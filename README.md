@@ -2,13 +2,17 @@
 
 _A Spatial Physical Reasoning Benchmark_
 
+## 🤗 SPhyR on HuggingFace
+
+You can also explore or download the dataset directly from Hugging Face:
+
+🔗 [SPhyR on Hugging Face](https://huggingface.co/datasets/philippds/SPhyR)
+
 ---
 
 ## 🔁 How to Re-Generate the Dataset
 
 Follow these steps to recreate the dataset from scratch.
-
----
 
 ### 🛠️ Step 1: Installation
 
@@ -27,8 +31,6 @@ Follow these steps to recreate the dataset from scratch.
    pip install poetry
    poetry install
    ```
-
----
 
 ### 🦏 Step 2: Rhinoceros 8.0 & Grasshopper Setup
 
@@ -59,8 +61,6 @@ Follow these steps to recreate the dataset from scratch.
 
    - Raw Data: `dataset_creation/topology_optimization_data/raw_data`
    - Plots/Frames: `dataset_creation/topology_optimization_data/frames`
-
----
 
 ### 📦 Step 3: Convert to JSON (HuggingFace Dataset Format)
 
