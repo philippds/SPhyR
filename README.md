@@ -2,6 +2,8 @@
 
 _A Spatial Physical Reasoning Benchmark_
 
+![SPhyR](sources/thumbnail.png)
+
 ## 🤗 SPhyR on HuggingFace
 
 You can also explore or download the dataset directly from Hugging Face:
