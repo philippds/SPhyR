@@ -100,6 +100,15 @@ def count_differences(list1, list2) -> int:
     return count
 
 
+def calculate_score(
+    output_ground_truth_difference_count, raw_input_ground_truth_difference_count
+) -> float:
+    score = 1 - (
+        output_ground_truth_difference_count / raw_input_ground_truth_difference_count
+    )
+    return score
+
+
 def aggregate_results(results: list[Result]) -> dict:
     total_exact_match = sum(1 for result in results if result.exact_match)
     total_score = sum(result.score for result in results)
@@ -185,7 +194,9 @@ def evaluate_against_model(model, samples) -> list:
 
             raw_input_list = [line.split() for line in sample.raw_input.splitlines()]
             output_text_list = [line.split() for line in output_text.splitlines()]
-            ground_truth_list = [line.split() for line in sample.ground_truth.splitlines()]
+            ground_truth_list = [
+                line.split() for line in sample.ground_truth.splitlines()
+            ]
 
             raw_input_ground_truth_difference_count = count_differences(
                 raw_input_list, ground_truth_list
@@ -195,15 +206,14 @@ def evaluate_against_model(model, samples) -> list:
                 output_text_list, ground_truth_list
             )
 
-            if output_ground_truth_difference_count == 0:
-                exact_match = True
-                score = 1
-                normalized_score = 1
-            else:
+            exact_match = True
+            score = 1
+            normalized_score = 1
+            if output_ground_truth_difference_count != 0:
                 exact_match = False
-                score = 1 - (
-                    output_ground_truth_difference_count /
-                    raw_input_ground_truth_difference_count
+                score = calculate_score(
+                    output_ground_truth_difference_count,
+                    raw_input_ground_truth_difference_count,
                 )
                 normalized_score = max(score, 0)
 
@@ -249,7 +259,7 @@ def evaluate_against_model(model, samples) -> list:
                 completion=r["completion"],
                 exact_match=r["exact_match"],
                 score=r["score"],
-                normalized_score=r["normnalized_score"]
+                normalized_score=r["normnalized_score"],
             )
             for r in results
         ]
@@ -263,7 +273,9 @@ def evaluate_against_model(model, samples) -> list:
         with open(f"results/{model}/{subject}_aggregated_results.json", "w") as f:
             json.dump(aggregated_results, f)
     else:
-        print(f"Skipping aggregation for {model}/{subject} – only {len(existing_results)} of {len(samples)} samples completed.")
+        print(
+            f"Skipping aggregation for {model}/{subject} – only {len(existing_results)} of {len(samples)} samples completed."
+        )
 
 
 # models = ["gpt-4.1", "gemini-2.5-pro-preview-05-06", "claude-3-7-sonnet-20250219", "deepseek-reasoner"]
