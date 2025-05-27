@@ -63,26 +63,25 @@ def generate_prompts(dataset, subject, sample_count=SAMPLE_COUNT) -> list[Sample
     samples = []
 
     for sample in dataset[:sample_count]:
-        # Assuming the dataset has a 'text' field
-        raw_input = sample[subject]
+        input_grid = sample["input_grid"]
 
         if subject.endswith("easy"):
             prompt = PROMT_TEMPLATE.format(
                 FILL_INSTRUCTION="'V' cells with either '1' (solid) or '0' (empty)",
-                GRID=raw_input,
+                GRID=input_grid,
             )
-            ground_truth = sample["ground_truth_easy"]
         else:
             prompt = PROMT_TEMPLATE.format(
                 FILL_INSTRUCTION="'V' cells with a floating point number between 0 and 1, with one decimal place (e.g., 0.0, 0.1, 0.2, ..., 1.0)",
-                GRID=raw_input,
+                GRID=input_grid,
             )
-            ground_truth = sample["ground_truth_hard"]
+
+        ground_truth = sample["ground_truth"]
 
         samples.append(
             Sample(
                 subject=subject,
-                raw_input=raw_input,
+                raw_input=input_grid,
                 prompt=prompt,
                 ground_truth=ground_truth,
             )
