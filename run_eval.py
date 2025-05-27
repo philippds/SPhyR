@@ -278,8 +278,12 @@ def evaluate_against_model(model, samples) -> list:
         )
 
 
-# models = ["gpt-4.1", "gemini-2.5-pro-preview-05-06", "claude-3-7-sonnet-20250219", "deepseek-reasoner"]
-models = ["gemini-2.5-pro-preview-05-06"]
+models = [
+    "gpt-4.1",
+    "claude-3-7-sonnet-20250219",
+    "gemini-2.5-pro-preview-05-06",
+    "deepseek-reasoner",
+]
 
 for subject in tqdm(subjects):
     dataset = load_dataset("philippds/SPhyR", subject)
