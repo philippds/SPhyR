@@ -102,6 +102,8 @@ def count_differences(list1, list2) -> int:
 def calculate_score(
     output_ground_truth_difference_count, raw_input_ground_truth_difference_count
 ) -> float:
+    if output_ground_truth_difference_count == 0 and raw_input_ground_truth_difference_count == 0:
+        return 1
     score = 1 - (
         output_ground_truth_difference_count / raw_input_ground_truth_difference_count
     )
