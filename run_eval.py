@@ -103,18 +103,18 @@ def generate_prompts(
 
         if subject.endswith("easy"):
             fill_instruction = "'V' cells with either '1' (solid) or '0' (empty)"
-            if few_shot_count == 0:
-                prompt = PROMPT_TEMPLATE.format(
-                    FILL_INSTRUCTION=fill_instruction,
-                    GRID=input_grid,
-                )
-            else:
+            if few_shot_count > 0:
                 concatenated_few_shot_examples = create_few_shot_example(
                     dataset, sample, few_shot_count, rotation_count
                 )
                 prompt = FEW_SHOT_PROMPT_TEMPLATE.format(
                     FILL_INSTRUCTION=fill_instruction,
                     FEW_SHOT_EXAMPLES=concatenated_few_shot_examples,
+                    GRID=input_grid,
+                )
+            else:
+                prompt = PROMPT_TEMPLATE.format(
+                    FILL_INSTRUCTION=fill_instruction,
                     GRID=input_grid,
                 )
         else:
@@ -526,7 +526,7 @@ def run_rotation_best_model_experiment():
             )
 
 
-def run_few_shot_experiment():
+def run_few_shot_experiment(few_shot_count=1):
     subjects = [
         "1_random_cell_easy",
         "5_random_cell_easy",
@@ -556,15 +556,18 @@ def run_few_shot_experiment():
         rnd.shuffle(dataset_list)
 
         samples = generate_prompts(
-            dataset=dataset_list, subject=subject, few_shot_count=1
+            dataset=dataset_list, subject=subject, few_shot_count=few_shot_count
         )
 
         for model in models:
-            evaluate_against_model(model=model, samples=samples)
+            evaluate_against_model(
+                model=model, samples=samples, name_suffix=f"_few_shot_{few_shot_count}"
+            )
 
 
 if __name__ == "__main__":
-    # run_main_experiment()
-    # run_rotation_comparison_experiment()
-    # run_rotation_best_model_experiment()
-    run_few_shot_experiment()
+    run_main_experiment()
+    run_rotation_comparison_experiment()
+    run_rotation_best_model_experiment()
+    run_few_shot_experiment(1)
+    run_few_shot_experiment(3)
