@@ -29,21 +29,11 @@ def process_line(line):
     if temp:
         parts.append(temp)
 
-    processed_values = []
-    for value in parts:
-        value = value.strip()
-        if value == "True":
-            processed_values.append(True)
-        elif value == "False":
-            processed_values.append(False)
-        elif value.startswith("[") and value.endswith("]"):
-            processed_values.append(ast.literal_eval(value))
-        else:
-            try:
-                processed_values.append(float(value) if "." in value else int(value))
-            except ValueError:
-                processed_values.append(value)
-    return processed_values
+    x_loc = int(math.floor(float(parts[1])))
+    y_loc = int(math.floor(float(parts[2])))
+    is_static = parts[5] == "True"
+    value = float(parts[4])
+    return x_loc, y_loc, is_static, value
 
 
 def grid_to_str(grid):
@@ -102,15 +92,14 @@ for index, csv_file in enumerate(csv_files):
         lines = f.readlines()
 
     grid_easy = [[0 for _ in range(dimensions)] for _ in range(dimensions)]
-    grid_hard = [[0 for _ in range(dimensions)] for _ in range(dimensions)]
+    grid_hard = [[0.0 for _ in range(dimensions)] for _ in range(dimensions)]
 
     for line in lines:
-        values = process_line(line)
-        x, y = int(math.floor(values[1])), int(math.floor(values[2]))
+        x, y, is_static, value = process_line(line)
 
-        if not values[5]:
-            grid_easy[y][x] = 1 if float(f"{values[4]:.1f}") > 0 else 0
-            grid_hard[y][x] = float(f"{values[4]:.1f}")
+        if not is_static:
+            grid_easy[y][x] = 1 if float(f"{value:.1f}") > 0 else 0
+            grid_hard[y][x] = float(f"{value:.1f}")
         elif y == 0:
             grid_easy[y][x] = grid_hard[y][x] = "S"
         else:
