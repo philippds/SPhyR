@@ -6,7 +6,7 @@
     "completion": "0 L L 0 L L L 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \nS S S S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.6666666666666667,
-    "normnalized_score": 0.6666666666666667
+    "normalized_score": 0.6666666666666667
   },
   {
     "subject": "10_random_cell_easy",
@@ -15,7 +15,7 @@
     "completion": "0 0 L L L L L L 0 0  \n0 0 1 1 1 1 1 1 0 0  \n0 0 1 1 0 0 1 0 0 0  \n0 0 0 1 0 0 1 0 0 0  \n0 0 0 1 0 0 1 0 0 0  \n0 0 0 1 0 0 1 0 0 0  \n0 0 0 1 0 0 1 0 0 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 S S S S S S S S 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -24,7 +24,7 @@
     "completion": "0 0 0 0 L L L L L L  \n0 0 0 0 0 1 1 1 1 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 S S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.8888888888888888,
-    "normnalized_score": 0.8888888888888888
+    "normalized_score": 0.8888888888888888
   },
   {
     "subject": "10_random_cell_easy",
@@ -33,7 +33,7 @@
     "completion": "L L L L 1 L 0 0 0 0  \n0 1 1 1 1 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 0 1 1 0 1 1 0 0  \n0 0 0 1 1 0 1 1 1 0  \n0 0 0 0 0 1 1 1 1 1  \n0 0 0 0 0 1 1 1 1 1  \n0 0 0 0 0 0 1 S S S",
     "exact_match": false,
     "score": 0.30000000000000004,
-    "normnalized_score": 0.30000000000000004
+    "normalized_score": 0.30000000000000004
   },
   {
     "subject": "10_random_cell_easy",
@@ -42,7 +42,7 @@
     "completion": "L 0 L 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n1 1 1 1 0 0 0 0 0 0  \n1 1 1 0 0 0 0 0 0 0  \n1 1 1 0 0 0 0 0 0 0  \n1 1 1 0 0 0 0 0 0 0  \n1 1 1 0 0 0 0 0 0 0  \n1 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \nS 0 S S S S S 0 0 0",
     "exact_match": false,
     "score": 0.7,
-    "normnalized_score": 0.7
+    "normalized_score": 0.7
   },
   {
     "subject": "10_random_cell_easy",
@@ -51,7 +51,7 @@
     "completion": "To predict the correct material distribution based on the surrounding structure and implicit physical reasoning, we'll logically infer the placement of solid ('1') or empty ('0') cells where 'V' cells exist. This involves maintaining structural integrity by placing solid material along load paths and adjacent to supports, minimizing material usage otherwise.\n\nHere's the completed grid based on these considerations:\n\n0 0 L L L L L 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 0 S S S 0\n\nThis approach aims to maintain structural support and minimize material usage while ensuring the integrity of load paths and supports.",
     "exact_match": false,
     "score": -2.6666666666666665,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -60,7 +60,7 @@
     "completion": "0 0 0 L L L L L L 0  \n0 0 0 0 1 0 1 1 0 0  \n0 0 0 1 1 1 1 1 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \nS S S S S S S 0 S S",
     "exact_match": false,
     "score": 0.5555555555555556,
-    "normnalized_score": 0.5555555555555556
+    "normalized_score": 0.5555555555555556
   },
   {
     "subject": "10_random_cell_easy",
@@ -69,7 +69,7 @@
     "completion": "0 0 0 0 L L L 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 S S S 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -78,7 +78,7 @@
     "completion": "L L L L L L 0 0 0 0  \n0 1 1 1 1 0 0 0 0 0  \n0 1 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 S S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.9,
-    "normnalized_score": 0.9
+    "normalized_score": 0.9
   },
   {
     "subject": "10_random_cell_easy",
@@ -87,7 +87,7 @@
     "completion": "V 0 0 L L L L 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 S S S S S 0 0 0",
     "exact_match": false,
     "score": 0.7,
-    "normnalized_score": 0.7
+    "normalized_score": 0.7
   },
   {
     "subject": "10_random_cell_easy",
@@ -96,7 +96,7 @@
     "completion": "```\n0 0 0 0 0 0 L L L 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 S S S S 0 0 0\n```",
     "exact_match": false,
     "score": -0.19999999999999996,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -105,7 +105,7 @@
     "completion": "```python\nimport numpy as np\nimport copy\n\ndef find_neighbors(grid, i, j):\n    rows, cols = len(grid), len(grid[0])\n    neighbors = []\n    for x, y in [(-1, 0), (1, 0), (0, -1), (0, 1)]:\n        ni, nj = i + x, j + y\n        if 0 <= ni < rows and 0 <= nj < cols and grid[ni][nj] != 'V':\n            neighbors.append((ni, nj))\n    return neighbors\n\ndef predict_material_distribution(grid):\n    # Create a copy to modify\n    modified_grid = copy.deepcopy(grid)\n    \n    # Identify 'L' and 'S' cells\n    loads = [(i, j) for i in range(len(grid)) for j in range(len(grid[0])) if grid[i][j] == 'L']\n    supports = [(i, j) for i in range(len(grid)) for j in range(len(grid[0])) if grid[i][j] == 'S']\n    \n    # Iterate over 'V' cells to make decisions\n    for i in range(len(grid)):\n        for j in range(len(grid[0])):\n            if modified_grid[i][j] == 'V':\n                # Simple heuristic: fill in 'V' cells under 'L' or between 'L' and 'S'\n                if any((neighbors[0] >= i and ('L' in [modified_grid[ni][nj] for ni, nj in find_neighbors(modified_grid, neighbors[0], neighbors[1])])) for neighbors in find_neighbors(modified_grid, i, j)):\n                    modified_grid[i][j] = '1'\n                elif any((neighbors[0] <= i and ('S' in [modified_grid[ni][nj] for ni, nj in find_neighbors(modified_grid, neighbors[0], neighbors[1])])) for neighbors in find_neighbors(modified_grid, i, j)):\n                    modified_grid[i][j] = '1'\n                else:\n                    modified_grid[i][j] = '0'\n                    \n    return modified_grid\n\n# Input grid\ngrid = [\n    ['0', '0', '0', '0', 'L', 'L', 'L', '0', '0', '0'],\n    ['0', '0', '0', '0', '0', '1', 'V', 'V', '0', '0'],\n    ['0', '0', '0', 'V', '0', '1', '0', '0', 'V', '0'],\n    ['0', '0', '0', '0', '0', '1', '0', '0', 'V', '0'],\n    ['0', '0', 'V', '0', '1', '1', '1', 'V', '0', '0'],\n    ['V', '0', '0', '0', '1', '1', '1', '0', '0', '0'],\n    ['0', '0', '0', '0', '0', '1', '0', '0', '0', '0'],\n    ['0', '0', '0', '0', '0', '1', '0', '0', '0', '0'],\n    ['0', '0', '0', '0', '0', 'V', '0', '0', '0', '0'],\n    ['0', '0', '0', '0', '0', 'V', 'S', '0', '0', '0']\n]\n\n# Modify 'V' cells based on the heuristic\npredicted_grid = predict_material_distribution(grid)\n\n# Output the predicted grid\nfor row in predicted_grid:\n    print(' '.join(row))\n```",
     "exact_match": false,
     "score": -3.5999999999999996,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -114,7 +114,7 @@
     "completion": "L L L L L 0 L L L 0  \n0 1 1 0 1 0 1 1 1 0  \n0 0 1 1 1 1 1 0 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 1 0 0 1 1 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 S S S 0 S 0 0 0",
     "exact_match": false,
     "score": 0.5,
-    "normnalized_score": 0.5
+    "normalized_score": 0.5
   },
   {
     "subject": "10_random_cell_easy",
@@ -123,7 +123,7 @@
     "completion": "L L L 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 1 0  \n0 1 1 0 0 1 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n1 1 1 1 1 0 0 0 0 0  \n0 1 1 0 1 1 1 0 0 1  \n0 0 1 1 0 1 1 1 0 0  \n0 1 0 1 1 1 0 1 0 0  \n0 0 0 1 S S S S S S",
     "exact_match": false,
     "score": 0.2222222222222222,
-    "normnalized_score": 0.2222222222222222
+    "normalized_score": 0.2222222222222222
   },
   {
     "subject": "10_random_cell_easy",
@@ -132,7 +132,7 @@
     "completion": "0 0 0 L L L L L L L\n0 0 0 0 1 1 0 0 1 0\n0 0 0 0 0 1 0 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\nS S S S 1 S S S 0 0",
     "exact_match": false,
     "score": 0.7,
-    "normnalized_score": 0.7
+    "normalized_score": 0.7
   },
   {
     "subject": "10_random_cell_easy",
@@ -141,7 +141,7 @@
     "completion": "0 0 0 0 L L L 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n1 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 S S S 0 S S S 0 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -150,7 +150,7 @@
     "completion": "0 0 L L 0 L L L 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 0 1 0 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 0 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 S S S S S 0 0",
     "exact_match": false,
     "score": 0.7,
-    "normnalized_score": 0.7
+    "normalized_score": 0.7
   },
   {
     "subject": "10_random_cell_easy",
@@ -159,7 +159,7 @@
     "completion": "0 0 0 L 0 L L L L L  \n0 0 0 0 1 1 0 1 1 0  \n0 0 0 0 1 1 0 1 1 0  \n0 0 0 0 0 1 0 1 0 0  \n0 0 0 0 0 1 0 1 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 0 1 0 0  \n0 0 0 0 0 1 0 1 0 0  \n0 0 0 0 0 1 0 1 0 0  \n0 0 0 S 0 S S S S S",
     "exact_match": false,
     "score": 0.5,
-    "normnalized_score": 0.5
+    "normalized_score": 0.5
   },
   {
     "subject": "10_random_cell_easy",
@@ -168,7 +168,7 @@
     "completion": "0 0 0 L L L L L 0 0  \n0 0 0 0 1 1 1 0 0 0  \n1 1 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n1 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 1 1 0 0  \n1 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 0 S S",
     "exact_match": false,
     "score": 0.30000000000000004,
-    "normnalized_score": 0.30000000000000004
+    "normalized_score": 0.30000000000000004
   },
   {
     "subject": "10_random_cell_easy",
@@ -177,7 +177,7 @@
     "completion": "L 0 L L 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 0 0 1 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 1 0 0 0 0 0 0  \n0 0 S S S S S 0 0 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -186,7 +186,7 @@
     "completion": "0 0 0 0 0 0 0 L L L  \n0 0 0 0 0 0 0 0 1 0  \n0 0 0 0 0 0 0 0 1 0  \n0 0 0 0 0 0 0 0 1 0  \n0 0 0 0 0 1 1 1 1 0  \n0 0 0 0 0 1 1 1 1 0  \n0 0 0 1 1 1 1 1 0 0  \n0 0 1 1 1 0 1 1 0 0  \n0 0 1 0 0 1 1 0 0 0  \n0 S S 0 S 1 0 0 0 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -195,7 +195,7 @@
     "completion": "L L L L L 0 0 0 0 0  \n0 1 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \nS S S S S S S 0 0 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -204,7 +204,7 @@
     "completion": "0 L 0 L L L L L 0\n0 0 1 0 1 1 1 1 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 S S S 0 0 0 0 0",
     "exact_match": false,
     "score": 0.5,
-    "normnalized_score": 0.5
+    "normalized_score": 0.5
   },
   {
     "subject": "10_random_cell_easy",
@@ -213,7 +213,7 @@
     "completion": "0 L L L L L L L L L  \n0 0 1 1 0 1 1 1 1 0  \n0 0 1 1 0 1 1 1 0 0  \n0 0 0 1 1 1 0 1 0 0  \n0 0 0 1 1 0 1 1 0 0  \n0 0 0 1 0 0 1 1 0 0  \n0 0 0 1 1 0 1 0 0 0  \n0 0 0 1 1 0 1 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 S S S S S S S S 0",
     "exact_match": false,
     "score": 0.5,
-    "normnalized_score": 0.5
+    "normalized_score": 0.5
   },
   {
     "subject": "10_random_cell_easy",
@@ -222,7 +222,7 @@
     "completion": "0 0 0 0 0 L L 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 S S S S S S S S S",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -231,7 +231,7 @@
     "completion": "0 0 0 0 0 0 L L L L  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 0 0 1 0  \n0 0 0 0 0 0 1 1 1 0  \n0 0 0 0 1 1 1 0 1 0  \n0 0 0 1 1 0 1 1 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 S S S S 1 0 0 0",
     "exact_match": false,
     "score": 0.5,
-    "normnalized_score": 0.5
+    "normalized_score": 0.5
   },
   {
     "subject": "10_random_cell_easy",
@@ -240,7 +240,7 @@
     "completion": "0 0 0 0 0 0 L L L L\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 1 1 0 1 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 S S S 1 0 0 0 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -249,7 +249,7 @@
     "completion": "L L L L L L 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 1 1 1 1 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \nS S S S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.8888888888888888,
-    "normnalized_score": 0.8888888888888888
+    "normalized_score": 0.8888888888888888
   },
   {
     "subject": "10_random_cell_easy",
@@ -258,7 +258,7 @@
     "completion": "```\n0 0 L L 0 L 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 S S S 0 0 S 0\n```",
     "exact_match": false,
     "score": -0.30000000000000004,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -267,7 +267,7 @@
     "completion": "L L L L L L L 0 0 0  \n0 1 1 0 1 1 0 0 0 0  \n0 0 1 0 1 0 0 0 0 0  \n1 0 1 1 1 0 0 0 0 0  \n0 0 1 1 1 0 0 0 1 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 1 0  \n0 0 0 1 0 0 0 0 0 0  \n0 1 S S S S S S S 0",
     "exact_match": false,
     "score": 0.4,
-    "normnalized_score": 0.4
+    "normalized_score": 0.4
   },
   {
     "subject": "10_random_cell_easy",
@@ -276,7 +276,7 @@
     "completion": "0 L L L L L L L 0 0  \n1 0 1 1 0 1 1 1 0 0  \n1 0 0 1 0 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 1 1 0 1 0 0 0  \n0 1 0 0 1 1 1 1 0 0  \n1 0 0 0 0 1 1 1 1 0  \n0 0 0 0 0 0 S S S S",
     "exact_match": false,
     "score": 0.11111111111111116,
-    "normnalized_score": 0.11111111111111116
+    "normalized_score": 0.11111111111111116
   },
   {
     "subject": "10_random_cell_easy",
@@ -285,7 +285,7 @@
     "completion": "L L L L L L 0 0 L 0  \n0 1 1 0 1 0 1 0 0 0  \n0 0 1 1 1 1 1 0 0 0  \n0 0 0 1 0 1 1 0 0 0  \n0 0 0 1 0 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 0 S S S 0 S S",
     "exact_match": false,
     "score": 0.4,
-    "normnalized_score": 0.4
+    "normalized_score": 0.4
   },
   {
     "subject": "10_random_cell_easy",
@@ -294,7 +294,7 @@
     "completion": "```\n0 L L L L L L L L 0\n0 0 1 1 1 1 1 1 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 S S S 0\n```",
     "exact_match": false,
     "score": -0.8999999999999999,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -303,7 +303,7 @@
     "completion": "L L L L L L L 0 0 0  \n0 1 1 0 1 1 0 0 0 0  \n0 0 1 0 1 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 S 0 S S S S",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -312,7 +312,7 @@
     "completion": "0 0 0 0 L L L L L 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 1 1 1 1 1 1 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 S S S 1 0 0 0 0 0",
     "exact_match": false,
     "score": 0.6666666666666667,
-    "normnalized_score": 0.6666666666666667
+    "normalized_score": 0.6666666666666667
   },
   {
     "subject": "10_random_cell_easy",
@@ -321,7 +321,7 @@
     "completion": "0 0 0 L L L 0 L L L  \n0 0 0 0 1 1 0 1 0 0  \n0 0 0 0 0 1 0 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 1 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \nS 0 S S S S S 0 0 0",
     "exact_match": false,
     "score": 0.4444444444444444,
-    "normnalized_score": 0.4444444444444444
+    "normalized_score": 0.4444444444444444
   },
   {
     "subject": "10_random_cell_easy",
@@ -330,7 +330,7 @@
     "completion": "0 0 0 0 L L L L 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 1 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \nS S S S 0 S 1 0 0 0",
     "exact_match": false,
     "score": 0.625,
-    "normnalized_score": 0.625
+    "normalized_score": 0.625
   },
   {
     "subject": "10_random_cell_easy",
@@ -339,7 +339,7 @@
     "completion": "0 0 0 L L L L 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 0 S S 0 S S",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -348,7 +348,7 @@
     "completion": "0 0 0 L L L 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 S S S 0 0 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -357,7 +357,7 @@
     "completion": "L L L L L L L L 0 0  \n0 1 1 0 1 1 1 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 1 0 1 1 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.7,
-    "normnalized_score": 0.7
+    "normalized_score": 0.7
   },
   {
     "subject": "10_random_cell_easy",
@@ -366,7 +366,7 @@
     "completion": "0 0 0 0 0 0 0 1 L 0  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 0 0 1 0  \n0 0 0 0 0 0 1 1 1 0  \n0 0 0 0 1 1 0 0 1 0  \n0 0 0 1 1 1 1 1 0 0  \n0 0 1 1 1 1 1 1 0 0  \n0 0 1 0 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 S S S 1 0 0 0 0 0",
     "exact_match": false,
     "score": 0.19999999999999996,
-    "normnalized_score": 0.19999999999999996
+    "normalized_score": 0.19999999999999996
   },
   {
     "subject": "10_random_cell_easy",
@@ -375,7 +375,7 @@
     "completion": "L L L 0 0 0 0 0 0 0  \n1 1 0 0 1 0 0 0 0 0  \n0 1 0 0 1 0 0 0 0 0  \n0 1 0 0 0 0 0 1 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 1 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 S S S 1 0 0 0 1 0",
     "exact_match": false,
     "score": 0.2222222222222222,
-    "normnalized_score": 0.2222222222222222
+    "normalized_score": 0.2222222222222222
   },
   {
     "subject": "10_random_cell_easy",
@@ -384,7 +384,7 @@
     "completion": "L L L 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n1 1 0 0 0 0 0 1 0 0  \n1 1 1 0 0 0 0 0 0 1  \n1 1 1 0 0 0 1 1 0 0  \n1 1 1 0 0 0 0 0 0 0  \n1 1 0 0 0 0 1 0 0 0  \n0 1 0 0 0 0 1 0 0 0  \n0 1 0 0 0 0 0 1 0 0  \nS S S S 1 S S S S S",
     "exact_match": false,
     "score": 0.11111111111111116,
-    "normnalized_score": 0.11111111111111116
+    "normalized_score": 0.11111111111111116
   },
   {
     "subject": "10_random_cell_easy",
@@ -393,7 +393,7 @@
     "completion": "0 0 0 0 L L L L 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 0 1 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \nS S S S S S 0 S 0 0",
     "exact_match": false,
     "score": 0.6666666666666667,
-    "normnalized_score": 0.6666666666666667
+    "normalized_score": 0.6666666666666667
   },
   {
     "subject": "10_random_cell_easy",
@@ -402,7 +402,7 @@
     "completion": "0 0 0 L 0 1 L 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 1 S S S 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -411,7 +411,7 @@
     "completion": "L L L L 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 1 1 1 1 1 0 0 0 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 1 1 1 1 1 1 0 0  \n0 0 0 1 1 1 1 1 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 0 1 S S S 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -420,7 +420,7 @@
     "completion": "V 0 0 L 0 L L L L 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 S S 0 0 0 0",
     "exact_match": false,
     "score": 0.6666666666666667,
-    "normnalized_score": 0.6666666666666667
+    "normalized_score": 0.6666666666666667
   },
   {
     "subject": "10_random_cell_easy",
@@ -429,7 +429,7 @@
     "completion": "0 0 0 L L L L 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 S S S S 0 0",
     "exact_match": true,
     "score": 1,
-    "normnalized_score": 1
+    "normalized_score": 1
   },
   {
     "subject": "10_random_cell_easy",
@@ -438,7 +438,7 @@
     "completion": "0 0 0 0 0 L L 0 L L L  \n0 0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 0 1 1 0 0  \n0 0 S S S S S S 0 0 0",
     "exact_match": false,
     "score": -0.5,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -447,7 +447,7 @@
     "completion": "L 0 L L L L 0 0 0 0  \n0 1 1 1 1 0 0 0 0 0  \n0 1 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 0 0 S S S S S S S",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -456,7 +456,7 @@
     "completion": "0 0 0 0 0 L L L 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 1 1 1 1 0 1 0  \n0 0 1 1 1 1 1 0 0 0  \n0 1 1 1 0 1 1 0 0 0  \n0 1 1 1 1 1 0 0 0 0  \n1 1 1 0 1 0 0 0 0 0  \nS S S 1 0 0 0 0 0 0",
     "exact_match": false,
     "score": 0.7,
-    "normnalized_score": 0.7
+    "normalized_score": 0.7
   },
   {
     "subject": "10_random_cell_easy",
@@ -465,7 +465,7 @@
     "completion": "0 0 0 0 L L L L L L  \n0 0 0 0 0 1 1 1 1 0  \n0 0 0 0 0 0 1 1 1 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 1 0 1 1 0 0  \n0 0 0 0 0 0 0 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 S S S 0 0",
     "exact_match": false,
     "score": 0.7777777777777778,
-    "normnalized_score": 0.7777777777777778
+    "normalized_score": 0.7777777777777778
   },
   {
     "subject": "10_random_cell_easy",
@@ -474,7 +474,7 @@
     "completion": "0 0 L L L L L L L L  \n0 0 0 1 1 1 1 1 1 0  \n0 0 0 1 1 0 0 1 1 0  \n0 0 0 0 1 0 0 1 0 0  \n0 0 0 0 1 0 0 1 0 0  \n0 0 0 0 1 0 0 1 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 1 1 0 1 0 0  \n0 0 S 0 S S S S S S",
     "exact_match": false,
     "score": 0.7777777777777778,
-    "normnalized_score": 0.7777777777777778
+    "normalized_score": 0.7777777777777778
   },
   {
     "subject": "10_random_cell_easy",
@@ -483,7 +483,7 @@
     "completion": "0 0 L L L L L L L L  \n0 0 0 1 1 1 1 1 1 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 1 0 1 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 S S S 0 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -492,7 +492,7 @@
     "completion": "L 0 L L 0 L L L L 0  \n0 1 1 1 0 1 1 1 0 0  \n0 1 1 0 0 0 1 0 0 0  \n0 0 1 0 0 0 1 0 0 0  \n0 0 1 0 0 0 1 0 0 0  \n0 0 1 0 0 0 1 0 0 0  \n0 0 1 0 0 0 1 0 0 0  \n0 0 1 0 0 0 1 0 0 0  \n0 0 1 0 0 0 1 0 0 0  \nS S S S S 0 S S S 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -501,7 +501,7 @@
     "completion": "```\n0 0 0 L L L 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\nS 0 S S 0 0 0 S S 0\n```",
     "exact_match": false,
     "score": -0.6000000000000001,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -510,7 +510,7 @@
     "completion": "0 0 L L L L 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 1 0 1 1 0 1 1 0 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 0 1 0 1 1 0\n0 0 0 0 0 1 0 S S S",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -519,7 +519,7 @@
     "completion": "```text\n0 L L L L L 0 L 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 0 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 S S 0 0 S 0 0 0 0\n```",
     "exact_match": false,
     "score": -0.8,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -528,7 +528,7 @@
     "completion": "L L L 0 L L L L L 0  \n0 1 1 0 1 0 1 1 0 0  \n0 0 1 0 1 0 1 0 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 0 S S S S 0",
     "exact_match": false,
     "score": 0.625,
-    "normnalized_score": 0.625
+    "normalized_score": 0.625
   },
   {
     "subject": "10_random_cell_easy",
@@ -537,7 +537,7 @@
     "completion": "0 L L L L L L L 0 L  \n0 0 0 1 0 1 0 1 1 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 0 1 1 0 1 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 1 0 0 0 1 0 0 0 0  \n1 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 S S S S 0 0 0",
     "exact_match": false,
     "score": 0.11111111111111116,
-    "normnalized_score": 0.11111111111111116
+    "normalized_score": 0.11111111111111116
   },
   {
     "subject": "10_random_cell_easy",
@@ -546,7 +546,7 @@
     "completion": "0 0 L L L 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 0 1 0 1 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \nS S S S S 0 S 0 S 0",
     "exact_match": false,
     "score": 0.5555555555555556,
-    "normnalized_score": 0.5555555555555556
+    "normalized_score": 0.5555555555555556
   },
   {
     "subject": "10_random_cell_easy",
@@ -555,7 +555,7 @@
     "completion": "0 L L L L L 1 L 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 S S S S S S S S S",
     "exact_match": false,
     "score": 0.9,
-    "normnalized_score": 0.9
+    "normalized_score": 0.9
   },
   {
     "subject": "10_random_cell_easy",
@@ -564,7 +564,7 @@
     "completion": "0 0 L L L 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n1 0 1 1 1 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n1 0 1 1 1 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 S S S S S S S 0",
     "exact_match": false,
     "score": 0.5555555555555556,
-    "normnalized_score": 0.5555555555555556
+    "normalized_score": 0.5555555555555556
   },
   {
     "subject": "10_random_cell_easy",
@@ -573,7 +573,7 @@
     "completion": "0 L 0 L 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \nS S 0 S S 0 0 0 0 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -582,7 +582,7 @@
     "completion": "0 0 L L L L L L L 0  \n0 0 0 1 1 0 1 1 0 0  \n0 0 0 0 1 0 1 0 0 0  \n0 0 0 0 1 0 1 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 S S S S 0",
     "exact_match": false,
     "score": 0.9,
-    "normnalized_score": 0.9
+    "normalized_score": 0.9
   },
   {
     "subject": "10_random_cell_easy",
@@ -591,7 +591,7 @@
     "completion": "0 L 1 0 L L 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 S S S S 0 S S",
     "exact_match": false,
     "score": 0.4,
-    "normnalized_score": 0.4
+    "normalized_score": 0.4
   },
   {
     "subject": "10_random_cell_easy",
@@ -600,7 +600,7 @@
     "completion": "0 0 0 L L L L L 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 S 1 1 S S",
     "exact_match": false,
     "score": 0.6666666666666667,
-    "normnalized_score": 0.6666666666666667
+    "normalized_score": 0.6666666666666667
   },
   {
     "subject": "10_random_cell_easy",
@@ -609,7 +609,7 @@
     "completion": "0 0 0 0 0 L L L 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 S S S S S S S 0",
     "exact_match": false,
     "score": 0.7777777777777778,
-    "normnalized_score": 0.7777777777777778
+    "normalized_score": 0.7777777777777778
   },
   {
     "subject": "10_random_cell_easy",
@@ -618,7 +618,7 @@
     "completion": "Given the complexity of predicting material distribution based on structural stability and minimal material usage, a simple heuristic approach can be described, though it may not fully capture all nuances of structural optimization. Here, we focus on connecting loads to supports with minimal material usage, assuming the structure remains two-dimensional and the material distribution is primarily determined by direct load paths and supportive elements.\n\n```python\ndef predict_material_distribution(grid):\n    # Identify supports and loads\n    supports = [(i, j) for i, row in enumerate(grid) for j, cell in enumerate(row) if cell == 'S']\n    loads = [(i, j) for i, row in enumerate(grid) for j, cell in enumerate(row) if cell == 'L']\n\n    # Initialize material distribution with voids as empty\n    material_distribution = [[cell if cell != 'V' else '0' for cell in row] for row in grid]\n\n    # Connect loads to supports using a simple heuristic\n    for load in loads:\n        for support in supports:\n            # Check if path exists vertically or horizontally\n            if load[0] == support[0]:  # Horizontal path\n                for x in range(min(load[1], support[1]), max(load[1], support[1]) + 1):\n                    material_distribution[load[0]][x] = '1'\n            elif load[1] == support[1]:  # Vertical path\n                for y in range(min(load[0], support[0]), max(load[0], support[0]) + 1):\n                    material_distribution[y][load[1]] = '1'\n            else:  # Diagonal or complex path, not directly supported\n                # For simplicity, focus on direct connections\n                pass\n\n    return [' '.join(row) for row in material_distribution]\n\ngrid = [\n    ['0', '0', 'L', 'L', 'L', 'L', 'L', 'V', '0', '0'],\n    ['0', '0', '0', '1', '1', '1', '1', '0', '0', '0'],\n    ['V', '0', '0', '1', '1', '1', '1', '0', '0', 'V'],\n    ['0', '0', '0', '0', '1', '1', '0', '0', '0', '0'],\n    ['0', '0', '0', '0', '1', '1', '0', '0', '0', '0'],\n    ['0', 'V', '0', '0', '1', '1', '0', '0', '0', '0'],\n    ['0', '0', '0', '0', '1', '1', '0', '0', 'V', '0'],\n    ['0', '0', '0', '0', '1', '1', 'V', 'V', '0', '0'],\n    ['0', '0', '0', '0', '1', 'V', '0', '0', 'V', '0'],\n    ['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', '0', '0']\n]\n\nprint(predict_material_distribution(grid))\n```\n\nThis script might not fully optimize the structure, as it doesn't account for stress distribution or more complex load paths, but it provides a basic approach to filling in voids based on direct connections between loads and supports. For a more accurate optimization, techniques like topology optimization or more advanced structural analysis would be necessary. \n\n**Note:** The provided Python code is a simplified example and does not handle all possible scenarios or optimize the structure according to physics principles in a real-world context. Real structural optimization requires more sophisticated methods that consider stress, strain, and other mechanical factors. \n\nHere is the output of the script:\n```\n0 0 L L L L L 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\nS S S S S S S S 0 0\n```",
     "exact_match": false,
     "score": -5.222222222222222,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -627,7 +627,7 @@
     "completion": "V L L L 0 L L L L L  \n0 1 0 0 1 1 1 1 1 0  \n0 0 1 1 1 1 1 1 0 0  \n0 0 1 1 1 1 1 0 0 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 0 1 1 0 1 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \nS S S S S 0 0 0 0 0",
     "exact_match": false,
     "score": -0.22222222222222232,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -636,7 +636,7 @@
     "completion": "0 0 1 1 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 0 1 0 1 0 0",
     "exact_match": false,
     "score": -0.19999999999999996,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -645,7 +645,7 @@
     "completion": "0 0 0 0 0 L L L 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 1 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 1 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \nS S 0 S S S S 0 0 0",
     "exact_match": false,
     "score": 0.375,
-    "normnalized_score": 0.375
+    "normalized_score": 0.375
   },
   {
     "subject": "10_random_cell_easy",
@@ -654,7 +654,7 @@
     "completion": "V 0 0 0 0 0 L L L L  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 0 1 1 0  \n0 0 0 0 0 0 1 1 1 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 1 1 1 1 1 0 0  \n0 0 1 0 1 1 1 0 0 0  \nS S S S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -663,7 +663,7 @@
     "completion": "0 0 0 0 0 L L L 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 1 1 0 0 1 1 1 0 0  \n0 1 0 0 0 1 1 0 0 0  \n1 1 1 0 0 0 1 0 0 0  \n0 0 0 1 0 0 1 0 0 0  \n0 0 0 S S S S S 0 0",
     "exact_match": false,
     "score": 0.30000000000000004,
-    "normnalized_score": 0.30000000000000004
+    "normalized_score": 0.30000000000000004
   },
   {
     "subject": "10_random_cell_easy",
@@ -672,7 +672,7 @@
     "completion": "The task at hand is to predict the optimal material distribution for a given structural grid, ensuring that the structure is stable and uses minimal material. The approach involves analyzing the load paths, supports, and forces to determine where material should be placed. However, the problem statement does not lend itself to a purely mathematical solution without applying specific topology optimization algorithms or physical reasoning. For simplicity, let's apply basic principles of structural integrity and material distribution:\n\n1. **Load Paths**: Material should be placed in areas where loads are transferred to supports.\n2. **Supports**: Material distribution should ensure that loads are efficiently transmitted to supports.\n3. **Minimal Material**: Use as little material as necessary for structural support and stability.\n\nGiven these constraints, the grid can be completed by placing material where it is structurally necessary and omitting it where possible. However, without direct application of topology optimization algorithms like SIMP or other computational methods, the following completed grid is a simplified interpretation:\n\n```\n0 0 0 0 L L L L L L\n1 1 0 0 0 1 1 1 1 0\n0 1 0 0 0 1 1 1 1 0\n0 1 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 1 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 1 0 S S S S S S 0\n```\n\nThis distribution aims to create a continuous path for loads while minimizing material usage. Note that this is an intuitive approach and may not fully adhere to the detailed computational optimization methods described in topology optimization techniques.",
     "exact_match": false,
     "score": -4.8,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -681,7 +681,7 @@
     "completion": "L L L L 0 0 0 0 0 0  \n0 1 1 1 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 0 1 1 1 1 1 0 0  \n0 0 0 1 1 1 1 1 0 0  \n0 0 0 0 1 0 S S S 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -690,7 +690,7 @@
     "completion": "0 0 0 0 0 L L L L 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 S S S 1 0 0 0 0 0",
     "exact_match": false,
     "score": 0.4444444444444444,
-    "normnalized_score": 0.4444444444444444
+    "normalized_score": 0.4444444444444444
   },
   {
     "subject": "10_random_cell_easy",
@@ -699,7 +699,7 @@
     "completion": "L L L L 0 L L L L L  \n0 1 1 1 1 1 1 1 1 0  \n0 0 1 1 0 1 1 1 0 0  \n0 0 0 1 0 1 1 0 0 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 S S S 0 0 0",
     "exact_match": false,
     "score": 0.4444444444444444,
-    "normnalized_score": 0.4444444444444444
+    "normalized_score": 0.4444444444444444
   },
   {
     "subject": "10_random_cell_easy",
@@ -708,7 +708,7 @@
     "completion": "L L L 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 0 0 0 0 0 0 0 0  \n0 1 1 1 0 0 0 0 0 0  \n0 0 S S S 0 0 0 0 0",
     "exact_match": false,
     "score": 0.9,
-    "normnalized_score": 0.9
+    "normalized_score": 0.9
   },
   {
     "subject": "10_random_cell_easy",
@@ -717,7 +717,7 @@
     "completion": "0 L L L L L L L 0 0  \n0 0 1 1 1 1 1 0 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 0 1 0 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 S S S S S S S S S",
     "exact_match": false,
     "score": 0.7777777777777778,
-    "normnalized_score": 0.7777777777777778
+    "normalized_score": 0.7777777777777778
   },
   {
     "subject": "10_random_cell_easy",
@@ -726,7 +726,7 @@
     "completion": "L L L L L 0 0 L 0 0  \n0 1 1 1 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \n0 0 0 S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.4,
-    "normnalized_score": 0.4
+    "normalized_score": 0.4
   },
   {
     "subject": "10_random_cell_easy",
@@ -735,7 +735,7 @@
     "completion": "0 0 L L L L L L 0 0  \n0 0 0 1 1 0 1 0 0 0  \n0 0 0 0 1 0 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 S S S 0 S 0 0 0 0",
     "exact_match": false,
     "score": 0.4,
-    "normnalized_score": 0.4
+    "normalized_score": 0.4
   },
   {
     "subject": "10_random_cell_easy",
@@ -744,7 +744,7 @@
     "completion": "0 0 L L L L L L L 0  \n0 0 0 1 1 0 1 0 0 0  \n0 0 0 0 1 0 1 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 1 1 1 1 0 0 0  \n0 0 0 0 0 0 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 S S S 0 S 0 0",
     "exact_match": false,
     "score": 0.5,
-    "normnalized_score": 0.5
+    "normalized_score": 0.5
   },
   {
     "subject": "10_random_cell_easy",
@@ -753,7 +753,7 @@
     "completion": "L L L L 0 0 0 0 0 0  \n0 1 1 0 0 0 0 0 0 0  \n0 0 1 0 0 0 0 0 0 0  \n0 1 1 1 1 0 0 0 0 0  \n0 1 0 0 1 1 0 0 0 0  \n0 0 1 1 1 1 1 0 0 0  \n0 0 1 1 1 1 1 0 0 0  \n0 0 0 1 1 1 1 1 1 0  \n0 0 0 0 1 1 1 1 1 0  \n0 0 0 0 0 1 S S S 0",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -762,7 +762,7 @@
     "completion": "L L L L L L L L 0 0  \n0 0 1 1 1 0 1 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 0 1 0 0 0 0 0  \nS S S S S S 0 0 0 0",
     "exact_match": false,
     "score": 0.4444444444444444,
-    "normnalized_score": 0.4444444444444444
+    "normalized_score": 0.4444444444444444
   },
   {
     "subject": "10_random_cell_easy",
@@ -771,7 +771,7 @@
     "completion": "0 0 0 L L L L 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 1 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 1 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \nS S S S S 1 S S S S",
     "exact_match": false,
     "score": 0.6,
-    "normnalized_score": 0.6
+    "normalized_score": 0.6
   },
   {
     "subject": "10_random_cell_easy",
@@ -780,7 +780,7 @@
     "completion": "0 0 0 0 L L L L 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n1 S S S 1 S S 1 S 0",
     "exact_match": false,
     "score": 0.5555555555555556,
-    "normnalized_score": 0.5555555555555556
+    "normalized_score": 0.5555555555555556
   },
   {
     "subject": "10_random_cell_easy",
@@ -789,7 +789,7 @@
     "completion": "L L 1 L L L L L 0 0  \n0 1 1 1 1 1 1 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 0 1 1 1 0 0  \n0 0 0 0 1 1 1 1 1 0  \n0 0 0 0 1 1 1 1 1 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 S S S",
     "exact_match": false,
     "score": 0.30000000000000004,
-    "normnalized_score": 0.30000000000000004
+    "normalized_score": 0.30000000000000004
   },
   {
     "subject": "10_random_cell_easy",
@@ -798,7 +798,7 @@
     "completion": "```python\n\ndef predict_material_distribution(grid):\n    def is_valid(grid, x, y, value):\n        if x < 0 or y < 0 or x >= len(grid) or y >= len(grid[0]):\n            return False\n        if grid[x][y] in ['L', 'S']:\n            return grid[x][y] == value\n        return True\n\n    def based_on_physical_reasoning(grid, x, y):\n        # Load paths and supports generally require solid material.\n        if (x-1 >= 0 and grid[x-1][y] in ['L', 'S']) or (x+1 < len(grid) and grid[x+1][y] in ['L', 'S']) \\\n            or (y-1 >= 0 and grid[x][y-1] in ['L', 'S']) or (y+1 < len(grid[0]) and grid[x][y+1] in ['L', 'S']):\n            return '1'\n        # Regions far from loads or supports can be empty.\n        else:\n            return '0'\n\n    for i in range(len(grid)):\n        for j in range(len(grid[0])):\n            if grid[i][j] == 'V':\n                grid[i][j] = based_on_physical_reasoning(grid, i, j)\n\n    return grid\n\ngrid = [\n    ['0', 'V', '0', '0', 'L', 'L', 'L', 'L', 'L', 'L'],\n    ['0', '0', '0', '0', '0', '1', '1', 'V', '1', '0'],\n    ['0', '0', '0', '0', '0', 'V', '1', '1', '1', '0'],\n    ['0', '0', '0', '0', '0', '0', '1', '1', 'V', '0'],\n    ['0', '0', '0', '0', 'V', '0', 'V', 'V', '0', '0'],\n    ['0', '0', '0', 'V', '0', '0', 'V', '1', '0', '0'],\n    ['0', '0', '0', 'V', '0', '0', '1', '1', '0', '0'],\n    ['0', '0', '0', '0', '0', '0', '1', '1', '0', '0'],\n    ['0', '0', '0', '0', '0', '0', '1', '1', '0', '0'],\n    ['0', '0', '0', '0', '0', '0', '1', '1', '0', '0'],\n    ['0', 'S', 'S', 'S', 'S', 'S', 'S', 'S', '0', '0']\n]\n\ncompleted_grid = predict_material_distribution([row[:] for row in grid])\n\nfor row in completed_grid:\n    print(' '.join(row))\n    \n```\n\nRunning this Python code will output the completed grid with the 'V' cells filled based on the physical reasoning provided. Note that the code makes a simple assumption about the structure's stability and might not cover all possible outcomes that topology optimization techniques could provide. \n\nOutput:\n```\n0 0 0 0 L L L L L L \n0 0 0 0 0 1 1 0 1 0 \n0 0 0 0 0 1 1 1 1 0 \n0 0 0 0 0 0 1 1 0 0 \n0 0 0 0 1 0 0 0 0 0 \n0 0 0 0 0 0 0 1 0 0 \n0 0 0 0 0 0 1 1 0 0 \n0 0 0 0 0 0 1 1 0 0 \n0 0 0 0 0 0 1 1 0 0 \n0 S S S S S S S 0 0 \n```",
     "exact_match": false,
     "score": -2.0,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -807,7 +807,7 @@
     "completion": "0 L L L L L L 0 0 0  \n0 0 1 1 1 1 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 1 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 1 1 0 0 0 0 0  \n0 0 0 0 S 0 S S S 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -816,7 +816,7 @@
     "completion": "0 0 L L L L L L 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 0 0 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 S S S 0",
     "exact_match": false,
     "score": 0.8888888888888888,
-    "normnalized_score": 0.8888888888888888
+    "normalized_score": 0.8888888888888888
   },
   {
     "subject": "10_random_cell_easy",
@@ -825,7 +825,7 @@
     "completion": "0 0 0 0 0 L L L L 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 0 0 1 1 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 1 1 1 0 0 0  \n0 0 0 S 0 S 1 0 0 0",
     "exact_match": false,
     "score": 0.8571428571428572,
-    "normnalized_score": 0.8571428571428572
+    "normalized_score": 0.8571428571428572
   },
   {
     "subject": "10_random_cell_easy",
@@ -834,7 +834,7 @@
     "completion": "```\n0 0 0 L L L L 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 S S S 0 0 0 0\n```",
     "exact_match": false,
     "score": 0.0,
-    "normnalized_score": 0.0
+    "normalized_score": 0.0
   },
   {
     "subject": "10_random_cell_easy",
@@ -843,7 +843,7 @@
     "completion": "Here is the completed grid, following the principles of minimizing material while maintaining structural integrity:\n\n```\n0 0 0 0 0 L L L L 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 0 0 S S\n```",
     "exact_match": false,
     "score": -0.8999999999999999,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -852,7 +852,7 @@
     "completion": "```python\ndef predict_material_distribution(grid):\n    rows = len(grid)\n    cols = len(grid[0])\n    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]\n\n    def is_valid(row, col):\n        return 0 <= row < rows and 0 <= col < cols\n\n    def has_load_or_support(row, col):\n        return grid[row][col] in ['L', 'S']\n\n    def has_strong_connection(row, col):\n        for dr, dc in directions:\n            nr, nc = row + dr, col + dc\n            if is_valid(nr, nc) and grid[nr][nc] in ['L', 'S', '1']:\n                return True\n        return False\n\n    # Initialize the grid copy\n    new_grid = [row.copy() for row in grid]\n\n    for row in range(rows):\n        for col in range(cols):\n            if new_grid[row][col] == 'V':\n                if has_load_or_support(row, col) or has_strong_connection(row, col):\n                    new_grid[row][col] = '1'\n                else:\n                    new_grid[row][col] = '0'\n\n    return new_grid\n\ngrid = [\n    ['L', 'L', 'L', 'L', '0', '0', '0', '0', 'V', '0'],\n    ['0', '1', '1', '0', 'V', '0', '0', '0', '0', '0'],\n    ['0', '1', '1', '0', 'V', '0', '0', '0', '0', '0'],\n    ['0', '1', '1', '0', '0', '0', '0', '0', '0', '0'],\n    ['0', '1', '1', '0', '0', '0', '0', '0', '0', '0'],\n    ['0', 'V', '1', '0', '0', '0', '0', '0', 'V', '0'],\n    ['0', '1', '1', '0', '0', 'V', '0', '0', '0', '0'],\n    ['0', '1', '1', '0', '0', 'V', '0', '0', '0', 'V'],\n    ['0', '1', '1', '0', '0', '0', '0', '0', '0', '0'],\n    ['0', 'S', 'S', 'S', 'S', 'V', '0', '0', '0', '0']\n]\n\ncompleted_grid = predict_material_distribution(grid)\n\nfor row in completed_grid:\n    print(' '.join(row))\n```\n\nRunning this Python script will output the completed grid with the 'V' cells replaced according to the implemented logic. However, please note that the script's assumption about connectivity and stability might not perfectly align with detailed structural analysis methods like SIMP or BESO, but it provides a basic approach based on grid connectivity and boundary conditions.",
     "exact_match": false,
     "score": -2.7777777777777777,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -861,7 +861,7 @@
     "completion": "0 L L L 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 S S S S 0 S S S 0",
     "exact_match": false,
     "score": 0.8,
-    "normnalized_score": 0.8
+    "normalized_score": 0.8
   },
   {
     "subject": "10_random_cell_easy",
@@ -870,7 +870,7 @@
     "completion": "```\n0 0 0 0 0 0 L L L 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 1 1 1 1 1 1 0 0\n0 0 1 1 0 0 1 1 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 S S S 0 0 0 0 0 0\n```",
     "exact_match": false,
     "score": -1.1111111111111112,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -879,7 +879,7 @@
     "completion": "To complete the grid as per the instructions, we need to replace 'V' cells with either '1' (solid) or '0' (empty) while ensuring the structure remains stable and uses minimal material. Here is the completed grid based on the given rules:\n\n0 0 0 0 0 L L L 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \nS 0 S S S S S S 0 0",
     "exact_match": false,
     "score": -2.0,
-    "normnalized_score": 0
+    "normalized_score": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -888,7 +888,7 @@
     "completion": "0 0 L L L L L L L L  \n0 0 0 1 0 1 0 1 1 0  \n0 0 0 0 1 1 0 1 0 0  \n0 0 0 0 1 1 1 1 0 0  \n0 0 0 0 0 1 1 1 0 0  \n0 0 0 0 0 1 0 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 0 0 1 0 0 0  \n0 0 0 0 0 1 1 0 0 0  \n0 0 0 0 S S S 0 0 0",
     "exact_match": false,
     "score": 0.4444444444444444,
-    "normnalized_score": 0.4444444444444444
+    "normalized_score": 0.4444444444444444
   },
   {
     "subject": "10_random_cell_easy",
@@ -897,6 +897,6 @@
     "completion": "0 L L L L L 0 0 0 0  \n0 0 1 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 0 1 1 1 0 0 0 0  \n0 0 0 1 0 0 1 1 0 0  \n0 0 0 0 1 0 1 1 1 0  \n0 0 0 0 0 S S 0 S S",
     "exact_match": false,
     "score": 0.5,
-    "normnalized_score": 0.5
+    "normalized_score": 0.5
   }
 ]
