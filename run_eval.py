@@ -56,6 +56,7 @@ class Sample:
 class Result:
     subject: str
     prompt: str
+    input_grid: str
     ground_truth: str
     completion: str
     exact_match: bool
@@ -350,6 +351,7 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
                 result = Result(
                     subject=sample.subject,
                     prompt=sample.prompt,
+                    input_grid=sample.raw_input,
                     ground_truth=sample.ground_truth,
                     completion=output_text,
                     exact_match=exact_match,
@@ -360,6 +362,7 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
                 result_dict = {
                     "subject": result.subject,
                     "prompt": result.prompt,
+                    "input_grid": result.input_grid,
                     "ground_truth": result.ground_truth,
                     "completion": result.completion,
                     "exact_match": result.exact_match,
@@ -389,6 +392,7 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
             Result(
                 subject=r["subject"],
                 prompt=r["prompt"],
+                input_grid=r["input_grid"],
                 ground_truth=r["ground_truth"],
                 completion=r["completion"],
                 exact_match=r["exact_match"],
