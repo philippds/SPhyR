@@ -2,7 +2,7 @@
 
 _A Spatial Physical Reasoning Benchmark_
 
-![SPhyR](sources/thumbnail.png)
+![SPhyR](docs/thumbnail.png)
 
 ## 🤗 SPhyR on HuggingFace
 
@@ -44,7 +44,7 @@ Follow these steps to recreate the dataset from scratch.
    Move the **Millipede plugin** to Grasshopper's special components folder:
 
    ```
-   dataset_creation/topology_optimization_data/rhino_grasshopper/libraries/millipede
+   src/sphyr/dataset_creation/topology_optimization_data/2D/rhino_grasshopper/libraries/millipede
    ```
 
    You can access the special folder in Grasshopper via:  
@@ -53,23 +53,23 @@ Follow these steps to recreate the dataset from scratch.
 3. **Open the Rhino & Grasshopper Files**
 
    - Rhino File:  
-     `dataset_creation/topology_optimization_data/rhino_grasshopper/SPhyR_2D.3dm`
+     `src/sphyr/dataset_creation/topology_optimization_data/2D/rhino_grasshopper/SPhyR_2D.3dm`
    - Grasshopper Script:  
-     `dataset_creation/topology_optimization_data/rhino_grasshopper/SPhyR_2D.gh`
+     `src/sphyr/dataset_creation/topology_optimization_data/2D/rhino_grasshopper/SPhyR_2D.gh`
 
    ✅ Once opened, run the Grasshopper script by toggling the boolean on the **top-left of the canvas**.
 
    💡 **Tip**: If you'd rather skip this step, precomputed results are available:
 
-   - Raw Data: `dataset_creation/topology_optimization_data/raw_data`
-   - Plots/Frames: `dataset_creation/topology_optimization_data/frames`
+   - Raw Data: `src/sphyr/dataset_creation/topology_optimization_data/2D/raw_data`
+   - Plots/Frames: `src/sphyr/dataset_creation/topology_optimization_data/2D/frames`
 
 ### 📦 Step 3: Convert to JSON (HuggingFace Dataset Format)
 
 Run the following Python script to convert raw simulation output to a format suitable for evaluation on HuggingFace:
 
 ```bash
-python dataset_creation/raw_data_to_huggingface_datasets.py
+python src/sphyr/dataset_creation/raw_data_2D_to_huggingface_datasets.py
 ```
 
 This script processes the `.csv` simulation outputs into structured `.json` entries.
