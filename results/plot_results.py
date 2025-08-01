@@ -7,11 +7,11 @@ import matplotlib.cm as cm
 # Base colors for models (tab10 for main models)
 base_colors = cm.get_cmap("tab10")
 model_color_map = {
-    "gpt-3.5-turbo-0125": base_colors(0),
+    "gpt-3.5-turbo-0125": base_colors(4),
     "gpt-4.1-2025-04-14": base_colors(1),
     "gpt-4o-2024-08-06": base_colors(2),
     "claude-3-7-sonnet-20250219": base_colors(3),
-    "claude-opus-4-20250514": base_colors(4),
+    "claude-opus-4-20250514": base_colors(0),
     "gemini-1.5-pro": base_colors(5),
     "gemini-2.5-pro-preview-05-06": base_colors(6),
     "deepseek-reasoner": base_colors(7),
