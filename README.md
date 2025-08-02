@@ -83,10 +83,20 @@ This script processes the `.csv` simulation outputs into structured `.json` entr
 Benchmarks for 100 samples are available for the following models:
 
 - **Claude 3.7 Sonnet**
+- **Claude Opus 4**
 - **DeepSeek-R1**
+- **Gemini 1.5 Pro**
 - **Gemini 2.5 Pro**
+- **GPT-3.5 Turbo**
 - **GPT-4.1**
+- **GPT-4o**
+- **Perplexity Sonar**
+- **Perplexity Sonar Reasoning**
 
 📁 You can find these results inside the `results` directory.
+
+### 3D Topology Optimization Data
+
+We have included a preliminary sub-set of 3D data and corresponding plots, but we plan to release a full set in the future. 3D Data can be found here: `src/sphyr/dataset_creation/topology_optimization_data/3D`.
 
 ---
