@@ -12,6 +12,8 @@ from google import genai
 import anthropic
 
 from prompt_templates import (
+    PHYSICS_ENHANCED_PROMPT_TEMPLATE,
+    PHYSICS_NEUTRAL_PROMPT_TEMPLATE,
     PROMPT_TEMPLATE,
     FEW_SHOT_PROMPT_TEMPLATE,
     FEW_SHOT_EXAMPLES,
@@ -94,7 +96,13 @@ def create_few_shot_example(dataset, current_sample, few_shot_count, rotation_co
 
 
 def generate_prompts(
-    dataset, subject, sample_count=SAMPLE_COUNT, rotation_count=0, few_shot_count=0
+    dataset,
+    subject,
+    sample_count=SAMPLE_COUNT,
+    rotation_count=0,
+    few_shot_count=0,
+    prompt_template=PROMPT_TEMPLATE,
+    few_shot_prompt_template=FEW_SHOT_PROMPT_TEMPLATE,
 ) -> list[Sample]:
     samples = []
 
@@ -107,13 +115,13 @@ def generate_prompts(
                 concatenated_few_shot_examples = create_few_shot_example(
                     dataset, sample, few_shot_count, rotation_count
                 )
-                prompt = FEW_SHOT_PROMPT_TEMPLATE.format(
+                prompt = few_shot_prompt_template.format(
                     FILL_INSTRUCTION=fill_instruction,
                     FEW_SHOT_EXAMPLES=concatenated_few_shot_examples,
                     GRID=input_grid,
                 )
             else:
-                prompt = PROMPT_TEMPLATE.format(
+                prompt = prompt_template.format(
                     FILL_INSTRUCTION=fill_instruction,
                     GRID=input_grid,
                 )
@@ -123,13 +131,13 @@ def generate_prompts(
                 concatenated_few_shot_examples = create_few_shot_example(
                     dataset, sample, few_shot_count, rotation_count
                 )
-                prompt = FEW_SHOT_PROMPT_TEMPLATE.format(
+                prompt = few_shot_prompt_template.format(
                     FILL_INSTRUCTION=fill_instruction,
                     FEW_SHOT_EXAMPLES=concatenated_few_shot_examples,
                     GRID=input_grid,
                 )
             else:
-                prompt = PROMPT_TEMPLATE.format(
+                prompt = prompt_template.format(
                     FILL_INSTRUCTION=fill_instruction,
                     GRID=input_grid,
                 )
@@ -565,9 +573,93 @@ def run_few_shot_experiment(few_shot_count=1):
             )
 
 
+def run_physics_enhanced_prompt_experiment():
+    subjects = [
+        "1_random_cell_easy",
+        "5_random_cell_easy",
+        "10_random_cell_easy",
+        "1_random_row_easy",
+        "3_random_row_easy",
+        "1_random_column_easy",
+        "3_random_column_easy",
+        "full_easy",
+        "1_random_cell_hard",
+        "5_random_cell_hard",
+        "10_random_cell_hard",
+        "1_random_row_hard",
+        "3_random_row_hard",
+        "1_random_column_hard",
+        "3_random_column_hard",
+        "full_hard",
+    ]
+
+    models = [
+        "gemini-2.5-pro-preview-05-06",
+    ]
+
+    for subject in tqdm(subjects):
+        dataset = load_dataset("philippds/SPhyR", subject)
+        dataset_list = list(dataset["test"])
+        rnd.shuffle(dataset_list)
+
+        samples = generate_prompts(
+            dataset=dataset_list,
+            subject=subject,
+            prompt_template=PHYSICS_ENHANCED_PROMPT_TEMPLATE,
+        )
+
+        for model in models:
+            evaluate_against_model(
+                model=model, samples=samples, name_suffix=f"_physics_enhanced_prompt"
+            )
+
+
+def run_physics_neutral_prompt_experiment():
+    subjects = [
+        "1_random_cell_easy",
+        "5_random_cell_easy",
+        "10_random_cell_easy",
+        "1_random_row_easy",
+        "3_random_row_easy",
+        "1_random_column_easy",
+        "3_random_column_easy",
+        "full_easy",
+        "1_random_cell_hard",
+        "5_random_cell_hard",
+        "10_random_cell_hard",
+        "1_random_row_hard",
+        "3_random_row_hard",
+        "1_random_column_hard",
+        "3_random_column_hard",
+        "full_hard",
+    ]
+
+    models = [
+        "gemini-2.5-pro-preview-05-06",
+    ]
+
+    for subject in tqdm(subjects):
+        dataset = load_dataset("philippds/SPhyR", subject)
+        dataset_list = list(dataset["test"])
+        rnd.shuffle(dataset_list)
+
+        samples = generate_prompts(
+            dataset=dataset_list,
+            subject=subject,
+            prompt_template=PHYSICS_NEUTRAL_PROMPT_TEMPLATE,
+        )
+
+        for model in models:
+            evaluate_against_model(
+                model=model, samples=samples, name_suffix=f"_physics_neutral_prompt"
+            )
+
+
 if __name__ == "__main__":
     run_main_experiment()
     run_rotation_comparison_experiment()
     run_rotation_best_model_experiment()
     run_few_shot_experiment(1)
     run_few_shot_experiment(3)
+    run_physics_enhanced_prompt_experiment()
+    run_physics_neutral_prompt_experiment()

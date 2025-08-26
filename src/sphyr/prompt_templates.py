@@ -15,6 +15,51 @@ Please output the completed grid by replacing all {FILL_INSTRUCTION}.
 Maintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.
 Return only the completed grid without any additional explanation."""
 
+
+PHYSICS_ENHANCED_PROMPT_TEMPLATE = """You are given a structural material distribution represented as a grid. Each cell can have one of the following states:
+- 'L' indicates applied load.
+- 'V' indicates void.
+- 'S' indicates support.
+
+The goal is to predict the correct material distribution by filling in all {FILL_INSTRUCTION}, based on the surrounding structure and implicit physical reasoning (such as load paths, supports, and forces).
+
+Relevant physical knowledge for reasoning:
+- Loads ('L') create forces that must be transferred through continuous material paths to supports ('S').
+- Stress follows the shortest stiff path from loads to supports.
+- Any material cell that is disconnected from both loads and supports does not carry force and should be avoided.
+- Structures should satisfy equilibrium: all loads must eventually be resisted by at least one support.
+- Use as little material as possible while still maintaining at least one valid load path.
+
+Below is the input grid with masked regions:
+
+{GRID}
+
+Please output the completed grid by replacing all {FILL_INSTRUCTION}.
+Maintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.
+Return only the completed grid without any additional explanation."""
+
+
+PHYSICS_NEUTRAL_PROMPT_TEMPLATE = """You are given a grid of cells. Each cell can have one of the following states:
+- 'L' indicates a special marker.
+- 'V' indicates an empty cell.
+- 'S' indicates a fixed marker.
+
+The goal is to predict the correct grid configuration by filling in all {FILL_INSTRUCTION}, based on the surrounding structure and general consistency rules.
+
+Relevant rules for reasoning:
+- Filled cells should form continuous connections between relevant markers when necessary.
+- Avoid placing isolated filled cells that are not connected to anything meaningful.
+- Minimize the number of filled cells while maintaining a coherent and connected structure.
+
+Below is the input grid with masked regions:
+
+{GRID}
+
+Please output the completed grid by replacing all {FILL_INSTRUCTION}.
+Maintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.
+Return only the completed grid without any additional explanation."""
+
+
 FEW_SHOT_PROMPT_TEMPLATE = """You are given a structural material distribution represented as a grid. Each cell can have one of the following states:
 - 'L' indicates applied load.
 - 'V' indicates void.
@@ -33,6 +78,7 @@ Below is the input grid with masked regions:
 Please output the completed grid by replacing all {FILL_INSTRUCTION}.
 Maintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.
 Return only the completed grid without any additional explanation."""
+
 
 FEW_SHOT_EXAMPLES = """Example input grid with masked regions:
 

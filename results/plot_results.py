@@ -21,6 +21,29 @@ model_color_map = {
 
 rotation_colors = cm.get_cmap("tab20")  # used for rotation and few-shot variants
 
+ALL_TASKS_BY_DIFFICULTY = {
+    "easy": [
+        "1_random_cell_easy",
+        "5_random_cell_easy",
+        "10_random_cell_easy",
+        "1_random_row_easy",
+        "3_random_row_easy",
+        "1_random_column_easy",
+        "3_random_column_easy",
+        "full_easy",
+    ],
+    "hard": [
+        "1_random_cell_hard",
+        "5_random_cell_hard",
+        "10_random_cell_hard",
+        "1_random_row_hard",
+        "3_random_row_hard",
+        "1_random_column_hard",
+        "3_random_column_hard",
+        "full_hard",
+    ],
+}
+
 
 def adjust_color_brightness(color, factor):
     """Lighten or darken a given RGBA color."""
@@ -33,6 +56,8 @@ def get_model_color(model_name):
         model_name.replace("_3_rotations", "")
         .replace("_few_shot_1", "")
         .replace("_few_shot_3", "")
+        .replace("_physics_enhanced_prompt", "")
+        .replace("_physics_neutral_prompt", "")
     )
     base_color = model_color_map.get(base_name, "gray")
 
@@ -41,10 +66,12 @@ def get_model_color(model_name):
 
     elif "_few_shot_1" in model_name:
         return adjust_color_brightness(base_color, 1.3)  # slightly brighter
-
     elif "_few_shot_3" in model_name:
         return adjust_color_brightness(base_color, 1.6)  # even brighter
-
+    elif "_physics_enhanced_prompt" in model_name:
+        return adjust_color_brightness(base_color, 1.3)
+    elif "_physics_neutral_prompt" in model_name:
+        return adjust_color_brightness(base_color, 1.6)
     else:
         return base_color
 
@@ -217,28 +244,7 @@ def plot_line_graph_results(
 
 def plot_main_body_results():
     # Task keys by difficulty
-    tasks_by_difficulty = {
-        "easy": [
-            "1_random_cell_easy",
-            "5_random_cell_easy",
-            "10_random_cell_easy",
-            "1_random_row_easy",
-            "3_random_row_easy",
-            "1_random_column_easy",
-            "3_random_column_easy",
-            "full_easy",
-        ],
-        "hard": [
-            "1_random_cell_hard",
-            "5_random_cell_hard",
-            "10_random_cell_hard",
-            "1_random_row_hard",
-            "3_random_row_hard",
-            "1_random_column_hard",
-            "3_random_column_hard",
-            "full_hard",
-        ],
-    }
+    tasks_by_difficulty = ALL_TASKS_BY_DIFFICULTY
 
     # Labels for x-axis
     task_labels = [
@@ -350,28 +356,7 @@ def plot_rotation_comparison_results():
 
 def plot_rotation_best_model_results():
     # Task keys by difficulty
-    tasks_by_difficulty = {
-        "easy": [
-            "1_random_cell_easy",
-            "5_random_cell_easy",
-            "10_random_cell_easy",
-            "1_random_row_easy",
-            "3_random_row_easy",
-            "1_random_column_easy",
-            "3_random_column_easy",
-            "full_easy",
-        ],
-        "hard": [
-            "1_random_cell_hard",
-            "5_random_cell_hard",
-            "10_random_cell_hard",
-            "1_random_row_hard",
-            "3_random_row_hard",
-            "1_random_column_hard",
-            "3_random_column_hard",
-            "full_hard",
-        ],
-    }
+    tasks_by_difficulty = ALL_TASKS_BY_DIFFICULTY
 
     # Labels for x-axis
     task_labels = [
@@ -580,28 +565,7 @@ def plot_results_rotation_avg(
 
 def plot_few_shot_results():
     # Task keys by difficulty
-    tasks_by_difficulty = {
-        "easy": [
-            "1_random_cell_easy",
-            "5_random_cell_easy",
-            "10_random_cell_easy",
-            "1_random_row_easy",
-            "3_random_row_easy",
-            "1_random_column_easy",
-            "3_random_column_easy",
-            "full_easy",
-        ],
-        "hard": [
-            "1_random_cell_hard",
-            "5_random_cell_hard",
-            "10_random_cell_hard",
-            "1_random_row_hard",
-            "3_random_row_hard",
-            "1_random_column_hard",
-            "3_random_column_hard",
-            "full_hard",
-        ],
-    }
+    tasks_by_difficulty = ALL_TASKS_BY_DIFFICULTY
 
     # Labels for x-axis
     task_labels = [
@@ -639,9 +603,51 @@ def plot_few_shot_results():
     )
 
 
+def plot_physics_enhanced_neutral_prompt_comparison_results():
+    # Task keys by difficulty
+    tasks_by_difficulty = ALL_TASKS_BY_DIFFICULTY
+
+    # Labels for x-axis
+    task_labels = [
+        "1 Random Cell",
+        "5 Random Cells",
+        "10 Random Cells",
+        "1 Random Row",
+        "3 Random Rows",
+        "1 Random Col",
+        "3 Random Cols",
+        "Full",
+    ]
+
+    # Folder names for each model
+    model_order = [
+        "gemini-2.5-pro-preview-05-06",
+        "gemini-2.5-pro-preview-05-06_physics_enhanced_prompt",
+        "gemini-2.5-pro-preview-05-06_physics_neutral_prompt",
+    ]
+
+    # Clean display names for legends
+    model_display_names = [
+        "Gemini 2.5 Pro",
+        "Gemini 2.5 Pro (Physics Enhanced Prompt)",
+        "Gemini 2.5 Pro (Physics Neutral Prompt)",
+    ]
+
+    plot_results(
+        model_order,
+        model_display_names,
+        "plots/physics_enhanced_neutral_prompt_comparison_results",
+        task_labels,
+        tasks_by_difficulty,
+        color_map_key="tab20",
+        width=0.3,
+    )
+
+
 if __name__ == "__main__":
-    plot_main_body_results()
-    plot_rotation_comparison_results()
-    plot_rotation_best_model_results()
-    plot_rotation_comparison_delta_results()
-    plot_few_shot_results()
+    # plot_main_body_results()
+    # plot_rotation_comparison_results()
+    # plot_rotation_best_model_results()
+    # plot_rotation_comparison_delta_results()
+    # plot_few_shot_results()
+    plot_physics_enhanced_neutral_prompt_comparison_results()
