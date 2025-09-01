@@ -645,9 +645,9 @@ def plot_physics_enhanced_neutral_prompt_comparison_results():
 
 
 if __name__ == "__main__":
-    # plot_main_body_results()
-    # plot_rotation_comparison_results()
-    # plot_rotation_best_model_results()
-    # plot_rotation_comparison_delta_results()
-    # plot_few_shot_results()
+    plot_main_body_results()
+    plot_rotation_comparison_results()
+    plot_rotation_best_model_results()
+    plot_rotation_comparison_delta_results()
+    plot_few_shot_results()
     plot_physics_enhanced_neutral_prompt_comparison_results()
