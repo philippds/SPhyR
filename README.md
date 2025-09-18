@@ -8,7 +8,7 @@ _A Spatial Physical Reasoning Benchmark_
 
 You can also explore or download the dataset directly from Hugging Face:
 
-🔗 [SPhyR on Hugging Face](https://huggingface.co/datasets/philippds/SPhyR)
+🔗 [SPhyR on Hugging Face](https://huggingface.co/datasets/anonymized/)
 
 ---
 
@@ -105,21 +105,8 @@ We have included a preliminary sub-set of 3D data and corresponding plots, but w
 
 **BibTeX:**
 
-```pyhton
-@misc{siedler2025sphyr,
-  title        = {SPhyR: Spatial-Physical Reasoning Benchmark on Material Distribution},
-  author       = {Philipp D. Siedler},
-  year         = {2025},
-  eprint       = {2505.16048},
-  archivePrefix= {arXiv},
-  primaryClass = {cs.AI},
-  doi          = {10.48550/arXiv.2505.16048},
-  url          = {https://arxiv.org/abs/2505.16048}
-}
-```
+WIP
 
 **APA:**
 
-```python
-Siedler, P. D. (2025). SPhyR: Spatial-Physical Reasoning Benchmark on Material Distribution. arXiv. https://doi.org/10.48550/arXiv.2505.16048
-```
+WIP
