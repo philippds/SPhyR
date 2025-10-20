@@ -87,8 +87,8 @@ for index, csv_file in enumerate(csv_files):
     with open(os.path.join(raw_data, csv_file), "r") as f:
         lines = f.readlines()
 
-    grid_easy = [[0 for _ in range(dimensions)] for _ in range(dimensions)]
-    grid_hard = [[0.0 for _ in range(dimensions)] for _ in range(dimensions)]
+    grid_easy = [["0" for _ in range(dimensions)] for _ in range(dimensions)]
+    grid_hard = [["0.0" for _ in range(dimensions)] for _ in range(dimensions)]
 
     for line in lines:
         x, y, is_static, value = process_line(line)
