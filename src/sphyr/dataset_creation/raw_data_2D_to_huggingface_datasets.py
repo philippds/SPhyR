@@ -94,8 +94,8 @@ for index, csv_file in enumerate(csv_files):
         x, y, is_static, value = process_line(line)
 
         if not is_static:
-            grid_easy[y][x] = 1 if float(f"{value:.1f}") > 0 else 0
-            grid_hard[y][x] = float(f"{value:.1f}")
+            grid_easy[y][x] = "1" if float(f"{value:.1f}") > 0 else "0"
+            grid_hard[y][x] = f"{value:.1f}"
         elif y == 0:
             grid_easy[y][x] = grid_hard[y][x] = "S"
         else:
@@ -126,5 +126,8 @@ for index, csv_file in enumerate(csv_files):
 
 for name, dataset in all_datasets.items():
     os.makedirs(output_path, exist_ok=True)
-    with open(f"{output_path}/{name}.json", "w") as f:
-        json.dump(dataset, f, indent=4)
+    out_path = f"{output_path}/{name}.jsonl"
+    with open(out_path, "w") as f:
+        for record in dataset:
+            f.write(json.dumps(record) + "\n")
+    print(f"Wrote {out_path} ({len(dataset)} records)")

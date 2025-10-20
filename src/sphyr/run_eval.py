@@ -1,15 +1,11 @@
 import json
 from dotenv import load_dotenv
-from huggingface_hub import login
 from datasets import load_dataset
 import os
 import random
 from tqdm import tqdm
 from dataclasses import dataclass
 
-from openai import OpenAI
-from google import genai
-import anthropic
 
 from prompt_templates import (
     PHYSICS_ENHANCED_PROMPT_TEMPLATE,
@@ -33,7 +29,7 @@ from sphyr.model_runners import (
 
 load_dotenv()
 
-subjects = [
+SUBJECTS = [
     "1_random_cell_easy",
     "5_random_cell_easy",
     "10_random_cell_easy",
@@ -353,25 +349,6 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
 
 
 def run_main_experiment():
-    subjects = [
-        "1_random_cell_easy",
-        "5_random_cell_easy",
-        "10_random_cell_easy",
-        "1_random_row_easy",
-        "3_random_row_easy",
-        "1_random_column_easy",
-        "3_random_column_easy",
-        "full_easy",
-        "1_random_cell_hard",
-        "5_random_cell_hard",
-        "10_random_cell_hard",
-        "1_random_row_hard",
-        "3_random_row_hard",
-        "1_random_column_hard",
-        "3_random_column_hard",
-        "full_hard",
-    ]
-
     models = [
         "gpt-4.1-2025-04-14",
         "claude-3-7-sonnet-20250219",
@@ -385,7 +362,7 @@ def run_main_experiment():
         "perplexity-sonar-reasoning",
     ]
 
-    for subject in tqdm(subjects):
+    for subject in tqdm(SUBJECTS):
         dataset = load_dataset("philippds/SPhyR", subject)
         dataset_list = list(dataset["test"])
         rnd.shuffle(dataset_list)
@@ -467,30 +444,11 @@ def run_rotation_best_model_experiment():
 
 
 def run_few_shot_experiment(few_shot_count=1):
-    subjects = [
-        "1_random_cell_easy",
-        "5_random_cell_easy",
-        "10_random_cell_easy",
-        "1_random_row_easy",
-        "3_random_row_easy",
-        "1_random_column_easy",
-        "3_random_column_easy",
-        "full_easy",
-        "1_random_cell_hard",
-        "5_random_cell_hard",
-        "10_random_cell_hard",
-        "1_random_row_hard",
-        "3_random_row_hard",
-        "1_random_column_hard",
-        "3_random_column_hard",
-        "full_hard",
-    ]
-
     models = [
         "claude-opus-4-20250514",
     ]
 
-    for subject in tqdm(subjects):
+    for subject in tqdm(SUBJECTS):
         dataset = load_dataset("philippds/SPhyR", subject)
         dataset_list = list(dataset["test"])
         rnd.shuffle(dataset_list)
@@ -506,30 +464,11 @@ def run_few_shot_experiment(few_shot_count=1):
 
 
 def run_physics_enhanced_prompt_experiment():
-    subjects = [
-        "1_random_cell_easy",
-        "5_random_cell_easy",
-        "10_random_cell_easy",
-        "1_random_row_easy",
-        "3_random_row_easy",
-        "1_random_column_easy",
-        "3_random_column_easy",
-        "full_easy",
-        "1_random_cell_hard",
-        "5_random_cell_hard",
-        "10_random_cell_hard",
-        "1_random_row_hard",
-        "3_random_row_hard",
-        "1_random_column_hard",
-        "3_random_column_hard",
-        "full_hard",
-    ]
-
     models = [
         "gemini-2.5-pro-preview-05-06",
     ]
 
-    for subject in tqdm(subjects):
+    for subject in tqdm(SUBJECTS):
         dataset = load_dataset("philippds/SPhyR", subject)
         dataset_list = list(dataset["test"])
         rnd.shuffle(dataset_list)
@@ -547,30 +486,11 @@ def run_physics_enhanced_prompt_experiment():
 
 
 def run_physics_neutral_prompt_experiment():
-    subjects = [
-        "1_random_cell_easy",
-        "5_random_cell_easy",
-        "10_random_cell_easy",
-        "1_random_row_easy",
-        "3_random_row_easy",
-        "1_random_column_easy",
-        "3_random_column_easy",
-        "full_easy",
-        "1_random_cell_hard",
-        "5_random_cell_hard",
-        "10_random_cell_hard",
-        "1_random_row_hard",
-        "3_random_row_hard",
-        "1_random_column_hard",
-        "3_random_column_hard",
-        "full_hard",
-    ]
-
     models = [
         "gemini-2.5-pro-preview-05-06",
     ]
 
-    for subject in tqdm(subjects):
+    for subject in tqdm(SUBJECTS):
         dataset = load_dataset("philippds/SPhyR", subject)
         dataset_list = list(dataset["test"])
         rnd.shuffle(dataset_list)
