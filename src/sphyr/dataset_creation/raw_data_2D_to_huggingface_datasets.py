@@ -36,10 +36,6 @@ def process_line(line):
     return x_loc, y_loc, is_static, value
 
 
-def grid_to_str(grid):
-    return "\n".join(" ".join(str(cell) for cell in row) for row in grid)
-
-
 def add_random_cells(grid, n, dimensions):
     grid = copy.deepcopy(grid)
     for _ in range(n):
@@ -109,17 +105,12 @@ for index, csv_file in enumerate(csv_files):
     grid_easy = grid_easy[::-1]
     grid_hard = grid_hard[::-1]
 
-    # Ground truth strings
-    gt_easy_str = grid_to_str(grid_easy)
-    gt_hard_str = grid_to_str(grid_hard)
-
     for name, modifier in variants.items():
-        for mode, grid, gt_str in [
-            ("easy", grid_easy, gt_easy_str),
-            ("hard", grid_hard, gt_hard_str),
+        for mode, grid in [
+            ("easy", grid_easy),
+            ("hard", grid_hard),
         ]:
             modified_grid = modifier(grid, dimensions)
-            modified_str = grid_to_str(modified_grid)
 
             key = f"{name}_{mode}"
             if key not in all_datasets:
@@ -128,8 +119,8 @@ for index, csv_file in enumerate(csv_files):
             all_datasets[key].append(
                 {
                     "index": index,
-                    "input_grid": modified_str,
-                    "ground_truth": gt_str,
+                    "input_grid": modified_grid,
+                    "ground_truth": grid,
                 }
             )
 

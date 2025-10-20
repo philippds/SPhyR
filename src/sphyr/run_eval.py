@@ -32,7 +32,6 @@ from sphyr.model_runners import (
 )
 
 load_dotenv()
-login(token=os.getenv("HF"))
 
 subjects = [
     "1_random_cell_easy",
@@ -107,6 +106,10 @@ def create_few_shot_example(dataset, current_sample, few_shot_count, rotation_co
     return concatenated_few_shot_examples
 
 
+def grid_to_str(grid):
+    return "\n".join(" ".join(str(cell) for cell in row) for row in grid)
+
+
 def generate_prompts(
     dataset,
     subject,
@@ -119,7 +122,8 @@ def generate_prompts(
     samples = []
 
     for sample in dataset[:sample_count]:
-        input_grid = rotate_grid(sample["input_grid"], times=rotation_count)
+        formatted_grid = grid_to_str(sample["input_grid"])
+        input_grid = rotate_grid(formatted_grid, times=rotation_count)
 
         if subject.endswith("easy"):
             fill_instruction = "'V' cells with either '1' (solid) or '0' (empty)"
