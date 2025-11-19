@@ -2,17 +2,36 @@ import json
 from dotenv import load_dotenv
 from datasets import load_dataset
 import os
+import re
 import random
 from tqdm import tqdm
 from dataclasses import dataclass
 
-
-from prompt_templates import (
+from sphyr.metrics.utils import (
+    get_gravity_from_folder,
+    get_grid_shape_and_value_validity,
+)
+from sphyr.prompt_templates import (
     PHYSICS_ENHANCED_PROMPT_TEMPLATE,
     PHYSICS_NEUTRAL_PROMPT_TEMPLATE,
     PROMPT_TEMPLATE,
     FEW_SHOT_PROMPT_TEMPLATE,
     FEW_SHOT_EXAMPLES,
+)
+from sphyr.metrics.physics_approximation import (
+    get_total_force_path_cost_average_efficiency_ratio,
+)
+from sphyr.metrics.reconstruction import (
+    get_exact_match,
+    get_difference_ratio,
+    get_penalized_difference_ratio,
+    get_relative_difference_ratio,
+)
+from sphyr.metrics.topology import (
+    get_isolated_clusters_count,
+    is_load_supported,
+    is_load_supported_force_directional,
+    get_difficulty_score,
 )
 from sphyr.model_runners import (
     run_claude,
@@ -52,11 +71,15 @@ RANDOM_SEED = 42
 SAMPLE_COUNT = 100
 rnd = random.Random(RANDOM_SEED)
 
+GRID_BLOCK_RE = re.compile(
+    r"(?:^|\n)(?:[0-9LVSlvs\.]+(?:\s+[0-9LVSlvs\.]+)+\s*\n?)+", re.MULTILINE
+)
+
 
 @dataclass
 class Sample:
     subject: str
-    raw_input: str
+    input: str
     prompt: str
     ground_truth: str
 
@@ -66,10 +89,47 @@ class Result:
     subject: str
     prompt: str
     ground_truth: str
-    completion: str
+    output: str
     exact_match: bool
-    score: float
-    normalized_score: float
+    difference_ratio: float  # lower is better
+    penalized_difference_ratio: float  # lower is better
+    relative_difference_ratio: float  # lower is better
+    valid_output_grid: bool
+    load_support_connected: bool
+    load_support_connected_force_directional: bool
+    isolated_clusters_count: int  # lower is better
+    total_force_path_cost_average_efficiency_ratio: float
+    difficulty_score: float  # higher is more difficult
+    difficulty_weighted_difference_ratio: float  # lower is better
+    difficulty_weighted_relative_difference_ratio: float  # lower is better
+
+    def from_dict(result_dict):
+        return Result(
+            subject=result_dict["subject"],
+            prompt=result_dict["prompt"],
+            ground_truth=result_dict["ground_truth"],
+            output=result_dict["output"],
+            exact_match=result_dict["exact_match"],
+            difference_ratio=result_dict["difference_ratio"],
+            penalized_difference_ratio=result_dict["penalized_difference_ratio"],
+            relative_difference_ratio=result_dict["relative_difference_ratio"],
+            valid_output_grid=result_dict["valid_output_grid"],
+            load_support_connected=result_dict["load_support_connected"],
+            load_support_connected_force_directional=result_dict[
+                "load_support_connected_force_directional"
+            ],
+            isolated_clusters_count=result_dict["isolated_clusters_count"],
+            total_force_path_cost_average_efficiency_ratio=result_dict[
+                "total_force_path_cost_average_efficiency_ratio"
+            ],
+            difficulty_score=result_dict["difficulty_score"],
+            difficulty_weighted_difference_ratio=result_dict[
+                "difficulty_weighted_difference_ratio"
+            ],
+            difficulty_weighted_relative_difference_ratio=result_dict[
+                "difficulty_weighted_relative_difference_ratio"
+            ],
+        )
 
 
 def rotate_grid(grid_str, times=1):
@@ -159,7 +219,7 @@ def generate_prompts(
         samples.append(
             Sample(
                 subject=subject,
-                raw_input=input_grid,
+                input=input_grid,
                 prompt=prompt,
                 ground_truth=ground_truth,
             )
@@ -168,39 +228,118 @@ def generate_prompts(
     return samples
 
 
-def count_differences(list1, list2) -> int:
-    count = 0
-    for row1, row2 in zip(list1, list2):
-        for cell1, cell2 in zip(row1, row2):
-            if cell1 != cell2:
-                count += 1
-    return count
-
-
-def calculate_score(
-    output_ground_truth_difference_count, raw_input_ground_truth_difference_count
-) -> float:
-    if (
-        output_ground_truth_difference_count == 0
-        and raw_input_ground_truth_difference_count == 0
-    ):
-        return 1
-    score = 1 - (
-        output_ground_truth_difference_count / raw_input_ground_truth_difference_count
-    )
-    return score
-
-
 def aggregate_results(results: list[Result]) -> dict:
-    total_exact_match = sum(1 for result in results if result.exact_match)
-    total_score = sum(result.score for result in results)
-    total_normalized_score = sum(result.normalized_score for result in results)
+
+    total_exact_match = 0
+    total_normalized_score = 0.0
+    total_penalized_normalized_score = 0.0
+    total_relative_difference_ratio = 0.0
+    total_valid_output_grid = 0
+    total_load_support_connected = 0
+    total_load_support_connected_force_directional = 0
+    total_isolated_clusters_count = 0
+    total_force_path_cost_average_efficiency_ratio = 0.0
+    total_difficulty_score = 0.0
+
+    for result in results:
+        total_exact_match += int(result.exact_match)
+        total_difference_ratio += result.difference_ratio
+        total_penalized_difference_ratio += result.penalized_difference_ratio
+        total_normalized_score += result.normalized_score
+        total_penalized_normalized_score += result.penalized_normalized_score
+        total_relative_difference_ratio += result.relative_difference_ratio
+        total_valid_output_grid += int(result.valid_output_grid)
+        total_load_support_connected += int(result.load_support_connected)
+        total_load_support_connected_force_directional += int(
+            result.load_support_connected_force_directional
+        )
+        total_isolated_clusters_count += result.isolated_clusters_count
+        total_force_path_cost_average_efficiency_ratio += (
+            result.total_force_path_cost_average_efficiency_ratio
+        )
+        total_difficulty_score += result.difficulty_score
 
     return {
         "total_exact_match": total_exact_match,
-        "total_score": total_score,
-        "total_normalized_score": total_normalized_score,
+        "total_difference_ratio": total_difference_ratio,
+        "total_penalized_difference_ratio": total_penalized_difference_ratio,
+        "total_relative_difference_ratio": total_relative_difference_ratio,
+        "total_valid_output_grid": total_valid_output_grid,
+        "total_load_support_connected": total_load_support_connected,
+        "total_load_support_connected_force_directional": total_load_support_connected_force_directional,
+        "total_isolated_clusters_count": total_isolated_clusters_count,
+        "total_force_path_cost_average_efficiency_ratio": total_force_path_cost_average_efficiency_ratio,
+        "total_difficulty_score": total_difficulty_score,
     }
+
+
+def calculate_all_metrics(
+    input_grid, output_grid, gt_grid, subject, prompt, ground_truth, output, folder_name
+):
+    result_dict = {}
+
+    valid_grid = get_grid_shape_and_value_validity(output_grid, gt_grid)
+    result_dict["valid_output_grid"] = valid_grid
+
+    difficulty_score = get_difficulty_score(
+        input_grid=input_grid,
+        gt_grid=gt_grid,
+    )
+
+    exact_match = False
+    difference_ratio = 0.0
+    penalized_difference_ratio = 0.0
+    relative_difference_ratio = 0.0
+    result_dict["valid_output_grid"] = False
+    load_support_connected = False
+    load_support_connected_force_directional = False
+    isolated_clusters_count = 0
+    total_force_path_cost_average_efficiency_ratio = 0
+
+    if valid_grid:
+        exact_match = get_exact_match(output_grid, gt_grid)
+        difference_ratio = get_difference_ratio(input_grid, output_grid, gt_grid)
+        penalized_difference_ratio = get_penalized_difference_ratio(
+            input_grid, output_grid, gt_grid
+        )
+        relative_difference_ratio = get_relative_difference_ratio(
+            input_grid, output_grid, gt_grid
+        )
+
+        load_support_connected = is_load_supported(output_grid)
+        load_support_connected_force_directional = is_load_supported_force_directional(
+            output_grid
+        )
+        isolated_clusters_count = get_isolated_clusters_count(output_grid)
+
+        # todo gravity
+        total_force_path_cost_average_efficiency_ratio = (
+            get_total_force_path_cost_average_efficiency_ratio(
+                output_grid, gt_grid, gravity_dir=get_gravity_from_folder(folder_name)
+            )
+        )
+
+    result_dict = {
+        "subject": subject,
+        "prompt": prompt,
+        "ground_truth": ground_truth,
+        "output": output,
+        "exact_match": exact_match,
+        "difference_ratio": difference_ratio,
+        "relative_difference_ratio": relative_difference_ratio,
+        "penalized_difference_ratio": penalized_difference_ratio,
+        "load_support_connected": load_support_connected,
+        "load_support_connected_force_directional": load_support_connected_force_directional,
+        "isolated_clusters_count": isolated_clusters_count,
+        "total_force_path_cost_average_efficiency_ratio": total_force_path_cost_average_efficiency_ratio,
+        "difficulty_score": difficulty_score,
+        "difficulty_weighted_difference_ratio": difficulty_score * difference_ratio,
+        "difficulty_weighted_relative_difference_ratio": difficulty_score
+        * relative_difference_ratio,
+        "valid_output_grid": valid_grid,
+    }
+
+    return result_dict
 
 
 def evaluate_against_model(model, samples, name_suffix="") -> list:
@@ -255,53 +394,20 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
 
             try:
                 output_text = eval_fn(sample.prompt)
+                input_grid = [line.split() for line in sample.input.splitlines()]
+                output_grid = [line.split() for line in output_text.splitlines()]
+                gt_grid = [line.split() for line in sample.ground_truth.splitlines()]
 
-                raw_input_list = [
-                    line.split() for line in sample.raw_input.splitlines()
-                ]
-                output_text_list = [line.split() for line in output_text.splitlines()]
-                ground_truth_list = [
-                    line.split() for line in sample.ground_truth.splitlines()
-                ]
-
-                raw_input_ground_truth_difference_count = count_differences(
-                    raw_input_list, ground_truth_list
-                )
-
-                output_ground_truth_difference_count = count_differences(
-                    output_text_list, ground_truth_list
-                )
-
-                exact_match = True
-                score = 1
-                normalized_score = 1
-                if output_ground_truth_difference_count != 0:
-                    exact_match = False
-                    score = calculate_score(
-                        output_ground_truth_difference_count,
-                        raw_input_ground_truth_difference_count,
-                    )
-                    normalized_score = max(score, 0)
-
-                result = Result(
+                result_dict = calculate_all_metrics(
+                    input_grid=input_grid,
+                    output_grid=output_grid,
+                    gt_grid=gt_grid,
                     subject=sample.subject,
                     prompt=sample.prompt,
                     ground_truth=sample.ground_truth,
-                    completion=output_text,
-                    exact_match=exact_match,
-                    score=score,
-                    normalized_score=normalized_score,
+                    output=output_text,
+                    folder_name=name_suffix,
                 )
-
-                result_dict = {
-                    "subject": result.subject,
-                    "prompt": result.prompt,
-                    "ground_truth": result.ground_truth,
-                    "completion": result.completion,
-                    "exact_match": result.exact_match,
-                    "score": result.score,
-                    "normalized_score": result.normalized_score,
-                }
 
                 results.append(result_dict)
                 existing_results[sample.prompt] = result_dict
@@ -321,18 +427,7 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
     if len(results) >= len(samples):
         print(f"{model} results for {subject}:")
 
-        full_results = [
-            Result(
-                subject=r["subject"],
-                prompt=r["prompt"],
-                ground_truth=r["ground_truth"],
-                completion=r["completion"],
-                exact_match=r["exact_match"],
-                score=r["score"],
-                normalized_score=r["normalized_score"],
-            )
-            for r in results
-        ]
+        full_results = [Result.from_dict(r) for r in results]
 
         aggregated_results = aggregate_results(full_results)
 
@@ -348,7 +443,88 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
         )
 
 
-def run_main_experiment():
+def extract_grid_from_prompt(prompt_text):
+    match = GRID_BLOCK_RE.findall(prompt_text)
+    if not match:
+        return []
+    grid_lines = match[-1].strip().splitlines()
+    return [line.split() for line in grid_lines]
+
+
+def evaluate_against_file(results_root="results"):
+    """
+    Recomputes relative_difference and relative_difference_clipped
+    for all existing *_results.json files.
+    """
+
+    print(f"Scanning {results_root}/ for existing results...")
+
+    folders = [
+        name
+        for name in os.listdir(results_root)
+        if os.path.isdir(os.path.join(results_root, name))
+    ]
+
+    for model_dir in folders:
+        if model_dir == "plots":
+            continue
+        model_path = os.path.join(results_root, model_dir)
+        if not os.path.isdir(model_path):
+            continue
+
+        print(f"\n📁 Processing model directory: {model_dir}")
+
+        for fname in os.listdir(model_path):
+            if fname.endswith("_aggregated_results.json"):
+                continue
+
+            results_file = os.path.join(model_path, fname)
+            # print(f"  → Updating {fname}")
+
+            with open(results_file, "r") as f:
+                results = json.load(f)
+
+            updated_results = []
+
+            for r in results:
+                input_grid = extract_grid_from_prompt(r["prompt"])
+                output_grid = extract_grid_from_prompt(r["completion"])
+                gt_grid = extract_grid_from_prompt(r["ground_truth"])
+
+                result_dict = calculate_all_metrics(
+                    input_grid=input_grid,
+                    output_grid=output_grid,
+                    gt_grid=gt_grid,
+                    output=r["completion"],
+                    folder_name=fname,
+                    subject=r["subject"],
+                    prompt=r["prompt"],
+                    ground_truth=r["ground_truth"],
+                )
+
+                r.update(result_dict)
+
+                updated_results.append(r)
+
+            # Save results
+            with open(results_file, "w") as f:
+                json.dump(updated_results, f, indent=2)
+
+            # Aggregate
+            full_results = [Result.from_dict(r) for r in updated_results]
+
+            agg = aggregate_results(full_results)
+            agg_file = results_file.replace("_results.json", "_aggregated_results.json")
+
+            with open(agg_file, "w") as f:
+                json.dump(agg, f, indent=2)
+
+            # print(f"    ✓ Metrics recalculated and aggregates updated")
+
+    print("\n🎉 All files updated.")
+
+
+def run_main_experiment(run_against_models=True):
     models = [
         "gpt-4.1-2025-04-14",
         "claude-3-7-sonnet-20250219",
@@ -367,10 +543,13 @@ def run_main_experiment():
         dataset_list = list(dataset["test"])
         rnd.shuffle(dataset_list)
 
-        samples = generate_prompts(dataset=dataset_list, subject=subject)
+        if run_against_models:
+            samples = generate_prompts(dataset=dataset_list, subject=subject)
 
         for model in models:
-            evaluate_against_model(model=model, samples=samples)
+            if run_against_models:
+                evaluate_against_model(model=model, samples=samples)
+            evaluate_against_file()
 
 
 def run_rotation_comparison_experiment():
@@ -508,10 +687,10 @@ def run_physics_neutral_prompt_experiment():
 
 
 if __name__ == "__main__":
-    run_main_experiment()
-    run_rotation_comparison_experiment()
-    run_rotation_best_model_experiment()
-    run_few_shot_experiment(1)
-    run_few_shot_experiment(3)
-    run_physics_enhanced_prompt_experiment()
-    run_physics_neutral_prompt_experiment()
+    run_main_experiment(False)
+    # run_rotation_comparison_experiment()
+    # run_rotation_best_model_experiment()
+    # run_few_shot_experiment(1)
+    # run_few_shot_experiment(3)
+    # run_physics_enhanced_prompt_experiment()
+    # run_physics_neutral_prompt_experiment()
