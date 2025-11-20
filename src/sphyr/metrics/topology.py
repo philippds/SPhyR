@@ -82,54 +82,6 @@ def get_force_directed_neighbors(r, c, nrows, ncols):
             yield nr, nc
 
 
-def relative_unsupported_loads(grid):
-    """
-    Returns:
-      - total_loads: number of load cells
-      - supported_loads: number of loads that reach a support
-      - unsupported_loads: number of loads with no path to any support
-      - unsupported_coords: list of (row, col) for unsupported loads
-    """
-    nrows, ncols = len(grid), len(grid[0])
-
-    loads = [(r, c) for r in range(nrows) for c in range(ncols) if grid[r][c] == "L"]
-    supports = {(r, c) for r in range(nrows) for c in range(ncols) if grid[r][c] == "S"}
-
-    if not loads:
-        return 1.0
-
-    supported = set()
-    unsupported = []
-
-    for lr, lc in loads:
-        visited = set([(lr, lc)])
-        q = deque([(lr, lc)])
-        load_supported = False
-
-        while q:
-            r, c = q.popleft()
-
-            if (r, c) in supports:
-                load_supported = True
-                supported.add((lr, lc))
-                break
-
-            for nr, nc in get_force_directed_neighbors(r, c, nrows, ncols):
-                if (nr, nc) not in visited and is_solid(grid[nr][nc]):
-                    visited.add((nr, nc))
-                    q.append((nr, nc))
-
-        if not load_supported:
-            unsupported.append((lr, lc))
-
-    # total = len(loads)
-    # supported_count = total - len(unsupported)
-    # return total, supported_count, len(unsupported), unsupported
-    unsupported_loads_count = len(unsupported)
-    total_loads_count = len(loads)
-    return unsupported_loads_count // total_loads_count if len(loads) else 1.0
-
-
 def get_isolated_clusters_count(grid):
     """
     Finds clusters of solid cells (non-zero) not connected to L or S.

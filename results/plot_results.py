@@ -76,11 +76,47 @@ def get_model_color(model_name):
         return base_color
 
 
+# "total_exact_match": total_exact_match,
+# "total_difference_ratio": total_difference_ratio,
+# "total_penalized_difference_ratio": total_penalized_difference_ratio,
+# "total_relative_difference_ratio": total_relative_difference_ratio,
+# "total_valid_output_grid": total_valid_output_grid,
+# "total_load_support_connected": total_load_support_connected,
+# "total_load_support_connected_force_directional": total_load_support_connected_force_directional,
+# "total_isolated_clusters_count": total_isolated_clusters_count,
+# "total_force_path_cost_average_efficiency_ratio": total_force_path_cost_average_efficiency_ratio,
+# "total_difficulty_score": total_difficulty_score,
+
 # Metric keys and plot configs
 metrics = [
     ("total_exact_match", "Exact Match", (0, 100)),
-    ("total_score", "Score", (0, 100)),
-    ("total_normalized_score", "Normalized Score", (0, 100)),
+    ("total_difference_ratio", "Difference Ratio (%)", (0, 100)),
+    ("total_penalized_difference_ratio", "Penalized Difference Ratio (%)", (0, 100)),
+    ("total_relative_difference_ratio", "Relative Difference Ratio (%)", (0, 100)),
+    ("total_valid_output_grid", "Valid Output Grid (%)", (0, 100)),
+    ("total_load_support_connected", "Load-Support Connectivity (%)", (0, 100)),
+    (
+        "total_load_support_connected_force_directional",
+        "Load-Support Directional Connectivity (%)",
+        (0, 100),
+    ),
+    ("total_isolated_clusters_count", "Average Isolated Clusters Count", None),
+    (
+        "total_force_path_cost_average_efficiency_ratio",
+        "Force Path Cost Average Efficiency Ratio (%)",
+        (0, 100),
+    ),
+    ("total_difficulty_score", "Average Difficulty Score", None),
+    (
+        "total_difficulty_weighted_difference_ratio",
+        "Difficulty Weighted Difference Ratio (%)",
+        (0, 100),
+    ),
+    (
+        "total_difficulty_weighted_relative_difference_ratio",
+        "Difficulty Weighted Relative Difference Ratio (%)",
+        (0, 100),
+    ),
 ]
 
 # Base path
@@ -123,6 +159,18 @@ def plot_results(
                         with open(file_path, "r") as f:
                             data = json.load(f)
                             value = data.get(metric_key, 0)
+                            if (
+                                metric_key == "total_difficulty_score"
+                                or metric_key == "total_isolated_clusters_count"
+                            ):
+                                value = value / 100.0
+                            if (
+                                metric_key
+                                == "total_difficulty_weighted_difference_ratio"
+                                or metric_key
+                                == "total_difficulty_weighted_relative_difference_ratio"
+                            ):
+                                value = value / 3
                     metric_data[i].append(value)
 
             # Plotting
@@ -200,6 +248,18 @@ def plot_line_graph_results(
                         with open(file_path, "r") as f:
                             data = json.load(f)
                             value = data.get(metric_key, 0)
+                            if (
+                                metric_key == "total_difficulty_score"
+                                or metric_key == "total_isolated_clusters_count"
+                            ):
+                                value = value / 100.0
+                            if (
+                                metric_key
+                                == "total_difficulty_weighted_difference_ratio"
+                                or metric_key
+                                == "total_difficulty_weighted_relative_difference_ratio"
+                            ):
+                                value = value / 3
                     metric_data[i].append(value)
 
             # Plotting
@@ -497,7 +557,20 @@ def plot_results_rotation_avg(
                     if os.path.exists(file_path):
                         with open(file_path, "r") as f:
                             data = json.load(f)
-                            non_rot_values.append(data.get(metric_key, 0))
+                            value = data.get(metric_key, 0)
+                            if (
+                                metric_key == "total_difficulty_score"
+                                or metric_key == "total_isolated_clusters_count"
+                            ):
+                                value = value / 100.0
+                            if (
+                                metric_key
+                                == "total_difficulty_weighted_difference_ratio"
+                                or metric_key
+                                == "total_difficulty_weighted_relative_difference_ratio"
+                            ):
+                                value = value / 3
+                            non_rot_values.append(value)
                 non_rotation_data.append(
                     np.mean(non_rot_values) if non_rot_values else 0
                 )
@@ -511,7 +584,20 @@ def plot_results_rotation_avg(
                     if os.path.exists(file_path):
                         with open(file_path, "r") as f:
                             data = json.load(f)
-                            rot_values.append(data.get(metric_key, 0))
+                            value = data.get(metric_key, 0)
+                            if (
+                                metric_key == "total_difficulty_score"
+                                or metric_key == "total_isolated_clusters_count"
+                            ):
+                                value = value / 100.0
+                            if (
+                                metric_key
+                                == "total_difficulty_weighted_difference_ratio"
+                                or metric_key
+                                == "total_difficulty_weighted_relative_difference_ratio"
+                            ):
+                                value = value / 3
+                            rot_values.append(value)
                 rotation_data.append(np.mean(rot_values) if rot_values else 0)
 
             # Plotting

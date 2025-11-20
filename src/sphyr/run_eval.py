@@ -230,19 +230,6 @@ def generate_prompts(
 
 def aggregate_results(results: list[Result]) -> dict:
 
-    # exact_match: bool
-    # difference_ratio: float  # lower is better
-    # penalized_difference_ratio: float  # lower is better
-    # relative_difference_ratio: float  # lower is better
-    # valid_output_grid: bool
-    # load_support_connected: bool
-    # load_support_connected_force_directional: bool
-    # isolated_clusters_count: int  # lower is better
-    # total_force_path_cost_average_efficiency_ratio: float
-    # difficulty_score: float  # higher is more difficult
-    # difficulty_weighted_difference_ratio: float  # lower is better
-    # difficulty_weighted_relative_difference_ratio: float  # lower is better
-
     total_exact_match = 0
     total_difference_ratio = 0.0
     total_penalized_difference_ratio = 0.0
@@ -289,6 +276,8 @@ def aggregate_results(results: list[Result]) -> dict:
         "total_isolated_clusters_count": total_isolated_clusters_count,
         "total_force_path_cost_average_efficiency_ratio": total_force_path_cost_average_efficiency_ratio,
         "total_difficulty_score": total_difficulty_score,
+        "total_difficulty_weighted_difference_ratio": total_difficulty_weighted_difference_ratio,
+        "total_difficulty_weighted_relative_difference_ratio": total_difficulty_weighted_relative_difference_ratio,
     }
 
 
