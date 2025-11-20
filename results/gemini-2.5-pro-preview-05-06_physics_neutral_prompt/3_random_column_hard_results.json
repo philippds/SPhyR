@@ -5,8 +5,17 @@
     "ground_truth": "L L L L L L L L L 0.0\n0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.3 0.0 0.2 0.0 0.3 0.1 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.5 0.1 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S S",
     "completion": "0.0 L L L L 0.0 L L L 0.0\n0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.3 0.0 0.2 0.0 0.3 0.1 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.0 0.0 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 S S S S",
     "exact_match": false,
-    "score": 0.55,
-    "normalized_score": 0.55
+    "difference_ratio": -0.15384615384615397,
+    "relative_difference_ratio": 0.39743589743589747,
+    "penalized_difference_ratio": -0.3717948717948718,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.0282384094856416,
+    "difficulty_score": 2.3,
+    "difficulty_weighted_difference_ratio": -0.3538461538461541,
+    "difficulty_weighted_relative_difference_ratio": 0.9141025641025641,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -14,8 +23,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "completion": "0.0 0.0 0.0 0.0 L L L 1.0 L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S 1.0 S S",
     "exact_match": false,
-    "score": 0.85,
-    "normalized_score": 0.85
+    "difference_ratio": 0.5890410958904111,
+    "relative_difference_ratio": 0.7123287671232877,
+    "penalized_difference_ratio": 0.16438356164383594,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9726234695281333,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 1.1780821917808222,
+    "difficulty_weighted_relative_difference_ratio": 1.4246575342465755,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -23,8 +41,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.0 0.0 0.0 L 1.0 L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.2 0.2 0.0 0.0 0.0 0.0\nS S S S 1.0 S S 1.0 S S",
     "exact_match": false,
-    "score": 0.44999999999999996,
-    "normalized_score": 0.44999999999999996
+    "difference_ratio": -0.44736842105263186,
+    "relative_difference_ratio": -0.15789473684210553,
+    "penalized_difference_ratio": -0.9473684210526319,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.0116,
+    "difficulty_score": 2.05,
+    "difficulty_weighted_difference_ratio": -0.9171052631578952,
+    "difficulty_weighted_relative_difference_ratio": -0.3236842105263163,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -32,8 +59,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.8 0.2 0.0 0.0 0.0\n0.0 S S 1.0 S S S S S 0.0",
     "exact_match": false,
-    "score": 0.8666666666666667,
-    "normalized_score": 0.8666666666666667
+    "difference_ratio": 0.4736842105263157,
+    "relative_difference_ratio": 0.5921052631578947,
+    "penalized_difference_ratio": -0.19736842105263164,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.5333333333333334,
+    "difficulty_weighted_difference_ratio": 0.7263157894736841,
+    "difficulty_weighted_relative_difference_ratio": 0.9078947368421052,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -41,8 +77,17 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.3 0.4 0.1 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.3 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.6 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.0 L L 1.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.2 0.1 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\nS S S 1.0 S S S 1.0 1.0 S",
     "exact_match": false,
-    "score": 0.6333333333333333,
-    "normalized_score": 0.6333333333333333
+    "difference_ratio": -0.4285714285714288,
+    "relative_difference_ratio": 0.11688311688311659,
+    "penalized_difference_ratio": -1.1818181818181825,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9247306091966285,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": -0.8571428571428577,
+    "difficulty_weighted_relative_difference_ratio": 0.23376623376623318,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -50,8 +95,17 @@
     "ground_truth": "L L L L L L L L L 0.0\n0.0 0.2 0.3 0.1 0.2 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.3 0.1 0.2 0.0 0.3 0.1 0.0 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.0 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.0 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.1 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.3 0.1 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "L L L L L L 0.0 L L 0.0\n0.0 0.2 0.3 0.1 0.2 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.3 0.1 0.2 0.0 0.0 0.1 0.0 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.0 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.0 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.1 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 S S 0.0",
     "exact_match": false,
-    "score": 0.5,
-    "normalized_score": 0.5
+    "difference_ratio": -0.2500000000000002,
+    "relative_difference_ratio": 0.5125,
+    "penalized_difference_ratio": 0.012500000000000067,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.045959632515957465,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": -0.5000000000000004,
+    "difficulty_weighted_relative_difference_ratio": 1.025,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -59,8 +113,17 @@
     "ground_truth": "L L L L L L L 0.0 0.0 0.0\n0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S S",
     "completion": "L L 0.0 L L L L 0.0 0.0 0.0\n0.0 0.2 0.0 0.0 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.8,
-    "normalized_score": 0.8
+    "difference_ratio": 0.04761904761904756,
+    "relative_difference_ratio": 0.3650793650793651,
+    "penalized_difference_ratio": -0.5873015873015874,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.038174594473245935,
+    "difficulty_score": 1.7333333333333334,
+    "difficulty_weighted_difference_ratio": 0.08253968253968244,
+    "difficulty_weighted_relative_difference_ratio": 0.6328042328042329,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -68,8 +131,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L 1.0 L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S 1.0 S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.25,
+    "relative_difference_ratio": -0.10000000000000009,
+    "penalized_difference_ratio": -0.5999999999999999,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0.0116,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.4166666666666667,
+    "difficulty_weighted_relative_difference_ratio": -0.16666666666666682,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -77,8 +149,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.15000000000000002,
-    "normalized_score": 0.15000000000000002
+    "difference_ratio": -1.125,
+    "relative_difference_ratio": -0.625,
+    "penalized_difference_ratio": -2.875,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": -2.25,
+    "difficulty_weighted_relative_difference_ratio": -1.25,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -86,8 +167,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.7 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.5 0.5 0.2 0.0 0.0\n0.0 0.0 S 1.0 S S S 1.0 S 0.0",
     "exact_match": false,
-    "score": 0.7,
-    "normalized_score": 0.7
+    "difference_ratio": 0.21052631578947367,
+    "relative_difference_ratio": 0.6578947368421053,
+    "penalized_difference_ratio": 0.13157894736842102,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 0.42105263157894735,
+    "difficulty_weighted_relative_difference_ratio": 1.3157894736842106,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -95,8 +185,17 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S 0.0 0.0",
     "completion": "0.0 L L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.4 0.3 0.2 0.1 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.3 0.2 0.1 0.0\n0.0 0.0 0.0 0.4 0.0 0.5 0.4 0.2 0.1 0.0\n0.0 0.0 0.0 0.4 0.4 0.4 0.3 0.2 0.1 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\nS S S S S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.3666666666666667,
-    "normalized_score": 0.3666666666666667
+    "difference_ratio": -1.5000000000000009,
+    "relative_difference_ratio": 0.1315789473684209,
+    "penalized_difference_ratio": -0.9210526315789476,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.9333333333333333,
+    "difficulty_weighted_difference_ratio": -2.9000000000000017,
+    "difficulty_weighted_relative_difference_ratio": 0.25438596491228044,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -104,8 +203,17 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.9333333333333333,
-    "normalized_score": 0.9333333333333333
+    "difference_ratio": 0.7014925373134329,
+    "relative_difference_ratio": 0.7014925373134329,
+    "penalized_difference_ratio": 0.10447761194029848,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8666666666666667,
+    "difficulty_weighted_difference_ratio": 1.309452736318408,
+    "difficulty_weighted_relative_difference_ratio": 1.309452736318408,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -113,8 +221,17 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.7 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.7 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S 1.0 S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.9333333333333333,
-    "normalized_score": 0.9333333333333333
+    "difference_ratio": 0.7142857142857143,
+    "relative_difference_ratio": 0.8285714285714285,
+    "penalized_difference_ratio": 0.5428571428571428,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.2,
+    "difficulty_weighted_difference_ratio": 0.8571428571428571,
+    "difficulty_weighted_relative_difference_ratio": 0.9942857142857142,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -122,8 +239,17 @@
     "ground_truth": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "L 1.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS 1.0 S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.7,
-    "normalized_score": 0.7
+    "difference_ratio": -0.20000000000000018,
+    "relative_difference_ratio": 0.013333333333333308,
+    "penalized_difference_ratio": -0.5200000000000002,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9975878342947039,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.33333333333333365,
+    "difficulty_weighted_relative_difference_ratio": 0.02222222222222218,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -131,8 +257,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L L 1.0 L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 1.0 0.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.25,
+    "relative_difference_ratio": 0.25,
+    "penalized_difference_ratio": -0.25,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9514462809917356,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.4166666666666667,
+    "difficulty_weighted_relative_difference_ratio": 0.4166666666666667,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -140,8 +275,17 @@
     "ground_truth": "0.0 L L L L L L L L 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.85,
-    "normalized_score": 0.85
+    "difference_ratio": 0.5774647887323944,
+    "relative_difference_ratio": 0.5774647887323944,
+    "penalized_difference_ratio": -0.26760563380281677,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.9,
+    "difficulty_weighted_difference_ratio": 1.0971830985915492,
+    "difficulty_weighted_relative_difference_ratio": 1.0971830985915492,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -149,8 +293,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S 0.0 0.0",
     "completion": "0.0 L 1.0 L 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.1 1.0 0.1 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.1 1.0 0.1 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.1 1.0 0.1 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.1 1.0 0.1 0.0 1.0 0.0 0.0 0.0 0.0\nS S 1.0 S 1.0 1.0 S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.2666666666666667,
-    "normalized_score": 0.2666666666666667
+    "difference_ratio": -1.7500000000000004,
+    "relative_difference_ratio": -0.8499999999999999,
+    "penalized_difference_ratio": -1.85,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9354838709677419,
+    "difficulty_score": 2.1,
+    "difficulty_weighted_difference_ratio": -3.675000000000001,
+    "difficulty_weighted_relative_difference_ratio": -1.7849999999999997,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -158,8 +311,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.2 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S 0.1 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L 0.0 L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S 0.1 S 0.1 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.8333333333333334,
-    "normalized_score": 0.8333333333333334
+    "difference_ratio": 0.2647058823529411,
+    "relative_difference_ratio": 0.5588235294117647,
+    "penalized_difference_ratio": -0.02941176470588247,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.051044998677216874,
+    "difficulty_score": 1.8666666666666667,
+    "difficulty_weighted_difference_ratio": 0.49411764705882344,
+    "difficulty_weighted_relative_difference_ratio": 1.0431372549019609,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -167,8 +329,17 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.9 0.9 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.9 0.9 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.7,
-    "normalized_score": 0.7
+    "difference_ratio": 0.25,
+    "relative_difference_ratio": 0.25,
+    "penalized_difference_ratio": -1.25,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.0,
+    "difficulty_weighted_difference_ratio": 0.25,
+    "difficulty_weighted_relative_difference_ratio": 0.25,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -176,8 +347,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 0.0 1.0 1.0 0.0 1.0 1.0 0.0",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": -0.5,
+    "relative_difference_ratio": -0.5,
+    "penalized_difference_ratio": -3.5,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.3333333333333335,
+    "difficulty_weighted_difference_ratio": -1.1666666666666667,
+    "difficulty_weighted_relative_difference_ratio": -1.1666666666666667,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -185,8 +365,17 @@
     "ground_truth": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.6 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.1 0.5 0.0 0.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
     "completion": "0.0 0.0 L 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.5 0.0 0.0 0.0 0.0\n0.0 S S 0.0 S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.7333333333333334,
-    "normalized_score": 0.7333333333333334
+    "difference_ratio": -0.11111111111111138,
+    "relative_difference_ratio": 0.3749999999999999,
+    "penalized_difference_ratio": -0.4583333333333337,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.04593615685516975,
+    "difficulty_score": 1.7,
+    "difficulty_weighted_difference_ratio": -0.18888888888888936,
+    "difficulty_weighted_relative_difference_ratio": 0.6374999999999998,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -194,8 +383,17 @@
     "ground_truth": "0.0 L L L L L L L L 0.0\n0.0 0.0 0.1 0.2 0.1 0.1 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.3 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.2 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 S S S",
     "completion": "0.0 L L L 0.1 L L 0.1 L 0.0\n0.0 0.0 0.1 0.2 0.2 0.1 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.2 0.2 0.2 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.2 0.2 0.1 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.4 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 S 0.0",
     "exact_match": false,
-    "score": 0.4666666666666667,
-    "normalized_score": 0.4666666666666667
+    "difference_ratio": -1.2857142857142851,
+    "relative_difference_ratio": 0.1428571428571429,
+    "penalized_difference_ratio": -0.9999999999999993,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9448444700460829,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": -3.3428571428571416,
+    "difficulty_weighted_relative_difference_ratio": 0.37142857142857155,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -203,8 +401,17 @@
     "ground_truth": "L L L L L L L 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.2 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.2 0.1 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "completion": "0.0 L 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.2 0.0 0.2 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.2 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.1 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "exact_match": false,
-    "score": 0.5333333333333333,
-    "normalized_score": 0.5333333333333333
+    "difference_ratio": -1.08955223880597,
+    "relative_difference_ratio": 0.16417910447761197,
+    "penalized_difference_ratio": -0.7313432835820894,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.013682142857142858,
+    "difficulty_score": 2.466666666666667,
+    "difficulty_weighted_difference_ratio": -2.687562189054726,
+    "difficulty_weighted_relative_difference_ratio": 0.40497512437810956,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -212,8 +419,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\nS S S S S S S S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.0 0.9 0.1\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.0 0.9 0.1\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.9 0.0\nS S 1.0 1.0 1.0 S S S S S",
     "exact_match": false,
-    "score": 0.23333333333333328,
-    "normalized_score": 0.23333333333333328
+    "difference_ratio": -1.875,
+    "relative_difference_ratio": -0.4249999999999998,
+    "penalized_difference_ratio": -1.1749999999999998,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.1,
+    "difficulty_weighted_difference_ratio": -2.0625,
+    "difficulty_weighted_relative_difference_ratio": -0.46749999999999986,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -221,8 +437,17 @@
     "ground_truth": "L L L L L L L L L 0.0\n0.0 0.2 0.3 0.0 0.2 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.3 0.2 0.1 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.1 0.3 0.0 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.1 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "completion": "L L 0.0 L 0.0 0.0 L L L 0.0\n0.0 0.2 0.2 0.0 0.0 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.2 0.2 0.2 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.1 0.3 0.2 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 S S S 0.0",
     "exact_match": false,
-    "score": 0.2666666666666667,
-    "normalized_score": 0.2666666666666667
+    "difference_ratio": -2.333333333333333,
+    "relative_difference_ratio": -0.1212121212121211,
+    "penalized_difference_ratio": -1.3333333333333326,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9892734264318963,
+    "difficulty_score": 2.8,
+    "difficulty_weighted_difference_ratio": -6.533333333333332,
+    "difficulty_weighted_relative_difference_ratio": -0.3393939393939391,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -230,8 +455,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0\n0.0 S S S S S S S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.2 0.0 0.0 0.0\n0.0 0.0 S S 0.0 S S S 0.0 S",
     "exact_match": false,
-    "score": 0.7,
-    "normalized_score": 0.7
+    "difference_ratio": -0.15384615384615397,
+    "relative_difference_ratio": 0.39743589743589736,
+    "penalized_difference_ratio": -0.6282051282051284,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.7333333333333334,
+    "difficulty_weighted_difference_ratio": -0.2666666666666669,
+    "difficulty_weighted_relative_difference_ratio": 0.6888888888888888,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -239,8 +473,17 @@
     "ground_truth": "L L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.6 0.1 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.2 0.1 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S 0.0 0.0",
     "completion": "0.0 0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.1 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.2 0.1 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.1 S 0.0 0.0",
     "exact_match": false,
-    "score": 0.6333333333333333,
-    "normalized_score": 0.6333333333333333
+    "difference_ratio": -0.5492957746478877,
+    "relative_difference_ratio": 0.25352112676056326,
+    "penalized_difference_ratio": -0.5915492957746482,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.533333333333333,
+    "difficulty_weighted_difference_ratio": -1.3915492957746487,
+    "difficulty_weighted_relative_difference_ratio": 0.6422535211267603,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -248,8 +491,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.5 0.0",
     "exact_match": false,
-    "score": 0.7333333333333334,
-    "normalized_score": 0.7333333333333334
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": -2.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.3333333333333335,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -257,8 +509,17 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.0 0.0 0.0\nS S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 S 1.0 1.0 S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.4666666666666667,
-    "normalized_score": 0.4666666666666667
+    "difference_ratio": -1.1052631578947367,
+    "relative_difference_ratio": -0.5657894736842104,
+    "penalized_difference_ratio": -1.8815789473684208,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.0116,
+    "difficulty_score": 2.3666666666666667,
+    "difficulty_weighted_difference_ratio": -2.6157894736842104,
+    "difficulty_weighted_relative_difference_ratio": -1.339035087719298,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -266,8 +527,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S S",
     "completion": "0.0 0.0 0.0 1.0 L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 S S S 0.0 S S",
     "exact_match": false,
-    "score": 0.8666666666666667,
-    "normalized_score": 0.8666666666666667
+    "difference_ratio": 0.3846153846153846,
+    "relative_difference_ratio": 0.523076923076923,
+    "penalized_difference_ratio": -0.09230769230769242,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.7,
+    "difficulty_weighted_difference_ratio": 0.6538461538461537,
+    "difficulty_weighted_relative_difference_ratio": 0.889230769230769,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -275,8 +545,17 @@
     "ground_truth": "L L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.4 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.1 0.3 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.1 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.1 0.2 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S S",
     "completion": "L L L 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.4 0.3 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.2 0.1 0.2 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.1 S 0.1 S S S S",
     "exact_match": false,
-    "score": 0.30000000000000004,
-    "normalized_score": 0.30000000000000004
+    "difference_ratio": -0.8918918918918921,
+    "relative_difference_ratio": 0.3648648648648647,
+    "penalized_difference_ratio": -0.17567567567567566,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": -2.3189189189189197,
+    "difficulty_weighted_relative_difference_ratio": 0.9486486486486482,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -284,8 +563,17 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
     "completion": "0.0 L L 1.0 1.0 L L 0.5 0.0 0.0\n0.0 0.0 0.2 0.3 0.4 0.4 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.5 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.5 1.0 S S 0.5 0.0 0.0",
     "exact_match": false,
-    "score": 0.33333333333333337,
-    "normalized_score": 0.33333333333333337
+    "difference_ratio": -2.174603174603175,
+    "relative_difference_ratio": -0.53968253968254,
+    "penalized_difference_ratio": -1.8095238095238089,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.013057142857142856,
+    "difficulty_score": 2.7333333333333334,
+    "difficulty_weighted_difference_ratio": -5.943915343915345,
+    "difficulty_weighted_relative_difference_ratio": -1.475132275132276,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -293,8 +581,17 @@
     "ground_truth": "L L L L L L L L 0.0 0.0\n0.0 0.2 0.3 0.2 0.1 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.2 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S S",
     "completion": "L L L L 1.0 L L 0.0 0.0 0.0\n0.0 0.2 0.3 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S 1.0 S S 1.0 1.0 S",
     "exact_match": false,
-    "score": 0.7666666666666666,
-    "normalized_score": 0.7666666666666666
+    "difference_ratio": 0.04109589041095896,
+    "relative_difference_ratio": 0.26027397260273977,
+    "penalized_difference_ratio": -1.1095890410958904,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9850289214018373,
+    "difficulty_score": 1.9333333333333333,
+    "difficulty_weighted_difference_ratio": 0.07945205479452065,
+    "difficulty_weighted_relative_difference_ratio": 0.5031963470319636,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -302,8 +599,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.3 0.3 0.4 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.2 0.4 0.4 0.0\n0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.5 0.0 0.0\n0.0 0.0 0.2 0.5 0.1 0.1 0.6 0.0 0.0 0.0\n0.0 S S S S S 0.1 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.3 0.3 0.4 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.2 0.4 0.4 0.0\n0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.5 0.0 0.0\n0.0 0.0 0.2 0.5 0.1 0.1 0.6 0.0 0.0 0.0\n0.0 0.0 S S S S 0.1 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.9333333333333333,
-    "normalized_score": 0.9333333333333333
+    "difference_ratio": 0.7402597402597402,
+    "relative_difference_ratio": 0.7402597402597402,
+    "penalized_difference_ratio": 0.22077922077922063,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.7333333333333334,
+    "difficulty_weighted_difference_ratio": 1.283116883116883,
+    "difficulty_weighted_relative_difference_ratio": 1.283116883116883,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -311,8 +617,17 @@
     "ground_truth": "L L L L L L L 0.0 0.0 0.0\n0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.1 0.5 0.0 0.5 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.3 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.6 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.0 L L L 0.0 L L 0.0 0.0 0.0\n0.2 0.3 0.4 0.0 0.2 0.3 0.0 0.0 0.0 0.0\n0.1 0.1 0.5 0.0 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.6 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.0 S S S 0.0 S",
     "exact_match": false,
-    "score": 0.5,
-    "normalized_score": 0.5
+    "difference_ratio": -1.0000000000000004,
+    "relative_difference_ratio": -0.02666666666666684,
+    "penalized_difference_ratio": -1.3600000000000008,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": -2.000000000000001,
+    "difficulty_weighted_relative_difference_ratio": -0.05333333333333368,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -320,8 +635,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L L\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\nS S S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 L L 0.0 L 0.0 L 0.0\n0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\nS S S S S 0.0 S 0.0 S 0.0",
     "exact_match": false,
-    "score": 0.5666666666666667,
-    "normalized_score": 0.5666666666666667
+    "difference_ratio": -0.780821917808219,
+    "relative_difference_ratio": -0.041095890410958624,
+    "penalized_difference_ratio": -1.410958904109589,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.012357142857142858,
+    "difficulty_score": 2.533333333333333,
+    "difficulty_weighted_difference_ratio": -1.9780821917808213,
+    "difficulty_weighted_relative_difference_ratio": -0.10410958904109517,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -329,8 +653,17 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
     "completion": "0.0 0.0 L L 1.0 L L L 0.0 0.0\n0.0 0.0 0.3 0.4 0.5 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S 1.0 S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.36986301369863006,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": -0.8219178082191776,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.012357142857142858,
+    "difficulty_score": 1.8666666666666667,
+    "difficulty_weighted_difference_ratio": -0.6904109589041094,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -338,8 +671,17 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\nS S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 L L L 1.0 1.0 L 0.5 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.5 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S 1.0 1.0 S 0.5 0.0 0.0",
     "exact_match": false,
-    "score": 0.3666666666666667,
-    "normalized_score": 0.3666666666666667
+    "difference_ratio": -1.5675675675675675,
+    "relative_difference_ratio": -0.4594594594594592,
+    "penalized_difference_ratio": -1.81081081081081,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.012357142857142858,
+    "difficulty_score": 2.533333333333333,
+    "difficulty_weighted_difference_ratio": -3.971171171171171,
+    "difficulty_weighted_relative_difference_ratio": -1.1639639639639632,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -347,8 +689,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.6 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.3 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.050000000000000044,
-    "normalized_score": 0.050000000000000044
+    "difference_ratio": -1.9230769230769238,
+    "relative_difference_ratio": -1.261538461538462,
+    "penalized_difference_ratio": -4.338461538461542,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.85,
+    "difficulty_weighted_difference_ratio": -3.5576923076923093,
+    "difficulty_weighted_relative_difference_ratio": -2.333846153846155,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -356,8 +707,17 @@
     "ground_truth": "L L L L L L L L 0.0 0.0\n0.0 0.2 0.3 0.2 0.1 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.3 0.2 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S S",
     "completion": "0.0 L L L 0.0 L L L 0.0 0.0\n0.0 0.2 0.3 0.2 0.0 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.0 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 S S S S 0.0",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": -0.8461538461538467,
+    "relative_difference_ratio": 0.07692307692307665,
+    "penalized_difference_ratio": -1.1538461538461546,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.02436567010733232,
+    "difficulty_score": 1.9,
+    "difficulty_weighted_difference_ratio": -1.6076923076923086,
+    "difficulty_weighted_relative_difference_ratio": 0.14615384615384563,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -365,8 +725,17 @@
     "ground_truth": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "L 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 S S S 1.0 S S 0.0",
     "exact_match": false,
-    "score": 0.30000000000000004,
-    "normalized_score": 0.30000000000000004
+    "difference_ratio": -2.2307692307692313,
+    "relative_difference_ratio": -1.9692307692307698,
+    "penalized_difference_ratio": -3.5076923076923086,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.8285714285714285,
+    "difficulty_score": 2.3666666666666667,
+    "difficulty_weighted_difference_ratio": -5.279487179487181,
+    "difficulty_weighted_relative_difference_ratio": -4.660512820512822,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -374,8 +743,17 @@
     "ground_truth": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.95,
-    "normalized_score": 0.95
+    "difference_ratio": 0.8611111111111112,
+    "relative_difference_ratio": 0.8611111111111112,
+    "penalized_difference_ratio": 0.5833333333333335,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.05,
+    "difficulty_weighted_difference_ratio": 0.9041666666666668,
+    "difficulty_weighted_relative_difference_ratio": 0.9041666666666668,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -383,8 +761,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L 1.0 L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.5 0.0\n0.0 S 1.0 S 1.0 S S 1.0 S 0.0",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": -0.5,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": -1.0,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9770155586987269,
+    "difficulty_score": 1.7333333333333334,
+    "difficulty_weighted_difference_ratio": -0.8666666666666667,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -392,8 +779,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 0.0",
     "exact_match": false,
-    "score": 0.9,
-    "normalized_score": 0.9
+    "difference_ratio": 0.5714285714285716,
+    "relative_difference_ratio": 0.5714285714285716,
+    "penalized_difference_ratio": -0.28571428571428514,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.5,
+    "difficulty_weighted_difference_ratio": 0.8571428571428574,
+    "difficulty_weighted_relative_difference_ratio": 0.8571428571428574,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -401,8 +797,17 @@
     "ground_truth": "L L L L L L L 0.0 0.0 0.0\n0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
     "completion": "L L 0.3 0.3 L L L 0.0 0.0 0.0\n0.0 0.3 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.4666666666666667,
-    "normalized_score": 0.4666666666666667
+    "difference_ratio": -1.191780821917808,
+    "relative_difference_ratio": -0.31506849315068486,
+    "penalized_difference_ratio": -1.410958904109588,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.012357142857142858,
+    "difficulty_score": 2.3333333333333335,
+    "difficulty_weighted_difference_ratio": -2.780821917808219,
+    "difficulty_weighted_relative_difference_ratio": -0.7351598173515981,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -410,8 +815,17 @@
     "ground_truth": "0.0 L L L L L L L L L\n0.0 0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.4 0.2 0.3 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\nS S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L 0.0 L L L\n0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.4 0.2 0.3 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\nS 0.6 0.6 S S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.6333333333333333,
-    "normalized_score": 0.6333333333333333
+    "difference_ratio": -0.46666666666666656,
+    "relative_difference_ratio": 0.013333333333333308,
+    "penalized_difference_ratio": -1.5866666666666664,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.025484451467070467,
+    "difficulty_score": 2.2666666666666666,
+    "difficulty_weighted_difference_ratio": -1.0577777777777775,
+    "difficulty_weighted_relative_difference_ratio": 0.030222222222222164,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -419,8 +833,17 @@
     "ground_truth": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.6 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S 0.0 0.0",
     "completion": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.6 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S 1.0 S 0.0 0.0",
     "exact_match": false,
-    "score": 0.9,
-    "normalized_score": 0.9
+    "difference_ratio": 0.5384615384615384,
+    "relative_difference_ratio": 0.6615384615384615,
+    "penalized_difference_ratio": 0.0461538461538461,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.7538461538461537,
+    "difficulty_weighted_relative_difference_ratio": 0.9261538461538461,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -428,8 +851,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.2 0.8 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.8 0.8 L L L 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.2 0.8 0.0 0.0 0.0\n0.0 0.0 S 0.8 0.8 S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.5666666666666667,
-    "normalized_score": 0.5666666666666667
+    "difference_ratio": -0.9402985074626868,
+    "relative_difference_ratio": -0.5074626865671643,
+    "penalized_difference_ratio": -1.1044776119402986,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": -1.3164179104477616,
+    "difficulty_weighted_relative_difference_ratio": -0.71044776119403,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -437,8 +869,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.4 0.1 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.3 0.5 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.1 0.6 0.0 0.0 0.0 0.0\n0.0 S S S S 0.1 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L 0.5 L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.3 0.5 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.1 0.6 0.0 0.0 0.0 0.0\n0.0 S S S S 0.1 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.7666666666666666,
-    "normalized_score": 0.7666666666666666
+    "difference_ratio": 0.09090909090909083,
+    "relative_difference_ratio": 0.6623376623376622,
+    "penalized_difference_ratio": 0.40259740259740273,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9761682242990655,
+    "difficulty_score": 1.6,
+    "difficulty_weighted_difference_ratio": 0.14545454545454534,
+    "difficulty_weighted_relative_difference_ratio": 1.0597402597402596,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -446,8 +887,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.1 L 0.1 L 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S 0.0 S S S S S 0.0 S",
     "exact_match": false,
-    "score": 0.3666666666666667,
-    "normalized_score": 0.3666666666666667
+    "difference_ratio": -1.4358974358974361,
+    "relative_difference_ratio": -0.4487179487179489,
+    "penalized_difference_ratio": -1.4743589743589745,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9336016096579476,
+    "difficulty_score": 2.033333333333333,
+    "difficulty_weighted_difference_ratio": -2.91965811965812,
+    "difficulty_weighted_relative_difference_ratio": -0.9123931623931627,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -455,8 +905,17 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.7 0.6 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S S S S 0.0 0.0",
     "completion": "0.0 0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.7 0.6 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.7,
-    "normalized_score": 0.7
+    "difference_ratio": -0.3432835820895521,
+    "relative_difference_ratio": 0.04477611940298509,
+    "penalized_difference_ratio": -0.5522388059701491,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9647058823529411,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.5721393034825869,
+    "difficulty_weighted_relative_difference_ratio": 0.07462686567164183,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -464,8 +923,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L L L 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 1.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.25,
+    "relative_difference_ratio": -0.25,
+    "penalized_difference_ratio": -0.5,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.0333333333333334,
+    "difficulty_weighted_difference_ratio": -0.25833333333333336,
+    "difficulty_weighted_relative_difference_ratio": -0.25833333333333336,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -473,8 +941,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.1 0.2 0.1 0.3 0.1 0.0\n0.0 0.0 0.0 0.1 0.2 0.2 0.2 0.3 0.0 0.0\n0.0 0.0 0.1 0.2 0.2 0.1 0.3 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.1 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.3 0.5 0.0 0.0 0.0 0.0\n0.0 S S S 0.5 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.1 L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.1 0.2 0.3 0.3 0.1 0.0\n0.0 0.0 0.0 0.1 0.2 0.2 0.3 0.3 0.0 0.0\n0.0 0.0 0.1 0.2 0.2 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.1 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.3 0.5 0.4 0.0 0.0 0.0\n0.0 0.0 S S 0.5 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.6333333333333333,
-    "normalized_score": 0.6333333333333333
+    "difference_ratio": -0.46666666666666656,
+    "relative_difference_ratio": 0.3866666666666667,
+    "penalized_difference_ratio": -0.4133333333333331,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.4,
+    "difficulty_weighted_difference_ratio": -1.1199999999999997,
+    "difficulty_weighted_relative_difference_ratio": 0.928,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -482,8 +959,17 @@
     "ground_truth": "0.0 L L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "0.0 L L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 S 0.0",
     "exact_match": false,
-    "score": 0.95,
-    "normalized_score": 0.95
+    "difference_ratio": 0.868421052631579,
+    "relative_difference_ratio": 0.868421052631579,
+    "penalized_difference_ratio": 0.6052631578947368,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.05,
+    "difficulty_weighted_difference_ratio": 0.911842105263158,
+    "difficulty_weighted_relative_difference_ratio": 0.911842105263158,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -491,8 +977,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L 0.0 L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S 0.0 S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.25,
+    "relative_difference_ratio": 0.25,
+    "penalized_difference_ratio": -0.25,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.03376017203880648,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.4166666666666667,
+    "difficulty_weighted_relative_difference_ratio": 0.4166666666666667,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -500,8 +995,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.5 0.2 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.1 0.6 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.2 0.6 0.1 0.0 0.0\n0.0 0.0 0.0 S S S 0.3 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L 1.0 L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.2 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.3 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.7,
-    "normalized_score": 0.7
+    "difference_ratio": -0.21621621621621645,
+    "relative_difference_ratio": 0.5270270270270269,
+    "penalized_difference_ratio": 0.2567567567567567,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9278761061946903,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.3603603603603608,
+    "difficulty_weighted_relative_difference_ratio": 0.8783783783783782,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -509,8 +1013,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 L L\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 1.0 S S S 1.0 1.0 S 0.0",
     "exact_match": false,
-    "score": 0.5333333333333333,
-    "normalized_score": 0.5333333333333333
+    "difference_ratio": -1.121212121212121,
+    "relative_difference_ratio": -0.7575757575757573,
+    "penalized_difference_ratio": -1.666666666666667,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8666666666666667,
+    "difficulty_weighted_difference_ratio": -2.0929292929292926,
+    "difficulty_weighted_relative_difference_ratio": -1.4141414141414137,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -518,8 +1031,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.3 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L L L 1.0 L\n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.3 0.0 0.0 0.0\n0.0 S 1.0 S S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.8666666666666667,
-    "normalized_score": 0.8666666666666667
+    "difference_ratio": 0.38461538461538447,
+    "relative_difference_ratio": 0.5076923076923076,
+    "penalized_difference_ratio": -0.4153846153846157,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.5666666666666667,
+    "difficulty_weighted_difference_ratio": 0.6025641025641023,
+    "difficulty_weighted_relative_difference_ratio": 0.7953846153846151,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -527,8 +1049,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L 1.0 L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 S S S S 1.0 S 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": -0.5,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": -1.0,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9388379204892966,
+    "difficulty_score": 3.0,
+    "difficulty_weighted_difference_ratio": -1.5,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -536,8 +1067,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 S S S S S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 S S 1.0 S S S S",
     "exact_match": false,
-    "score": 0.95,
-    "normalized_score": 0.95
+    "difference_ratio": 0.875,
+    "relative_difference_ratio": 0.875,
+    "penalized_difference_ratio": 0.625,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.05,
+    "difficulty_weighted_difference_ratio": 0.9187500000000001,
+    "difficulty_weighted_relative_difference_ratio": 0.9187500000000001,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -545,8 +1085,17 @@
     "ground_truth": "0.0 L L L L L L L L 0.0\n0.0 0.0 0.2 0.3 0.2 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.3 0.2 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.5 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "completion": "0.0 L 0.0 L 0.0 L 1.0 L L 0.0\n0.0 0.0 0.0 0.3 0.0 0.1 1.0 0.2 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.2 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.0 0.3 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S 1.0 S S 0.0",
     "exact_match": false,
-    "score": 0.30000000000000004,
-    "normalized_score": 0.30000000000000004
+    "difference_ratio": -2.181818181818183,
+    "relative_difference_ratio": -1.0454545454545463,
+    "penalized_difference_ratio": -2.2575757575757587,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.03030665733681975,
+    "difficulty_score": 2.6666666666666665,
+    "difficulty_weighted_difference_ratio": -5.818181818181821,
+    "difficulty_weighted_relative_difference_ratio": -2.78787878787879,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -554,8 +1103,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.2 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.0 0.2 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.4 0.2 0.1 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.3 0.2 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 S S S 0.0",
     "completion": "0.0 L L 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.3 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.3 0.2 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.2 0.2 0.1 0.1 0.0\n0.0 0.0 0.0 0.1 0.2 0.1 0.3 0.3 0.2 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.2 0.5 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 S S 0.5 0.0",
     "exact_match": false,
-    "score": 0.35,
-    "normalized_score": 0.35
+    "difference_ratio": -0.8055555555555556,
+    "relative_difference_ratio": 0.4027777777777778,
+    "penalized_difference_ratio": -0.1527777777777779,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.5,
+    "difficulty_weighted_difference_ratio": -2.013888888888889,
+    "difficulty_weighted_relative_difference_ratio": 1.0069444444444444,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -563,8 +1121,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 L 1.0 L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\nS S 1.0 S S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.28205128205128216,
+    "relative_difference_ratio": -0.14102564102564097,
+    "penalized_difference_ratio": -0.6538461538461544,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.0116,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.4700854700854703,
+    "difficulty_weighted_relative_difference_ratio": -0.23504273504273496,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -572,8 +1139,17 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.7,
-    "normalized_score": 0.7
+    "difference_ratio": -0.32352941176470584,
+    "relative_difference_ratio": -0.2058823529411764,
+    "penalized_difference_ratio": -2.5588235294117645,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.5392156862745098,
+    "difficulty_weighted_relative_difference_ratio": -0.3431372549019607,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -581,8 +1157,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 0.0",
     "completion": "0.0 0.0 L L 1.0 L L L L 0.0\n0.0 0.0 0.0 0.2 0.1 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 1.0",
     "exact_match": false,
-    "score": 0.55,
-    "normalized_score": 0.55
+    "difference_ratio": -0.4285714285714286,
+    "relative_difference_ratio": 0.39682539682539675,
+    "penalized_difference_ratio": 0.07936507936507942,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9128209396196579,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": -0.8571428571428572,
+    "difficulty_weighted_relative_difference_ratio": 0.7936507936507935,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -590,8 +1175,17 @@
     "ground_truth": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.5 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.1 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.2 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 S S S 0.0 0.0",
     "completion": "0.0 L 1.0 1.0 L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.1 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.6 0.2 0.5 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 0.4 S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.33333333333333337,
-    "normalized_score": 0.33333333333333337
+    "difference_ratio": -1.7027027027027026,
+    "relative_difference_ratio": -1.1081081081081083,
+    "penalized_difference_ratio": -1.6486486486486478,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9799065420560749,
+    "difficulty_score": 2.3333333333333335,
+    "difficulty_weighted_difference_ratio": -3.9729729729729732,
+    "difficulty_weighted_relative_difference_ratio": -2.5855855855855863,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -599,8 +1193,17 @@
     "ground_truth": "0.0 L L L L L L L L 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.1 0.3 0.0 0.0 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.1 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.2 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.1 0.0 0.0 0.0\nS S S S S S S S S 0.0",
     "completion": "0.0 L L 0.3 0.2 L L L L 0.0\n0.0 0.0 0.2 0.2 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.4 0.1 0.0 0.0 0.0\nS S S 0.1 0.1 S S S S 0.0",
     "exact_match": false,
-    "score": 0.5333333333333333,
-    "normalized_score": 0.5333333333333333
+    "difference_ratio": -0.8421052631578951,
+    "relative_difference_ratio": 0.23684210526315763,
+    "penalized_difference_ratio": -0.8157894736842106,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9139072847682119,
+    "difficulty_score": 2.3333333333333335,
+    "difficulty_weighted_difference_ratio": -1.9649122807017554,
+    "difficulty_weighted_relative_difference_ratio": 0.5526315789473678,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -608,8 +1211,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.6 0.7 0.0 0.0 0.0\nS S S S S S 0.1 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.6 0.7 0.0 0.0 0.0\n0.0 S S S S S 0.1 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.9,
-    "normalized_score": 0.9
+    "difference_ratio": 0.7058823529411764,
+    "relative_difference_ratio": 0.7058823529411764,
+    "penalized_difference_ratio": 0.11764705882352944,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.45,
+    "difficulty_weighted_difference_ratio": 1.0235294117647058,
+    "difficulty_weighted_relative_difference_ratio": 1.0235294117647058,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -617,8 +1229,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L 1.0 L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 S S S S 1.0 S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": -0.40845070422535157,
+    "relative_difference_ratio": 0.5211267605633804,
+    "penalized_difference_ratio": -0.04225352112676051,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9726234695281333,
+    "difficulty_score": 3.0,
+    "difficulty_weighted_difference_ratio": -1.2253521126760547,
+    "difficulty_weighted_relative_difference_ratio": 1.563380281690141,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -626,8 +1247,17 @@
     "ground_truth": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S S",
     "completion": "0.0 0.5 L 1.0 L L L L 0.5 0.0\n0.0 0.0 0.0 0.2 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 S S S S 1.0 S",
     "exact_match": false,
-    "score": 0.5666666666666667,
-    "normalized_score": 0.5666666666666667
+    "difference_ratio": -0.7567567567567561,
+    "relative_difference_ratio": 0.2567567567567569,
+    "penalized_difference_ratio": -0.5540540540540535,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9998585772875124,
+    "difficulty_score": 1.7,
+    "difficulty_weighted_difference_ratio": -1.2864864864864853,
+    "difficulty_weighted_relative_difference_ratio": 0.43648648648648675,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -635,8 +1265,17 @@
     "ground_truth": "L L L L L L L L L 0.0\n0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.4 0.1 0.3 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.5 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\nS S S S S S S 0.0 0.0 0.0",
     "completion": "L 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.1 0.0\n0.0 0.0 0.4 0.1 0.3 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.5 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\nS 0.0 0.0 S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.8,
-    "normalized_score": 0.8
+    "difference_ratio": 0.21052631578947356,
+    "relative_difference_ratio": 0.32894736842105254,
+    "penalized_difference_ratio": -0.9868421052631582,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.1333333333333333,
+    "difficulty_weighted_difference_ratio": 0.4491228070175436,
+    "difficulty_weighted_relative_difference_ratio": 0.7017543859649121,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -644,8 +1283,17 @@
     "ground_truth": "0.0 L L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.2 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.3 0.3 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.3 0.3 0.1 0.0\n0.0 0.0 0.0 0.0 0.3 0.4 0.2 0.3 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 S S S S",
     "completion": "0.0 L L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.2 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.3 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.7333333333333334,
-    "normalized_score": 0.7333333333333334
+    "difference_ratio": -0.09589041095890405,
+    "relative_difference_ratio": 0.42465753424657526,
+    "penalized_difference_ratio": -0.3972602739726028,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": -0.1917808219178081,
+    "difficulty_weighted_relative_difference_ratio": 0.8493150684931505,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -653,8 +1301,17 @@
     "ground_truth": "L L L L L L L L 0.0 0.0\n0.0 0.2 0.3 0.2 0.1 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.2 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\nS S S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "L L 1.0 L 1.0 L L L 0.0 0.0\n0.0 0.2 0.2 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.2 0.2 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\nS S 1.0 S 1.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.5333333333333333,
-    "normalized_score": 0.5333333333333333
+    "difference_ratio": -0.8918918918918917,
+    "relative_difference_ratio": 0.10810810810810823,
+    "penalized_difference_ratio": -0.9729729729729728,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9624335106382982,
+    "difficulty_score": 2.3333333333333335,
+    "difficulty_weighted_difference_ratio": -2.0810810810810807,
+    "difficulty_weighted_relative_difference_ratio": 0.25225225225225256,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -662,8 +1319,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.6 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 S S S 0.0",
     "completion": "0.0 0.0 0.0 L L 1.0 L 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 S 1.0 S 0.0",
     "exact_match": false,
-    "score": 0.5333333333333333,
-    "normalized_score": 0.5333333333333333
+    "difference_ratio": -1.08955223880597,
+    "relative_difference_ratio": -0.14925373134328335,
+    "penalized_difference_ratio": -1.044776119402985,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.01259,
+    "difficulty_score": 2.1333333333333333,
+    "difficulty_weighted_difference_ratio": -2.324378109452736,
+    "difficulty_weighted_relative_difference_ratio": -0.31840796019900447,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -671,8 +1337,17 @@
     "ground_truth": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.5 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.4 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S S S 0.0 0.0 0.0",
     "completion": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.5 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.6 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.5 S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.8666666666666667,
-    "normalized_score": 0.8666666666666667
+    "difference_ratio": 0.45945945945945943,
+    "relative_difference_ratio": 0.6891891891891893,
+    "penalized_difference_ratio": 0.14864864864864846,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9466434452184928,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": 0.7657657657657657,
+    "difficulty_weighted_relative_difference_ratio": 1.148648648648649,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -680,8 +1355,17 @@
     "ground_truth": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "1.0 L 0.0 1.0 L 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 S 0.0 1.0 S S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": -2.75,
+    "relative_difference_ratio": -1.75,
+    "penalized_difference_ratio": -3.0,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9209999999999999,
+    "difficulty_score": 2.3666666666666667,
+    "difficulty_weighted_difference_ratio": -6.508333333333334,
+    "difficulty_weighted_relative_difference_ratio": -4.141666666666667,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -689,8 +1373,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 0.1 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.4666666666666667,
-    "normalized_score": 0.4666666666666667
+    "difference_ratio": -1.1052631578947367,
+    "relative_difference_ratio": -0.3421052631578949,
+    "penalized_difference_ratio": -2.18421052631579,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.533333333333333,
+    "difficulty_weighted_difference_ratio": -2.7999999999999994,
+    "difficulty_weighted_relative_difference_ratio": -0.866666666666667,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -698,8 +1391,17 @@
     "ground_truth": "L L L L L L 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "L 1.0 L 1.0 L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS 1.0 S 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.5333333333333333,
-    "normalized_score": 0.5333333333333333
+    "difference_ratio": -0.9999999999999993,
+    "relative_difference_ratio": -0.08571428571428541,
+    "penalized_difference_ratio": -1.2285714285714278,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.8964970676810906,
+    "difficulty_score": 2.3333333333333335,
+    "difficulty_weighted_difference_ratio": -2.3333333333333317,
+    "difficulty_weighted_relative_difference_ratio": -0.1999999999999993,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -707,8 +1409,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.8 L L L 0.8 L\n0.0 0.0 0.0 0.0 0.8 0.0 0.5 0.5 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.2 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 S S S 0.8 0.0",
     "exact_match": false,
-    "score": 0.33333333333333337,
-    "normalized_score": 0.33333333333333337
+    "difference_ratio": -1.666666666666667,
+    "relative_difference_ratio": -1.0933333333333342,
+    "penalized_difference_ratio": -1.6266666666666678,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9975878342947039,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -2.7777777777777786,
+    "difficulty_weighted_relative_difference_ratio": -1.8222222222222237,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -716,8 +1427,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L 1.0 L 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.4 0.0 0.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.5624999999999998,
+    "relative_difference_ratio": 0.3437500000000001,
+    "penalized_difference_ratio": 0.03124999999999989,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9975878342947039,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.9374999999999997,
+    "difficulty_weighted_relative_difference_ratio": 0.5729166666666669,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -725,8 +1445,17 @@
     "ground_truth": "0.0 L L L L L L L L L\n0.0 0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.4 0.2 0.3 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "completion": "0.0 0.0 L 0.0 L L L L L L\n0.0 0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.4 0.2 0.3 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "exact_match": false,
-    "score": 0.9,
-    "normalized_score": 0.9
+    "difference_ratio": 0.7333333333333334,
+    "relative_difference_ratio": 0.7333333333333334,
+    "penalized_difference_ratio": 0.19999999999999996,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 1.4666666666666668,
+    "difficulty_weighted_relative_difference_ratio": 1.4666666666666668,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -734,8 +1463,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.5 0.6 0.7 0.0 0.0 0.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.6 0.7 0.0 0.0 0.0\n0.0 0.0 S 1.0 S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.9,
-    "normalized_score": 0.9
+    "difference_ratio": 0.696969696969697,
+    "relative_difference_ratio": 0.803030303030303,
+    "penalized_difference_ratio": 0.5,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.3,
+    "difficulty_weighted_difference_ratio": 0.9060606060606061,
+    "difficulty_weighted_relative_difference_ratio": 1.043939393939394,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -743,8 +1481,17 @@
     "ground_truth": "L L L L L L 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
     "completion": "L L 1.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S 1.0 S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.85,
-    "normalized_score": 0.85
+    "difference_ratio": 0.5774647887323945,
+    "relative_difference_ratio": 0.7042253521126761,
+    "penalized_difference_ratio": 0.14084507042253558,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9726234695281332,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 1.154929577464789,
+    "difficulty_weighted_relative_difference_ratio": 1.4084507042253522,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -752,8 +1499,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.6 0.6 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.2 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.6 0.6 0.6 0.1 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.8 0.2 0.7 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.1 S S S",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.470588235294118,
+    "relative_difference_ratio": 0.13235294117647067,
+    "penalized_difference_ratio": -0.1617647058823528,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.6,
+    "difficulty_weighted_difference_ratio": -0.7529411764705888,
+    "difficulty_weighted_relative_difference_ratio": 0.21176470588235308,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -761,8 +1517,17 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.2 0.3 0.0 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.1 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.2 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 S S S",
     "completion": "0.0 L L 1.0 L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.1 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.0 0.0 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 S S",
     "exact_match": false,
-    "score": 0.4666666666666667,
-    "normalized_score": 0.4666666666666667
+    "difference_ratio": -1.2857142857142856,
+    "relative_difference_ratio": 0.04285714285714293,
+    "penalized_difference_ratio": -1.0999999999999996,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.7956414689087955,
+    "difficulty_score": 2.8666666666666667,
+    "difficulty_weighted_difference_ratio": -3.6857142857142855,
+    "difficulty_weighted_relative_difference_ratio": 0.12285714285714305,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -770,8 +1535,17 @@
     "ground_truth": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.5 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.3 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
     "completion": "0.0 L L L 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.5 0.4 0.2 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.6 0.5 0.4 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 S 0.7 0.3 0.0 0.0",
     "exact_match": false,
-    "score": 0.5,
-    "normalized_score": 0.5
+    "difference_ratio": -1.1739130434782608,
+    "relative_difference_ratio": 0.17391304347826086,
+    "penalized_difference_ratio": -0.9855072463768113,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9556374119154386,
+    "difficulty_score": 2.1333333333333333,
+    "difficulty_weighted_difference_ratio": -2.5043478260869563,
+    "difficulty_weighted_relative_difference_ratio": 0.3710144927536232,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -779,8 +1553,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.3 0.4 0.0\n0.0 0.0 0.0 0.1 0.4 0.3 0.0 0.4 0.3 0.0\n0.0 0.0 0.1 0.5 0.1 0.2 0.3 0.5 0.0 0.0\n0.0 0.0 0.5 0.0 0.3 0.1 0.6 0.0 0.0 0.0\nS S S S S S 0.1 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.4 0.4 0.0\n0.0 0.0 0.0 0.1 0.4 0.3 0.0 0.3 0.3 0.0\n0.0 0.1 0.1 0.5 0.1 0.2 0.3 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.3 0.1 0.6 0.0 0.0 0.0\nS 1.0 S S S S 0.1 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.44999999999999996,
-    "normalized_score": 0.44999999999999996
+    "difference_ratio": -0.42857142857142905,
+    "relative_difference_ratio": 0.3636363636363634,
+    "penalized_difference_ratio": -0.15584415584415612,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.4,
+    "difficulty_weighted_difference_ratio": -1.0285714285714296,
+    "difficulty_weighted_relative_difference_ratio": 0.8727272727272722,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -788,8 +1571,17 @@
     "ground_truth": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 L 0.5 L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S 0.5 S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.6666666666666667,
-    "normalized_score": 0.6666666666666667
+    "difference_ratio": -0.25,
+    "relative_difference_ratio": 0.45000000000000007,
+    "penalized_difference_ratio": -0.04999999999999982,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9770155586987269,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": -0.4166666666666667,
+    "difficulty_weighted_relative_difference_ratio": 0.7500000000000001,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -797,8 +1589,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.6 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.1 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.5 L 1.0 L 1.0 L 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.6 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.5 S 0.6 0.1 0.1 0.0 0.0",
     "exact_match": false,
-    "score": 0.33333333333333337,
-    "normalized_score": 0.33333333333333337
+    "difference_ratio": -1.9850746268656714,
+    "relative_difference_ratio": -0.28358208955223874,
+    "penalized_difference_ratio": -1.477611940298508,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9797665369649805,
+    "difficulty_score": 2.533333333333333,
+    "difficulty_weighted_difference_ratio": -5.028855721393034,
+    "difficulty_weighted_relative_difference_ratio": -0.7184079601990048,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -806,8 +1607,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S 0.2 S 0.0",
     "exact_match": false,
-    "score": 0.9333333333333333,
-    "normalized_score": 0.9333333333333333
+    "difference_ratio": 0.696969696969697,
+    "relative_difference_ratio": 0.8181818181818181,
+    "penalized_difference_ratio": 0.5151515151515151,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.2,
+    "difficulty_weighted_difference_ratio": 0.8363636363636364,
+    "difficulty_weighted_relative_difference_ratio": 0.9818181818181817,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -815,8 +1625,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L L\n0.0 0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.5 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 S S S",
     "completion": "0.0 0.0 0.0 0.0 L L L 0.7 0.7 L\n0.0 0.0 0.0 0.0 0.2 0.4 0.0 0.0 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.0 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.6 0.7 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 S",
     "exact_match": false,
-    "score": 0.43333333333333335,
-    "normalized_score": 0.43333333333333335
+    "difference_ratio": -1.6984126984126986,
+    "relative_difference_ratio": -0.7777777777777777,
+    "penalized_difference_ratio": -2.3650793650793647,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9047825279960403,
+    "difficulty_score": 2.4,
+    "difficulty_weighted_difference_ratio": -4.076190476190477,
+    "difficulty_weighted_relative_difference_ratio": -1.8666666666666663,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -824,8 +1643,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L L\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L 1.0 L 1.0 L L L\n0.0 0.0 0.0 0.0 0.4 0.4 0.4 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.0 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.0 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 S 1.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.33333333333333337,
-    "normalized_score": 0.33333333333333337
+    "difference_ratio": -2.076923076923078,
+    "relative_difference_ratio": -0.384615384615385,
+    "penalized_difference_ratio": -1.6153846153846163,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9627692136457233,
+    "difficulty_score": 2.033333333333333,
+    "difficulty_weighted_difference_ratio": -4.223076923076925,
+    "difficulty_weighted_relative_difference_ratio": -0.7820512820512828,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -833,8 +1661,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.5 0.1 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.3 0.1 0.5 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "completion": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.5 0.5 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.4 0.1 0.5 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "exact_match": false,
-    "score": 0.8,
-    "normalized_score": 0.8
+    "difference_ratio": 0.4444444444444444,
+    "relative_difference_ratio": 0.7361111111111112,
+    "penalized_difference_ratio": 0.45833333333333326,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9486238532110094,
+    "difficulty_score": 1.5,
+    "difficulty_weighted_difference_ratio": 0.6666666666666666,
+    "difficulty_weighted_relative_difference_ratio": 1.1041666666666667,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -842,8 +1679,17 @@
     "ground_truth": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.3 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S 0.0",
     "completion": "0.0 0.0 L L 1.0 L L 1.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.5 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.4 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0\nS S S S 1.0 S S 1.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.30000000000000004,
-    "normalized_score": 0.30000000000000004
+    "difference_ratio": -1.8767123287671228,
+    "relative_difference_ratio": -1.3835616438356162,
+    "penalized_difference_ratio": -2.47945205479452,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.7670967741935484,
+    "difficulty_score": 1.7333333333333334,
+    "difficulty_weighted_difference_ratio": -3.25296803652968,
+    "difficulty_weighted_relative_difference_ratio": -2.398173515981735,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -851,8 +1697,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.7 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 S S S S S 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.5 0.0 0.0 0.5 0.5 0.4 0.5 0.4 0.0\n0.0 0.7 0.0 0.0 0.7 0.7 0.2 0.7 0.2 0.0\n0.0 0.7 0.0 0.0 0.7 0.7 0.0 0.7 0.0 0.0\n0.0 0.7 0.0 0.0 0.7 0.7 0.0 0.7 0.0 0.0\n0.0 0.7 0.0 0.0 0.7 0.7 0.0 0.7 0.0 0.0\n0.0 0.7 0.0 0.0 0.7 0.7 0.0 0.7 0.0 0.0\n0.0 0.7 0.0 0.0 0.7 0.7 0.0 0.7 0.0 0.0\n0.0 0.7 0.0 0.0 0.7 0.7 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 S 0.7 0.7 S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.09999999999999998,
-    "normalized_score": 0.09999999999999998
+    "difference_ratio": -3.09090909090909,
+    "relative_difference_ratio": -1.9090909090909074,
+    "penalized_difference_ratio": -2.8181818181818157,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.3333333333333333,
+    "difficulty_weighted_difference_ratio": -4.121212121212119,
+    "difficulty_weighted_relative_difference_ratio": -2.545454545454543,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -860,8 +1715,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "completion": "0.9 0.0 0.0 0.9 0.0 0.0 L L L 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.0 0.9 0.0 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.0 0.9 0.0 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.1 0.9 0.1 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.1 0.9 0.1 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.1 0.9 0.1 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.0 0.9 0.1 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.0 0.9 0.0 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 0.0 0.9 0.0 0.0\n0.9 0.0 0.0 0.9 0.0 0.0 S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": -1.531645569620253,
+    "relative_difference_ratio": -1.2784810126582276,
+    "penalized_difference_ratio": -1.2784810126582276,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.0,
+    "difficulty_weighted_difference_ratio": -1.531645569620253,
+    "difficulty_weighted_relative_difference_ratio": -1.2784810126582276,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -869,8 +1733,17 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.8 0.8 0.8\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.8 0.0 0.8\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.8 0.0 0.8\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.8 0.0 0.8\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.8 0.0 0.8\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.8 0.0 0.8\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.8 0.0 0.8\n0.0 0.0 0.0 0.8 0.2 0.0 0.0 0.8 0.8 0.8\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": -1.7272727272727275,
+    "relative_difference_ratio": -1.1818181818181825,
+    "penalized_difference_ratio": -1.1818181818181825,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.0,
+    "difficulty_weighted_difference_ratio": -1.7272727272727275,
+    "difficulty_weighted_relative_difference_ratio": -1.1818181818181825,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -878,8 +1751,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.35,
-    "normalized_score": 0.35
+    "difference_ratio": -0.7105263157894737,
+    "relative_difference_ratio": -0.23684210526315796,
+    "penalized_difference_ratio": -2.6052631578947367,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 3.0,
+    "difficulty_weighted_difference_ratio": -2.1315789473684212,
+    "difficulty_weighted_relative_difference_ratio": -0.7105263157894739,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -887,8 +1769,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "exact_match": false,
-    "score": 0.9,
-    "normalized_score": 0.9
+    "difference_ratio": 0.6103896103896105,
+    "relative_difference_ratio": 0.7272727272727273,
+    "penalized_difference_ratio": 0.20779220779220797,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.6666666666666667,
+    "difficulty_weighted_difference_ratio": 1.0173160173160176,
+    "difficulty_weighted_relative_difference_ratio": 1.2121212121212122,
+    "valid_output_grid": true
   },
   {
     "subject": "3_random_column_hard",
@@ -896,7 +1787,16 @@
     "ground_truth": "0.0 L L L L L L L L 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 0.0",
     "completion": "0.0 L 0.1 0.1 L L L 0.1 L 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.2 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S 0.3 S 0.0",
     "exact_match": false,
-    "score": 0.5,
-    "normalized_score": 0.5
+    "difference_ratio": -1.112676056338028,
+    "relative_difference_ratio": 0.15492957746478897,
+    "penalized_difference_ratio": -0.9718309859154923,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9972232860972807,
+    "difficulty_score": 2.533333333333333,
+    "difficulty_weighted_difference_ratio": -2.8187793427230043,
+    "difficulty_weighted_relative_difference_ratio": 0.3924882629107987,
+    "valid_output_grid": true
   }
 ]
