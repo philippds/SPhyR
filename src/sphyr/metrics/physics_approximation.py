@@ -1,7 +1,7 @@
 import heapq
 import math
 
-from sphyr.metrics.utils import get_gravity_from_folder, is_solid
+from sphyr.metrics.utils import is_solid
 
 
 def generate_direction_costs(gravity_dir=(1, 0)):

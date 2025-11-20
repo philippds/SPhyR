@@ -45,6 +45,14 @@ from sphyr.metrics.utils import get_grid_shape_and_value_validity
             ],
             False,
         ),
+        (
+            [
+                ["0", "L", "0"],
+                ["0", "1"],
+                ["0", "S", "0"],
+            ],
+            False,
+        ),
     ],
 )
 def test_get_grid_shape_and_value_validity(completion_grid, expected_validity):
