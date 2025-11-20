@@ -1,7 +1,7 @@
 import pytest
 
 from sphyr.metrics.physics_approximation import (
-    get_total_force_path_cost_average_efficiency_ratio,
+    get_force_path_cost_average_efficiency_ratio,
 )
 
 
@@ -83,7 +83,7 @@ from sphyr.metrics.physics_approximation import (
 def test_get_total_force_path_cost_average_efficiency_ratio(
     gt_grid, completion_grid, gravity_dir, expected_ratio
 ):
-    ratio = get_total_force_path_cost_average_efficiency_ratio(
+    ratio = get_force_path_cost_average_efficiency_ratio(
         completion_grid, gt_grid, gravity_dir
     )
     assert ratio == pytest.approx(

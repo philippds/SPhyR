@@ -54,15 +54,6 @@ def count_differences_with_penalty(reference_grid, gt_grid, penalty=3) -> float:
     return count
 
 
-def calculate_score(output_gt_difference_count, input_gt_difference_count) -> float:
-    if input_gt_difference_count == 0:
-        # Input already perfect — only a perfect output keeps score = 1
-        return 1.0 if output_gt_difference_count == 0 else 0.0
-
-    score = 1 - (output_gt_difference_count / input_gt_difference_count)
-    return score
-
-
 def grid_value_sum(grid) -> float:
     total = 0.0
     for row in grid:
@@ -83,7 +74,7 @@ def get_difference_ratio(output_grid, gt_grid) -> float:
         reference_grid=output_grid, gt_grid=gt_grid
     )
 
-    if output_gt_difference_count == 0:
+    if output_gt_difference_count == 0 or gt_grid_value_sum == 0:
         return 1.0
 
     difference_ratio = 1 - (output_gt_difference_count / gt_grid_value_sum)
@@ -96,7 +87,7 @@ def get_relative_difference_ratio(output_grid, gt_grid) -> float:
         reference_grid=output_grid, gt_grid=gt_grid
     )
 
-    if output_gt_difference_count == 0:
+    if output_gt_difference_count == 0 or gt_grid_value_sum == 0:
         return 1.0
 
     relative_difference_ratio = 1 - (output_gt_difference_count / gt_grid_value_sum)
@@ -109,7 +100,7 @@ def get_penalized_difference_ratio(output_grid, gt_grid) -> float:
         reference_grid=output_grid, gt_grid=gt_grid
     )
 
-    if output_gt_difference_count == 0:
+    if output_gt_difference_count == 0 or gt_grid_value_sum == 0:
         return 1.0
 
     relative_difference_ratio = 1 - (output_gt_difference_count / gt_grid_value_sum)

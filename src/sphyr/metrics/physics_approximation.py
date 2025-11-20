@@ -93,7 +93,7 @@ def get_total_force_path_cost(grid, max_cost=1000.0, gravity_dir=(1, 0)):
     return avg_cost
 
 
-def get_total_force_path_cost_average_efficiency_ratio(
+def get_force_path_cost_average_efficiency_ratio(
     output_grid, gt_grid, gravity_dir
 ) -> float:
     output_total_force_path_cost = get_total_force_path_cost(

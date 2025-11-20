@@ -19,7 +19,7 @@ from sphyr.prompt_templates import (
     FEW_SHOT_EXAMPLES,
 )
 from sphyr.metrics.physics_approximation import (
-    get_total_force_path_cost_average_efficiency_ratio,
+    get_force_path_cost_average_efficiency_ratio,
 )
 from sphyr.metrics.reconstruction import (
     get_exact_match,
@@ -89,7 +89,7 @@ class Result:
     subject: str
     prompt: str
     ground_truth: str
-    output: str
+    completion: str
     exact_match: bool
     difference_ratio: float  # lower is better
     penalized_difference_ratio: float  # lower is better
@@ -98,7 +98,7 @@ class Result:
     load_support_connected: bool
     load_support_connected_force_directional: bool
     isolated_clusters_count: int  # lower is better
-    total_force_path_cost_average_efficiency_ratio: float
+    force_path_cost_average_efficiency_ratio: float
     difficulty_score: float  # higher is more difficult
     difficulty_weighted_difference_ratio: float  # lower is better
     difficulty_weighted_relative_difference_ratio: float  # lower is better
@@ -108,7 +108,7 @@ class Result:
             subject=result_dict["subject"],
             prompt=result_dict["prompt"],
             ground_truth=result_dict["ground_truth"],
-            output=result_dict["output"],
+            completion=result_dict["completion"],
             exact_match=result_dict["exact_match"],
             difference_ratio=result_dict["difference_ratio"],
             penalized_difference_ratio=result_dict["penalized_difference_ratio"],
@@ -119,8 +119,8 @@ class Result:
                 "load_support_connected_force_directional"
             ],
             isolated_clusters_count=result_dict["isolated_clusters_count"],
-            total_force_path_cost_average_efficiency_ratio=result_dict[
-                "total_force_path_cost_average_efficiency_ratio"
+            force_path_cost_average_efficiency_ratio=result_dict[
+                "force_path_cost_average_efficiency_ratio"
             ],
             difficulty_score=result_dict["difficulty_score"],
             difficulty_weighted_difference_ratio=result_dict[
@@ -230,9 +230,22 @@ def generate_prompts(
 
 def aggregate_results(results: list[Result]) -> dict:
 
+    # exact_match: bool
+    # difference_ratio: float  # lower is better
+    # penalized_difference_ratio: float  # lower is better
+    # relative_difference_ratio: float  # lower is better
+    # valid_output_grid: bool
+    # load_support_connected: bool
+    # load_support_connected_force_directional: bool
+    # isolated_clusters_count: int  # lower is better
+    # total_force_path_cost_average_efficiency_ratio: float
+    # difficulty_score: float  # higher is more difficult
+    # difficulty_weighted_difference_ratio: float  # lower is better
+    # difficulty_weighted_relative_difference_ratio: float  # lower is better
+
     total_exact_match = 0
-    total_normalized_score = 0.0
-    total_penalized_normalized_score = 0.0
+    total_difference_ratio = 0.0
+    total_penalized_difference_ratio = 0.0
     total_relative_difference_ratio = 0.0
     total_valid_output_grid = 0
     total_load_support_connected = 0
@@ -240,13 +253,13 @@ def aggregate_results(results: list[Result]) -> dict:
     total_isolated_clusters_count = 0
     total_force_path_cost_average_efficiency_ratio = 0.0
     total_difficulty_score = 0.0
+    total_difficulty_weighted_difference_ratio = 0.0
+    total_difficulty_weighted_relative_difference_ratio = 0.0
 
     for result in results:
         total_exact_match += int(result.exact_match)
         total_difference_ratio += result.difference_ratio
         total_penalized_difference_ratio += result.penalized_difference_ratio
-        total_normalized_score += result.normalized_score
-        total_penalized_normalized_score += result.penalized_normalized_score
         total_relative_difference_ratio += result.relative_difference_ratio
         total_valid_output_grid += int(result.valid_output_grid)
         total_load_support_connected += int(result.load_support_connected)
@@ -255,9 +268,15 @@ def aggregate_results(results: list[Result]) -> dict:
         )
         total_isolated_clusters_count += result.isolated_clusters_count
         total_force_path_cost_average_efficiency_ratio += (
-            result.total_force_path_cost_average_efficiency_ratio
+            result.force_path_cost_average_efficiency_ratio
         )
         total_difficulty_score += result.difficulty_score
+        total_difficulty_weighted_difference_ratio += (
+            result.difficulty_weighted_difference_ratio
+        )
+        total_difficulty_weighted_relative_difference_ratio += (
+            result.difficulty_weighted_relative_difference_ratio
+        )
 
     return {
         "total_exact_match": total_exact_match,
@@ -294,17 +313,15 @@ def calculate_all_metrics(
     load_support_connected = False
     load_support_connected_force_directional = False
     isolated_clusters_count = 0
-    total_force_path_cost_average_efficiency_ratio = 0
+    force_path_cost_average_efficiency_ratio = 0
 
     if valid_grid:
         exact_match = get_exact_match(output_grid, gt_grid)
-        difference_ratio = get_difference_ratio(input_grid, output_grid, gt_grid)
+        difference_ratio = get_difference_ratio(output_grid, gt_grid)
         penalized_difference_ratio = get_penalized_difference_ratio(
-            input_grid, output_grid, gt_grid
+            output_grid, gt_grid
         )
-        relative_difference_ratio = get_relative_difference_ratio(
-            input_grid, output_grid, gt_grid
-        )
+        relative_difference_ratio = get_relative_difference_ratio(output_grid, gt_grid)
 
         load_support_connected = is_load_supported(output_grid)
         load_support_connected_force_directional = is_load_supported_force_directional(
@@ -313,8 +330,8 @@ def calculate_all_metrics(
         isolated_clusters_count = get_isolated_clusters_count(output_grid)
 
         # todo gravity
-        total_force_path_cost_average_efficiency_ratio = (
-            get_total_force_path_cost_average_efficiency_ratio(
+        force_path_cost_average_efficiency_ratio = (
+            get_force_path_cost_average_efficiency_ratio(
                 output_grid, gt_grid, gravity_dir=get_gravity_from_folder(folder_name)
             )
         )
@@ -323,7 +340,7 @@ def calculate_all_metrics(
         "subject": subject,
         "prompt": prompt,
         "ground_truth": ground_truth,
-        "output": output,
+        "completion": output,
         "exact_match": exact_match,
         "difference_ratio": difference_ratio,
         "relative_difference_ratio": relative_difference_ratio,
@@ -331,7 +348,7 @@ def calculate_all_metrics(
         "load_support_connected": load_support_connected,
         "load_support_connected_force_directional": load_support_connected_force_directional,
         "isolated_clusters_count": isolated_clusters_count,
-        "total_force_path_cost_average_efficiency_ratio": total_force_path_cost_average_efficiency_ratio,
+        "force_path_cost_average_efficiency_ratio": force_path_cost_average_efficiency_ratio,
         "difficulty_score": difficulty_score,
         "difficulty_weighted_difference_ratio": difficulty_score * difference_ratio,
         "difficulty_weighted_relative_difference_ratio": difficulty_score
@@ -503,6 +520,10 @@ def evaluate_against_file(results_root="results"):
                 )
 
                 r.update(result_dict)
+
+                # remove "score" and "normalized_score" if they exist
+                r.pop("score", None)
+                r.pop("normalized_score", None)
 
                 updated_results.append(r)
 
