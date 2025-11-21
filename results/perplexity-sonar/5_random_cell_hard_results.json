@@ -5,8 +5,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.2 0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.8 0.0  \n0.0 0.0 0.1 0.0 0.0 0.2 0.0 0.1 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.0  \n0.0 0.0 0.0 S S S S S S 0.0",
     "exact_match": false,
-    "score": -0.3999999999999999,
-    "normalized_score": 0
+    "difference_ratio": -0.06060606060606055,
+    "relative_difference_ratio": 0.8333333333333333,
+    "penalized_difference_ratio": 0.8333333333333333,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": -0.109090909090909,
+    "difficulty_weighted_relative_difference_ratio": 1.5,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -14,8 +23,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S 0.0 0.0",
     "completion": "```python\nimport numpy as np\n\ndef predict_material_distribution(grid):\n    # Convert grid to numpy array\n    grid = np.array(grid)\n\n    # Store positions of 'V' (voids)\n    void_positions = []\n    for i in range(len(grid)):\n        for j in range(len(grid[i])):\n            if grid[i, j] == 'V':\n                void_positions.append((i, j))\n\n    # Basic physical reasoning: intermediate values are assigned to voids\n    #   based on the need to distribute material for structural integrity.\n    for pos in void_positions:\n        i, j = pos\n        # If near supports or loads, assign higher density\n        if 'S' in grid[i-1:i+2, j-1:j+2] or 'L' in grid[i-1:i+2, j-1:j+2]:\n            grid[i, j] = 0.9\n        # If not near supports or loads, assign lower density\n        else:\n            grid[i, j] = 0.1\n\n    # Convert numpy array back to string grid\n    grid = grid.astype(str).tolist()\n\n    # Correct 'L', 'S' types\n    for i in range(len(grid)):\n        for j in range(len(grid[i])):\n            if grid[i][j] == 'S' or grid[i][j] == 'L':\n                grid[i][j] = grid[i][j]\n            else:\n                grid[i][j] = \"{:.1f}\".format(float(grid[i][j]))\n\n    return '\\n'.join([' '.join(row) for row in grid])\n\n# Input grid\ngrid = [\n    ['0.0', '0.0', '0.0', '0.0', '0.0', 'L', 'L', 'L', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['V', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', 'V', '0.0', 'V', '0.0', 'V', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.1', '0.9', '0.1', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.1', '0.9', '0.1', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.1', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.9', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', 'S', 'S', 'V', 'S', 'S', '0.0', '0.0'],\n]\n\n# Transform grid for processing\ngrid_array = np.array(grid)\nfor i in range(len(grid_array)):\n    for j in range(len(grid_array[i])):\n        grid_array[i, j] = grid_array[i, j].replace('0.0', '0.0')\n\n# Numerical prediction\ngrid_array = grid_array.astype(str).tolist()\n\n# Find and replace 'V'\nfor i in range(len(grid_array)):\n    for j in range(len(grid_array[i])):\n        if grid_array[i][j] == 'V':\n            grid_array[i][j] = '0.1'\n\n# Correct 'L', 'S' types\nfor i in range(len(grid_array)):\n    for j in range(len(grid_array[i])):\n        if grid_array[i][j] == 'S':\n            grid_array[i][j] = grid_array[i][j]\n        elif grid_array[i][j] == 'L':\n            grid_array[i][j] = grid_array[i][j]\n\n# Correct nearby 'V' values based on physical reasoning\nfor i in range(len(grid_array)):\n    for j in range(len(grid_array[i])):\n        if grid_array[i][j] == 'V':\n            continue  # These are corrected already\n        if grid_array[i][j] == 'S' or grid_array[i][j] == 'L':\n            for x in range(max(0, i-1), min(len(grid_array), i+2)):\n                for y in range(max(0, j-1), min(len(grid_array[i]), j+2)):\n                    if grid_array[x][y] == 'V':\n                        grid_array[x][y] = '0.9'\n\n# Ensure numpy to list conversion\ngrid = grid_array\n\n# Final output\nprint('\\n'.join([' '.join(row) for row in grid]))\n```\n\n\n\nOutput:\n```\n0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.9 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.9 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 S S 0.9 S S 0.0 0.0\n```",
     "exact_match": false,
-    "score": -4.8,
-    "normalized_score": 0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -23,8 +41,17 @@
     "ground_truth": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L L L L 0.0 0.0  \n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.5945945945945947,
+    "relative_difference_ratio": 0.8783783783783784,
+    "penalized_difference_ratio": 0.8783783783783784,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9771941948859708,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 1.3081081081081085,
+    "difficulty_weighted_relative_difference_ratio": 1.9324324324324327,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -32,8 +59,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.0 0.3 0.1 0.0\n0.0 0.0 0.0 0.2 0.2 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.3 0.1 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.3 0.2 0.2 0.1 0.2 0.4 0.0 0.0 0.0\n0.0 0.3 0.2 0.2 0.2 0.4 0.0 0.0 0.0 0.0\nS S S S 0.5 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.0 0.3 0.1 0.0\n0.0 0.0 0.0 0.2 0.2 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.3 0.1 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.3 0.2 0.2 0.1 0.2 0.4 0.0 0.0 0.0\n0.0 0.3 0.2 0.2 0.2 0.4 0.0 0.0 0.0 0.0\n0.0 S S S 0.5 0.0 0.0 0.0 0.4 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.6103896103896105,
+    "relative_difference_ratio": 0.8051948051948052,
+    "penalized_difference_ratio": 0.5454545454545455,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.5870129870129872,
+    "difficulty_weighted_relative_difference_ratio": 2.0935064935064935,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -41,8 +77,17 @@
     "ground_truth": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.5 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S S S",
     "completion": "0.0 0.0 L L L L L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.2 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.5 0.3 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 S S S S S",
     "exact_match": false,
-    "score": 0.75,
-    "normalized_score": 0.75
+    "difference_ratio": 0.8507462686567164,
+    "relative_difference_ratio": 0.9104477611940298,
+    "penalized_difference_ratio": 0.9104477611940298,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.012565000000000002,
+    "difficulty_score": 2.5,
+    "difficulty_weighted_difference_ratio": 2.126865671641791,
+    "difficulty_weighted_relative_difference_ratio": 2.2761194029850746,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -50,8 +95,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.6 0.7 0.7 0.0 0.0 0.0 0.0 0.0\nS S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.6 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.1 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.1 0.0 0.0 0.0 0.0  \n0.0 0.2 0.6 0.7 0.7 0.0 0.0 0.0 0.0 0.0  \nS S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.3939393939393939,
+    "relative_difference_ratio": 0.9393939393939393,
+    "penalized_difference_ratio": 0.9393939393939393,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.7090909090909091,
+    "difficulty_weighted_relative_difference_ratio": 1.690909090909091,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -59,8 +113,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L L\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\nS S S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 L L L L L L L  \n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0  \n0.0 0.0 0.2 0.0 0.0 0.5 0.0 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0  \n0.0 0.4 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \nS S S S S S 0.0 S S 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.452054794520548,
+    "relative_difference_ratio": 0.7123287671232876,
+    "penalized_difference_ratio": 0.43835616438356173,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 0.9445809445809447,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.8136986301369864,
+    "difficulty_weighted_relative_difference_ratio": 1.2821917808219179,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -68,8 +131,17 @@
     "ground_truth": "L L L L L L 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "L L L L L L 0.0 0.0 0.0 0.0  \n0.0 0.3 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0  \n0.0 0.1 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 S S S S S S S S 0.0",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": 0.7183098591549297,
+    "relative_difference_ratio": 0.9295774647887324,
+    "penalized_difference_ratio": 0.9295774647887324,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9915848527349229,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 1.5802816901408456,
+    "difficulty_weighted_relative_difference_ratio": 2.045070422535211,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -77,8 +149,17 @@
     "ground_truth": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L 0.0 L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.2 0.0 0.2  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.625,
+    "relative_difference_ratio": 0.825,
+    "penalized_difference_ratio": 0.575,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 0.9924568965517241,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 1.125,
+    "difficulty_weighted_relative_difference_ratio": 1.4849999999999999,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -86,8 +167,17 @@
     "ground_truth": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "L L L L L 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.1 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.1 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0 0.0 0.0  \nS S S S S 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": 0.7142857142857143,
+    "relative_difference_ratio": 0.9714285714285714,
+    "penalized_difference_ratio": 0.9714285714285714,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 1.2857142857142858,
+    "difficulty_weighted_relative_difference_ratio": 1.7485714285714287,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -95,8 +185,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.5 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.1 0.5 0.4 0.0\n0.0 0.0 0.0 0.1 0.5 0.1 0.3 0.7 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "To predict the correct material distribution, we need to analyze the load paths, supports, and forces in the structure. The goal is to minimize material usage while ensuring structural stability. Here is the completed grid with all 'V' cells replaced with floating-point numbers between 0 and 1, with one decimal place:\n\n```\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.3 0.0 0.1 0.4 0.4 0.5 0.0\n0.0 0.0 0.0 0.2 0.2 0.5 0.1 0.5 0.4 0.0\n0.0 0.4 0.0 0.1 0.5 0.1 0.3 0.7 0.0 0.0\n0.0 0.0 0.6 S S S S 0.0 0.0 0.0\n```",
     "exact_match": false,
-    "score": -6.2,
-    "normalized_score": 0
+    "difference_ratio": 0.31506849315068486,
+    "relative_difference_ratio": 0.726027397260274,
+    "penalized_difference_ratio": 0.45205479452054786,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.6931506849315068,
+    "difficulty_weighted_relative_difference_ratio": 1.597260273972603,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -104,8 +203,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.3 0.5 0.5 0.3 0.0 0.0 0.3  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.2 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 S S S S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.5,
+    "relative_difference_ratio": 0.8625,
+    "penalized_difference_ratio": 0.8625,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.9,
+    "difficulty_weighted_relative_difference_ratio": 1.5525000000000002,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -113,8 +221,17 @@
     "ground_truth": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S S",
     "completion": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 S S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.25373134328358216,
+    "relative_difference_ratio": 0.8656716417910448,
+    "penalized_difference_ratio": 0.8656716417910448,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 3.0,
+    "difficulty_weighted_difference_ratio": 0.7611940298507465,
+    "difficulty_weighted_relative_difference_ratio": 2.5970149253731343,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -122,8 +239,17 @@
     "ground_truth": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
     "completion": "0.0 L L L L L L 0.0 0.0 0.0  \n0.0 0.0 0.3 0.3 0.4 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.1 S 0.1 S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": 0.7402597402597403,
+    "relative_difference_ratio": 0.7402597402597403,
+    "penalized_difference_ratio": 0.22077922077922085,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.977194194885971,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 1.3324675324675326,
+    "difficulty_weighted_relative_difference_ratio": 1.3324675324675326,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -131,8 +257,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "To accurately predict and fill in the material distribution, we need to simulate a process similar to topology optimization but lacking direct access to specific optimization algorithms or computational tools in this context. However, we can apply some logical reasoning based on typical structural behavior and load paths.\n\nGiven the constraints and the goal to minimize material usage while maintaining stability, here is a completed grid based on logical deductions:\n\n```\n0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.1 0.1 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.0\n0.0 0.1 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0\n```\n\nThis grid focuses on minimizing material while ensuring structural integrity by maintaining material around supports and load paths.",
     "exact_match": false,
-    "score": -6.2,
-    "normalized_score": 0
+    "difference_ratio": 0.4736842105263158,
+    "relative_difference_ratio": 0.9473684210526315,
+    "penalized_difference_ratio": 0.9473684210526315,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.8526315789473685,
+    "difficulty_weighted_relative_difference_ratio": 1.7052631578947368,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -140,8 +275,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.2\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.2\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.1 0.9 0.1  \n0.0 0.1 0.0 0.1 0.0 0.0 0.0 0.1 0.9 0.1  \n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.1 0.9 0.2  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.2  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1  \n0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.9 0.1  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0  \n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.41860465116279066,
+    "relative_difference_ratio": 0.9418604651162791,
+    "penalized_difference_ratio": 0.9418604651162791,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.0,
+    "difficulty_weighted_difference_ratio": 0.41860465116279066,
+    "difficulty_weighted_relative_difference_ratio": 0.9418604651162791,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -149,8 +293,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 S S S S S S S",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L 0.4 L L  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0  \n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.8 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.8 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.8 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0  \n0.0 0.2 0.0 S S S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.33333333333333326,
+    "relative_difference_ratio": 0.72,
+    "penalized_difference_ratio": 0.45333333333333337,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 0.9867219917012447,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.5999999999999999,
+    "difficulty_weighted_relative_difference_ratio": 1.296,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -158,8 +311,17 @@
     "ground_truth": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.7 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.7 0.3 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.1\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S 1.0 S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.3421052631578946,
+    "relative_difference_ratio": 0.7105263157894737,
+    "penalized_difference_ratio": 0.4473684210526314,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.6,
+    "difficulty_weighted_difference_ratio": 0.5473684210526314,
+    "difficulty_weighted_relative_difference_ratio": 1.1368421052631579,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -167,8 +329,17 @@
     "ground_truth": "0.0 L L L L L L L L L\n0.0 0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.4 0.2 0.3 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "completion": "```python\nimport numpy as np\n\ndef predict_material_distribution(grid):\n    # Define the grid dimensions\n    rows = len(grid)\n    cols = len(grid[0])\n    \n    # Initialize material distribution with support and load locations\n    material_distribution = np.zeros((rows, cols))\n    for i in range(rows):\n        for j in range(cols):\n            if grid[i][j] == 'L' or grid[i][j] == 'S':\n                material_distribution[i][j] = 1.0\n    \n    # Heuristic approach to fill in voids with material\n    for i in range(rows):\n        for j in range(cols):\n            if grid[i][j] == 'V':\n                # Check if there is support or load nearby\n                nearby_support = False\n                nearby_load = False\n                if i > 0 and (grid[i-1][j] == 'L' or grid[i-1][j] == 'S'):\n                    nearby_support = True\n                if i < rows - 1 and (grid[i+1][j] == 'L' or grid[i+1][j] == 'S'):\n                    nearby_support = True\n                if j > 0 and (grid[i][j-1] == 'L' or grid[i][j-1] == 'S'):\n                    nearby_load = True\n                if j < cols - 1 and (grid[i][j+1] == 'L' or grid[i][j+1] == 'S'):\n                    nearby_load = True\n                \n                # Assign material based on nearby conditions\n                if nearby_support or nearby_load:\n                    material_distribution[i][j] = 0.4  # Use moderate material around supports and loads\n                else:\n                    material_distribution[i][j] = 0.2  # Use minimal material elsewhere\n    \n    return material_distribution\n\n# Input grid\ngrid = [\n    ['0.0', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L'],\n    ['0.0', '0.0', '0.2', '0.3', '0.0', '0.3', '0.0', '0.3', '0.2', '0.0'],\n    ['V', '0.0', '0.0', '0.4', '0.2', '0.3', '0.2', '0.4', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.2', '0.4', '0.0', '0.4', '0.2', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.4', '0.0', 'V', '0.0', '0.0', 'V'],\n    ['0.0', '0.0', '0.0', '0.0', '0.2', '0.5', '0.2', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.6', '0.0', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.6', '0.0', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.6', '0.0', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', 'V', 'S', 'S', 'S', 'S'],\n]\n\n# Predict material distribution\nmaterial_distribution = predict_material_distribution(grid)\n\n# Output the completed grid\nfor i in range(rows):\n    row_output = []\n    for j in range(cols):\n        if grid[i][j] != 'V':\n            row_output.append(grid[i][j])\n        else:\n            row_output.append(f\"{material_distribution[i][j]:.1f}\")\n    print(' '.join(row_output))\n```\n\n0.0 L L L L L L L L L  \n0.0 0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0  \n0.4 0.0 0.0 0.4 0.2 0.3 0.2 0.4 0.0 0.0  \n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.4  \n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 S S S S",
     "exact_match": false,
-    "score": -6.75,
-    "normalized_score": 0
+    "difference_ratio": 0.33333333333333337,
+    "relative_difference_ratio": 0.4933333333333334,
+    "penalized_difference_ratio": -0.30666666666666687,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 0.9467998369343662,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 0.6666666666666667,
+    "difficulty_weighted_relative_difference_ratio": 0.9866666666666668,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -176,8 +347,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S S",
     "completion": "0.0 0.0 0.0 L L L L L 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0 0.0 0.0  \n0.0 0.4 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.2 0.0  \n0.2 0.0 0.0 S S S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.33333333333333326,
+    "relative_difference_ratio": 0.8,
+    "penalized_difference_ratio": 0.8,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.4666666666666665,
+    "difficulty_weighted_relative_difference_ratio": 1.1199999999999999,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -185,8 +365,17 @@
     "ground_truth": "L L L L L L 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "L L L L L L 0.0 0.0 0.0 0.0  \n0.0 0.3 0.3 0.4 0.3 0.0 0.3 0.3 0.0 0.0  \n0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.3 0.0  \n0.0 0.0 0.4 0.4 0.3 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \nS S S S S 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.4520547945205481,
+    "relative_difference_ratio": 0.8356164383561644,
+    "penalized_difference_ratio": 0.8356164383561644,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.5,
+    "difficulty_weighted_difference_ratio": 0.6780821917808222,
+    "difficulty_weighted_relative_difference_ratio": 1.2534246575342465,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -194,8 +383,17 @@
     "ground_truth": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0  \n0.0 0.2 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.2 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.1 0.5 0.5 0.0 0.0 0.0 0.0 0.1  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \nS S S S S S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.375,
+    "relative_difference_ratio": 0.9125,
+    "penalized_difference_ratio": 0.9125,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.675,
+    "difficulty_weighted_relative_difference_ratio": 1.6425,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -203,8 +401,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.6 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.6 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 S S S S S S S S 0.0",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -212,8 +419,17 @@
     "ground_truth": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.0 0.2 0.2 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.2 0.4 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 S S S",
     "completion": "0.0 0.0 L L L L L L 0.6 0.0  \n0.0 0.0 0.0 0.2 0.2 0.2 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.4 0.0  \n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.3  \n0.0 0.0 0.0 0.0 0.3 0.3 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.2 0.0 0.0  \n0.0 0.0 0.0 0.2 0.0 0.4 0.2 0.4 0.2 0.0  \n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.32432432432432445,
+    "relative_difference_ratio": 0.7837837837837838,
+    "penalized_difference_ratio": 0.7837837837837838,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.583783783783784,
+    "difficulty_weighted_relative_difference_ratio": 1.4108108108108108,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -221,8 +437,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
     "completion": "To fill in the 'V' cells with a material distribution strategy, we can manually assess the grid and apply principles similar to topology optimization, focusing on minimizing material while ensuring structural integrity and stability. Here's a completed grid based on these principles:\n\n```\n0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.1 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0\n```",
     "exact_match": false,
-    "score": -4.0,
-    "normalized_score": 0
+    "difference_ratio": 0.4285714285714288,
+    "relative_difference_ratio": 0.8857142857142858,
+    "penalized_difference_ratio": 0.8857142857142858,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.7714285714285719,
+    "difficulty_weighted_relative_difference_ratio": 1.5942857142857145,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -230,8 +455,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "completion": "```python\ndef predict_material_distribution(grid):\n    # Simulate load paths and supports based on the input grid\n    def simulate_load_paths(grid):\n        # For simplicity, this placeholder function assumes load paths directly under applied loads\n        new_grid = [row[:] for row in grid]\n        \n        for i in range(len(grid)):\n            for j in range(len(grid[0])):\n                if grid[i][j] == 'L':\n                    # Increase material below loads\n                    if i + 1 < len(grid):\n                        if isinstance(new_grid[i + 1][j], str) and new_grid[i + 1][j] == 'V':\n                            new_grid[i + 1][j] = '0.5'\n                            \n                    # Increase material around supports\n                    if j + 1 < len(grid[0]):\n                        if isinstance(new_grid[i][j + 1], str) and new_grid[i][j + 1] == 'V':\n                            new_grid[i][j + 1] = '0.1'\n                    if j - 1 >= 0:\n                        if isinstance(new_grid[i][j - 1], str) and new_grid[i][j - 1] == 'V':\n                            new_grid[i][j - 1] = '0.1'\n                            \n        return new_grid\n\n    def assign_material(grid):\n        new_grid = [row[:] for row in grid]\n        \n        for i in range(len(grid)):\n            for j in range(len(grid[0])):\n                if isinstance(new_grid[i][j], str) and new_grid[i][j] == 'V':\n                    # Assign material based on proximity to loads and supports\n                    if i < len(grid) // 2:\n                        new_grid[i][j] = '0.1'  # Less material towards the top\n                    else:\n                        new_grid[i][j] = '0.2'  # More material towards the bottom for stability\n                    # Adjust material around existing structure\n                    if i > 0 and isinstance(new_grid[i - 1][j], float):\n                        new_grid[i][j] = str(min(float(new_grid[i - 1][j]) + 0.1, 1.0))\n                    if i < len(grid) - 1 and isinstance(new_grid[i + 1][j], float):\n                        new_grid[i][j] = str(min(float(new_grid[i + 1][j]) + 0.1, 1.0))\n                    if j > 0 and isinstance(new_grid[i][j - 1], float):\n                        new_grid[i][j] = str(min(float(new_grid[i][j - 1]) + 0.1, 1.0))\n                    if j < len(grid[0]) - 1 and isinstance(new_grid[i][j + 1], float):\n                        new_grid[i][j] = str(min(float(new_grid[i][j + 1]) + 0.1, 1.0))\n                    \n        return new_grid\n\n    grid = simulate_load_paths(grid)\n    grid = assign_material(grid)\n\n    return grid\n\n# Input grid with 'V' indicating voids\ngrid = [\n    ['0.0', '0.0', '0.0', 'L', 'L', 'L', 'L', 'L', 'L', '0.0'],\n    ['0.0', '0.0', 'V', '0.0', '0.3', '0.4', '0.4', '0.3', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.1', '0.4', '0.4', '0.1', '0.0', '0.0'],\n    ['0.0', 'V', '0.0', '0.0', '0.0', '0.4', '0.4', '0.0', '0.0', '0.0'],\n    ['V', '0.0', '0.0', '0.0', '0.0', '0.5', '0.5', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.4', '0.4', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.4', 'V', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.4', '0.4', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', '0.0', '0.4', '0.4', '0.0', '0.0', '0.0'],\n    ['0.0', '0.0', '0.0', '0.0', 'V', 'S', 'S', 'S', 'S', '0.0']\n]\n\ncompleted_grid = predict_material_distribution(grid)\n\n# Output the completed grid\nfor row in completed_grid:\n    print(' '.join(row))\n```",
     "exact_match": false,
-    "score": -7.800000000000001,
-    "normalized_score": 0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -239,8 +473,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.4 0.2 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L L L L 0.1 L  \n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.2 0.0  \n0.0 0.0 0.0 0.0 0.4 0.2 0.2 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.1  \n0.0 0.0 0.0 0.1 0.0 0.3 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0  \n0.0 0.0 0.1 S S S 0.1 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.32432432432432445,
+    "relative_difference_ratio": 0.6891891891891893,
+    "penalized_difference_ratio": 0.14864864864864868,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 0.9835468841001749,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.583783783783784,
+    "difficulty_weighted_relative_difference_ratio": 1.2405405405405407,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -248,8 +491,17 @@
     "ground_truth": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "L L L L L 0.0 0.1 0.0 0.0 0.0  \n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.1  \n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 S S 0.1 S 0.1 S S S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.32432432432432423,
+    "relative_difference_ratio": 0.6081081081081081,
+    "penalized_difference_ratio": 0.06756756756756743,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 0.6486486486486485,
+    "difficulty_weighted_relative_difference_ratio": 1.2162162162162162,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -257,8 +509,17 @@
     "ground_truth": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.3 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.3 0.1 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 0.3 0.5 0.1 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.1 S S S S S S S",
     "completion": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.3 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.3 0.1 0.1 0.3 0.0 0.0 0.0 0.0\n0.0 0.3 0.5 0.1 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.6 0.5 0.0 0.0 0.1 0.3 0.0 0.0\n0.0 0.0 0.1 S S S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.3506493506493503,
+    "relative_difference_ratio": 0.9090909090909091,
+    "penalized_difference_ratio": 0.9090909090909091,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.7714285714285708,
+    "difficulty_weighted_relative_difference_ratio": 2.0,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -266,8 +527,17 @@
     "ground_truth": "0.0 L L L L L L L L L\n0.0 0.0 0.1 0.2 0.0 0.2 0.0 0.3 0.1 0.0\n0.0 0.0 0.0 0.2 0.2 0.1 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.0 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.2 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 L L L L L L L L L  \n0.0 0.0 0.1 0.2 0.0 0.2 0.0 0.3 0.1 0.0  \n0.0 0.0 0.0 0.2 0.2 0.1 0.2 0.2 0.0 0.0  \n0.0 0.0 0.0 0.1 0.3 0.0 0.3 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.1 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.3 0.2 0.0 0.0 0.2  \n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.2 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.2 0.5 0.1 0.0 0.0 0.0 0.0  \n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.41176470588235303,
+    "relative_difference_ratio": 0.9117647058823529,
+    "penalized_difference_ratio": 0.9117647058823529,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.5,
+    "difficulty_weighted_difference_ratio": 1.0294117647058827,
+    "difficulty_weighted_relative_difference_ratio": 2.2794117647058822,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -275,8 +545,17 @@
     "ground_truth": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L L L L 0.0 0.2  \n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.2  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.2  \n0.0 0.0 0.0 0.0 0.4 0.4 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 S S 0.8 S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.3055555555555558,
+    "relative_difference_ratio": 0.7083333333333335,
+    "penalized_difference_ratio": 0.4305555555555558,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.5500000000000005,
+    "difficulty_weighted_relative_difference_ratio": 1.2750000000000004,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -284,8 +563,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L 0.0\n0.0 0.0 0.0 0.2 0.3 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.2 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L 0.6 0.7 0.6 L L 0.0  \n0.0 0.0 0.0 0.2 0.3 0.0 0.3 0.2 0.0 0.4  \n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.4 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.5 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.2 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.4029850746268655,
+    "relative_difference_ratio": 0.4925373134328357,
+    "penalized_difference_ratio": -0.40298507462686617,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9808673469387755,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.0477611940298504,
+    "difficulty_weighted_relative_difference_ratio": 1.280597014925373,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -293,8 +581,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.5 0.7 0.7 0.0 0.0\nS S S S S S S 0.1 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L L 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.1  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.5 0.7 0.7 0.0 0.0  \nS S S S S S S 0.1 0.0 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.4029850746268656,
+    "relative_difference_ratio": 0.7462686567164178,
+    "penalized_difference_ratio": 0.4477611940298507,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.0477611940298506,
+    "difficulty_weighted_relative_difference_ratio": 1.9402985074626864,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -302,8 +599,17 @@
     "ground_truth": "0.0 L L L L L L L L L\n0.0 0.0 0.1 0.2 0.0 0.2 0.0 0.2 0.1 0.0\n0.0 0.0 0.0 0.2 0.1 0.1 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.1 0.2 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.1 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.3 0.2 0.2 0.4 0.0 0.0 0.0 0.0 0.0\nS S S 0.5 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 L L L L L L L L L  \n0.0 0.0 0.1 0.2 0.0 0.2 0.0 0.2 0.1 0.0  \n0.0 0.0 0.0 0.2 0.1 0.1 0.2 0.1 0.0 0.0  \n0.0 0.0 0.0 0.1 0.2 0.0 0.3 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.2 0.1 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.1 0.3 0.1 0.0 0.0 0.0  \n0.0 0.0 0.1 0.2 0.2 0.3 0.0 0.0 0.0 0.0  \n0.0 0.2 0.3 0.1 0.3 0.2 0.0 0.0 0.0 0.0  \n0.1 0.3 0.2 0.2 0.4 0.0 0.0 0.0 0.0 0.0  \nS S S 0.1 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.42028985507246386,
+    "relative_difference_ratio": 0.8985507246376812,
+    "penalized_difference_ratio": 0.8985507246376812,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 3.0,
+    "difficulty_weighted_difference_ratio": 1.2608695652173916,
+    "difficulty_weighted_relative_difference_ratio": 2.6956521739130435,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -311,8 +617,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.3 0.9 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.9 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.3 0.9 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.2 0.1 0.9 0.1 0.0 0.0 0.0 0.0  \n0.0 S S S S S S 0.0 0.0 0.3",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.3421052631578947,
+    "relative_difference_ratio": 0.8289473684210527,
+    "penalized_difference_ratio": 0.8289473684210527,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 0.8894736842105262,
+    "difficulty_weighted_relative_difference_ratio": 2.155263157894737,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -320,8 +635,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.4 0.0 0.0\nS S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L L L L  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.1 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.2 0.2  \n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.2  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.6 0.4 0.0 0.0  \nS S S S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": -0.19999999999999996,
-    "normalized_score": 0
+    "difference_ratio": 0.15492957746478875,
+    "relative_difference_ratio": 0.8591549295774648,
+    "penalized_difference_ratio": 0.8591549295774648,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9870395634379265,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 0.4028169014084508,
+    "difficulty_weighted_relative_difference_ratio": 2.2338028169014086,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -329,8 +653,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.4 0.1 0.1 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 S S S S S S S 0.0",
     "completion": "V 0.0 L L L L L L 0.1 L  \n0.0 0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0  \n0.0 0.0 0.0 0.0 0.4 0.1 0.1 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.2 0.2 0.4 0.0 0.0  \n0.1 0.0 0.0 0.0 0.2 0.3 0.4 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.3 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.3 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.1 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0 0.0  \n0.0 0.0 S S 0.1 S S S S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -338,8 +671,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 S S S",
     "completion": "Here is the completed grid with all 'V' cells replaced:\n\n```\n0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.1\n0.0 0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.2\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.0 0.2 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 S S S\n```",
     "exact_match": false,
-    "score": -8.0,
-    "normalized_score": 0
+    "difference_ratio": 0.4444444444444444,
+    "relative_difference_ratio": 0.9166666666666666,
+    "penalized_difference_ratio": 0.9166666666666666,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.1555555555555554,
+    "difficulty_weighted_relative_difference_ratio": 2.3833333333333333,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -347,8 +689,17 @@
     "ground_truth": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
     "completion": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.8 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.1  \n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.8 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.8 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0  \n0.0 0.8 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0  \n0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 S S S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.24242424242424243,
+    "relative_difference_ratio": 0.9242424242424242,
+    "penalized_difference_ratio": 0.9242424242424242,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 5,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.0,
+    "difficulty_weighted_difference_ratio": 0.24242424242424243,
+    "difficulty_weighted_relative_difference_ratio": 0.9242424242424242,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -356,8 +707,17 @@
     "ground_truth": "L L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S 0.0",
     "completion": "L L L 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.1 0.1 0.0  \n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 S S S S S S S S 0.0 \n\nNote: The provided output reflects an attempt to minimize material usage while maintaining structural integrity. However, creating a precise solution without explicit topology optimization algorithms or additional context regarding the structure's specific requirements can only be speculative. The output is based on maintaining continuity and support where necessary.",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -365,8 +725,17 @@
     "ground_truth": "L L L L L L L 0.0 0.0 0.0\n0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
     "completion": "L L L L L L L 0.0 0.0 0.0  \n0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.0 0.0 0.1 0.1 0.0 0.0  \n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.1 0.0  \n0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.5238095238095237,
+    "relative_difference_ratio": 0.9523809523809523,
+    "penalized_difference_ratio": 0.9523809523809523,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.0,
+    "difficulty_weighted_difference_ratio": 0.5238095238095237,
+    "difficulty_weighted_relative_difference_ratio": 0.9523809523809523,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -374,8 +743,17 @@
     "ground_truth": "L L L L L L L L L 0.0\n0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0 0.0\n0.0 0.0 0.3 0.2 0.2 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.0 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "L L L L L 0.0 0.0 L L 0.0  \n0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0 0.0  \n0.0 0.0 0.3 0.2 0.2 0.2 0.3 0.0 0.0 0.0  \n0.0 0.0 0.1 0.4 0.0 0.4 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.5,
-    "normalized_score": 0.5
+    "difference_ratio": 0.7014925373134329,
+    "relative_difference_ratio": 0.7014925373134329,
+    "penalized_difference_ratio": 0.10447761194029848,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9952555861646772,
+    "difficulty_score": 2.5,
+    "difficulty_weighted_difference_ratio": 1.7537313432835822,
+    "difficulty_weighted_relative_difference_ratio": 1.7537313432835822,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -383,8 +761,17 @@
     "ground_truth": "0.0 L L L L L L L L 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.3 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "completion": "0.0 L L L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.2 0.0 0.0  \n0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.0 0.0  \n0.0 0.0 0.1 0.2 0.3 0.3 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.3 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.4 0.3 0.1 0.0 0.0  \n0.0 0.0 0.2 0.0 0.0 0.5 0.3 0.4 0.1 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.4444444444444444,
+    "relative_difference_ratio": 0.9166666666666666,
+    "penalized_difference_ratio": 0.9166666666666666,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0.991432651118515,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.9777777777777779,
+    "difficulty_weighted_relative_difference_ratio": 2.0166666666666666,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -392,8 +779,17 @@
     "ground_truth": "L L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
     "completion": "L 0.0 L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.625,
+    "relative_difference_ratio": 0.6875,
+    "penalized_difference_ratio": 0.1875,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9766702014846235,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.625,
+    "difficulty_weighted_relative_difference_ratio": 1.7875,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -401,8 +797,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
     "completion": "0.0 0.0 0.0 L 0.0 L V 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.2 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S S 0.0 0.0  \n\nHowever, the actual task requires a more sophisticated approach to optimize material distribution based on load paths and structural integrity. The provided solution does not fully adhere to these principles as it lacks the application of topology optimization techniques such as SIMP or other algorithms that consider the loads, supports, and material distribution more comprehensively. For a more accurate solution, implementing such algorithms would be necessary.",
     "exact_match": false,
-    "score": -0.8,
-    "normalized_score": 0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -410,8 +815,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.1 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.2 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 S S S 0.0 0.0",
     "completion": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.0 0.0 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.1 0.1 0.0 0.0 0.0 0.0 0.1  \n0.0 0.0 0.5 0.4 0.4 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.0 0.4 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.5 0.2 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 S S 0.1 0.0 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.4285714285714286,
+    "relative_difference_ratio": 0.7714285714285715,
+    "penalized_difference_ratio": 0.48571428571428577,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.7714285714285715,
+    "difficulty_weighted_relative_difference_ratio": 1.3885714285714286,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -419,8 +833,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.5 0.3 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.2 0.2 0.6 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L  \n0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0  \n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.5 0.4 0.3  \n0.0 0.0 0.0 0.0 0.3 0.2 0.0 0.5 0.0 0.0  \n0.0 0.0 0.0 0.3 0.0 0.2 0.2 0.6 0.4 0.0  \n0.0 S S S S S 0.1 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.2957746478873239,
+    "relative_difference_ratio": 0.7323943661971831,
+    "penalized_difference_ratio": 0.45070422535211263,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 0.9523128278493084,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 0.7690140845070421,
+    "difficulty_weighted_relative_difference_ratio": 1.9042253521126762,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -428,8 +851,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.5 0.6 0.7 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.5 0.6 0.7 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.8,
-    "normalized_score": 0.8
+    "difference_ratio": 0.8484848484848485,
+    "relative_difference_ratio": 0.9090909090909091,
+    "penalized_difference_ratio": 0.9090909090909091,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.01259,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 1.1878787878787878,
+    "difficulty_weighted_relative_difference_ratio": 1.2727272727272727,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -437,8 +869,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.1 0.0 0.0 0.5 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.2 S S S S 0.0 0.0 0.0 0.1",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.24242424242424232,
+    "relative_difference_ratio": 0.7424242424242424,
+    "penalized_difference_ratio": 0.4393939393939392,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.6,
+    "difficulty_weighted_difference_ratio": 0.3878787878787877,
+    "difficulty_weighted_relative_difference_ratio": 1.187878787878788,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -446,8 +887,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.1 0.4 0.1 0.0 0.0\n0.0 0.0 0.2 0.4 0.2 0.3 0.4 0.0 0.0 0.0\n0.0 0.1 0.4 0.1 0.2 0.5 0.0 0.0 0.0 0.0\nS S S S S 0.1 0.0 0.0 0.0 0.0",
     "completion": "Here is a completed grid with the voids filled based on the implicit physical reasoning:\n\n0.0 0.0 0.0 0.0 L L L L 0.0 L\n0.0 0.0 0.0 0.0 0.1 0.2 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.1 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.1 0.4 0.1 0.0 0.0\n0.0 0.0 0.2 0.0 0.2 0.3 0.4 0.0 0.0 0.0\n0.0 0.1 0.4 0.1 0.2 0.5 0.0 0.0 0.0 0.0\nS S S S S 0.1 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": -8.2,
-    "normalized_score": 0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -455,8 +905,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.3 0.6 0.1 0.7 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L L L 0.0  \n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.3 0.2 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.3 0.6 0.1 0.7 0.0 0.0 0.0 0.0  \n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.5,
-    "normalized_score": 0.5
+    "difference_ratio": 0.7101449275362318,
+    "relative_difference_ratio": 0.8840579710144927,
+    "penalized_difference_ratio": 0.8840579710144927,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.013215,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 1.4202898550724636,
+    "difficulty_weighted_relative_difference_ratio": 1.7681159420289854,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -464,8 +923,17 @@
     "ground_truth": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.3 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.0 0.0 L L L L L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.3 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.0 0.0  \n0.2 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.8 0.0 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.1 0.0  \n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0  \nS S S S S 0.1 S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.31506849315068497,
+    "relative_difference_ratio": 0.7123287671232876,
+    "penalized_difference_ratio": 0.43835616438356173,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.567123287671233,
+    "difficulty_weighted_relative_difference_ratio": 1.2821917808219179,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -473,8 +941,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.6 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 0.0",
     "completion": "0.0 0.0 0.0 L L 0.7 L L L 0.0  \n0.0 0.1 0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.2  \n0.0 0.0 0.0 0.0 0.2 0.4 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.6 0.1 0.0 0.0  \n0.0 0.0 0.0 0.1 0.0 0.0 S S S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.295774647887324,
+    "relative_difference_ratio": 0.7746478873239436,
+    "penalized_difference_ratio": 0.49295774647887325,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 0.9953226028339522,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.5323943661971832,
+    "difficulty_weighted_relative_difference_ratio": 1.3943661971830985,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -482,8 +959,17 @@
     "ground_truth": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
     "completion": "0.0 0.0 L L 0.3 L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.5 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.5,
+    "relative_difference_ratio": 0.7875,
+    "penalized_difference_ratio": 0.5375000000000001,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9924568965517241,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 1.1,
+    "difficulty_weighted_relative_difference_ratio": 1.7325000000000002,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -491,8 +977,17 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
     "completion": "V L L L L L L L 0.0 0.0  \n0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0  \n0.1 0.0 0.0 0.3 0.6 0.3 0.0 0.1 0.0 0.1  \n0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0  \n0.0 S S 0.1 S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -500,8 +995,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.6 0.6 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.2 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 S S S 0.1 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.0 0.0 0.3 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.4 0.0 0.0 0.3 0.0 0.0 0.5 0.0 0.0 0.4  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.6 0.6 0.6 0.0 0.0 0.0  \n0.0 0.0 0.0 0.7 0.2 0.8 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S 0.1 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.2753623188405796,
+    "relative_difference_ratio": 0.6521739130434783,
+    "penalized_difference_ratio": 0.3623188405797102,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 4,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.38550724637681144,
+    "difficulty_weighted_relative_difference_ratio": 0.9130434782608695,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -509,8 +1013,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.3 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
     "completion": "0.0 0.0 0.0 L L L L L 0.0 0.0  \n0.0 0.0 0.1 0.0 0.5 0.3 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.1  \n0.0 0.0 0.2 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \nS S S S S 0.1 S S S S",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.452054794520548,
+    "relative_difference_ratio": 0.8082191780821918,
+    "penalized_difference_ratio": 0.5342465753424659,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 0.942528735632184,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.8136986301369864,
+    "difficulty_weighted_relative_difference_ratio": 1.4547945205479453,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -518,8 +1031,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.6 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L L L 0.0  \n0.0 0.0 0.0 0.0 0.0 0.5 0.6 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \n0.3 0.4 0.5 0.0 0.0 0.0 0.8 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.3  \n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0  \n0.0 0.0 S S S S S S S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.3421052631578947,
+    "relative_difference_ratio": 0.7894736842105263,
+    "penalized_difference_ratio": 0.7894736842105263,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.4789473684210525,
+    "difficulty_weighted_relative_difference_ratio": 1.1052631578947367,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -527,8 +1049,17 @@
     "ground_truth": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.2 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.5 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 S S S S S 0.0 0.0",
     "completion": "L L L L L 0.0 0.0 0.0 0.0 0.0  \n0.0 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.1 0.6 0.1 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.1 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.2 0.2 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.5 0.3 0.2 0.0 0.0 0.0 0.1  \n0.0 0.0 0.1 S S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.5714285714285714,
+    "relative_difference_ratio": 0.9,
+    "penalized_difference_ratio": 0.9,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 1.0285714285714285,
+    "difficulty_weighted_relative_difference_ratio": 1.62,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -536,8 +1067,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.3 0.5 0.2 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.4 0.6 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 L 0.5 L L  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.0  \n0.0 0.0 0.0 0.0 0.0 0.2 0.3 0.5 0.2 0.0  \n0.0 0.0 0.0 0.0 0.2 0.4 0.4 0.6 0.0 0.0  \n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.8,
-    "normalized_score": 0.8
+    "difference_ratio": 0.8529411764705882,
+    "relative_difference_ratio": 0.8529411764705882,
+    "penalized_difference_ratio": 0.5588235294117647,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9859550561797752,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 1.5352941176470587,
+    "difficulty_weighted_relative_difference_ratio": 1.5352941176470587,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -545,8 +1085,17 @@
     "ground_truth": "0.0 L L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.2 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.5 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S S S S S 0.0",
     "completion": "0.0 L L L L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0 0.0  \n0.1 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.3 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.6 0.2 0.2 0.1 0.0 0.0 0.0  \n0.0 0.0 0.2 0.7 0.5 0.3 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 S S S S S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.2753623188405797,
+    "relative_difference_ratio": 0.8695652173913043,
+    "penalized_difference_ratio": 0.8695652173913043,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.6057971014492755,
+    "difficulty_weighted_relative_difference_ratio": 1.9130434782608696,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -554,8 +1103,17 @@
     "ground_truth": "0.0 L L L L L L L L L\n0.0 0.0 0.2 0.3 0.0 0.3 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.4 0.2 0.3 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
     "completion": "0.0 L L L L L L L L L  \n0.0 0.0 0.1 0.3 0.0 0.3 0.0 0.3 0.2 0.0  \n0.0 0.0 0.0 0.4 0.2 0.3 0.2 0.4 0.0 0.0  \n0.1 0.2 0.0 0.2 0.4 0.3 0.4 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.1 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 S S S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.33333333333333337,
+    "relative_difference_ratio": 0.8933333333333333,
+    "penalized_difference_ratio": 0.8933333333333333,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.6000000000000001,
+    "difficulty_weighted_relative_difference_ratio": 1.608,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -563,8 +1121,17 @@
     "ground_truth": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.0 0.0 0.0 0.0",
     "completion": "V 0.0 L L L L L L 0.0 0.0  \n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.1 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.1 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 S S 0.1 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -572,8 +1139,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.7 0.5 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 S S S S S S S",
     "completion": "V L L L 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.7 0.7 0.5 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 S 0.0 S S S S S",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -581,8 +1157,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.1 0.2 0.1 0.4 0.1 0.0 0.0 0.0\n0.0 0.1 0.3 0.4 0.3 0.4 0.0 0.0 0.0 0.0\n0.0 0.3 0.4 0.1 0.5 0.0 0.0 0.0 0.0 0.0\nS S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.2 0.0 0.0  \n0.1 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.3 0.2 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.0 0.3 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.4 0.2 0.0 0.0 0.0  \n0.0 0.0 0.1 0.2 0.1 0.4 0.1 0.0 0.0 0.0  \n0.0 0.1 0.3 0.4 0.3 0.4 0.0 0.0 0.0 0.0  \n0.0 0.3 0.4 0.1 0.5 0.0 0.0 0.0 0.0 0.0  \nS S S S 0.1 0.0 0.0 0.1 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.4444444444444444,
+    "relative_difference_ratio": 0.9444444444444444,
+    "penalized_difference_ratio": 0.9444444444444444,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.5,
+    "difficulty_weighted_difference_ratio": 0.6666666666666666,
+    "difficulty_weighted_relative_difference_ratio": 1.4166666666666665,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -590,8 +1175,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.7 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.1 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.2 0.0 0.0 0.0 0.0 0.8 0.7 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 S S S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.2857142857142857,
+    "relative_difference_ratio": 0.8285714285714285,
+    "penalized_difference_ratio": 0.8285714285714285,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.6285714285714286,
+    "difficulty_weighted_relative_difference_ratio": 1.822857142857143,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -599,8 +1193,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.6 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L L L 0.0  \n0.0 0.0 0.0 0.0 0.0 0.4 0.6 0.4 0.3 0.0  \n0.2 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.1  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.0 0.0 0.7 0.0 0.0 0.1  \n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.23076923076923084,
+    "relative_difference_ratio": 0.8769230769230769,
+    "penalized_difference_ratio": 0.8769230769230769,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.32307692307692315,
+    "difficulty_weighted_relative_difference_ratio": 1.2276923076923076,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -608,8 +1211,17 @@
     "ground_truth": "L L L L L L L 0.0 0.0 0.0\n0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
     "completion": "L L L L L L L 0.0 0.0 0.0  \n0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.0 0.5 0.0 0.2 0.0 0.0 0.0  \n0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0 0.0 0.0  \n0.1 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.1 0.0  \n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S 0.1 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.452054794520548,
+    "relative_difference_ratio": 0.8082191780821918,
+    "penalized_difference_ratio": 0.5342465753424659,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.75,
+    "difficulty_weighted_difference_ratio": 0.791095890410959,
+    "difficulty_weighted_relative_difference_ratio": 1.4143835616438356,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -617,8 +1229,17 @@
     "ground_truth": "0.0 L L L L L L L L 0.0\n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.4 0.1 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.4 0.2 0.2 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 S S S S S S S 0.0",
     "completion": "V L L L L L L L L 0.0  \n0.0 0.0 0.2 0.3 0.1 0.1 0.3 0.2 0.0 0.0  \n0.0 0.0 0.0 0.4 0.1 0.1 0.3 0.1 0.0 0.0  \n0.0 0.0 0.0 0.4 0.2 0.2 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.4 0.3 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.4 0.2 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.2 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.2 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.4 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S S S 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -626,8 +1247,17 @@
     "ground_truth": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
     "completion": "```python\n# This Python script aims to simulate the optimization process based on load paths and structural support.\n# It is simplified and does not include advanced topology optimization techniques like SIMP.\n\ndef optimize_grid(grid):\n    # Define the possible movements in the grid\n    movements = [(0, 1), (0, -1), (1, 0), (-1, 0)]\n    \n    def is_valid_position(x, y):\n        return 0 <= x < len(grid) and 0 <= y < len(grid[0])\n    \n    def get_neighbors(x, y):\n        neighbors = []\n        for dx, dy in movements:\n            nx, ny = x + dx, y + dy\n            if is_valid_position(nx, ny):\n                neighbors.append((nx, ny))\n        return neighbors\n    \n    def distance_to_load(x, y):\n        # Calculate the distance to the nearest load\n        min_distance = float('inf')\n        for i, row in enumerate(grid):\n            for j, cell in enumerate(row):\n                if cell == 'L':\n                    distance = abs(i - x) + abs(j - y)\n                    min_distance = min(min_distance, distance)\n        return min_distance\n    \n    def distance_to_support(x, y):\n        # Calculate the distance to the nearest support\n        min_distance = float('inf')\n        for i, row in enumerate(grid):\n            for j, cell in enumerate(row):\n                if cell == 'S':\n                    distance = abs(i - x) + abs(j - y)\n                    min_distance = min(min_distance, distance)\n        return min_distance\n    \n    # Initialize the weight for each void cell based on distance to loads and supports\n    for i, row in enumerate(grid):\n        for j, cell in enumerate(row):\n            if cell == 'V':\n                # Assign a value based on distance to loads and supports\n                load_dist = distance_to_load(i, j)\n                support_dist = distance_to_support(i, j)\n                # Lower distance to loads should get more material\n                weight = 0.5 - (load_dist / (load_dist + support_dist)) * 0.5\n                # Ensure the weight is within the bounds [0, 1]\n                weight = max(0, min(weight, 1))\n                grid[i][j] = round(weight, 1)\n    \n    return grid\n\n# Example usage\ngrid = [\n    [0.0, 'L', 'L', 'L', 'L', 'L', 0.0, 0.0, 'V'],\n    [0.0, 0.0, 0.3, 0.3, 0.3, 0.3, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0],\n    ['V', 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 'V', 0.0, 0.4, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.4, 'V', 0.0, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.4, 0.6, 0.1, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 'S', 'S', 'S', 'S', 'V', 0.0]\n]\n\noptimized_grid = optimize_grid(grid)\n\n# Print the optimized grid\nfor row in optimized_grid:\n    print(' '.join(str(cell) for cell in row))\n```",
     "exact_match": false,
-    "score": -9.8,
-    "normalized_score": 0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -635,8 +1265,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
     "completion": "To solve this problem, one would typically use a topology optimization algorithm like the SIMP method, which is computationally intensive and involves iterative calculations to optimize material distribution. However, for simplicity and without access to real-time computational tools, we can apply basic principles of structural stability and material distribution based on the given structure. This involves distributing material to support loads and minimize material usage. Here is a simplified solution:\n\n```\n0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.0 0.2 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S 0.0 0.0 0.0\n```\n\nThis approach ensures that material is used sparingly while maintaining structural support for the loads. However, for precise optimization, computational tools and algorithms like SIMP would be necessary.",
     "exact_match": false,
-    "score": -3.2,
-    "normalized_score": 0
+    "difference_ratio": 0.4029850746268657,
+    "relative_difference_ratio": 0.7462686567164178,
+    "penalized_difference_ratio": 0.4477611940298507,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.7253731343283584,
+    "difficulty_weighted_relative_difference_ratio": 1.3432835820895521,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -644,8 +1283,17 @@
     "ground_truth": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.2 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.2 0.5 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S S S S 0.0 0.0",
     "completion": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.1 0.0  \n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.2 0.1 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.5 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.7 0.2 0.5 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 S S S S 0.0 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.5833333333333334,
+    "relative_difference_ratio": 0.9027777777777778,
+    "penalized_difference_ratio": 0.9027777777777778,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.5166666666666668,
+    "difficulty_weighted_relative_difference_ratio": 2.3472222222222223,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -653,8 +1301,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
     "completion": "```python\nimport numpy as np\n\n# Given grid\ngrid = np.array([\n    [0.0, 0.0, 0.0, 'L', 'L', 'L', 'L', 'L', 'L', 0.0],\n    ['V', 0.0, 0.0, 0.0, 0.3, 0.4, 0.4, 0.3, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.1, 0.4, 0.4, 0.1, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 'V', 0.4, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 'V', 0.4, 0.4, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.0, 0.0, 'V']\n])\n\n# Mask of void cells\nmask = np.where(grid == 'V', True, False)\n\n# Assign material density to void cells based on physical reasoning\n# For simplicity, assign a medium density to voids except for those near supports or directly under loads\nfor i in range(len(mask)):\n    for j in range(len(mask[i])):\n        if mask[i, j]:\n            if i < len(mask) - 2 and 'S' in grid[i+2,:]:\n                grid[i, j] = 0.5  # Medium density near supports\n            elif i < len(mask) - 1 and grid[i+1, j] == 'S':\n                grid[i, j] = 0.6  # Higher density directly above supports\n            elif i > 0 and 'L' in grid[i-1,:]:\n                grid[i, j] = 0.4  # Lower density below loads if not critical\n            elif i > 1 and 'L' in grid[i-2,:]:\n                grid[i, j] = 0.3  # Even lower density if further from loads\n            else:\n                grid[i, j] = 0.2  # Default low density\n\n# Convert to string format\ngrid_str = []\nfor row in grid:\n    row_str = []\n    for cell in row:\n        if isinstance(cell, str):\n            row_str.append(cell)\n        elif isinstance(cell, float):\n            row_str.append(f\"{cell:.1f}\")\n    grid_str.append(\" \".join(row_str))\n\n# Print the completed grid\nfor row in grid_str:\n    print(row)\n``` \n\nHowever, the actual Python code execution is not provided here. Below is the final grid output based on the given input and the physical reasoning applied:\n\n```\n0.0 0.0 0.0 L L L L L L 0.0\n0.2 0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.2\n```",
     "exact_match": false,
-    "score": -14.25,
-    "normalized_score": 0
+    "difference_ratio": 0.027777777777778123,
+    "relative_difference_ratio": 0.47222222222222243,
+    "penalized_difference_ratio": -0.3611111111111105,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 0.055555555555556246,
+    "difficulty_weighted_relative_difference_ratio": 0.9444444444444449,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -662,8 +1319,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0  \n0.0 0.1 0.0 0.0 0.0 S S S S 0.0",
     "exact_match": false,
-    "score": 0.25,
-    "normalized_score": 0.25
+    "difference_ratio": 0.625,
+    "relative_difference_ratio": 0.925,
+    "penalized_difference_ratio": 0.925,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 1.25,
+    "difficulty_weighted_relative_difference_ratio": 1.85,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -671,8 +1337,17 @@
     "ground_truth": "L L L L L L L L L L\n0.0 0.1 0.3 0.1 0.2 0.2 0.1 0.3 0.1 0.0\n0.0 0.0 0.3 0.2 0.1 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.1 0.3 0.1 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.0 0.0 0.0 0.0",
     "completion": "L L L L 0.1 L 0.1 L L L  \n0.0 0.1 0.3 0.1 0.2 0.2 0.1 0.3 0.1 0.0  \n0.0 0.0 0.3 0.2 0.1 0.1 0.2 0.3 0.0 0.0  \n0.0 0.0 0.1 0.3 0.1 0.1 0.3 0.1 0.0 0.0  \n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.1 0.0  \n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.3 0..0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.1 0.0  \n\nThe masked cells 'V' were replaced by low fractional material densities (0.1) in locations near supports or areas where load transfer demands minimal but nonzero material to maintain stability and load paths. Other 'V' cells in less critical regions were assigned 0.1 to maintain structural plausibility with minimal material usage, consistent with topology optimization principles (minimizing material while ensuring load transfer and support continuity)[1][2][4].",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -680,8 +1355,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "completion": "0.0 0.0 0.0 L L L L L 0.0 0.2  \n0.0 0.0 0.3 0.0 0.4 0.6 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.2 0.0 0.2 0.0 0.7 0.4 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.23076923076923084,
+    "relative_difference_ratio": 0.8,
+    "penalized_difference_ratio": 0.8,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.32307692307692315,
+    "difficulty_weighted_relative_difference_ratio": 1.1199999999999999,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -689,8 +1373,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "completion": "0.2 0.0 0.0 L L L L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.1  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.5 0.5 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 S S S 0.1 S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.375,
+    "relative_difference_ratio": 0.8125,
+    "penalized_difference_ratio": 0.5625,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.0,
+    "difficulty_weighted_difference_ratio": 0.75,
+    "difficulty_weighted_relative_difference_ratio": 1.625,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -698,8 +1391,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.4 0.0 0.0 0.0 0.1 0.0 0.0 0.9 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.0  \n0.0 0.0 0.0 0.0 S S S 0.2 S 0.2",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.2753623188405797,
+    "relative_difference_ratio": 0.6231884057971013,
+    "penalized_difference_ratio": 0.33333333333333326,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 0.0116,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.6057971014492755,
+    "difficulty_weighted_relative_difference_ratio": 1.371014492753623,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -707,8 +1409,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0\nS S S S S S S S 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.0 0.0  \n0.0 0.2 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.2 0.2 0.8 0.2 0.0 0.1 0.0 0.0  \n0.0 0.0 0.1 0.2 0.8 0.2 0.0 0.0 0.0 0.0  \nS S S S S S S S 0.0 0.0",
     "exact_match": false,
-    "score": -0.19999999999999996,
-    "normalized_score": 0
+    "difference_ratio": 0.22077922077922074,
+    "relative_difference_ratio": 0.8831168831168831,
+    "penalized_difference_ratio": 0.8831168831168831,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.48571428571428565,
+    "difficulty_weighted_relative_difference_ratio": 1.9428571428571428,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -716,8 +1427,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
     "completion": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.3  \n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.3  \n0.0 0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 S S S S S S 0.3 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.3421052631578947,
+    "relative_difference_ratio": 0.6842105263157894,
+    "penalized_difference_ratio": 0.42105263157894735,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.6,
+    "difficulty_weighted_difference_ratio": 0.5473684210526315,
+    "difficulty_weighted_relative_difference_ratio": 1.094736842105263,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -725,8 +1445,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "completion": "To predict the optimal material distribution, we need to analyze the load paths and support conditions in the structure. The general approach is to use topology optimization principles, such as minimizing material usage while maintaining structural integrity. However, without applying specific algorithms like SIMP or BESO, we can use heuristic reasoning to distribute material in regions that likely bear significant loads or are critical for structural support.\n\nGiven the input grid:\n\n```\n0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 V 0.3 0.0 0.0\n0.0 0.0 0.0 V 0.2 0.3 0.3 V 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 V 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 V 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S\n```\n\nLet's fill in the 'V' cells with plausible material distributions based on the surrounding structure:\n\n```\n0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.3 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S\n```\n\nThis distribution aims to minimize material usage while maintaining structural support by focusing material in critical load paths and near supports.",
     "exact_match": false,
-    "score": -7.4,
-    "normalized_score": 0
+    "difference_ratio": 0.2424242424242422,
+    "relative_difference_ratio": 0.9090909090909091,
+    "penalized_difference_ratio": 0.9090909090909091,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 3.0,
+    "difficulty_weighted_difference_ratio": 0.7272727272727266,
+    "difficulty_weighted_relative_difference_ratio": 2.727272727272727,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -734,8 +1463,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.4 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.4 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.1 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.1 0.0 L L 0.2 L 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.0 0.0  \n0.0 0.1 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.4 0.5 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.4 0.7 0.0 0.0 0.0  \n0.0 0.0 0.0 S S S 0.1 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.45945945945945943,
+    "relative_difference_ratio": 0.8108108108108107,
+    "penalized_difference_ratio": 0.5405405405405405,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 0.9998327759197324,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 1.010810810810811,
+    "difficulty_weighted_relative_difference_ratio": 1.7837837837837838,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -743,8 +1481,17 @@
     "ground_truth": "L L L L L L L L L L\n0.0 0.2 0.2 0.2 0.2 0.0 0.2 0.2 0.2 0.0\n0.0 0.0 0.3 0.1 0.2 0.0 0.1 0.3 0.1 0.0\n0.0 0.0 0.3 0.2 0.1 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 S S S S S S S S S",
     "completion": "L L L L L L L L L L  \n0.0 0.2 0.2 0.2 0.2 0.0 0.2 0.2 0.2 0.0  \n0.0 0.0 0.3 0.1 0.2 0.0 0.1 0.3 0.1 0.0  \n0.0 0.0 0.3 0.2 0.1 0.0 0.0 0.3 0.0 0.0  \n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0  \n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0  \n0.0 0.1 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0  \n0.0 0.1 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0  \n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.1  \n0.0 S S S S S 0.1 S S S",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.45945945945945943,
+    "relative_difference_ratio": 0.8243243243243243,
+    "penalized_difference_ratio": 0.5540540540540541,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.1945945945945946,
+    "difficulty_weighted_relative_difference_ratio": 2.1432432432432433,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -752,8 +1499,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S S",
     "completion": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.9 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.1 0.0  \n0.0 0.1 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.1  \n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.8 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0  \n0.0 S S S S 0.2 S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.33333333333333315,
+    "relative_difference_ratio": 0.8133333333333332,
+    "penalized_difference_ratio": 0.5466666666666666,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 3,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.4666666666666664,
+    "difficulty_weighted_relative_difference_ratio": 1.1386666666666665,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -761,17 +1517,35 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "completion": "0.0 L L L L L L L 0.0 0.0  \n0.0 0.0 0.2 0.4 0.4 0.4 0.2 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.1 0.0 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.1 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.0 0.6 0.5 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.20634920634920628,
+    "relative_difference_ratio": 0.873015873015873,
+    "penalized_difference_ratio": 0.873015873015873,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.45396825396825385,
+    "difficulty_weighted_relative_difference_ratio": 1.9206349206349207,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
     "prompt": "You are given a structural material distribution represented as a grid. Each cell can have one of the following states:\n- 'L' indicates applied load.\n- 'V' indicates void.\n- 'S' indicates support.\n\nThe goal is to predict the correct material distribution by filling in all 'V' cells with a floating point number between 0 and 1, with one decimal place (e.g., 0.0, 0.1, 0.2, ..., 1.0), based on the surrounding structure and implicit physical reasoning (such as load paths, supports, and forces).\n\nImportant: The completed structure should use as little material as possible while remaining stable and plausible for carrying the applied forces. Minimize material usage unless necessary for structural support.\n\nBelow is the input grid with masked regions:\n\n0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 V\n0.0 0.0 0.3 0.3 0.0 V 0.0 V 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\nV 0.0 0.3 0.4 0.2 0.0 0.0 0.0 V 0.0\n0.0 0.0 0.1 0.4 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.3 0.4 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.1 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S S 0.0\n\nPlease output the completed grid by replacing all 'V' cells with a floating point number between 0 and 1, with one decimal place (e.g., 0.0, 0.1, 0.2, ..., 1.0).\nMaintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.\nReturn only the completed grid without any additional explanation.",
     "ground_truth": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.3 0.4 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.1 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S S 0.0",
     "completion": "``` \n0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.3 0.4 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.1 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S S 0.0\n```",
-    "exact_match": false,
-    "score": -3.8,
-    "normalized_score": 0
+    "exact_match": true,
+    "difference_ratio": 1.0,
+    "relative_difference_ratio": 1.0,
+    "penalized_difference_ratio": 1.0,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.0,
+    "difficulty_weighted_difference_ratio": 1.0,
+    "difficulty_weighted_relative_difference_ratio": 1.0,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -779,8 +1553,17 @@
     "ground_truth": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
     "completion": "To achieve the desired material distribution, we need to apply ideas from topology optimization, ensuring that material is used efficiently while maintaining structural integrity. Given the input grid, we focus on minimizing material usage while ensuring path continuity for load transmission and support.\n\nHere is a completed grid where 'V' cells are replaced with floating-point numbers representing material density:\n\n0.0 L L L L L L 0.0 0.0 0.0  \n0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.1 S S S 0.0 0.0 0.0 0.0 0.0  \n\n\n\nThis grid maintains structural continuity and minimizes material use by assigning low material densities to void regions except where necessary for structural support and load transmission.",
     "exact_match": false,
-    "score": -6.0,
-    "normalized_score": 0
+    "difference_ratio": 0.7222222222222223,
+    "relative_difference_ratio": 0.8472222222222223,
+    "penalized_difference_ratio": 0.5694444444444446,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.4,
+    "difficulty_weighted_difference_ratio": 1.7333333333333336,
+    "difficulty_weighted_relative_difference_ratio": 2.0333333333333337,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -788,8 +1571,17 @@
     "ground_truth": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.2 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.2 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \nS S S 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": true,
-    "score": 1,
-    "normalized_score": 1
+    "difference_ratio": 1.0,
+    "relative_difference_ratio": 1.0,
+    "penalized_difference_ratio": 1.0,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 1.4,
+    "difficulty_weighted_relative_difference_ratio": 1.4,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -797,8 +1589,17 @@
     "ground_truth": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S S S",
     "completion": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S S S S",
     "exact_match": false,
-    "score": 0.6,
-    "normalized_score": 0.6
+    "difference_ratio": 0.75,
+    "relative_difference_ratio": 0.875,
+    "penalized_difference_ratio": 0.875,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9578783151326054,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 1.6500000000000001,
+    "difficulty_weighted_relative_difference_ratio": 1.9250000000000003,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -806,8 +1607,17 @@
     "ground_truth": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S 0.0",
     "completion": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \nS S S S S S S S S 0.0",
     "exact_match": false,
-    "score": 0.8,
-    "normalized_score": 0.8
+    "difference_ratio": 0.875,
+    "relative_difference_ratio": 0.9375,
+    "penalized_difference_ratio": 0.9375,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9578783151326054,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 1.2249999999999999,
+    "difficulty_weighted_relative_difference_ratio": 1.3125,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -815,8 +1625,17 @@
     "ground_truth": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.2 0.2 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.3 0.2 0.2 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.1 0.2 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.2 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.5 0.2 0.2 0.2 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 S S S S 0.0",
     "completion": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.1 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.0  \n0.0 0.3 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0  \n0.0 0.4 0.2 0.2 0.1 0.0 0.0 0.0 0.0 0.0  \n0.0 0.4 0.3 0.2 0.2 0.2 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.1 0.2 0.2 0.2 0.0 0.0 0.0  \n0.0 0.0 0.3 0.3 0.0 0.2 0.2 0.2 0.1 0.0  \n0.1 0.0 0.0 0.5 0.2 0.2 0.2 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 S S S S 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.32432432432432445,
+    "relative_difference_ratio": 0.9324324324324325,
+    "penalized_difference_ratio": 0.9324324324324325,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.7135135135135139,
+    "difficulty_weighted_relative_difference_ratio": 2.0513513513513515,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -824,8 +1643,17 @@
     "ground_truth": "0.0 0.0 L L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nHowever, the above output does not fully follow the instructions. Since the goal is to fill each 'V' cell with a floating-point number between 0 and 1 while minimizing material usage and maintaining structural plausibility, we analyze the grid's structure:\n\n- The third row has a 'V' which is between two equally valued (0.5) cells, suggesting a need for a similar density to support the structure.\n- The fifth row has a 'V' between two low-density cells (0.1), suggesting a minimal material requirement.\n- The seventh row has two 'V' cells, where one is influenced by a 0.7 density above and below, indicating minimal material is needed for support directly under those high-density regions.\n\nHere is a revised version of the completed grid, taking these considerations into account:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nBut this also does not fully implement the instructions as it does not explicitly fill all 'V' cells with floating-point numbers. Here is another attempt with explicit numbers:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nTo fully align with the instructions, we need to ensure all 'V' cells are filled with appropriate floating-point numbers considering structural requirements. Given the constraints, here is a more detailed attempt:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nCorrecting further to explicitly follow instructions and ensure all 'V' cells are filled with appropriate values, and considering the need for precise material distribution to minimize material usage while maintaining structural integrity, a more accurate approach would involve numerical methods like topology optimization algorithms. However, without explicit implementation of such algorithms here, a heuristic approach based on structural analysis is necessary. Given the grid structure, here is a final attempt at filling the 'V' cells with explicit floating-point numbers:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nThis provides a more detailed approach to filling the 'V' cells while maintaining structural integrity and minimizing material usage. \n\nHowever, the most accurate version given the constraints would involve assigning values based on the structural analysis without explicit topology optimization algorithms. Here is a final grid with more detailed considerations for structural support and material minimization:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nThis version still does not fully simulate a topology optimization process like SIMP but provides a heuristic approach to material distribution based on structural analysis. \n\nHere's another attempt with explicit values for all 'V' cells, ensuring minimal material usage while maintaining structural feasibility:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nHowever, this still doesn't fully adhere to the instructions as it doesn't explicitly apply topology optimization principles like SIMP or other algorithms. For a precise approach, using algorithms like SIMP or other optimization techniques would be ideal. \n\nGiven the constraints and the need for a heuristic approach without explicit optimization algorithms here, the final version with explicit values for all 'V' cells is:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nThis version attempts to minimize material usage while ensuring structural support but does not fully implement topology optimization algorithms. \n\nLet's correct this with a more appropriate approach:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nHowever, this still does not fully capture the essence of topology optimization which involves iterative adjustments to material distribution based on structural analysis and optimization algorithms like SIMP[1][2][3]. \n\nFor the 'V' cells, assigning values based on structural analysis without explicit optimization algorithms, we might consider the following grid:\n\n0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0\n\nThis still does not fully meet the requirements as it does not explicitly use topology optimization algorithms to assign material densities. For a precise solution, applying algorithms like SIMP or other optimization methods would be necessary[1][2][3]. \n\n### Final Version\n\nHere is the final version of the grid, ensuring all 'V' cells are filled with appropriate floating-point numbers based on heuristic structural analysis:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nBut this still does not fully apply topology optimization principles without explicit algorithmic implementation. For a more accurate approach, applying algorithms like SIMP or other optimization techniques would be ideal[1][2][3]. \n\nGiven the need to minimize material usage and maintain structural integrity without explicit optimization algorithms here, the final version with explicit values for all 'V' cells is:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nIn conclusion, while this version attempts to minimize material usage and maintain structural integrity, it does not use explicit topology optimization algorithms. For precise results, applying algorithms like SIMP would be necessary[1][2][3]. \n\n### Final Grid\n\nTo align with instructions, the final grid should be presented as follows:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nThis final attempt still uses a heuristic approach without explicit optimization algorithms. \n\nFor a simpler representation that adheres closely to the instructions without explicit optimization, consider the following grid, focusing on maintaining structural support with minimal material:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nNote that this version still does not fully apply topology optimization principles but provides a simplified approach based on maintaining structural integrity. \n\nTo fully align with the request, the focus should be on minimizing material while ensuring structural plausibility, ideally using algorithms like SIMP for precise results[1][2][3]. \n\nHere is the final grid with all 'V' cells filled based on a simplified structural analysis:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nThis version, while simplified, attempts to maintain structural integrity with minimal material usage without explicit optimization algorithms. For a more precise solution, using optimization algorithms like SIMP is necessary[1][2][3]. \n\n### Final Answer\n\nGiven the constraints and without explicit optimization algorithms, the final grid is:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nThis version, while simplified, attempts to minimize material usage while maintaining structural integrity without explicit optimization algorithms. For precise results, algorithms like SIMP should be used[1][2][3]. \n\nTo align with the requirements without explicit optimization and to maintain clarity, the final version should focus on structural support with minimal material:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nHowever, this still lacks explicit optimization. For precise topology optimization, algorithms like SIMP are necessary[1][2][3]. \n\n**Final Grid**\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nThis version maintains structural integrity with minimal material without explicit optimization algorithms. For precise results, topology optimization algorithms are necessary[1][2][3]. \n\n### Final Attempt\n\nFor a more accurate approach, using algorithms like SIMP would provide optimal material distribution. However, without explicit optimization here, the final grid is:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nThis version provides a simplified approach focusing on structural support with minimal material. For precise topology optimization, algorithms like SIMP are required[1][2][3]. \n\nHowever, the above explanations and attempts do not fully align with the instructions as they do not explicitly use topology optimization algorithms. Here is a final attempt at providing a completed grid based on the instructions:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nFor precise topology optimization, using algorithms like SIMP is necessary. \n\n### Final Output\n\nTo align with the instructions without explicit optimization algorithms, the final version is:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nThis version focuses on maintaining structural integrity with minimal material usage without explicit optimization algorithms. For precise results, topology optimization algorithms like SIMP are necessary[1][2][3]. \n\n### Final Grid\n\nTo maintain structural support while minimizing material without explicit optimization, the final grid is:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nFor a precise solution, applying topology optimization algorithms is necessary[1][2][3]. \n\nTo fully minimize material while maintaining structural integrity without explicit optimization:\n\n0.0 0.0 L L L L L L 0.0  \n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0  \n0.0 0.0 S S S S S 0.0 0.0 0.0  \n\nThis version maintains structural plausibility with minimal material without explicit optimization algorithms. For precise topology optimization, algorithms like SIMP are necessary[1][2][3].",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 3.0,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -833,8 +1661,17 @@
     "ground_truth": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "0.0   L    L    L    L    L    L    0.0   0.0   0.0  \n0.0  0.0  0.3  0.4  0.4  0.3  0.0  0.0  0.0  0.0  \n0.0  0.0  0.1  0.4  0.4  0.1  0.0  0.0  0.0  0.0  \n0.0  0.0  0.0  0.4  0.4  0.0  0.0  0.0  0.0  0.0  \n0.0  0.0  0.0  0.4  0.4  0.0  0.0  0.0  0.0  0.0  \n0.0  0.0  0.0  0.4  0.4  0.0  0.0  0.0  0.0  0.0  \n0.0  0.0  0.0  0.4  0.4  0.0  0.0  0.0  0.0  0.0  \n0.0  0.0  0.0  0.4  0.4  0.0  0.0  0.0  0.0  0.0  \n0.0  0.0  0.0  0.4  0.4  0.0  0.0  0.0  0.0  0.0  \n0.0  0.0  0.0   S    S    S    S    S    S   0.0",
     "exact_match": true,
-    "score": 1,
-    "normalized_score": 1
+    "difference_ratio": 1.0,
+    "relative_difference_ratio": 1.0,
+    "penalized_difference_ratio": 1.0,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 1.8,
+    "difficulty_weighted_relative_difference_ratio": 1.8,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -842,8 +1679,17 @@
     "ground_truth": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.1 0.6 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "completion": "```python\ndef complete_grid(grid):\n    # A basic implementation to fill 'V' with minimal material\n    # This is a simplified approach and may not perfectly adhere to physical laws\n    for row in grid:\n        for i in range(len(row)):\n            if row[i] == 'V':\n                row[i] = 0.0  # Minimal material unless necessary\n\n    # Example adjustment based on adjacent material\n    for y in range(len(grid)):\n        for x in range(len(grid[y])):\n            if grid[y][x] == 'V':\n                adjacent_material = 0\n                count = 0\n                for dy in [-1, 0, 1]:\n                    for dx in [-1, 0, 1]:\n                        if 0 <= y + dy < len(grid) and 0 <= x + dx < len(grid[y]):\n                            if isinstance(grid[y + dy][x + dx], float) and grid[y + dy][x + dx] > 0:\n                                adjacent_material += grid[y + dy][x + dx]\n                                count += 1\n                if count > 0:\n                    grid[y][x] = round(adjacent_material / count, 1)\n\n    return grid\n\n# Input grid\ngrid = [\n    [0.0, 0.0, 'L', 'L', 'L', 'L', 'L', 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.2, 0.4, 0.2, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 'V'],\n    [0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 'V', 0.0, 0.5, 0.0, 0.0, 'V', 0.0, 0.0],\n    [0.0, 'V', 0.0, 0.0, 0.5, 'V', 0.0, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0.3, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 0.7, 0.1, 0.6, 0.3, 0.0],\n    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'S', 'S', 'S', 'S']\n]\n\n# Fill 'V' cells\ncompleted_grid = complete_grid(grid)\n\n# Print the completed grid\nfor row in completed_grid:\n    print(' '.join(str(cell) for cell in row))\n```",
     "exact_match": false,
-    "score": -8.8,
-    "normalized_score": 0
+    "difference_ratio": 0.0,
+    "relative_difference_ratio": 0.0,
+    "penalized_difference_ratio": 0.0,
+    "load_support_connected": false,
+    "load_support_connected_force_directional": false,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0,
+    "difficulty_score": 1.4,
+    "difficulty_weighted_difference_ratio": 0.0,
+    "difficulty_weighted_relative_difference_ratio": 0.0,
+    "valid_output_grid": false
   },
   {
     "subject": "5_random_cell_hard",
@@ -851,8 +1697,17 @@
     "ground_truth": "L L L L L L 0.0 0.0 0.0 0.0\n0.0 0.2 0.2 0.2 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.1 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.3 0.2 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.2 0.1 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 S S S S S",
     "completion": "L L L L L L 0.0 0.0 0.0 0.0  \n0.0 0.2 0.2 0.2 0.2 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.2 0.4 0.2 0.2 0.0 0.0 0.0 0.0  \n0.0 0.2 0.1 0.4 0.1 0.3 0.1 0.0 0.0 0.0  \n0.1 0.0 0.0 0.4 0.3 0.2 0.4 0.2 0.0 0.0  \n0.0 0.0 0.0 0.0 0.5 0.2 0.1 0.4 0.1 0.0  \n0.1 0.0 0.0 0.0 0.2 S S S S S",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.31506849315068497,
+    "relative_difference_ratio": 0.904109589041096,
+    "penalized_difference_ratio": 0.904109589041096,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.567123287671233,
+    "difficulty_weighted_relative_difference_ratio": 1.6273972602739728,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -860,8 +1715,17 @@
     "ground_truth": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.6 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.6 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.1 0.0 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.25,
-    "normalized_score": 0.25
+    "difference_ratio": 0.6052631578947368,
+    "relative_difference_ratio": 0.9605263157894737,
+    "penalized_difference_ratio": 0.9605263157894737,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.5,
+    "difficulty_weighted_difference_ratio": 0.9078947368421053,
+    "difficulty_weighted_relative_difference_ratio": 1.4407894736842106,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -869,8 +1733,17 @@
     "ground_truth": "L L L L L L L L L L\n0.0 0.1 0.3 0.1 0.2 0.2 0.1 0.3 0.1 0.0\n0.0 0.0 0.3 0.2 0.1 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.1 0.3 0.1 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "L L L L L L L L L L\n0.0 0.1 0.3 0.1 0.2 0.2 0.1 0.3 0.1 0.0\n0.0 0.0 0.3 0.2 0.1 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.1 0.3 0.1 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.0 0.1 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.3 0.0 0.0 0.0 0.1\n0.0 0.0 0.0 0.0 0.1 0.3 0.0 0.0 0.0 0.1\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "exact_match": false,
-    "score": 0.0,
-    "normalized_score": 0.0
+    "difference_ratio": 0.30555555555555536,
+    "relative_difference_ratio": 0.9166666666666666,
+    "penalized_difference_ratio": 0.9166666666666666,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 0.6722222222222218,
+    "difficulty_weighted_relative_difference_ratio": 2.0166666666666666,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -878,8 +1751,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 S S 0.0 S S 0.0",
     "exact_match": false,
-    "score": 0.4,
-    "normalized_score": 0.4
+    "difference_ratio": 0.5890410958904111,
+    "relative_difference_ratio": 0.767123287671233,
+    "penalized_difference_ratio": 0.49315068493150704,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9160997732426305,
+    "difficulty_score": 2.2,
+    "difficulty_weighted_difference_ratio": 1.2958904109589044,
+    "difficulty_weighted_relative_difference_ratio": 1.6876712328767127,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -887,8 +1769,17 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.1 0.2 0.2 0.2 0.3 0.0\n0.0 0.0 0.0 0.1 0.3 0.2 0.0 0.3 0.2 0.0\n0.0 0.0 0.2 0.3 0.2 0.1 0.3 0.3 0.0 0.0\n0.0 0.1 0.3 0.2 0.2 0.1 0.4 0.0 0.0 0.0\n0.0 0.1 0.5 0.2 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 S S S 0.5 0.0 0.0 0.0 0.0 0.0",
     "completion": "To complete the grid while maintaining structural integrity and minimizing material use, we need to apply principles similar to topology optimization. However, since we don't have explicit algorithms or code to execute, we'll make logical assumptions based on load paths and structural support. \n\nBelow is the completed grid with 'V' cells filled in a way that supports the structure while minimizing material usage:\n\n```\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.1 0.2 0.2 0.2 0.3 0.0\n0.0 0.0 0.0 0.1 0.3 0.2 0.0 0.3 0.2 0.1\n0.0 0.0 0.2 0.3 0.2 0.1 0.3 0.3 0.0 0.0\n0.0 0.1 0.3 0.2 0.2 0.2 0.4 0.0 0.0 0.0\n0.0 0.1 0.5 0.2 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 S S S 0.5 0.0 0.0 0.0 0.0 0.0\n```\n\nThis approach ensures that the material is concentrated in areas necessary for structural integrity and load distribution, while minimizing material usage elsewhere.",
     "exact_match": false,
-    "score": -9.8,
-    "normalized_score": 0
+    "difference_ratio": 0.48051948051948057,
+    "relative_difference_ratio": 0.9090909090909091,
+    "penalized_difference_ratio": 0.9090909090909091,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 1,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 2.6,
+    "difficulty_weighted_difference_ratio": 1.2493506493506494,
+    "difficulty_weighted_relative_difference_ratio": 2.3636363636363638,
+    "valid_output_grid": true
   },
   {
     "subject": "5_random_cell_hard",
@@ -896,7 +1787,16 @@
     "ground_truth": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.1 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.1 0.3 0.4 0.1 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.1 0.3 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 S S S S 0.0",
     "completion": "L L L L L 0.0 0.0 0.0 0.0 0.0  \n0.1 0.2 0.3 0.2 0.0 0.0 0.1 0.0 0.1 0.0  \n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.1 0.1 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.4 0.4 0.4 0.3 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.5 0.1 0.3 0.4 0.1 0.0 0.0  \n0.0 0.0 0.0 0.1 0.6 0.1 0.3 0.1 0.0 0.0  \n0.0 0.0 0.0 0.0 0.2 S S S S 0.0",
     "exact_match": false,
-    "score": 0.19999999999999996,
-    "normalized_score": 0.19999999999999996
+    "difference_ratio": 0.4444444444444443,
+    "relative_difference_ratio": 0.9166666666666666,
+    "penalized_difference_ratio": 0.9166666666666666,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 2,
+    "force_path_cost_average_efficiency_ratio": 1.0,
+    "difficulty_score": 1.8,
+    "difficulty_weighted_difference_ratio": 0.7999999999999998,
+    "difficulty_weighted_relative_difference_ratio": 1.65,
+    "valid_output_grid": true
   }
 ]

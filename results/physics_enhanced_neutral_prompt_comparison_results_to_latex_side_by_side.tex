@@ -1,0 +1,132 @@
+\begin{table*}[!h]
+  \caption{Gemini 2.5 Pro Physics Prompt Comparison --- Easy vs Hard side by side.}
+  \label{tab:physics_prompt_comparison_side_by_side}
+  \centering
+  \small
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{lllll|lll}
+    \toprule
+    \multicolumn{5}{c}{\textbf{Easy}} & \multicolumn{3}{c}{\textbf{Hard}} \\
+    Task & Metric & Gemini 2.5 Pro (Base) & Gemini 2.5 Pro (Physics-Enhanced Prompt) & Gemini 2.5 Pro (Physics-Neutral Prompt) & Gemini 2.5 Pro (Base) & Gemini 2.5 Pro (Physics-Enhanced Prompt) & Gemini 2.5 Pro (Physics-Neutral Prompt) \\
+    \midrule
+1 Random Cell & Exact Match & \textbf{81} & 77 & 80 & \textbf{76} & 72 & 71 \\
+ & Difference Ratio (\%) & \textbf{99.03} & 97.87 & 98.93 & \textbf{96.70} & 91.20 & 94.52 \\
+ & Relative Difference Ratio (\%) & \textbf{99.03} & 97.87 & 98.93 & \textbf{97.88} & 92.22 & 95.33 \\
+ & Penalized Difference Ratio (\%) & \textbf{98.37} & 95.26 & 97.20 & \textbf{94.31} & 77.77 & 88.60 \\
+ & Average Difficulty Score & \textbf{1.99} & \textbf{1.99} & 1.85 & 1.86 & \textbf{1.96} & 1.92 \\
+ & Difficulty Weighted Difference Ratio (\%) & \textbf{65.47} & 64.69 & 60.78 & 58.87 & 59.00 & \textbf{59.30} \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & \textbf{65.47} & 64.69 & 60.78 & 60.01 & 60.03 & \textbf{60.11} \\
+ & Valid Output Grid (\%) & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & 99.00 \\
+ & Load-Support Connectivity (\%) & \textbf{100.00} & 98.00 & \textbf{100.00} & \textbf{100.00} & 95.00 & 97.00 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{100.00} & 98.00 & \textbf{100.00} & \textbf{100.00} & 95.00 & 97.00 \\
+ & Average Isolated Clusters Count & 0.00 & \textbf{0.02} & 0.00 & 0.01 & \textbf{0.04} & 0.01 \\
+ & Force Path Cost Average Efficiency Ratio (\%) & \textbf{99.94} & 97.94 & 99.83 & \textbf{99.92} & 94.93 & 96.80 \\
+\midrule
+5 Random Cells & Exact Match & 39 & \textbf{44} & 37 & \textbf{37} & 26 & 33 \\
+ & Difference Ratio (\%) & 95.08 & \textbf{95.12} & 95.08 & \textbf{83.19} & 79.81 & 80.21 \\
+ & Relative Difference Ratio (\%) & 95.08 & \textbf{95.12} & 95.08 & \textbf{89.98} & 85.92 & 85.99 \\
+ & Penalized Difference Ratio (\%) & 88.59 & 88.62 & \textbf{89.15} & \textbf{75.62} & 66.34 & 66.29 \\
+ & Average Difficulty Score & 1.89 & 1.89 & \textbf{1.93} & 1.96 & 1.97 & \textbf{1.99} \\
+ & Difficulty Weighted Difference Ratio (\%) & 59.48 & 59.56 & \textbf{60.93} & \textbf{52.60} & 51.32 & 51.35 \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & 59.48 & 59.56 & \textbf{60.93} & \textbf{57.87} & 55.85 & 55.77 \\
+ & Valid Output Grid (\%) & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{99.00} & 98.00 & \textbf{99.00} \\
+ & Load-Support Connectivity (\%) & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{98.00} & 96.00 & 97.00 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{98.00} & 96.00 & 97.00 \\
+ & Average Isolated Clusters Count & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} & 0.03 & 0.02 & \textbf{0.06} \\
+ & Force Path Cost Average Efficiency Ratio (\%) & 99.75 & \textbf{99.75} & 99.73 & \textbf{97.84} & 95.55 & 96.83 \\
+\midrule
+10 Random Cells & Exact Match & \textbf{13} & \textbf{13} & 11 & \textbf{14} & 7 & 7 \\
+ & Difference Ratio (\%) & 88.88 & \textbf{89.86} & 88.77 & \textbf{67.83} & 64.28 & 60.77 \\
+ & Relative Difference Ratio (\%) & 88.88 & \textbf{89.86} & 88.77 & \textbf{82.80} & 77.50 & 72.96 \\
+ & Penalized Difference Ratio (\%) & 76.21 & \textbf{77.19} & 75.70 & \textbf{57.50} & 44.08 & 30.78 \\
+ & Average Difficulty Score & 1.97 & 1.97 & \textbf{1.99} & 1.94 & \textbf{2.01} & 1.97 \\
+ & Difficulty Weighted Difference Ratio (\%) & 58.06 & \textbf{58.69} & 58.53 & \textbf{41.99} & 41.53 & 38.61 \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & 58.06 & \textbf{58.69} & 58.53 & \textbf{52.66} & 51.13 & 47.43 \\
+ & Valid Output Grid (\%) & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & 99.00 & 99.00 \\
+ & Load-Support Connectivity (\%) & \textbf{100.00} & \textbf{100.00} & 97.00 & \textbf{100.00} & 98.00 & 92.00 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{100.00} & \textbf{100.00} & 97.00 & \textbf{100.00} & 98.00 & 92.00 \\
+ & Average Isolated Clusters Count & 0.00 & 0.00 & \textbf{0.02} & 0.02 & 0.01 & \textbf{0.07} \\
+ & Force Path Cost Average Efficiency Ratio (\%) & 99.31 & \textbf{99.34} & 96.19 & \textbf{99.34} & 97.12 & 91.07 \\
+\midrule
+1 Random Row & Exact Match & 44 & 46 & \textbf{60} & \textbf{46} & 42 & 38 \\
+ & Difference Ratio (\%) & 93.90 & 94.56 & \textbf{94.59} & 71.69 & \textbf{72.25} & 65.84 \\
+ & Relative Difference Ratio (\%) & 93.90 & 94.56 & \textbf{94.59} & \textbf{93.86} & 90.55 & 84.59 \\
+ & Penalized Difference Ratio (\%) & 93.90 & 94.56 & \textbf{94.59} & \textbf{93.86} & 90.55 & 67.23 \\
+ & Average Difficulty Score & \textbf{1.94} & \textbf{1.94} & 1.89 & 1.99 & 1.92 & \textbf{1.99} \\
+ & Difficulty Weighted Difference Ratio (\%) & 60.55 & \textbf{60.98} & 59.59 & \textbf{45.14} & 44.52 & 42.47 \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & 60.55 & \textbf{60.98} & 59.59 & \textbf{61.91} & 57.70 & 56.45 \\
+ & Valid Output Grid (\%) & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} & 99.00 \\
+ & Load-Support Connectivity (\%) & \textbf{100.00} & \textbf{100.00} & 99.00 & \textbf{100.00} & 99.00 & 92.00 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{100.00} & \textbf{100.00} & 99.00 & \textbf{100.00} & 99.00 & 92.00 \\
+ & Average Isolated Clusters Count & \textbf{0.00} & \textbf{0.00} & \textbf{0.00} & 0.00 & 0.00 & \textbf{0.07} \\
+ & Force Path Cost Average Efficiency Ratio (\%) & \textbf{99.99} & 99.94 & 98.65 & \textbf{99.99} & 99.00 & 91.96 \\
+\midrule
+3 Random Rows & Exact Match & \textbf{29} & 28 & \textbf{29} & 12 & 16 & \textbf{22} \\
+ & Difference Ratio (\%) & 84.09 & \textbf{84.46} & 83.85 & 18.75 & 8.05 & \textbf{33.21} \\
+ & Relative Difference Ratio (\%) & 84.09 & \textbf{84.46} & 83.85 & 77.42 & 66.67 & \textbf{78.96} \\
+ & Penalized Difference Ratio (\%) & \textbf{82.84} & 82.61 & 82.18 & \textbf{77.42} & 62.27 & 69.10 \\
+ & Average Difficulty Score & 1.92 & 1.89 & \textbf{1.95} & 1.95 & \textbf{1.99} & 1.94 \\
+ & Difficulty Weighted Difference Ratio (\%) & 53.52 & 53.40 & \textbf{54.34} & 9.64 & 1.50 & \textbf{19.13} \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & 53.52 & 53.40 & \textbf{54.34} & 49.98 & 43.20 & \textbf{50.91} \\
+ & Valid Output Grid (\%) & \textbf{99.00} & 98.00 & \textbf{99.00} & \textbf{100.00} & \textbf{100.00} & 99.00 \\
+ & Load-Support Connectivity (\%) & \textbf{98.00} & 96.00 & \textbf{98.00} & \textbf{100.00} & 98.00 & 95.00 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{98.00} & 96.00 & \textbf{98.00} & \textbf{100.00} & 98.00 & 95.00 \\
+ & Average Isolated Clusters Count & 0.01 & \textbf{0.02} & 0.01 & 0.00 & 0.02 & \textbf{0.04} \\
+ & Force Path Cost Average Efficiency Ratio (\%) & \textbf{97.54} & 95.88 & 97.43 & \textbf{99.87} & 97.97 & 94.45 \\
+\midrule
+1 Random Column & Exact Match & \textbf{26} & 22 & 14 & \textbf{26} & 20 & 17 \\
+ & Difference Ratio (\%) & \textbf{81.95} & 80.45 & 69.86 & \textbf{44.93} & 18.64 & 18.41 \\
+ & Relative Difference Ratio (\%) & \textbf{81.95} & 80.45 & 69.86 & \textbf{72.53} & 48.66 & 42.16 \\
+ & Penalized Difference Ratio (\%) & 70.55 & \textbf{70.85} & 57.94 & \textbf{46.17} & \textcolor{red}{-2.29} & \textcolor{red}{-5.47} \\
+ & Average Difficulty Score & 1.85 & \textbf{1.90} & 1.88 & 1.87 & \textbf{2.13} & 2.08 \\
+ & Difficulty Weighted Difference Ratio (\%) & 48.21 & \textbf{50.24} & 43.85 & \textbf{15.91} & 2.64 & 0.94 \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & 48.21 & \textbf{50.24} & 43.85 & \textbf{40.27} & 29.14 & 22.96 \\
+ & Valid Output Grid (\%) & \textbf{98.00} & \textbf{98.00} & 97.00 & \textbf{100.00} & \textbf{100.00} & \textbf{100.00} \\
+ & Load-Support Connectivity (\%) & \textbf{98.00} & \textbf{98.00} & 96.00 & \textbf{100.00} & 91.00 & 94.00 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{98.00} & \textbf{98.00} & 96.00 & \textbf{100.00} & 91.00 & 94.00 \\
+ & Average Isolated Clusters Count & 0.00 & 0.01 & \textbf{0.03} & 0.00 & \textbf{0.08} & 0.07 \\
+ & Force Path Cost Average Efficiency Ratio (\%) & 97.30 & \textbf{97.34} & 95.36 & \textbf{99.48} & 90.32 & 92.43 \\
+\midrule
+3 Random Columns & Exact Match & 3 & \textbf{5} & 4 & 3 & \textbf{7} & 0 \\
+ & Difference Ratio (\%) & 52.03 & \textbf{60.60} & 46.29 & \textcolor{red}{-56.28} & \textbf{\textcolor{red}{-38.97}} & \textcolor{red}{-56.82} \\
+ & Relative Difference Ratio (\%) & 52.03 & \textbf{60.60} & 46.29 & \textbf{20.55} & 16.32 & 3.17 \\
+ & Penalized Difference Ratio (\%) & 17.06 & \textbf{29.47} & 13.61 & \textbf{\textcolor{red}{-60.21}} & \textcolor{red}{-68.23} & \textcolor{red}{-87.68} \\
+ & Average Difficulty Score & \textbf{1.90} & 1.88 & 1.88 & \textbf{1.96} & 1.90 & 1.95 \\
+ & Difficulty Weighted Difference Ratio (\%) & 31.14 & \textbf{36.09} & 28.05 & \textcolor{red}{-50.66} & \textbf{\textcolor{red}{-36.28}} & \textcolor{red}{-43.02} \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & 31.14 & \textbf{36.09} & 28.05 & \textbf{7.72} & 4.18 & 0.15 \\
+ & Valid Output Grid (\%) & 98.00 & 99.00 & \textbf{100.00} & \textbf{100.00} & 99.00 & \textbf{100.00} \\
+ & Load-Support Connectivity (\%) & 96.00 & \textbf{97.00} & 96.00 & \textbf{96.00} & 90.00 & 81.00 \\
+ & Load-Support Directional Connectivity (\%) & 96.00 & \textbf{97.00} & 96.00 & \textbf{96.00} & 90.00 & 81.00 \\
+ & Average Isolated Clusters Count & 0.02 & 0.01 & \textbf{0.05} & 0.02 & 0.04 & \textbf{0.14} \\
+ & Force Path Cost Average Efficiency Ratio (\%) & 92.30 & \textbf{95.26} & 92.66 & \textbf{94.28} & 86.24 & 70.47 \\
+\midrule
+Full & Exact Match & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} \\
+ & Difference Ratio (\%) & \textcolor{red}{-25.03} & \textcolor{red}{-39.34} & \textbf{\textcolor{red}{-16.98}} & \textcolor{red}{-548.98} & \textcolor{red}{-577.88} & \textbf{\textcolor{red}{-439.73}} \\
+ & Relative Difference Ratio (\%) & \textcolor{red}{-25.03} & \textcolor{red}{-39.34} & \textbf{\textcolor{red}{-16.98}} & \textcolor{red}{-316.57} & \textcolor{red}{-358.96} & \textbf{\textcolor{red}{-282.89}} \\
+ & Penalized Difference Ratio (\%) & \textcolor{red}{-25.96} & \textcolor{red}{-39.34} & \textbf{\textcolor{red}{-17.62}} & \textbf{\textcolor{red}{-318.95}} & \textcolor{red}{-390.30} & \textcolor{red}{-326.53} \\
+ & Average Difficulty Score & 1.91 & \textbf{1.93} & 1.91 & 1.95 & 1.95 & \textbf{1.98} \\
+ & Difficulty Weighted Difference Ratio (\%) & \textcolor{red}{-14.61} & \textcolor{red}{-23.66} & \textbf{\textcolor{red}{-10.88}} & \textcolor{red}{-360.89} & \textcolor{red}{-380.19} & \textbf{\textcolor{red}{-298.08}} \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & \textcolor{red}{-14.61} & \textcolor{red}{-23.66} & \textbf{\textcolor{red}{-10.88}} & \textcolor{red}{-208.21} & \textcolor{red}{-236.96} & \textbf{\textcolor{red}{-192.17}} \\
+ & Valid Output Grid (\%) & 99.00 & 98.00 & \textbf{100.00} & 99.00 & 98.00 & \textbf{100.00} \\
+ & Load-Support Connectivity (\%) & \textbf{98.00} & \textbf{98.00} & \textbf{98.00} & \textbf{98.00} & 87.00 & 83.00 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{98.00} & \textbf{98.00} & \textbf{98.00} & \textbf{98.00} & 87.00 & 83.00 \\
+ & Average Isolated Clusters Count & 0.01 & 0.00 & \textbf{0.02} & 0.01 & 0.11 & \textbf{0.17} \\
+ & Force Path Cost Average Efficiency Ratio (\%) & \textbf{96.85} & 95.30 & 96.63 & \textbf{97.83} & 86.29 & 81.43 \\
+\midrule
+\midrule
+\textbf{Average} & Exact Match & \textbf{29.38} & \textbf{29.38} & \textbf{29.38} & \textbf{26.75} & 23.75 & 23.50 \\
+ & Difference Ratio (\%) & \textbf{71.24} & 70.45 & 70.05 & \textcolor{red}{-27.77} & \textcolor{red}{-35.33} & \textbf{\textcolor{red}{-17.95}} \\
+ & Relative Difference Ratio (\%) & \textbf{71.24} & 70.45 & 70.05 & \textbf{27.31} & 14.86 & 22.53 \\
+ & Penalized Difference Ratio (\%) & \textbf{62.70} & 62.40 & 61.59 & \textbf{8.21} & \textcolor{red}{-14.97} & \textcolor{red}{-12.21} \\
+ & Average Difficulty Score & 1.92 & \textbf{1.92} & 1.91 & 1.94 & \textbf{1.98} & 1.98 \\
+ & Difficulty Weighted Difference Ratio (\%) & \textbf{45.23} & 45.00 & 44.40 & \textcolor{red}{-23.42} & \textcolor{red}{-26.99} & \textbf{\textcolor{red}{-16.16}} \\
+ & Difficulty Weighted Relative Difference Ratio (\%) & \textbf{45.23} & 45.00 & 44.40 & \textbf{15.28} & 8.03 & 12.70 \\
+ & Valid Output Grid (\%) & 99.25 & 99.12 & \textbf{99.50} & \textbf{99.75} & 99.25 & 99.38 \\
+ & Load-Support Connectivity (\%) & \textbf{98.75} & 98.38 & 98.00 & \textbf{99.00} & 94.25 & 91.38 \\
+ & Load-Support Directional Connectivity (\%) & \textbf{98.75} & 98.38 & 98.00 & \textbf{99.00} & 94.25 & 91.38 \\
+ & Average Isolated Clusters Count & 0.01 & 0.01 & \textbf{0.02} & 0.01 & 0.04 & \textbf{0.08} \\
+ & Force Path Cost Average Efficiency Ratio (\%) & \textbf{97.87} & 97.59 & 97.06 & \textbf{98.57} & 93.43 & 89.43 \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table*}

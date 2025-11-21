@@ -1,0 +1,30 @@
+\textbf{Prompt:}
+\small\ttfamily
+You are given a grid of cells. Each cell can have one of the following states:\\- 'L' indicates a special marker.\\- 'V' indicates an empty cell.\\- 'S' indicates a fixed marker.\\\\The goal is to predict the correct grid configuration by filling in all 'V' cells with either '1' (solid) or '0' (empty), based on the surrounding structure and general consistency rules.\\\\Relevant rules for reasoning:\\- Filled cells should form continuous connections between relevant markers when necessary.\\- Avoid placing isolated filled cells that are not connected to anything meaningful.\\- Minimize the number of filled cells while maintaining a coherent and connected structure.\\\\Below is the input grid with masked regions:\\\\L L L L L 0 0 0 0 0\\0 1 1 1 0 0 0 0 0 0\\0 1 1 1 0 0 0 0 0 0\\0 0 1 0 0 0 0 0 0 0\\0 0 1 0 0 0 0 0 0 0\\0 0 1 0 0 0 0 0 0 0\\0 0 1 0 0 0 0 0 0 0\\0 0 1 0 0 0 0 0 0 0\\V 0 1 1 1 0 0 0 0 0\\0 0 1 S S S 0 0 0 0\\\\Please output the completed grid by replacing all 'V' cells with either '1' (solid) or '0' (empty).\\Maintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.\\Return only the completed grid without any additional explanation.\\\normalfont
+\normalsize\normalfont
+\textbf{Model Completion (differences in \textcolor{red}{red}):}\\
+\small\ttfamily
+L L L L L 0 0 0 0 0 \\
+0 1 1 1 0 0 0 0 0 0 \\
+0 1 1 1 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 1 1 0 0 0 0 0 \\
+0 0 1 S S S 0 0 0 0 \\
+\normalsize\rmfamily
+\textbf{Ground Truth:}\\
+\small\ttfamily
+L L L L L 0 0 0 0 0 \\
+0 1 1 1 0 0 0 0 0 0 \\
+0 1 1 1 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 0 0 0 0 0 0 0 \\
+0 0 1 1 1 0 0 0 0 0 \\
+0 0 1 S S S 0 0 0 0 \\
+\normalsize\rmfamily
