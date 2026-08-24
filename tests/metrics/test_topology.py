@@ -100,7 +100,7 @@ from sphyr.metrics.topology import (
 def test_get_difficulty_score(
     input_grid, gt_grid, completion_grid, expected_difficulty_score
 ):
-    difficulty_score = get_difficulty_score(input_grid, completion_grid, gt_grid)
+    difficulty_score = get_difficulty_score(input_grid, gt_grid)
     assert (
         difficulty_score == expected_difficulty_score
     ), f"Expected {expected_difficulty_score}, got {difficulty_score}"

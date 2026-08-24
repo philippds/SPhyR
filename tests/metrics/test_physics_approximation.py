@@ -47,7 +47,10 @@ from sphyr.metrics.physics_approximation import (
                 ["1", "1", "0"],
                 ["S", "0", "0"],
             ],
-            0.8037,
+            # The completion reaches the support over a cheaper path than the
+            # ground truth does (2.675 against 2.700), so the ratio saturates at
+            # the 1.0 the metric clips to.
+            1.0,
             (1, 0),
         ),
         (
@@ -61,7 +64,9 @@ from sphyr.metrics.physics_approximation import (
                 ["1", "0", "0"],
                 ["S", "0", "0"],
             ],
-            0.8037,
+            # Same here: the diagonal step is cheaper than the ground truth's
+            # route, and the metric never rewards beating it by more than 1.0.
+            1.0,
             (1, 0),
         ),
         (
