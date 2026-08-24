@@ -1,3 +1,6 @@
+import re
+
+
 def is_solid(value):
     """Return True if the cell can transmit force (solid or partially solid)."""
     if value in ("L", "S"):
@@ -57,3 +60,20 @@ def get_grid_shape_and_value_validity(output_grid, gt_grid):
     )
 
     return value_validity and shape_validity
+
+
+GRID_BLOCK_RE = re.compile(
+    r"(?:^|\n)(?:[0-9LVSlvs\.]+(?:\s+[0-9LVSlvs\.]+)+\s*\n?)+", re.MULTILINE
+)
+
+
+def extract_grid_from_text(text):
+    """Parse the last grid block out of a prompt or a model completion.
+
+    Models often wrap the grid in prose or code fences, so the last block of
+    whitespace-separated grid tokens is taken as the answer.
+    """
+    matches = GRID_BLOCK_RE.findall(text)
+    if not matches:
+        return []
+    return [line.split() for line in matches[-1].strip().splitlines()]

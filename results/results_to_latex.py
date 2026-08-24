@@ -19,6 +19,12 @@ METRICS_MAP = {
     "total_difficulty_score": "Average Difficulty Score",
     "total_difficulty_weighted_difference_ratio": "Difficulty Weighted Difference Ratio (%)",
     "total_difficulty_weighted_relative_difference_ratio": "Difficulty Weighted Relative Difference Ratio (%)",
+    # Dynamic, simulation-based metrics.
+    "total_topology_score": "Topology Score (%)",
+    "total_structural_efficiency": "Structural Efficiency (%)",
+    "total_material_efficiency": "Material Efficiency (%)",
+    "total_compliance_efficiency_vs_ground_truth": "Compliance Efficiency vs Ground Truth (%)",
+    "total_load_carrying": "Load Carrying (%)",
 }
 
 
@@ -35,6 +41,11 @@ METRICS_ORDER = [
     "Load-Support Directional Connectivity (%)",
     "Average Isolated Clusters Count",
     "Force Path Cost Average Efficiency Ratio (%)",
+    "Topology Score (%)",
+    "Structural Efficiency (%)",
+    "Material Efficiency (%)",
+    "Compliance Efficiency vs Ground Truth (%)",
+    "Load Carrying (%)",
 ]
 
 

@@ -2,12 +2,12 @@ import json
 from dotenv import load_dotenv
 from datasets import load_dataset
 import os
-import re
 import random
 from tqdm import tqdm
 from dataclasses import dataclass
 
 from sphyr.metrics.utils import (
+    extract_grid_from_text,
     get_gravity_from_folder,
     get_grid_shape_and_value_validity,
 )
@@ -26,6 +26,10 @@ from sphyr.metrics.reconstruction import (
     get_difference_ratio,
     get_penalized_difference_ratio,
     get_relative_difference_ratio,
+)
+from sphyr.metrics.structural import (
+    STRUCTURAL_METRIC_KEYS,
+    get_structural_metrics,
 )
 from sphyr.metrics.topology import (
     get_isolated_clusters_count,
@@ -71,10 +75,6 @@ RANDOM_SEED = 42
 SAMPLE_COUNT = 100
 rnd = random.Random(RANDOM_SEED)
 
-GRID_BLOCK_RE = re.compile(
-    r"(?:^|\n)(?:[0-9LVSlvs\.]+(?:\s+[0-9LVSlvs\.]+)+\s*\n?)+", re.MULTILINE
-)
-
 
 @dataclass
 class Sample:
@@ -103,6 +103,16 @@ class Result:
     difficulty_weighted_difference_ratio: float  # lower is better
     difficulty_weighted_relative_difference_ratio: float  # lower is better
 
+    # Dynamic, simulation-based metrics.  Defaulted so that result files
+    # written before the structural evaluation existed still load.
+    topology_score: float = 0.0  # higher is better
+    structural_efficiency: float = 0.0  # higher is better
+    material_efficiency: float = 0.0  # higher is better
+    compliance_efficiency_vs_ground_truth: float = 0.0  # higher is better
+    load_carrying: bool = False
+    compliance: float = None  # lower is better
+    volume_ratio: float = 0.0  # 1.0 matches the reference material usage
+
     def from_dict(result_dict):
         return Result(
             subject=result_dict["subject"],
@@ -129,6 +139,15 @@ class Result:
             difficulty_weighted_relative_difference_ratio=result_dict[
                 "difficulty_weighted_relative_difference_ratio"
             ],
+            topology_score=result_dict.get("topology_score", 0.0),
+            structural_efficiency=result_dict.get("structural_efficiency", 0.0),
+            material_efficiency=result_dict.get("material_efficiency", 0.0),
+            compliance_efficiency_vs_ground_truth=result_dict.get(
+                "compliance_efficiency_vs_ground_truth", 0.0
+            ),
+            load_carrying=result_dict.get("load_carrying", False),
+            compliance=result_dict.get("compliance"),
+            volume_ratio=result_dict.get("volume_ratio", 0.0),
         )
 
 
@@ -265,7 +284,7 @@ def aggregate_results(results: list[Result]) -> dict:
             result.difficulty_weighted_relative_difference_ratio
         )
 
-    return {
+    aggregated = {
         "total_exact_match": total_exact_match,
         "total_difference_ratio": total_difference_ratio,
         "total_penalized_difference_ratio": total_penalized_difference_ratio,
@@ -280,6 +299,13 @@ def aggregate_results(results: list[Result]) -> dict:
         "total_difficulty_weighted_relative_difference_ratio": total_difficulty_weighted_relative_difference_ratio,
     }
 
+    for key in STRUCTURAL_METRIC_KEYS:
+        aggregated[f"total_{key}"] = sum(
+            float(getattr(result, key) or 0.0) for result in results
+        )
+
+    return aggregated
+
 
 def calculate_all_metrics(
     input_grid, output_grid, gt_grid, subject, prompt, ground_truth, output, folder_name
@@ -293,6 +319,8 @@ def calculate_all_metrics(
         input_grid=input_grid,
         gt_grid=gt_grid,
     )
+
+    structural_metrics = {}
 
     exact_match = False
     difference_ratio = 0.0
@@ -318,12 +346,21 @@ def calculate_all_metrics(
         )
         isolated_clusters_count = get_isolated_clusters_count(output_grid)
 
-        # todo gravity
+        gravity_dir = get_gravity_from_folder(folder_name)
+
         force_path_cost_average_efficiency_ratio = (
             get_force_path_cost_average_efficiency_ratio(
-                output_grid, gt_grid, gravity_dir=get_gravity_from_folder(folder_name)
+                output_grid, gt_grid, gravity_dir=gravity_dir
             )
         )
+
+        # Dynamic evaluation: simulate the completion and re-optimise its mask.
+        structural_metrics = get_structural_metrics(
+            output_grid=output_grid,
+            gt_grid=gt_grid,
+            input_grid=input_grid,
+            gravity_dir=gravity_dir,
+        ).as_dict()
 
     result_dict = {
         "subject": subject,
@@ -344,6 +381,8 @@ def calculate_all_metrics(
         * relative_difference_ratio,
         "valid_output_grid": valid_grid,
     }
+
+    result_dict.update(structural_metrics)
 
     return result_dict
 
@@ -438,8 +477,11 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
         aggregated_results = aggregate_results(full_results)
 
         print(f"Total exact match: {aggregated_results['total_exact_match']}")
-        print(f"Total score: {aggregated_results['total_score']}")
-        print(f"Total normalized score: {aggregated_results['total_normalized_score']}")
+        print(f"Total topology score: {aggregated_results['total_topology_score']}")
+        print(
+            "Total structural efficiency: "
+            f"{aggregated_results['total_structural_efficiency']}"
+        )
 
         with open(f"{root_dir}/{subject}_aggregated_results.json", "w") as f:
             json.dump(aggregated_results, f)
@@ -447,14 +489,6 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
         print(
             f"Skipping aggregation for {model}/{subject} – only {len(existing_results)} of {len(samples)} samples completed."
         )
-
-
-def extract_grid_from_prompt(prompt_text):
-    match = GRID_BLOCK_RE.findall(prompt_text)
-    if not match:
-        return []
-    grid_lines = match[-1].strip().splitlines()
-    return [line.split() for line in grid_lines]
 
 
 def evaluate_against_file(results_root="results"):
@@ -493,16 +527,18 @@ def evaluate_against_file(results_root="results"):
             updated_results = []
 
             for r in results:
-                input_grid = extract_grid_from_prompt(r["prompt"])
-                output_grid = extract_grid_from_prompt(r["completion"])
-                gt_grid = extract_grid_from_prompt(r["ground_truth"])
+                input_grid = extract_grid_from_text(r["prompt"])
+                output_grid = extract_grid_from_text(r["completion"])
+                gt_grid = extract_grid_from_text(r["ground_truth"])
 
                 result_dict = calculate_all_metrics(
                     input_grid=input_grid,
                     output_grid=output_grid,
                     gt_grid=gt_grid,
                     output=r["completion"],
-                    folder_name=fname,
+                    # Rotation is recorded in the directory name, not in the
+                    # file name, and gravity has to rotate with the sample.
+                    folder_name=model_dir,
                     subject=r["subject"],
                     prompt=r["prompt"],
                     ground_truth=r["ground_truth"],

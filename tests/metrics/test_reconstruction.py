@@ -1,7 +1,7 @@
 import pytest
 
-from sphyr.run_eval import get_exact_match
 from sphyr.metrics.reconstruction import (
+    get_exact_match,
     get_difference_ratio,
     get_penalized_difference_ratio,
     get_relative_difference_ratio,
