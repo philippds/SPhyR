@@ -117,6 +117,16 @@ metrics = [
         "Difficulty Weighted Relative Difference Ratio (%)",
         (0, 100),
     ),
+    # Dynamic, simulation-based metrics.
+    ("total_topology_score", "Topology Score (%)", (0, 100)),
+    ("total_structural_efficiency", "Structural Efficiency (%)", (0, 100)),
+    ("total_material_efficiency", "Material Efficiency (%)", (0, 100)),
+    (
+        "total_compliance_efficiency_vs_ground_truth",
+        "Compliance Efficiency vs Ground Truth (%)",
+        (0, 100),
+    ),
+    ("total_load_carrying", "Load Carrying (%)", (0, 100)),
 ]
 
 # Base path

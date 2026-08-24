@@ -76,6 +76,103 @@ This script processes the `.csv` simulation outputs into structured `.json` entr
 
 ---
 
+## 🧮 Dynamic Evaluation (Topology Optimization in the Loop)
+
+Comparing a completion to the reference answer cell by cell asks the wrong
+question: a structure that routes the load differently but just as efficiently
+is marked wrong, while one that matches almost everywhere but severs the load
+path is marked nearly right. SPhyR therefore also evaluates completions
+**dynamically** — by simulating them and re-running a real topology optimizer.
+
+### How a completion is scored
+
+1. **Rebuild the load case.** The `L`, `S` and density cells of the sample are
+   turned into a plane-stress finite element model: a unit load spread over the
+   load cells, the support cells clamped, one bilinear (Q4) element per grid
+   cell, and stiffness interpolated from density with the SIMP law
+   `E(ρ) = E_min + ρ^p (E_0 − E_min)`.
+2. **Simulate the completion.** Solving `K u = f` gives its **compliance**
+   (the work done by the load — the inverse of stiffness). A completion whose
+   load path is broken shows up as a compliance orders of magnitude larger than
+   a solid grid, so `load_carrying` is a physical fact, not a graph heuristic.
+3. **Re-optimize the same hole.** A SIMP optimizer (density filter, optimality
+   criteria update, penalization continuation, discrete swap polish) is re-run
+   on **exactly the masked cells**, with the rest of the sample pinned and with
+   the reference material budget. The search is seeded with the dataset answer,
+   so the resulting optimum is by construction at least as good as it.
+4. **Score.** How close the completion gets to that optimum, discounted by any
+   material it spent beyond the reference budget.
+
+### Metrics
+
+| Metric | Meaning |
+| --- | --- |
+| `topology_score` | **Headline.** `structural_efficiency × material_efficiency` |
+| `structural_efficiency` | `optimal_compliance / compliance`, clipped to [0, 1] |
+| `material_efficiency` | `min(1, reference_volume / used_volume)` |
+| `load_carrying` | Does the load actually reach the supports? |
+| `compliance` | Raw simulated compliance (lower is better) |
+| `optimal_compliance` | Compliance of the re-optimized structure |
+| `compliance_efficiency_vs_ground_truth` | Stiffness relative to the dataset answer |
+| `volume_ratio` | Material used, relative to the dataset answer |
+| `design_efficiency` | Optional: optimum re-run at the completion's *own* budget |
+
+Both halves of the headline score are needed: stiffness alone is maximised by
+filling the grid solid, thrift alone by building nothing. Filling everything
+solid scores a perfect `structural_efficiency` but is discounted to roughly the
+reference volume fraction; an empty grid scores zero.
+
+### Running it
+
+```bash
+# Add the structural metrics to the stored benchmark results
+python -m sphyr.evaluate_dynamic rescore --workers 8
+
+# Check that the metric ranks known-good and known-bad completions correctly
+python -m sphyr.evaluate_dynamic validate --subject full_easy --samples 20
+```
+
+`validate` scores the dataset answer against deliberately degraded and
+degenerate completions and reports how often the reference optimizer was beaten
+by the answer it is meant to bound (it should be zero):
+
+```
+completion         topo score  stiffness  material   vs GT  volume  carrying
+----------------------------------------------------------------------------
+dataset answer          0.933      0.933     1.000   1.000   0.285     1.000
+2 cells flipped         0.804      0.843     0.909   0.896   0.296     0.950
+10 cells flipped        0.476      0.599     0.735   0.639   0.348     0.900
+filled solid            0.285      1.000     0.285   1.000   1.000     1.000
+left empty              0.000      0.000     0.000   0.000   0.095     0.000
+
+Reference optimiser beaten by the dataset answer on 0/20 samples.
+```
+
+The dataset answer does not score 1.0: the optimizer usually finds a slightly
+stiffer structure for the same material, which is exactly the headroom a model
+is being measured against.
+
+To score completions from your own code:
+
+```python
+from sphyr.metrics.structural import get_structural_metrics
+
+metrics = get_structural_metrics(
+    output_grid=completion_grid,  # list[list[str]]
+    gt_grid=sample["ground_truth"],
+    input_grid=sample["input_grid"],
+)
+print(metrics.topology_score, metrics.load_carrying)
+```
+
+The physics engine is standalone and reusable:
+`src/sphyr/physics/fea.py` (finite elements),
+`src/sphyr/physics/simp.py` (topology optimization),
+`src/sphyr/physics/boundary_conditions.py` (grid → load case),
+`src/sphyr/physics/analysis.py` (structural response).
+
+---
+
 ## 📊 Additional Information
 
 ### 🧪 Results Overview
