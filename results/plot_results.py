@@ -2,10 +2,9 @@ import os
 import json
 import matplotlib.pyplot as plt
 import numpy as np
-import matplotlib.cm as cm
 
 # Base colors for models (tab10 for main models)
-base_colors = cm.get_cmap("tab10")
+base_colors = plt.get_cmap("tab10")
 model_color_map = {
     "gpt-3.5-turbo-0125": base_colors(4),
     "gpt-4.1-2025-04-14": base_colors(1),
@@ -19,7 +18,7 @@ model_color_map = {
     "perplexity-sonar-reasoning": base_colors(9),
 }
 
-rotation_colors = cm.get_cmap("tab20")  # used for rotation and few-shot variants
+rotation_colors = plt.get_cmap("tab20")  # used for rotation and few-shot variants
 
 ALL_TASKS_BY_DIFFICULTY = {
     "easy": [
@@ -143,7 +142,7 @@ def plot_results(
     width=0.19,
 ):
     # Set color palette
-    colors = cm.get_cmap(color_map_key)
+    colors = plt.get_cmap(color_map_key)
 
     # Output folder
     output_dir = os.path.join(base_dir, f"{output_dir}")
@@ -232,7 +231,7 @@ def plot_line_graph_results(
     width=0.19,
 ):
     # Set color palette
-    colors = cm.get_cmap(color_map_key)
+    colors = plt.get_cmap(color_map_key)
 
     # Output folder
     output_dir = os.path.join(base_dir, f"{output_dir}")
@@ -538,7 +537,7 @@ def plot_results_rotation_avg(
     color_map_key="tab10",
 ):
     # Set color palette
-    colors = cm.get_cmap(color_map_key)
+    colors = plt.get_cmap(color_map_key)
 
     # Output folder
     output_dir = os.path.join(base_dir, f"{output_dir}")
