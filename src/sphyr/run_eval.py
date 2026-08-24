@@ -37,18 +37,8 @@ from sphyr.metrics.topology import (
     is_load_supported_force_directional,
     get_difficulty_score,
 )
-from sphyr.model_runners import (
-    run_claude,
-    run_claude_opus,
-    run_deepkseek,
-    run_gemini,
-    run_gemini_1_5,
-    run_openai,
-    run_openai_3_5_turbo,
-    run_openai_4o,
-    run_perplexity_sonar,
-    run_perplexity_sonar_reasoning,
-)
+# The model runners are imported lazily inside evaluate_against_model: they pull
+# in every provider SDK, and re-scoring stored results needs none of them.
 
 load_dotenv()
 
@@ -340,13 +330,13 @@ def calculate_all_metrics(
         )
         relative_difference_ratio = get_relative_difference_ratio(output_grid, gt_grid)
 
+        gravity_dir = get_gravity_from_folder(folder_name)
+
         load_support_connected = is_load_supported(output_grid)
         load_support_connected_force_directional = is_load_supported_force_directional(
-            output_grid
+            output_grid, gravity_dir=gravity_dir
         )
         isolated_clusters_count = get_isolated_clusters_count(output_grid)
-
-        gravity_dir = get_gravity_from_folder(folder_name)
 
         force_path_cost_average_efficiency_ratio = (
             get_force_path_cost_average_efficiency_ratio(
@@ -388,6 +378,19 @@ def calculate_all_metrics(
 
 
 def evaluate_against_model(model, samples, name_suffix="") -> list:
+    from sphyr.model_runners import (
+        run_claude,
+        run_claude_opus,
+        run_deepkseek,
+        run_gemini,
+        run_gemini_1_5,
+        run_openai,
+        run_openai_3_5_turbo,
+        run_openai_4o,
+        run_perplexity_sonar,
+        run_perplexity_sonar_reasoning,
+    )
+
     if model == "gpt-4.1-2025-04-14":
         eval_fn = run_openai
     elif model == "gpt-4o-2024-08-06":
