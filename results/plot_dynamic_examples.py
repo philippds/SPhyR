@@ -36,21 +36,27 @@ from sphyr.physics.boundary_conditions import (
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(BASE_DIR, "plots", "dynamic_evaluation")
 
-# Sequential blue ramp (steps 100-700) for density, plus the two reserved
-# categorical hues for the boundary conditions.  Loads and supports also carry a
-# letter, so identity is never colour alone.
-DENSITY_RAMP = ["#fcfcfb", "#cde2fb", "#9ec5f4", "#5598e7", "#2a78d6", "#184f95", "#0d366b"]
-LOAD_COLOR = "#eb6834"
-SUPPORT_COLOR = "#1baf7a"
-MASK_COLOR = "#e8e8e4"
+# Palette sampled from source/thumbnail_wide.pdf, so this figure reads as part
+# of the same paper: mint green for the simulated structure, grey boxes for the
+# boundary conditions, and the pink/red pair the thumbnail uses for masked and
+# answer cells.
+STRUCTURE_GREEN = "#3bd19a"
+ACCENT_RED = "#ff6969"
+HIGHLIGHT_PINK = "#ffcccc"
+BOUNDARY_GREY = "#d3d3d3"
 
-SURFACE = "#fcfcfb"
-TEXT_PRIMARY = "#0b0b0b"
-TEXT_SECONDARY = "#52514e"
-TEXT_MUTED = "#8a8984"
-CELL_EDGE = "#d8d8d3"
+SURFACE = "#ffffff"
+TEXT_PRIMARY = "#000000"
+TEXT_SECONDARY = "#595959"
+TEXT_MUTED = "#a5a5a5"
+CELL_EDGE = "#dfdfdf"
+PANEL_EDGE = "#000000"
 
-DENSITY_CMAP = LinearSegmentedColormap.from_list("sphyr_density", DENSITY_RAMP)
+# Density ramp: white at void through to the structure green at solid, so the
+# continuous ("hard") grids stay readable in the same colour language.
+DENSITY_CMAP = LinearSegmentedColormap.from_list(
+    "sphyr_density", [SURFACE, "#c7f0de", "#8ee2c0", STRUCTURE_GREEN]
+)
 
 # The two records the figure is built from, located by the analysis in the
 # repository history; metrics and reference designs are recomputed here so the
@@ -172,55 +178,65 @@ def draw_grid(ax, grid, title, subtitle, highlight=None):
         for col in range(cols):
             token = str(grid[row][col]).strip()
 
+            # Masked cells: pink fill and a red "?", exactly as the thumbnail
+            # renders the task input.
             if token == "V":
                 ax.add_patch(
                     Rectangle(
                         (col, row), 1, 1,
-                        facecolor=MASK_COLOR, edgecolor=TEXT_MUTED,
-                        hatch="////", linewidth=0.4,
+                        facecolor=HIGHLIGHT_PINK, edgecolor=CELL_EDGE, linewidth=0.4,
                     )
+                )
+                ax.text(
+                    col + 0.5, row + 0.5, "?",
+                    ha="center", va="center", fontsize=7,
+                    fontweight="bold", color=ACCENT_RED,
                 )
                 continue
 
-            if token == "L":
-                face, label = LOAD_COLOR, "L"
-            elif token == "S":
-                face, label = SUPPORT_COLOR, "S"
-            else:
-                face, label = DENSITY_CMAP(cell_density(token)), None
+            # Loads and supports: grey box with a bold black letter.
+            if token in ("L", "S"):
+                ax.add_patch(
+                    Rectangle(
+                        (col, row), 1, 1,
+                        facecolor=BOUNDARY_GREY, edgecolor=TEXT_PRIMARY, linewidth=0.5,
+                    )
+                )
+                ax.text(
+                    col + 0.5, row + 0.5, token,
+                    ha="center", va="center", fontsize=7,
+                    fontweight="bold", color=TEXT_PRIMARY,
+                )
+                continue
 
+            density = cell_density(token)
             ax.add_patch(
                 Rectangle(
                     (col, row), 1, 1,
-                    facecolor=face, edgecolor=CELL_EDGE, linewidth=0.4,
+                    facecolor=DENSITY_CMAP(density), edgecolor=CELL_EDGE, linewidth=0.4,
                 )
             )
-            if label:
-                ax.text(
-                    col + 0.5, row + 0.5, label,
-                    ha="center", va="center", fontsize=7.5,
-                    fontweight="bold", color=TEXT_PRIMARY,
-                )
 
+    # Cells differing from the reference answer get the thumbnail's red accent.
     if highlight is not None:
         for row in range(rows):
             for col in range(cols):
                 if not highlight[row][col]:
                     continue
-                # A surface ring under a dark outline, so the marker reads on
-                # both an empty cell and a solid one.
                 ax.add_patch(
                     Rectangle(
-                        (col + 0.09, row + 0.09), 0.82, 0.82,
-                        facecolor="none", edgecolor=SURFACE, linewidth=2.4,
+                        (col, row), 1, 1,
+                        facecolor="none", edgecolor=ACCENT_RED, linewidth=1.6,
                     )
                 )
-                ax.add_patch(
-                    Rectangle(
-                        (col + 0.09, row + 0.09), 0.82, 0.82,
-                        facecolor="none", edgecolor=TEXT_PRIMARY, linewidth=1.3,
-                    )
-                )
+
+    # Thin black frame around the grid, matching the thumbnail's panel boxes.
+    ax.add_patch(
+        Rectangle(
+            (0, 0), cols, rows,
+            facecolor="none", edgecolor=PANEL_EDGE, linewidth=0.9,
+        )
+    )
 
     ax.set_title(title, fontsize=9.5, color=TEXT_PRIMARY, pad=7, fontweight="semibold")
     if subtitle:
@@ -334,11 +350,10 @@ def build_figure(cases):
 def draw_legend(fig):
     """Key for the cell encoding, including the difference markers."""
     entries = [
-        ("Load", LOAD_COLOR, None),
-        ("Support", SUPPORT_COLOR, None),
+        ("Load / Support", BOUNDARY_GREY, "boundary"),
         ("Material", DENSITY_CMAP(1.0), None),
         ("Empty", DENSITY_CMAP(0.0), None),
-        ("Masked", MASK_COLOR, "////"),
+        ("Masked", HIGHLIGHT_PINK, None),
         ("Differs from answer", None, "ring"),
     ]
 
@@ -353,15 +368,15 @@ def draw_legend(fig):
             axis.add_patch(
                 Rectangle(
                     (cursor, 0.28), 2.0, 0.46,
-                    facecolor=SURFACE, edgecolor=TEXT_PRIMARY, linewidth=1.3,
+                    facecolor=SURFACE, edgecolor=ACCENT_RED, linewidth=1.6,
                 )
             )
         else:
+            edge = TEXT_PRIMARY if style == "boundary" else CELL_EDGE
             axis.add_patch(
                 Rectangle(
                     (cursor, 0.28), 2.0, 0.46,
-                    facecolor=color, edgecolor=CELL_EDGE,
-                    hatch=style, linewidth=0.5,
+                    facecolor=color, edgecolor=edge, linewidth=0.5,
                 )
             )
         axis.text(
