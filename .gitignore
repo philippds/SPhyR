@@ -8,3 +8,20 @@ __pycache__/
 results/sample_to_latex.py
 results/results_counter.py
 src/sphyr/dataset_creation/topology_optimization_data/3D
+
+# uv
+.venv/
+dist/
+
+# Staging directory for the HuggingFace dataset upload; regenerated from
+# generate_v2.py and the results files.
+huggingface_upload/
+
+# pytest
+.pytest_cache/
+
+# Source topology-optimization data: kept locally, not tracked. The 2D raw_data
+# the released dataset is built from stays in the repository; the rendered
+# preview frames and the 3D material (unused by the paper) do not.
+src/sphyr/dataset_creation/topology_optimization_data/2D/frames/
+src/sphyr/dataset_creation/topology_optimization_data/3D/
