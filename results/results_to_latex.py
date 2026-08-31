@@ -582,11 +582,15 @@ def generate_latex_table_side_by_side(results, model_order, model_name_map):
 
 
 def results_to_latex_main_body_side_by_side(output_latex_file):
+    # The DeepSeek column reports ``deepseek_deepseek-r1``: the results in
+    # ``deepseek-reasoner`` were produced against deepseek-chat (V3), not R1,
+    # and were reported under R1's name.  The V3 results are kept and are
+    # labelled for what they are; see deepseek_v3_r1_comparison_to_latex.
     model_order = [
         "gpt-4.1-2025-04-14",
         "claude-opus-4-20250514",
         "gemini-2.5-pro-preview-05-06",
-        "deepseek-reasoner",
+        "deepseek_deepseek-r1",
         "perplexity-sonar",
     ]
 
@@ -594,7 +598,8 @@ def results_to_latex_main_body_side_by_side(output_latex_file):
         "gpt-4.1-2025-04-14": "GPT 4.1",
         "claude-opus-4-20250514": "Claude Opus 4",
         "gemini-2.5-pro-preview-05-06": "Gemini 2.5 Pro",
-        "deepseek-reasoner": "DeepSeek-R1",
+        "deepseek_deepseek-r1": "DeepSeek-R1",
+        "deepseek-reasoner": "DeepSeek-V3",
         "perplexity-sonar": "Perplexity Sonar",
     }
 
@@ -1510,15 +1515,15 @@ if __name__ == "__main__":
     #     RESULTS_DIR / "physics_enhanced_neutral_prompt_comparison_results_to_latex.tex"
     # )
 
-    physics_enhanced_neutral_prompt_comparison_results_to_latex_main_body_side_by_side(
-        RESULTS_DIR
-        / "physics_enhanced_neutral_prompt_comparison_results_to_latex_side_by_side.tex"
-    )
+    # physics_enhanced_neutral_prompt_comparison_results_to_latex_main_body_side_by_side(
+    #     RESULTS_DIR
+    #     / "physics_enhanced_neutral_prompt_comparison_results_to_latex_side_by_side.tex"
+    # )
 
     # SIDE BY SIDE
-    # results_to_latex_main_body_side_by_side(
-    #     RESULTS_DIR / "results_to_latex_main_body_side_by_side.tex"
-    # )
+    results_to_latex_main_body_side_by_side(
+        RESULTS_DIR / "results_to_latex_main_body_side_by_side.tex"
+    )
 
     # rotation_comparison_results_to_latex_main_body_side_by_side(
     #     RESULTS_DIR / "rotation_comparison_results_to_latex_side_by_side.tex"

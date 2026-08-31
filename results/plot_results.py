@@ -14,6 +14,7 @@ model_color_map = {
     "gemini-1.5-pro": base_colors(5),
     "gemini-2.5-pro-preview-05-06": base_colors(6),
     "deepseek-reasoner": base_colors(7),
+    "deepseek_deepseek-r1": base_colors(10),
     "perplexity-sonar": base_colors(8),
     "perplexity-sonar-reasoning": base_colors(9),
 }
@@ -337,6 +338,7 @@ def plot_main_body_results():
         "gemini-1.5-pro",
         "gemini-2.5-pro-preview-05-06",
         "deepseek-reasoner",
+        "deepseek_deepseek-r1",
         "perplexity-sonar",
         "perplexity-sonar-reasoning",
     ]
@@ -350,6 +352,7 @@ def plot_main_body_results():
         "Claude Opus 4",
         "Gemini 1.5 Pro",
         "Gemini 2.5 Pro",
+        "DeepSeek-V3",
         "DeepSeek-R1",
         "Perplexity Sonar",
         "Perplexity Sonar Reasoning",
