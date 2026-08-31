@@ -1,484 +1,224 @@
+"""Run the SPhyR benchmark by driving the OpenEnv environment.
+
+Every experiment here is the same loop: reset the environment to get a masked
+grid, ask a policy to complete it, step the environment to have the completion
+simulated and scored, write the result.  The environment is the only thing that
+knows how a task is built or how an answer is scored, so a run against a model
+here and a run against an RL agent elsewhere are measured identically.
+
+The environment runs in-process by default.  Point ``--base-url`` at a served
+environment (see ``envs/sphyr_env``) to run against a container instead.
+
+Examples::
+
+    python -m sphyr.run_eval main
+    python -m sphyr.run_eval main --models claude-opus-4-20250514
+    python -m sphyr.run_eval rotations
+    python -m sphyr.run_eval few-shot --few-shot-count 3
+    python -m sphyr.run_eval rescore
+"""
+
+import argparse
 import json
-from dotenv import load_dotenv
-from datasets import load_dataset
 import os
-import random
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from contextlib import contextmanager
+
 from tqdm import tqdm
-from dataclasses import dataclass
 
-from sphyr.metrics.utils import (
-    extract_grid_from_text,
-    get_gravity_from_folder,
-    get_grid_shape_and_value_validity,
-)
-from sphyr.prompt_templates import (
-    PHYSICS_ENHANCED_PROMPT_TEMPLATE,
-    PHYSICS_NEUTRAL_PROMPT_TEMPLATE,
-    PROMPT_TEMPLATE,
-    FEW_SHOT_PROMPT_TEMPLATE,
-    FEW_SHOT_EXAMPLES,
-)
-from sphyr.metrics.physics_approximation import (
-    get_force_path_cost_average_efficiency_ratio,
-)
-from sphyr.metrics.reconstruction import (
-    get_exact_match,
-    get_difference_ratio,
-    get_penalized_difference_ratio,
-    get_relative_difference_ratio,
-)
-from sphyr.metrics.structural import (
-    STRUCTURAL_METRIC_KEYS,
-    get_structural_metrics,
-)
-from sphyr.metrics.topology import (
-    get_isolated_clusters_count,
-    is_load_supported,
-    is_load_supported_force_directional,
-    get_difficulty_score,
-)
-# The model runners are imported lazily inside evaluate_against_model: they pull
-# in every provider SDK, and re-scoring stored results needs none of them.
+from sphyr.metrics.utils import extract_grid_from_text, get_gravity_from_folder
+from sphyr.policies import RUNNABLE_MODELS, get_policy, resolve_model
+from sphyr.scoring import Result, aggregate_results, calculate_all_metrics
+from sphyr.tasks import SAMPLE_COUNT, SUBJECTS
 
-load_dotenv()
+from sphyr_env import SPhyRAction
 
-SUBJECTS = [
-    "1_random_cell_easy",
-    "5_random_cell_easy",
-    "10_random_cell_easy",
-    "1_random_row_easy",
-    "3_random_row_easy",
-    "1_random_column_easy",
-    "3_random_column_easy",
-    "full_easy",
-    "1_random_cell_hard",
-    "5_random_cell_hard",
-    "10_random_cell_hard",
-    "1_random_row_hard",
-    "3_random_row_hard",
-    "1_random_column_hard",
-    "3_random_column_hard",
-    "full_hard",
+# The published main experiment covered ten models; the three OpenRouter no
+# longer serves (see sphyr.policies.MODELS) are absent here because a run
+# against them is no longer possible, not because they were dropped.
+DEFAULT_MODELS = [
+    "gpt-4.1-2025-04-14",
+    "gemini-2.5-pro-preview-05-06",
+    "deepseek-reasoner",
+    "claude-opus-4-20250514",
+    "gpt-4o-2024-08-06",
+    "gpt-3.5-turbo-0125",
+    "perplexity-sonar",
 ]
 
-RANDOM_SEED = 42
-SAMPLE_COUNT = 100
-rnd = random.Random(RANDOM_SEED)
+RESULTS_ROOT = "results"
 
 
-@dataclass
-class Sample:
-    subject: str
-    input: str
-    prompt: str
-    ground_truth: str
+class EnvSession:
+    """One reset/step interface over an in-process or a served environment.
+
+    The OpenEnv client returns a ``StepResult`` wrapping the observation while
+    the environment returns the observation directly; the loop below should not
+    have to care which it is talking to.
+    """
+
+    def __init__(self, env, remote, reset_defaults=None):
+        self._env = env
+        self._remote = remote
+        self._reset_defaults = reset_defaults or {}
+
+    def reset(self, **kwargs):
+        result = self._env.reset(**{**self._reset_defaults, **kwargs})
+        return result.observation if self._remote else result
+
+    def step(self, action):
+        result = self._env.step(action)
+        return result.observation if self._remote else result
+
+    def close(self):
+        close = getattr(self._env, "close", None)
+        if close is not None:
+            close()
 
 
-@dataclass
-class Result:
-    subject: str
-    prompt: str
-    ground_truth: str
-    completion: str
-    exact_match: bool
-    difference_ratio: float  # lower is better
-    penalized_difference_ratio: float  # lower is better
-    relative_difference_ratio: float  # lower is better
-    valid_output_grid: bool
-    load_support_connected: bool
-    load_support_connected_force_directional: bool
-    isolated_clusters_count: int  # lower is better
-    force_path_cost_average_efficiency_ratio: float
-    difficulty_score: float  # higher is more difficult
-    difficulty_weighted_difference_ratio: float  # lower is better
-    difficulty_weighted_relative_difference_ratio: float  # lower is better
+@contextmanager
+def open_session(base_url=None, **reset_defaults):
+    """Open an environment session, in-process or against a served environment.
 
-    # Dynamic, simulation-based metrics.  Defaulted so that result files
-    # written before the structural evaluation existed still load.
-    topology_score: float = 0.0  # higher is better
-    structural_efficiency: float = 0.0  # higher is better
-    material_efficiency: float = 0.0  # higher is better
-    compliance_efficiency_vs_ground_truth: float = 0.0  # higher is better
-    load_carrying: bool = False
-    compliance: float = None  # lower is better
-    volume_ratio: float = 0.0  # 1.0 matches the reference material usage
+    The task configuration travels on every ``reset()`` rather than in the
+    constructor, so a served environment is configured the same way an
+    in-process one is.
+    """
+    if base_url:
+        from sphyr_env import SPhyREnv
 
-    def from_dict(result_dict):
-        return Result(
-            subject=result_dict["subject"],
-            prompt=result_dict["prompt"],
-            ground_truth=result_dict["ground_truth"],
-            completion=result_dict["completion"],
-            exact_match=result_dict["exact_match"],
-            difference_ratio=result_dict["difference_ratio"],
-            penalized_difference_ratio=result_dict["penalized_difference_ratio"],
-            relative_difference_ratio=result_dict["relative_difference_ratio"],
-            valid_output_grid=result_dict["valid_output_grid"],
-            load_support_connected=result_dict["load_support_connected"],
-            load_support_connected_force_directional=result_dict[
-                "load_support_connected_force_directional"
-            ],
-            isolated_clusters_count=result_dict["isolated_clusters_count"],
-            force_path_cost_average_efficiency_ratio=result_dict[
-                "force_path_cost_average_efficiency_ratio"
-            ],
-            difficulty_score=result_dict["difficulty_score"],
-            difficulty_weighted_difference_ratio=result_dict[
-                "difficulty_weighted_difference_ratio"
-            ],
-            difficulty_weighted_relative_difference_ratio=result_dict[
-                "difficulty_weighted_relative_difference_ratio"
-            ],
-            topology_score=result_dict.get("topology_score", 0.0),
-            structural_efficiency=result_dict.get("structural_efficiency", 0.0),
-            material_efficiency=result_dict.get("material_efficiency", 0.0),
-            compliance_efficiency_vs_ground_truth=result_dict.get(
-                "compliance_efficiency_vs_ground_truth", 0.0
-            ),
-            load_carrying=result_dict.get("load_carrying", False),
-            compliance=result_dict.get("compliance"),
-            volume_ratio=result_dict.get("volume_ratio", 0.0),
-        )
-
-
-def rotate_grid(grid_str, times=1):
-    grid = [row.split() for row in grid_str.strip().split("\n")]
-    for _ in range(times % 4):
-        grid = [list(row) for row in zip(*grid[::-1])]
-    return "\n".join(" ".join(row) for row in grid)
-
-
-def create_few_shot_example(dataset, current_sample, few_shot_count, rotation_count):
-    few_shot_examples = rnd.sample(dataset, few_shot_count + 1)
-    # make sure current sample is not in few_shot_examples
-    few_shot_examples = [
-        ex
-        for ex in few_shot_examples
-        if ex["input_grid"] != current_sample["input_grid"]
-    ]
-    few_shot_examples = few_shot_examples[:few_shot_count]
-
-    concatenated_few_shot_examples = "\n\n".join(
-        FEW_SHOT_EXAMPLES.format(
-            EXAMPLE_GRID=rotate_grid(ex["input_grid"], times=rotation_count),
-            EXAMPLE_COMPLETED_GRID=rotate_grid(
-                ex["ground_truth"], times=rotation_count
-            ),
-        )
-        for ex in few_shot_examples
-    )
-
-    return concatenated_few_shot_examples
-
-
-def grid_to_str(grid):
-    return "\n".join(" ".join(str(cell) for cell in row) for row in grid)
-
-
-def generate_prompts(
-    dataset,
-    subject,
-    sample_count=SAMPLE_COUNT,
-    rotation_count=0,
-    few_shot_count=0,
-    prompt_template=PROMPT_TEMPLATE,
-    few_shot_prompt_template=FEW_SHOT_PROMPT_TEMPLATE,
-) -> list[Sample]:
-    samples = []
-
-    for sample in dataset[:sample_count]:
-        formatted_grid = grid_to_str(sample["input_grid"])
-        input_grid = rotate_grid(formatted_grid, times=rotation_count)
-
-        if subject.endswith("easy"):
-            fill_instruction = "'V' cells with either '1' (solid) or '0' (empty)"
-            if few_shot_count > 0:
-                concatenated_few_shot_examples = create_few_shot_example(
-                    dataset, sample, few_shot_count, rotation_count
-                )
-                prompt = few_shot_prompt_template.format(
-                    FILL_INSTRUCTION=fill_instruction,
-                    FEW_SHOT_EXAMPLES=concatenated_few_shot_examples,
-                    GRID=input_grid,
-                )
-            else:
-                prompt = prompt_template.format(
-                    FILL_INSTRUCTION=fill_instruction,
-                    GRID=input_grid,
-                )
-        else:
-            fill_instruction = "'V' cells with a floating point number between 0 and 1, with one decimal place (e.g., 0.0, 0.1, 0.2, ..., 1.0)"
-            if few_shot_count > 0:
-                concatenated_few_shot_examples = create_few_shot_example(
-                    dataset, sample, few_shot_count, rotation_count
-                )
-                prompt = few_shot_prompt_template.format(
-                    FILL_INSTRUCTION=fill_instruction,
-                    FEW_SHOT_EXAMPLES=concatenated_few_shot_examples,
-                    GRID=input_grid,
-                )
-            else:
-                prompt = prompt_template.format(
-                    FILL_INSTRUCTION=fill_instruction,
-                    GRID=input_grid,
-                )
-
-        ground_truth = rotate_grid(sample["ground_truth"], times=rotation_count)
-
-        samples.append(
-            Sample(
-                subject=subject,
-                input=input_grid,
-                prompt=prompt,
-                ground_truth=ground_truth,
-            )
-        )
-
-    return samples
-
-
-def aggregate_results(results: list[Result]) -> dict:
-
-    total_exact_match = 0
-    total_difference_ratio = 0.0
-    total_penalized_difference_ratio = 0.0
-    total_relative_difference_ratio = 0.0
-    total_valid_output_grid = 0
-    total_load_support_connected = 0
-    total_load_support_connected_force_directional = 0
-    total_isolated_clusters_count = 0
-    total_force_path_cost_average_efficiency_ratio = 0.0
-    total_difficulty_score = 0.0
-    total_difficulty_weighted_difference_ratio = 0.0
-    total_difficulty_weighted_relative_difference_ratio = 0.0
-
-    for result in results:
-        total_exact_match += int(result.exact_match)
-        total_difference_ratio += result.difference_ratio
-        total_penalized_difference_ratio += result.penalized_difference_ratio
-        total_relative_difference_ratio += result.relative_difference_ratio
-        total_valid_output_grid += int(result.valid_output_grid)
-        total_load_support_connected += int(result.load_support_connected)
-        total_load_support_connected_force_directional += int(
-            result.load_support_connected_force_directional
-        )
-        total_isolated_clusters_count += result.isolated_clusters_count
-        total_force_path_cost_average_efficiency_ratio += (
-            result.force_path_cost_average_efficiency_ratio
-        )
-        total_difficulty_score += result.difficulty_score
-        total_difficulty_weighted_difference_ratio += (
-            result.difficulty_weighted_difference_ratio
-        )
-        total_difficulty_weighted_relative_difference_ratio += (
-            result.difficulty_weighted_relative_difference_ratio
-        )
-
-    aggregated = {
-        "total_exact_match": total_exact_match,
-        "total_difference_ratio": total_difference_ratio,
-        "total_penalized_difference_ratio": total_penalized_difference_ratio,
-        "total_relative_difference_ratio": total_relative_difference_ratio,
-        "total_valid_output_grid": total_valid_output_grid,
-        "total_load_support_connected": total_load_support_connected,
-        "total_load_support_connected_force_directional": total_load_support_connected_force_directional,
-        "total_isolated_clusters_count": total_isolated_clusters_count,
-        "total_force_path_cost_average_efficiency_ratio": total_force_path_cost_average_efficiency_ratio,
-        "total_difficulty_score": total_difficulty_score,
-        "total_difficulty_weighted_difference_ratio": total_difficulty_weighted_difference_ratio,
-        "total_difficulty_weighted_relative_difference_ratio": total_difficulty_weighted_relative_difference_ratio,
-    }
-
-    for key in STRUCTURAL_METRIC_KEYS:
-        aggregated[f"total_{key}"] = sum(
-            float(getattr(result, key) or 0.0) for result in results
-        )
-
-    return aggregated
-
-
-def calculate_all_metrics(
-    input_grid, output_grid, gt_grid, subject, prompt, ground_truth, output, folder_name
-):
-    result_dict = {}
-
-    valid_grid = get_grid_shape_and_value_validity(output_grid, gt_grid)
-    result_dict["valid_output_grid"] = valid_grid
-
-    difficulty_score = get_difficulty_score(
-        input_grid=input_grid,
-        gt_grid=gt_grid,
-    )
-
-    structural_metrics = {}
-
-    exact_match = False
-    difference_ratio = 0.0
-    penalized_difference_ratio = 0.0
-    relative_difference_ratio = 0.0
-    result_dict["valid_output_grid"] = False
-    load_support_connected = False
-    load_support_connected_force_directional = False
-    isolated_clusters_count = 0
-    force_path_cost_average_efficiency_ratio = 0
-
-    if valid_grid:
-        exact_match = get_exact_match(output_grid, gt_grid)
-        difference_ratio = get_difference_ratio(output_grid, gt_grid)
-        penalized_difference_ratio = get_penalized_difference_ratio(
-            output_grid, gt_grid
-        )
-        relative_difference_ratio = get_relative_difference_ratio(output_grid, gt_grid)
-
-        gravity_dir = get_gravity_from_folder(folder_name)
-
-        load_support_connected = is_load_supported(output_grid)
-        load_support_connected_force_directional = is_load_supported_force_directional(
-            output_grid, gravity_dir=gravity_dir
-        )
-        isolated_clusters_count = get_isolated_clusters_count(output_grid)
-
-        force_path_cost_average_efficiency_ratio = (
-            get_force_path_cost_average_efficiency_ratio(
-                output_grid, gt_grid, gravity_dir=gravity_dir
-            )
-        )
-
-        # Dynamic evaluation: simulate the completion and re-optimise its mask.
-        structural_metrics = get_structural_metrics(
-            output_grid=output_grid,
-            gt_grid=gt_grid,
-            input_grid=input_grid,
-            gravity_dir=gravity_dir,
-        ).as_dict()
-
-    result_dict = {
-        "subject": subject,
-        "prompt": prompt,
-        "ground_truth": ground_truth,
-        "completion": output,
-        "exact_match": exact_match,
-        "difference_ratio": difference_ratio,
-        "relative_difference_ratio": relative_difference_ratio,
-        "penalized_difference_ratio": penalized_difference_ratio,
-        "load_support_connected": load_support_connected,
-        "load_support_connected_force_directional": load_support_connected_force_directional,
-        "isolated_clusters_count": isolated_clusters_count,
-        "force_path_cost_average_efficiency_ratio": force_path_cost_average_efficiency_ratio,
-        "difficulty_score": difficulty_score,
-        "difficulty_weighted_difference_ratio": difficulty_score * difference_ratio,
-        "difficulty_weighted_relative_difference_ratio": difficulty_score
-        * relative_difference_ratio,
-        "valid_output_grid": valid_grid,
-    }
-
-    result_dict.update(structural_metrics)
-
-    return result_dict
-
-
-def evaluate_against_model(model, samples, name_suffix="") -> list:
-    from sphyr.model_runners import (
-        run_claude,
-        run_claude_opus,
-        run_deepkseek,
-        run_gemini,
-        run_gemini_1_5,
-        run_openai,
-        run_openai_3_5_turbo,
-        run_openai_4o,
-        run_perplexity_sonar,
-        run_perplexity_sonar_reasoning,
-    )
-
-    if model == "gpt-4.1-2025-04-14":
-        eval_fn = run_openai
-    elif model == "gpt-4o-2024-08-06":
-        eval_fn = run_openai_4o
-    elif model == "gpt-3.5-turbo-0125":
-        eval_fn = run_openai_3_5_turbo
-    elif model == "gemini-1.5-pro":
-        eval_fn = run_gemini_1_5
-    elif model == "gemini-2.5-pro-preview-05-06":
-        eval_fn = run_gemini
-    elif model == "claude-3-7-sonnet-20250219":
-        eval_fn = run_claude
-    elif model == "claude-opus-4-20250514":
-        eval_fn = run_claude_opus
-    elif model == "deepseek-reasoner":
-        eval_fn = run_deepkseek
-    elif model == "perplexity-sonar":
-        eval_fn = run_perplexity_sonar
-    elif model == "perplexity-sonar-reasoning":
-        eval_fn = run_perplexity_sonar_reasoning
+        client = SPhyREnv(base_url=base_url).sync()
+        client.connect()
+        session = EnvSession(client, remote=True, reset_defaults=reset_defaults)
     else:
-        raise ValueError(f"Unknown model: {model}")
+        # Imported here so that rescoring stored results does not need the
+        # environment package at all.
+        from sphyr_env.server.sphyr_environment import SPhyREnvironment
 
-    root_dir = f"results/{model}{name_suffix}"
+        session = EnvSession(
+            SPhyREnvironment(), remote=False, reset_defaults=reset_defaults
+        )
 
+    try:
+        yield session
+    finally:
+        session.close()
+
+
+def load_existing_results(results_path):
+    """Stored results for this model and subject, keyed by prompt."""
+    if not os.path.exists(results_path):
+        return {}
+
+    with open(results_path, "r") as handle:
+        return {record["prompt"]: record for record in json.load(handle)}
+
+
+def results_dir_name(model, name_suffix=""):
+    """The directory one model's results are stored under.
+
+    An OpenRouter model id carries a vendor prefix (``openai/gpt-4.1``); flatten
+    it so results land in one directory per model rather than nested under the
+    vendor, where the rescoring scan would not find them.  Ollama tags carry a
+    colon (``qwen3:8b``), which is not a legal filename character on Windows,
+    so it is flattened the same way.
+    """
+    safe = model
+    for character in "/:":
+        safe = safe.replace(character, "_")
+    return f"{safe}{name_suffix}"
+
+
+def evaluate_subject(
+    session,
+    policy,
+    model,
+    subject,
+    name_suffix="",
+    sample_count=SAMPLE_COUNT,
+    concurrency=1,
+):
+    """Run one model over one subject, resuming from whatever is already stored.
+
+    The model calls are the only slow part -- a reasoning model can spend
+    minutes on a single grid -- so they are the only part run in parallel.  The
+    environment stays on the main thread throughout, for two reasons:
+
+    * It holds the current sample between ``reset()`` and ``step()``, so
+      concurrent episodes on one instance would score answers against each
+      other's grids.
+    * Its RNG is seeded once and its state carries across subject builds, so a
+      per-thread environment would shuffle every subject after the first
+      differently and quietly evaluate this model on different samples than the
+      stored results for every other model.
+
+    Addressing a ``sample_index`` consumes no randomness once the subject is
+    built, so posing the tasks up front and re-posing them to score consumes
+    exactly the sample order the sequential runner produced.
+    """
+    root_dir = f"{RESULTS_ROOT}/{results_dir_name(model, name_suffix)}"
     os.makedirs(root_dir, exist_ok=True)
-    subject = samples[0].subject if samples else "unknown"
 
-    # Load existing results if available
     results_path = f"{root_dir}/{subject}_results.json"
-    existing_results = {}
-    if os.path.exists(results_path):
-        with open(results_path, "r") as f:
-            existing_result_dicts = json.load(f)
-            for r in existing_result_dicts:
-                existing_results[r["prompt"]] = r
-
+    existing_results = load_existing_results(results_path)
     results = list(existing_results.values())
 
     print(
-        f"Evaluating {model} for subject {subject} - Existing results: {len(existing_results)}"
+        f"Evaluating {model} for subject {subject} - "
+        f"Existing results: {len(existing_results)}"
     )
 
-    if len(results) < len(samples):
-        for sample in tqdm(samples):
-            if sample.prompt in existing_results:
-                print(f"Skipping existing sample for prompt: {sample.prompt[:60]}...")
-                continue
+    pending = []
+    for sample_index in range(sample_count):
+        observation = session.reset(subject=subject, sample_index=sample_index)
+        if observation.prompt not in existing_results:
+            pending.append((sample_index, observation))
 
-            try:
-                output_text = eval_fn(sample.prompt)
-                input_grid = [line.split() for line in sample.input.splitlines()]
-                output_grid = [line.split() for line in output_text.splitlines()]
-                gt_grid = [line.split() for line in sample.ground_truth.splitlines()]
+    completions = {}
+    if pending:
+        with ThreadPoolExecutor(max_workers=concurrency) as pool:
+            futures = {
+                pool.submit(policy, observation): sample_index
+                for sample_index, observation in pending
+            }
+            for future in tqdm(as_completed(futures), total=len(futures)):
+                sample_index = futures[future]
+                try:
+                    completions[sample_index] = future.result()
+                except Exception as error:
+                    # A failed sample is skipped, not recorded: the run stays
+                    # resumable and a rerun picks it up.
+                    print(f"Error processing sample {sample_index}: {error}")
 
-                result_dict = calculate_all_metrics(
-                    input_grid=input_grid,
-                    output_grid=output_grid,
-                    gt_grid=gt_grid,
-                    subject=sample.subject,
-                    prompt=sample.prompt,
-                    ground_truth=sample.ground_truth,
-                    output=output_text,
-                    folder_name=name_suffix,
-                )
+    for sample_index, _ in pending:
+        action = completions.get(sample_index)
+        if action is None:
+            continue
 
-                results.append(result_dict)
-                existing_results[sample.prompt] = result_dict
+        session.reset(subject=subject, sample_index=sample_index)
+        scored = session.step(action)
 
-                # Save after each sample
-                with open(results_path, "w") as f:
-                    json.dump(results, f, indent=2)
+        record = scored.metrics
+        # Stamp what actually answered.  The published results carry no model
+        # field, which is how a column produced by one model came to be
+        # reported as another.  A baseline policy answers under a name that is
+        # no OpenRouter model, so the slug is recorded only when there is one.
+        record["model"] = model
+        try:
+            record["openrouter_model"] = resolve_model(model)
+        except ValueError:
+            pass
+        results.append(record)
+        existing_results[record["prompt"]] = record
 
-                if len(results) >= 100:
-                    print(f"Processed {len(results)} samples for {model}/{subject}.")
-                    break
+        # Save after each sample: these runs are long and paid for by the call.
+        with open(results_path, "w") as handle:
+            json.dump(results, handle, indent=2)
 
-            except Exception as e:
-                print(f"Error processing prompt {sample.prompt[:60]}...: {e}")
+    if len(results) >= sample_count:
+        aggregated_results = aggregate_results([Result.from_dict(r) for r in results])
 
-    # Only aggregate if all samples were processed
-    if len(results) >= len(samples):
         print(f"{model} results for {subject}:")
-
-        full_results = [Result.from_dict(r) for r in results]
-
-        aggregated_results = aggregate_results(full_results)
-
         print(f"Total exact match: {aggregated_results['total_exact_match']}")
         print(f"Total topology score: {aggregated_results['total_topology_score']}")
         print(
@@ -486,260 +226,313 @@ def evaluate_against_model(model, samples, name_suffix="") -> list:
             f"{aggregated_results['total_structural_efficiency']}"
         )
 
-        with open(f"{root_dir}/{subject}_aggregated_results.json", "w") as f:
-            json.dump(aggregated_results, f)
+        with open(f"{root_dir}/{subject}_aggregated_results.json", "w") as handle:
+            json.dump(aggregated_results, handle)
     else:
         print(
-            f"Skipping aggregation for {model}/{subject} – only {len(existing_results)} of {len(samples)} samples completed."
+            f"Skipping aggregation for {model}/{subject} - only {len(results)} "
+            f"of {sample_count} samples completed."
         )
 
 
-def evaluate_against_file(results_root="results"):
+def run_experiment(
+    models,
+    subjects,
+    name_suffix="",
+    sample_count=SAMPLE_COUNT,
+    base_url=None,
+    concurrency=1,
+    **task_config,
+):
+    """Run a set of models over a set of subjects in one environment session.
+
+    One session for the whole experiment is deliberate: the environment seeds
+    its sample order once, so every model sees the same samples in the same
+    order, exactly as the published results were produced.
     """
-    Recomputes relative_difference and relative_difference_clipped
-    for all existing *_results.json files.
-    """
-
-    print(f"Scanning {results_root}/ for existing results...")
-
-    folders = [
-        name
-        for name in os.listdir(results_root)
-        if os.path.isdir(os.path.join(results_root, name))
-    ]
-
-    for model_dir in folders:
-        if model_dir == "plots":
-            continue
-        model_path = os.path.join(results_root, model_dir)
-        if not os.path.isdir(model_path):
-            continue
-
-        print(f"\n📁 Processing model directory: {model_dir}")
-
-        for fname in os.listdir(model_path):
-            if fname.endswith("_aggregated_results.json"):
-                continue
-
-            results_file = os.path.join(model_path, fname)
-            # print(f"  → Updating {fname}")
-
-            with open(results_file, "r") as f:
-                results = json.load(f)
-
-            updated_results = []
-
-            for r in results:
-                input_grid = extract_grid_from_text(r["prompt"])
-                output_grid = extract_grid_from_text(r["completion"])
-                gt_grid = extract_grid_from_text(r["ground_truth"])
-
-                result_dict = calculate_all_metrics(
-                    input_grid=input_grid,
-                    output_grid=output_grid,
-                    gt_grid=gt_grid,
-                    output=r["completion"],
-                    # Rotation is recorded in the directory name, not in the
-                    # file name, and gravity has to rotate with the sample.
-                    folder_name=model_dir,
-                    subject=r["subject"],
-                    prompt=r["prompt"],
-                    ground_truth=r["ground_truth"],
+    with open_session(
+        base_url=base_url, sample_count=sample_count, **task_config
+    ) as session:
+        for subject in tqdm(subjects):
+            for model in models:
+                evaluate_subject(
+                    session=session,
+                    policy=get_policy(model),
+                    model=model,
+                    subject=subject,
+                    name_suffix=name_suffix,
+                    sample_count=sample_count,
+                    concurrency=concurrency,
                 )
 
-                r.update(result_dict)
 
-                # remove "score" and "normalized_score" if they exist
-                r.pop("score", None)
-                r.pop("normalized_score", None)
-
-                updated_results.append(r)
-
-            # Save results
-            with open(results_file, "w") as f:
-                json.dump(updated_results, f, indent=2)
-
-            # Aggregate
-            full_results = [Result.from_dict(r) for r in updated_results]
-
-            agg = aggregate_results(full_results)
-            agg_file = results_file.replace("_results.json", "_aggregated_results.json")
-
-            with open(agg_file, "w") as f:
-                json.dump(agg, f, indent=2)
-
-            # print(f"    ✓ Metrics recalculated and aggregates updated")
-
-    print("\n🎉 All files updated.")
+def run_main_experiment(
+    models=None,
+    base_url=None,
+    concurrency=1,
+    replay_from=None,
+    dataset_version=None,
+    sample_count=SAMPLE_COUNT,
+):
+    run_experiment(
+        models=models or DEFAULT_MODELS,
+        subjects=SUBJECTS,
+        sample_count=sample_count,
+        base_url=base_url,
+        concurrency=concurrency,
+        **({"replay_from": replay_from} if replay_from else {}),
+        **({"dataset_version": dataset_version} if dataset_version else {}),
+    )
 
 
-def run_main_experiment(run_against_models=True):
-    models = [
-        "gpt-4.1-2025-04-14",
-        "claude-3-7-sonnet-20250219",
-        "gemini-2.5-pro-preview-05-06",
-        "deepseek-reasoner",
-        "claude-opus-4-20250514",
-        "gpt-4o-2024-08-06",
-        "gemini-1.5-pro",
-        "gpt-3.5-turbo-0125",
-        "perplexity-sonar",
-        "perplexity-sonar-reasoning",
+def run_rotation_comparison_experiment(
+    models=None, rotations=3, base_url=None, concurrency=1, replay_from=None
+):
+    run_experiment(
+        models=models
+        or [
+            "gpt-4.1-2025-04-14",
+            "gemini-2.5-pro-preview-05-06",
+            "deepseek-reasoner",
+            "claude-opus-4-20250514",
+            "perplexity-sonar",
+        ],
+        subjects=[
+            "10_random_cell_easy",
+            "3_random_row_easy",
+            "3_random_column_easy",
+            "full_easy",
+        ],
+        name_suffix=f"_{rotations}_rotations",
+        rotation_count=rotations,
+        base_url=base_url,
+        concurrency=concurrency,
+        **({"replay_from": replay_from} if replay_from else {}),
+    )
+
+
+def run_rotation_best_model_experiment(models=None, rotations=3, base_url=None):
+    run_experiment(
+        models=models or ["claude-opus-4-20250514"],
+        subjects=[
+            "1_random_cell_easy",
+            "5_random_cell_easy",
+            "1_random_row_easy",
+            "1_random_column_easy",
+            "1_random_cell_hard",
+            "5_random_cell_hard",
+            "10_random_cell_hard",
+            "1_random_row_hard",
+            "3_random_row_hard",
+            "1_random_column_hard",
+            "3_random_column_hard",
+            "full_hard",
+        ],
+        name_suffix=f"_{rotations}_rotations",
+        rotation_count=rotations,
+        base_url=base_url,
+    )
+
+
+def run_few_shot_experiment(few_shot_count=1, models=None, base_url=None):
+    run_experiment(
+        models=models or ["claude-opus-4-20250514"],
+        subjects=SUBJECTS,
+        name_suffix=f"_few_shot_{few_shot_count}",
+        few_shot_count=few_shot_count,
+        base_url=base_url,
+    )
+
+
+def run_prompt_style_experiment(prompt_style, models=None, base_url=None):
+    run_experiment(
+        models=models or ["gemini-2.5-pro-preview-05-06"],
+        subjects=SUBJECTS,
+        name_suffix=f"_{prompt_style}_prompt",
+        prompt_style=prompt_style,
+        base_url=base_url,
+    )
+
+
+def rescore_stored_results(results_root=RESULTS_ROOT):
+    """Recompute every metric for the stored results and rewrite them in place.
+
+    The completions are already on disk, so this needs no model and no
+    environment: the same scorer the environment calls from ``step()`` is
+    applied to the grids parsed back out of each record.
+    """
+    print(f"Scanning {results_root}/ for existing results...")
+
+    model_dirs = [
+        name
+        for name in sorted(os.listdir(results_root))
+        if os.path.isdir(os.path.join(results_root, name)) and name != "plots"
     ]
 
-    for subject in tqdm(SUBJECTS):
-        dataset = load_dataset("philippds/SPhyR", subject)
-        dataset_list = list(dataset["test"])
-        rnd.shuffle(dataset_list)
+    for model_dir in model_dirs:
+        model_path = os.path.join(results_root, model_dir)
+        print(f"\nProcessing model directory: {model_dir}")
 
-        if run_against_models:
-            samples = generate_prompts(dataset=dataset_list, subject=subject)
+        # Rotation is recorded in the directory name, not the file name, and
+        # gravity has to rotate with the sample.
+        gravity_dir = get_gravity_from_folder(model_dir)
 
-        for model in models:
-            if run_against_models:
-                evaluate_against_model(model=model, samples=samples)
-            evaluate_against_file()
+        for file_name in sorted(os.listdir(model_path)):
+            if file_name.endswith("_aggregated_results.json"):
+                continue
+            if not file_name.endswith("_results.json"):
+                continue
+
+            results_file = os.path.join(model_path, file_name)
+
+            with open(results_file, "r") as handle:
+                records = json.load(handle)
+
+            for record in records:
+                record.update(
+                    calculate_all_metrics(
+                        input_grid=extract_grid_from_text(record["prompt"]),
+                        output_grid=extract_grid_from_text(record["completion"]),
+                        gt_grid=extract_grid_from_text(record["ground_truth"]),
+                        subject=record["subject"],
+                        prompt=record["prompt"],
+                        ground_truth=record["ground_truth"],
+                        output=record["completion"],
+                        gravity_dir=gravity_dir,
+                    )
+                )
+
+                # Retired metrics from earlier revisions of the benchmark.
+                record.pop("score", None)
+                record.pop("normalized_score", None)
+
+            with open(results_file, "w") as handle:
+                json.dump(records, handle, indent=2)
+
+            aggregated = aggregate_results([Result.from_dict(r) for r in records])
+
+            with open(
+                results_file.replace("_results.json", "_aggregated_results.json"), "w"
+            ) as handle:
+                json.dump(aggregated, handle, indent=2)
+
+    print("\nAll files updated.")
 
 
-def run_rotation_comparison_experiment():
-    subjects = [
-        "10_random_cell_easy",
-        "3_random_row_easy",
-        "3_random_column_easy",
-        "full_easy",
-    ]
+def build_parser():
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument(
+        "experiment",
+        choices=[
+            "main",
+            "rotations",
+            "rotations-best-model",
+            "few-shot",
+            "physics-enhanced",
+            "physics-neutral",
+            "rescore",
+        ],
+    )
+    parser.add_argument(
+        "--models",
+        nargs="+",
+        metavar="MODEL",
+        help=(
+            "Models to evaluate; defaults to the experiment's own set. Either a "
+            "benchmark model name (" + ", ".join(RUNNABLE_MODELS) + ") or any "
+            "OpenRouter model id, e.g. anthropic/claude-sonnet-4.5"
+        ),
+    )
+    parser.add_argument(
+        "--base-url",
+        help="Run against a served environment instead of an in-process one",
+    )
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        default=1,
+        help=(
+            "Model calls to keep in flight at once. Only the calls run in "
+            "parallel; the environment is stepped on the main thread, so the "
+            "samples served are unchanged. A reasoning model can take minutes "
+            "per sample, where the default of 1 is impractically slow."
+        ),
+    )
+    parser.add_argument(
+        "--replay-from",
+        metavar="RESULTS_DIR",
+        help=(
+            "Evaluate the exact samples a stored run was scored on, naming a "
+            "directory under results/ (e.g. claude-opus-4-20250514). Without "
+            "it a run draws its own samples and its numbers are not "
+            "comparable to the published columns."
+        ),
+    )
+    parser.add_argument(
+        "--sample-count",
+        type=int,
+        default=SAMPLE_COUNT,
+        help=(
+            "Samples per subject to evaluate. The published v1 runs used 100; "
+            "the regenerated v2 sets contain 300."
+        ),
+    )
+    parser.add_argument(
+        "--dataset-version",
+        default="v1",
+        help=(
+            "Dataset version to evaluate on: v1 (the published benchmark), "
+            "v2 (regenerated with widely separated samples), or v2-20 (the "
+            "same on a 20x20 grid)."
+        ),
+    )
+    parser.add_argument("--few-shot-count", type=int, default=1)
+    parser.add_argument("--rotations", type=int, default=3)
+    parser.add_argument("--results-root", default=RESULTS_ROOT)
+    return parser
 
-    models = [
-        "gpt-4.1-2025-04-14",
-        "gemini-2.5-pro-preview-05-06",
-        "deepseek-reasoner",
-        "claude-opus-4-20250514",
-        "perplexity-sonar",
-    ]
 
-    for subject in tqdm(subjects):
-        dataset = load_dataset("philippds/SPhyR", subject)
-        dataset_list = list(dataset["test"])
-        rnd.shuffle(dataset_list)
+def main(argv=None):
+    args = build_parser().parse_args(argv)
 
-        rotations = 3
-
-        samples = generate_prompts(
-            dataset=dataset_list, subject=subject, rotation_count=rotations
+    if args.experiment == "rescore":
+        rescore_stored_results(args.results_root)
+    elif args.experiment == "main":
+        run_main_experiment(
+            models=args.models,
+            base_url=args.base_url,
+            concurrency=args.concurrency,
+            replay_from=args.replay_from,
+            dataset_version=args.dataset_version,
+            sample_count=args.sample_count,
         )
-
-        for model in models:
-            evaluate_against_model(
-                model=model, samples=samples, name_suffix=f"_{rotations}_rotations"
-            )
-
-
-def run_rotation_best_model_experiment():
-    subjects = [
-        "1_random_cell_easy",
-        "5_random_cell_easy",
-        "1_random_row_easy",
-        "1_random_column_easy",
-        "1_random_cell_hard",
-        "5_random_cell_hard",
-        "10_random_cell_hard",
-        "1_random_row_hard",
-        "3_random_row_hard",
-        "1_random_column_hard",
-        "3_random_column_hard",
-        "full_hard",
-    ]
-
-    models = [
-        "claude-opus-4-20250514",
-    ]
-
-    for subject in tqdm(subjects):
-        dataset = load_dataset("philippds/SPhyR", subject)
-        dataset_list = list(dataset["test"])
-        rnd.shuffle(dataset_list)
-
-        rotations = 3
-
-        samples = generate_prompts(
-            dataset=dataset_list, subject=subject, rotation_count=rotations
+    elif args.experiment == "rotations":
+        run_rotation_comparison_experiment(
+            models=args.models,
+            rotations=args.rotations,
+            base_url=args.base_url,
+            concurrency=args.concurrency,
+            replay_from=args.replay_from,
         )
-
-        for model in models:
-            evaluate_against_model(
-                model=model, samples=samples, name_suffix=f"_{rotations}_rotations"
-            )
-
-
-def run_few_shot_experiment(few_shot_count=1):
-    models = [
-        "claude-opus-4-20250514",
-    ]
-
-    for subject in tqdm(SUBJECTS):
-        dataset = load_dataset("philippds/SPhyR", subject)
-        dataset_list = list(dataset["test"])
-        rnd.shuffle(dataset_list)
-
-        samples = generate_prompts(
-            dataset=dataset_list, subject=subject, few_shot_count=few_shot_count
+    elif args.experiment == "rotations-best-model":
+        run_rotation_best_model_experiment(
+            models=args.models, rotations=args.rotations, base_url=args.base_url
         )
-
-        for model in models:
-            evaluate_against_model(
-                model=model, samples=samples, name_suffix=f"_few_shot_{few_shot_count}"
-            )
-
-
-def run_physics_enhanced_prompt_experiment():
-    models = [
-        "gemini-2.5-pro-preview-05-06",
-    ]
-
-    for subject in tqdm(SUBJECTS):
-        dataset = load_dataset("philippds/SPhyR", subject)
-        dataset_list = list(dataset["test"])
-        rnd.shuffle(dataset_list)
-
-        samples = generate_prompts(
-            dataset=dataset_list,
-            subject=subject,
-            prompt_template=PHYSICS_ENHANCED_PROMPT_TEMPLATE,
+    elif args.experiment == "few-shot":
+        run_few_shot_experiment(
+            few_shot_count=args.few_shot_count,
+            models=args.models,
+            base_url=args.base_url,
         )
-
-        for model in models:
-            evaluate_against_model(
-                model=model, samples=samples, name_suffix=f"_physics_enhanced_prompt"
-            )
-
-
-def run_physics_neutral_prompt_experiment():
-    models = [
-        "gemini-2.5-pro-preview-05-06",
-    ]
-
-    for subject in tqdm(SUBJECTS):
-        dataset = load_dataset("philippds/SPhyR", subject)
-        dataset_list = list(dataset["test"])
-        rnd.shuffle(dataset_list)
-
-        samples = generate_prompts(
-            dataset=dataset_list,
-            subject=subject,
-            prompt_template=PHYSICS_NEUTRAL_PROMPT_TEMPLATE,
+    elif args.experiment == "physics-enhanced":
+        run_prompt_style_experiment(
+            "physics_enhanced", models=args.models, base_url=args.base_url
         )
-
-        for model in models:
-            evaluate_against_model(
-                model=model, samples=samples, name_suffix=f"_physics_neutral_prompt"
-            )
+    elif args.experiment == "physics-neutral":
+        run_prompt_style_experiment(
+            "physics_neutral", models=args.models, base_url=args.base_url
+        )
 
 
 if __name__ == "__main__":
-    run_main_experiment(False)
-    # run_rotation_comparison_experiment()
-    # run_rotation_best_model_experiment()
-    # run_few_shot_experiment(1)
-    # run_few_shot_experiment(3)
-    # run_physics_enhanced_prompt_experiment()
-    # run_physics_neutral_prompt_experiment()
+    main()

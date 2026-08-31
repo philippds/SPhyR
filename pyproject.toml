@@ -1,25 +1,57 @@
 [project]
 name = "sphyr"
 version = "0.1.0"
-description = ""
+description = "SPhyR: a spatial-physical reasoning benchmark on material distribution"
 authors = [
-    {name = "philippds",email = "p.d.siedler@gmail.com"}
+    {name = "philippds", email = "p.d.siedler@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "openai (>=1.78.1,<2.0.0)",
-    "dotenv (>=0.9.9,<0.10.0)",
-    "huggingface-hub (>=0.31.1,<0.32.0)",
-    "datasets (>=3.6.0,<4.0.0)",
-    "google-genai (>=1.14.0,<2.0.0)",
-    "anthropic (>=0.51.0,<0.52.0)",
-    "matplotlib (>=3.10.3,<4.0.0)",
-    "numpy (>=2.0.0,<3.0.0)",
-    "scipy (>=1.14.0,<2.0.0)"
+    "openenv>=0.4.1,<0.5.0",
+    # Every benchmarked model is reached through OpenRouter, which speaks the
+    # OpenAI chat completions API; no per-vendor SDK is needed.
+    "openai>=1.78.1",
+    "python-dotenv>=1.0.0",
+    "huggingface-hub>=0.31.1",
+    "datasets>=3.6.0",
+    "matplotlib>=3.10.3,<4.0.0",
+    "numpy>=2.0.0,<3.0.0",
+    "scipy>=1.14.0,<2.0.0",
+    "tqdm>=4.66.0,<5.0.0",
+    # Assembles the individual metric plots into the paper's multi-panel
+    # figures (results/build_paper_figures.py).
+    "pypdf>=5.0.0,<7.0.0",
 ]
 
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# The benchmark ships as two packages: the sphyr library (tasks, physics,
+# metrics) and the OpenEnv environment that serves and scores them.
+[tool.hatch.build.targets.wheel]
+packages = ["src/sphyr", "envs/sphyr_env"]
+exclude = [
+    # 800MB of Rhino/Grasshopper output the dataset was generated from; the
+    # generated .jsonl datasets it produced are kept so an installed
+    # environment can serve episodes offline.
+    "src/sphyr/dataset_creation/topology_optimization_data",
+    "src/sphyr/dataset_creation/huggingface/2D/datasets.zip",
+]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/sphyr", "envs/sphyr_env", "tests", "README.md"]
+exclude = [
+    "src/sphyr/dataset_creation/topology_optimization_data",
+    "src/sphyr/dataset_creation/huggingface/2D/datasets.zip",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "envs"]
+testpaths = ["tests"]

@@ -87,3 +87,22 @@ FEW_SHOT_EXAMPLES = """Example input grid with masked regions:
 Corresponding completed output grid:
 
 {EXAMPLE_COMPLETED_GRID}"""
+
+
+# Shown to a model after a submission has been simulated, so it can revise with
+# the structure's actual behaviour in hand rather than its guess at it.  The
+# feedback is physical -- what the structure did -- and never says which cells
+# are wrong, so the model is given grounding, not the answer.
+FEEDBACK_PROMPT_TEMPLATE = """Your previous answer was simulated as a linear elastic structure. Here is how it behaved:
+
+{FEEDBACK}
+
+Below is the original grid with masked regions again:
+
+{GRID}
+
+Your previous answer:
+
+{PREVIOUS}
+
+Revise it to carry the load with less material. Reply with the completed grid only, in the same format: one row per line, cells separated by spaces, the same number of rows and columns. Return only the grid, with no explanation."""

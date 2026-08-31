@@ -1,0 +1,15 @@
+# The environment image is built from the repository root, so keep the
+# context to the library, the environment package and the lock file.
+.git
+.github
+.pytest_cache
+__pycache__
+*.pyc
+.env
+.venv
+dist
+docs
+results
+highlighted_output.tex
+src/sphyr/dataset_creation/topology_optimization_data
+src/sphyr/dataset_creation/huggingface/2D/datasets.zip

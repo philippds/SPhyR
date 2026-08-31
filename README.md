@@ -12,27 +12,131 @@ You can also explore or download the dataset directly from Hugging Face:
 
 ---
 
+## 🌐 SPhyR as an OpenEnv Environment
+
+SPhyR is packaged as an [OpenEnv](https://github.com/meta-pytorch/OpenEnv)
+environment in [`envs/sphyr_env/`](envs/sphyr_env/), so an agent can be
+evaluated or trained against it through the standard `reset` / `step`
+interface instead of through bespoke benchmark code.
+
+An episode is a single step: the environment hands out a masked structural
+grid, the agent submits the completed grid, and the environment scores it by
+simulating it (see [Dynamic Evaluation](#-dynamic-evaluation-topology-optimization-in-the-loop)).
+
+```python
+from sphyr_env import SPhyREnv, SPhyRAction
+
+env = SPhyREnv(base_url="http://localhost:8000")
+
+result = env.reset(subject="10_random_cell_easy")
+print(result.observation.grid)     # the masked grid, with 'V' cells to fill
+print(result.observation.prompt)   # the same task, phrased for a language model
+
+result = env.step(SPhyRAction(grid=completed_grid_text))
+print(result.reward)                                 # topology score, 0..1
+print(result.observation.metrics["load_carrying"])   # did it stand up?
+```
+
+Or in-process, with no server:
+
+```python
+from sphyr_env.server.sphyr_environment import SPhyREnvironment
+
+env = SPhyREnvironment()
+observation = env.reset(subject="full_hard")
+scored = env.step(SPhyRAction(grid=completed_grid_text))
+```
+
+Serve it over HTTP, or build the container:
+
+```bash
+cd envs/sphyr_env && uvicorn server.app:app --port 8000
+
+docker build -f envs/sphyr_env/server/Dockerfile -t sphyr-env:latest .
+```
+
+The environment is the only thing that knows how a task is built or how an
+answer is scored, so a language model run through
+[`src/sphyr/run_eval.py`](src/sphyr/run_eval.py) and an RL agent trained
+against the served environment are measured identically. See
+[`envs/sphyr_env/README.md`](envs/sphyr_env/README.md) for the full `reset()`
+parameter set.
+
+---
+
+## 🏃 Running the Benchmark
+
+Every model is reached through [OpenRouter](https://openrouter.ai), so the
+benchmark needs one key and one endpoint rather than an SDK per vendor. Put
+`OPENROUTER_API_KEY` in `.env` (see `.env.example`), then:
+
+```bash
+# The main experiment: every model, all 16 subjects
+python -m sphyr.run_eval main
+
+# A single model
+python -m sphyr.run_eval main --models claude-opus-4-20250514
+
+# Any other OpenRouter model, named by its id
+python -m sphyr.run_eval main --models anthropic/claude-sonnet-4.5
+
+# The ablations reported in the paper
+python -m sphyr.run_eval rotations
+python -m sphyr.run_eval few-shot --few-shot-count 3
+python -m sphyr.run_eval physics-enhanced
+
+# Re-score everything already stored, without spending an API call
+python -m sphyr.run_eval rescore
+
+# Run against a served environment instead of an in-process one
+python -m sphyr.run_eval main --base-url http://localhost:8000
+```
+
+Results are written per model and subject to `results/<model>/<subject>_results.json`,
+and runs resume from whatever is already stored there.
+
+The models the paper reported are mapped to their OpenRouter ids in
+[`src/sphyr/policies.py`](src/sphyr/policies.py), keyed by the name their
+results are stored under so a fresh run stays comparable with the published
+numbers. Three of them — Gemini 1.5 Pro, Claude 3.7 Sonnet and Perplexity Sonar
+Reasoning — are no longer served by OpenRouter: their stored results are still
+read, plotted and re-scored, but they cannot be run again and are marked as
+such rather than failing mid-experiment.
+
+---
+
 ## 🔁 How to Re-Generate the Dataset
 
 Follow these steps to recreate the dataset from scratch.
 
 ### 🛠️ Step 1: Installation
 
-1. **Create a Conda Environment**  
-   Make sure you have [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/) installed.
+1. **Install uv**  
+   [uv](https://docs.astral.sh/uv/) manages the Python version, the virtual
+   environment and the dependencies.
 
    ```bash
-   conda create -n "sphyr" python -y
-   conda activate sphyr
+   # macOS / Linux
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+
+   # Windows
+   powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
    ```
 
-2. **Install Poetry & Project Dependencies**  
-   Poetry is used for dependency management.
+2. **Sync the Project**  
 
    ```bash
-   pip install poetry
-   poetry install
+   uv sync
    ```
+
+   This creates `.venv`, installs everything from `uv.lock`, and installs both
+   packages: `sphyr` (tasks, physics, metrics) from `src/` and the OpenEnv
+   environment `sphyr_env` from `envs/`.
+
+   Commands are then run with `uv run`, e.g. `uv run pytest`, or inside the
+   activated environment (`source .venv/bin/activate`,
+   `.venv\Scripts\activate` on Windows). The rest of this README writes the
+   bare command; prefix it with `uv run` if you have not activated `.venv`.
 
 ### 🦏 Step 2: Rhinoceros 8.0 & Grasshopper Setup
 
@@ -179,16 +283,16 @@ The physics engine is standalone and reusable:
 
 Benchmarks for 100 samples are available for the following models:
 
-- **Claude 3.7 Sonnet**
+- **Claude 3.7 Sonnet** *(retired from OpenRouter)*
 - **Claude Opus 4**
 - **DeepSeek-R1**
-- **Gemini 1.5 Pro**
+- **Gemini 1.5 Pro** *(retired from OpenRouter)*
 - **Gemini 2.5 Pro**
 - **GPT-3.5 Turbo**
 - **GPT-4.1**
 - **GPT-4o**
 - **Perplexity Sonar**
-- **Perplexity Sonar Reasoning**
+- **Perplexity Sonar Reasoning** *(retired from OpenRouter)*
 
 📁 You can find these results inside the `results` directory.
 
