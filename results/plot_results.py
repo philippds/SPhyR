@@ -15,6 +15,7 @@ model_color_map = {
     "gemini-2.5-pro-preview-05-06": base_colors(6),
     "deepseek-reasoner": base_colors(7),
     "deepseek_deepseek-r1": base_colors(10),
+    "deepseek_deepseek-r1_3_rotations": base_colors(10),
     "perplexity-sonar": base_colors(8),
     "perplexity-sonar-reasoning": base_colors(9),
 }
@@ -397,6 +398,8 @@ def plot_rotation_comparison_results():
         "gemini-2.5-pro-preview-05-06_3_rotations",
         "deepseek-reasoner",
         "deepseek-reasoner_3_rotations",
+        "deepseek_deepseek-r1",
+        "deepseek_deepseek-r1_3_rotations",
         "perplexity-sonar",
         "perplexity-sonar_3_rotations",
     ]
@@ -409,6 +412,8 @@ def plot_rotation_comparison_results():
         "Claude Opus 4 (3 Rotations)",
         "Gemini 2.5 Pro",
         "Gemini 2.5 Pro (3 Rotations)",
+        "DeepSeek-V3",
+        "DeepSeek-V3 (3 Rotations)",
         "DeepSeek-R1",
         "DeepSeek-R1 (3 Rotations)",
         "Perplexity Sonar",
@@ -493,6 +498,8 @@ def plot_rotation_comparison_delta_results():
         "gemini-2.5-pro-preview-05-06_3_rotations",
         "deepseek-reasoner",
         "deepseek-reasoner_3_rotations",
+        "deepseek_deepseek-r1",
+        "deepseek_deepseek-r1_3_rotations",
         "perplexity-sonar",
         "perplexity-sonar_3_rotations",
     ]
@@ -505,6 +512,8 @@ def plot_rotation_comparison_delta_results():
         "Claude Opus 4 (3 Rotations)",
         "Gemini 2.5 Pro",
         "Gemini 2.5 Pro (3 Rotations)",
+        "DeepSeek-V3",
+        "DeepSeek-V3 (3 Rotations)",
         "DeepSeek-R1",
         "DeepSeek-R1 (3 Rotations)",
         "Perplexity Sonar",
