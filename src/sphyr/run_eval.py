@@ -29,7 +29,7 @@ from tqdm import tqdm
 from sphyr.metrics.utils import extract_grid_from_text, get_gravity_from_folder
 from sphyr.policies import RUNNABLE_MODELS, get_policy, resolve_model
 from sphyr.scoring import Result, aggregate_results, calculate_all_metrics
-from sphyr.tasks import SAMPLE_COUNT, SUBJECTS
+from sphyr.tasks import DEFAULT_DATASET_VERSION, SAMPLE_COUNT, SUBJECTS
 
 from sphyr_env import SPhyRAction
 
@@ -47,6 +47,13 @@ DEFAULT_MODELS = [
 ]
 
 RESULTS_ROOT = "results"
+
+# How many scored samples to accumulate before rewriting the results file.
+# These runs are long and paid for by the call, so the cost of an
+# interruption should be minutes rather than a whole subject; rewriting
+# after every sample would be safer still but rewrites the entire file each
+# time, which is wasteful once a subject holds hundreds of records.
+SAVE_EVERY = 10
 
 
 class EnvSession:
@@ -114,7 +121,7 @@ def load_existing_results(results_path):
         return {record["prompt"]: record for record in json.load(handle)}
 
 
-def results_dir_name(model, name_suffix=""):
+def results_dir_name(model, name_suffix="", dataset_version=DEFAULT_DATASET_VERSION):
     """The directory one model's results are stored under.
 
     An OpenRouter model id carries a vendor prefix (``openai/gpt-4.1``); flatten
@@ -122,11 +129,19 @@ def results_dir_name(model, name_suffix=""):
     vendor, where the rescoring scan would not find them.  Ollama tags carry a
     colon (``qwen3:8b``), which is not a legal filename character on Windows,
     so it is flattened the same way.
+
+    Anything but the published ``v1`` dataset is kept in its own directory. The
+    same subject on two dataset versions produces different prompts, so a shared
+    directory would not overwrite: the resume logic keys on the prompt, and both
+    versions' records would accumulate in one file with nothing to say which
+    grid size a row came from.  ``v1`` keeps the bare name so that the published
+    results stay where every stored run, plot and table already expects them.
     """
     safe = model
     for character in "/:":
         safe = safe.replace(character, "_")
-    return f"{safe}{name_suffix}"
+    version = "" if dataset_version == DEFAULT_DATASET_VERSION else f"_{dataset_version}"
+    return f"{safe}{name_suffix}{version}"
 
 
 def evaluate_subject(
@@ -137,6 +152,7 @@ def evaluate_subject(
     name_suffix="",
     sample_count=SAMPLE_COUNT,
     concurrency=1,
+    dataset_version=DEFAULT_DATASET_VERSION,
 ):
     """Run one model over one subject, resuming from whatever is already stored.
 
@@ -156,7 +172,10 @@ def evaluate_subject(
     built, so posing the tasks up front and re-posing them to score consumes
     exactly the sample order the sequential runner produced.
     """
-    root_dir = f"{RESULTS_ROOT}/{results_dir_name(model, name_suffix)}"
+    root_dir = (
+        f"{RESULTS_ROOT}/"
+        f"{results_dir_name(model, name_suffix, dataset_version)}"
+    )
     os.makedirs(root_dir, exist_ok=True)
 
     results_path = f"{root_dir}/{subject}_results.json"
@@ -174,46 +193,58 @@ def evaluate_subject(
         if observation.prompt not in existing_results:
             pending.append((sample_index, observation))
 
-    completions = {}
+    def save():
+        with open(results_path, "w") as handle:
+            json.dump(results, handle, indent=2)
+
     if pending:
         with ThreadPoolExecutor(max_workers=concurrency) as pool:
             futures = {
                 pool.submit(policy, observation): sample_index
                 for sample_index, observation in pending
             }
+            since_save = 0
+
             for future in tqdm(as_completed(futures), total=len(futures)):
                 sample_index = futures[future]
                 try:
-                    completions[sample_index] = future.result()
+                    action = future.result()
                 except Exception as error:
                     # A failed sample is skipped, not recorded: the run stays
                     # resumable and a rerun picks it up.
                     print(f"Error processing sample {sample_index}: {error}")
+                    continue
 
-    for sample_index, _ in pending:
-        action = completions.get(sample_index)
-        if action is None:
-            continue
+                # Scored as each answer arrives rather than after the whole
+                # subject, so an interruption costs minutes instead of the
+                # subject.  Scoring stays on this thread -- the environment is
+                # not safe to reset and step from several at once -- while the
+                # pool keeps the remaining calls in flight.
+                session.reset(subject=subject, sample_index=sample_index)
+                scored = session.step(action)
 
-        session.reset(subject=subject, sample_index=sample_index)
-        scored = session.step(action)
+                record = scored.metrics
+                # Stamp what actually answered.  The published results carry no
+                # model field, which is how a column produced by one model came
+                # to be reported as another.  A baseline policy answers under a
+                # name that is no OpenRouter model, so the slug is recorded only
+                # when there is one.
+                record["model"] = model
+                record["dataset_version"] = dataset_version
+                try:
+                    record["openrouter_model"] = resolve_model(model)
+                except ValueError:
+                    pass
 
-        record = scored.metrics
-        # Stamp what actually answered.  The published results carry no model
-        # field, which is how a column produced by one model came to be
-        # reported as another.  A baseline policy answers under a name that is
-        # no OpenRouter model, so the slug is recorded only when there is one.
-        record["model"] = model
-        try:
-            record["openrouter_model"] = resolve_model(model)
-        except ValueError:
-            pass
-        results.append(record)
-        existing_results[record["prompt"]] = record
+                results.append(record)
+                existing_results[record["prompt"]] = record
 
-        # Save after each sample: these runs are long and paid for by the call.
-        with open(results_path, "w") as handle:
-            json.dump(results, handle, indent=2)
+                since_save += 1
+                if since_save >= SAVE_EVERY:
+                    save()
+                    since_save = 0
+
+        save()
 
     if len(results) >= sample_count:
         aggregated_results = aggregate_results([Result.from_dict(r) for r in results])
@@ -263,6 +294,9 @@ def run_experiment(
                     name_suffix=name_suffix,
                     sample_count=sample_count,
                     concurrency=concurrency,
+                    dataset_version=task_config.get(
+                        "dataset_version", DEFAULT_DATASET_VERSION
+                    ),
                 )
 
 
@@ -273,10 +307,11 @@ def run_main_experiment(
     replay_from=None,
     dataset_version=None,
     sample_count=SAMPLE_COUNT,
+    subjects=None,
 ):
     run_experiment(
         models=models or DEFAULT_MODELS,
-        subjects=SUBJECTS,
+        subjects=subjects or SUBJECTS,
         sample_count=sample_count,
         base_url=base_url,
         concurrency=concurrency,
@@ -469,6 +504,17 @@ def build_parser():
         ),
     )
     parser.add_argument(
+        "--subjects",
+        nargs="+",
+        metavar="SUBJECT",
+        choices=SUBJECTS,
+        help=(
+            "Subjects to evaluate; defaults to all sixteen. Naming a subset "
+            "is how a run is scoped when covering every subject is not worth "
+            "the calls it costs."
+        ),
+    )
+    parser.add_argument(
         "--sample-count",
         type=int,
         default=SAMPLE_COUNT,
@@ -505,6 +551,7 @@ def main(argv=None):
             replay_from=args.replay_from,
             dataset_version=args.dataset_version,
             sample_count=args.sample_count,
+            subjects=args.subjects,
         )
     elif args.experiment == "rotations":
         run_rotation_comparison_experiment(
