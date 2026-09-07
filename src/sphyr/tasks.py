@@ -193,17 +193,25 @@ def format_feedback(metrics):
             f"{100.0 * structural:.0f}% (100% would match it)."
         )
 
+    # Both directions have to read as an instruction, not an observation. An
+    # earlier version reported being under budget neutrally, alongside an
+    # over-budget line that said to remove material; a model that was already
+    # at half its budget read the pair as "use less" and shrank further, which
+    # is the opposite of what its score needed.
     volume = metrics.get("volume_ratio")
     if volume is not None:
         if volume > 1.05:
             lines.append(
                 f"- It used {100.0 * (volume - 1.0):.0f}% MORE material than the "
-                "budget allows; remove material that is not carrying load."
+                "budget allows. Remove material that carries no load; you must "
+                "come down to the budget."
             )
         elif volume < 0.95:
             lines.append(
-                f"- It used {100.0 * (1.0 - volume):.0f}% less material than the "
-                "budget allows."
+                f"- It used only {100.0 * volume:.0f}% of the material budget, so "
+                f"{100.0 * (1.0 - volume):.0f}% is still unspent. Material is not "
+                "penalised until the budget is exceeded, so ADD material along "
+                "the load path to make the structure stiffer."
             )
         else:
             lines.append("- Its material use matched the budget.")

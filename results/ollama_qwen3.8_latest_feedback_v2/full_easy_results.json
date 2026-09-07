@@ -1,0 +1,2202 @@
+[
+  {
+    "sample_index": 0,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.07519354380064762,
+        "structural_efficiency": 0.07519354380064762,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 L L 0 0 0"
+      },
+      {
+        "topology_score": 0.6521739130434782,
+        "structural_efficiency": 1.0,
+        "material_efficiency": 0.6521739130434782,
+        "volume_ratio": 1.5333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\nS 1 1 1 1 1 1 1 0 0\nS 1 1 1 1 1 1 1 0 0\nS 0 0 1 1 1 1 0 0 0\nS 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 L L 0 0 0"
+      },
+      {
+        "topology_score": 0.40130731241917567,
+        "structural_efficiency": 0.40130731241917567,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 L L 0 0 0"
+      },
+      {
+        "topology_score": 0.5297133430420972,
+        "structural_efficiency": 0.5297133430420972,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9000000000000001,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 L L L 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 1,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.8807486803423852,
+        "structural_efficiency": 0.8807486803423852,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 L L 0 0 0 0"
+      },
+      {
+        "topology_score": 0.928386160791186,
+        "structural_efficiency": 0.928386160791186,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 S\n0 0 0 0 1 1 1 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 L L 0 0 0 0"
+      },
+      {
+        "topology_score": 0.8807486803423852,
+        "structural_efficiency": 0.8807486803423852,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 L L 0 0 0 0"
+      },
+      {
+        "topology_score": 0.9361864306221624,
+        "structural_efficiency": 0.9361864306221624,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 L L 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 2,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 S\n1 0 0 0 0 0 0 0 0 S\n1 S S S S S 0 0 0 S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 1\n0 1 0 0 0 0 0 0 0 1\n0 1 1 1 1 1 0 0 0 1"
+      },
+      {
+        "topology_score": 0.7051553913382577,
+        "structural_efficiency": 0.7051553913382577,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 1 1 1 1 1 0 0 0 1"
+      },
+      {
+        "topology_score": 0.007310069640461621,
+        "structural_efficiency": 0.007310069640461621,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9000000000000001,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 1 0 0 1\n0 0 0 0 0 0 1 1 0 1\n0 1 1 1 1 1 1 1 1 1"
+      }
+    ]
+  },
+  {
+    "sample_index": 3,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.6410725027332276,
+        "structural_efficiency": 0.6410725027332276,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 L"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 0 1\nS 1 1 1 1 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 0 L"
+      },
+      {
+        "topology_score": 0.6410725027332276,
+        "structural_efficiency": 0.6410725027332276,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 L"
+      },
+      {
+        "topology_score": 0.760170720875746,
+        "structural_efficiency": 0.760170720875746,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 0 L"
+      }
+    ]
+  },
+  {
+    "sample_index": 4,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.19882475956158485,
+        "structural_efficiency": 0.19882475956158485,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.3,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S S 1 L\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.2826255387168051,
+        "structural_efficiency": 0.2826255387168051,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.3666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S S 1 L\n0 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.5379958496897177,
+        "structural_efficiency": 0.5379958496897177,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S S 1 L\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 0 0 1 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.7000174861520018,
+        "structural_efficiency": 0.7000174861520018,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S S 1 L\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 1 1 1 1 1 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 5,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.2187294528003235,
+        "structural_efficiency": 0.2187294528003235,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.3666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nL 1 S S S S S 0 0 S"
+      },
+      {
+        "topology_score": 0.21872945280037615,
+        "structural_efficiency": 0.21872945280037615,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nL 1 S S S S S 1 1 S"
+      },
+      {
+        "topology_score": 0.31091967393791337,
+        "structural_efficiency": 0.31091967393791337,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 0 S\nL 1 S S S S S 1 1 S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 1.0,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "L 1 S S S S S 0 0 S\n1 1 0 0 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 6,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.08254599908502998,
+        "structural_efficiency": 0.08254599908502998,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 1 L\n0 0 0 S S S S 1 1 L"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 S S 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 1 1 1 1 L\n0 0 0 S S S S 1 1 L"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V S S V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V S L\nV V V V V V V V V S L\nV V V S S S S S S L"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V S S V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V S L\nV V V V V V V V S L\nV V V S S S S S S L"
+      }
+    ]
+  },
+  {
+    "sample_index": 7,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "L 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\nS S S 0 0 0 S S 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "L 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\nS S S 0 0 0 S S 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "L 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0\nS S S 0 0 0 S S 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "L 0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nS S S 0 0 0 S S 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 8,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 S S S S 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 L L L 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V V S S S S V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V L L L V V V V"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V V S S S S V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V S V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V L L L V V V V"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V V S S S S V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V V S V V V V V\nV V V L L L V V V V"
+      }
+    ]
+  },
+  {
+    "sample_index": 9,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.5,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S S 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 0 1 1 1 S S S S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 S S S 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n1 0 0 0 0 1 0 0 0 0\n1 0 0 0 0 1 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 S S S S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.6,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S S 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 S S S S 0"
+      },
+      {
+        "topology_score": 0.011808744845595007,
+        "structural_efficiency": 0.011808744845595007,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 S S S 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 0 0 S S S S 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 10,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.33333333333333337,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 S S 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.3666666666666667,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\nS 0 0 1 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 S S 0 0"
+      },
+      {
+        "topology_score": 0.06312618417498686,
+        "structural_efficiency": 0.06312618417498686,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 S S 0 0"
+      },
+      {
+        "topology_score": 0.2921344209766975,
+        "structural_efficiency": 0.2921344209766975,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L 0 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\nS 1 1 1 1 1 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 S S 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 11,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.013070322972250423,
+        "structural_efficiency": 0.013070322972250423,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.46666666666666673,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 L L L 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.3448275862068965,
+        "structural_efficiency": 1.0,
+        "material_efficiency": 0.3448275862068965,
+        "volume_ratio": 2.9,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 L L L 1\n0 0 0 0 1 1 1 1 1 1\n0 0 1 1 1 1 1 1 1 1\n0 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 S\nS 1 1 1 1 1 1 1 1 S\nS 1 1 1 1 1 1 1 1 S\nS 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1"
+      },
+      {
+        "topology_score": 0.04222284399644118,
+        "structural_efficiency": 0.04222284399644118,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 L L L 0\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 L L L 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 0 1 1 S\nS 0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 12,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0044631664694029065,
+        "structural_efficiency": 0.0044631664694029065,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.005442744021017214,
+        "structural_efficiency": 0.005442744021017214,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 0 1 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.011865114968504849,
+        "structural_efficiency": 0.011865114968504849,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 1 1 1 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0044631664694029065,
+        "structural_efficiency": 0.0044631664694029065,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 13,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.15245796991261243,
+        "structural_efficiency": 0.15245796991261243,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.6296453419951108,
+        "structural_efficiency": 0.6296453419951108,
+        "material_efficiency": 1.0,
+        "volume_ratio": 1.0,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L 1 1 1 1 1 1 1 1\n1 1 0 0 0 0 0 0 1 1\n1 1 0 0 0 0 0 0 1 1\n1 1 0 0 0 0 0 0 1 1\n1 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.385342526453292,
+        "structural_efficiency": 0.385342526453292,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L 1 1 1 1 1 1 1 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.38618586523691895,
+        "structural_efficiency": 0.38618586523691895,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L 1 1 1 1 1 1 1 1\n1 0 0 0 1 0 0 0 0 1\n1 0 0 0 1 0 0 0 0 1\n1 0 0 0 1 0 0 0 0 1\n1 0 0 0 1 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 14,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.33333333333333337,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 L L 1 0 S"
+      },
+      {
+        "topology_score": 0.03291486839003768,
+        "structural_efficiency": 0.03291486839003768,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.3666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 L L 1 1 S"
+      },
+      {
+        "topology_score": 0.11832273101143155,
+        "structural_efficiency": 0.11832273101143155,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 L L 1 1 S"
+      },
+      {
+        "topology_score": 0.17127311683714225,
+        "structural_efficiency": 0.17127311683714225,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 L L 1 1 S"
+      }
+    ]
+  },
+  {
+    "sample_index": 15,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.6603248562989132,
+        "structural_efficiency": 0.6603248562989132,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 S S S S S S S S 0"
+      },
+      {
+        "topology_score": 0.7569265573322813,
+        "structural_efficiency": 0.7569265573322813,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.8907159105868296,
+        "structural_efficiency": 0.8907159105868296,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.6603248562989132,
+        "structural_efficiency": 0.6603248562989132,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 16,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0025437478067725783,
+        "structural_efficiency": 0.0025437478067725783,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.018772414170856087,
+        "structural_efficiency": 0.018772414170856087,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 1 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 1 1 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 S S S S 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 17,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.06395291291431325,
+        "structural_efficiency": 0.06395291291431325,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.33333333333333337,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L L 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.8604365564937454,
+        "structural_efficiency": 0.8604365564937454,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L L 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.9202341414659609,
+        "structural_efficiency": 0.9202341414659609,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L L 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.9222379374319443,
+        "structural_efficiency": 0.9222379374319443,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L L L 0 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 18,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.3896345413793695,
+        "structural_efficiency": 0.3896345413793695,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.26666666666666666,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\nS S 0 0 0 0 S S S 1"
+      },
+      {
+        "topology_score": 0.6497017973306515,
+        "structural_efficiency": 0.6497017973306515,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 1 1 1 L\nS S 0 0 0 0 S S S 1"
+      },
+      {
+        "topology_score": 0.3896345462161223,
+        "structural_efficiency": 0.3896345462161223,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 1 0 L\n0 0 0 0 0 0 1 1 0 L\nS S 0 0 0 0 S S S 1"
+      },
+      {
+        "topology_score": 0.8077242023194716,
+        "structural_efficiency": 0.8077242023194716,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 0 1 1 1 L\nS S 0 0 0 0 S S S 1"
+      }
+    ]
+  },
+  {
+    "sample_index": 19,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.08816629608052703,
+        "structural_efficiency": 0.08816629608052703,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 1 S S S S S 0 0\nL 1 1 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.25081167463080417,
+        "structural_efficiency": 0.25081167463080417,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9000000000000001,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\nL 1 1 1 1 1 1 1 1 1\nL 1 1 1 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.5747396498973549,
+        "structural_efficiency": 0.5747396498973549,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 1 1 S S S S S 0 0\nL 1 1 1 1 1 1 1 1 1\nL 1 1 1 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.10866711774527904,
+        "structural_efficiency": 0.10866711774527904,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\nL 1 1 1 0 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 20,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "1 1 1 1 1 S S S 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "S S S S S S S S V V\nS V V V V V V V V V\nS V V V V V V V V V\nL V V V V V V V V V\nL V V V V V V V V S\nV V V V V V V V V S\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V V V V V S S S V V\nV V V V V V V V V V\nV V V V V V V V V V\nL V V V V V V V V V\nL V V V V V V V V S\nV V V V V V V V V S\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V"
+      }
+    ]
+  },
+  {
+    "sample_index": 21,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.29957395970299266,
+        "structural_efficiency": 0.29957395970299266,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 S S S S\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.352474426578537,
+        "structural_efficiency": 0.352474426578537,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 S S S S\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 S S S S\n0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 1 1 0 L\n0 0 0 0 0 0 0 1 0 L\n0 0 0 0 0 0 0 1 0 L\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 S S S 0 0"
+      },
+      {
+        "topology_score": 0.2995739598862129,
+        "structural_efficiency": 0.2995739598862129,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 S S S S\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 S S S 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 22,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0732014698457943,
+        "structural_efficiency": 0.0732014698457943,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.46666666666666673,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L 1 1 S S S S S 0 0\nL 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 S S S S 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "L 1 1 1 S S S S S 0 0\nL 1 1 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0 0\n0 0 S S S S 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "L V V S S S V V V V\nL V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V S S V V V V V V"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "L V V S S S S V V V\nL V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V V V V V V V V V\nV V S S S V V V V V"
+      }
+    ]
+  },
+  {
+    "sample_index": 23,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.08548848669369719,
+        "structural_efficiency": 0.08548848669369719,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n0 S S S S 0 0 0 0 S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 S S S S 0 0 0 0 S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n0 S S S S 0 0 0 0 S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0 S\n1 0 0 0 0 0 0 0 0 S\n1 0 0 0 0 0 0 0 0 S\n1 S S S S 0 0 0 0 S"
+      }
+    ]
+  },
+  {
+    "sample_index": 24,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "S S S S 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\nS 0 1 0 0 0 0 0 0 0\nS 0 0 1 0 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 0 L"
+      },
+      {
+        "topology_score": 0.4166666666666667,
+        "structural_efficiency": 1.0,
+        "material_efficiency": 0.4166666666666667,
+        "volume_ratio": 2.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S S S S 1 1 1 1 0 0\nS 1 1 1 1 1 1 1 0 0\nS 1 1 1 1 1 1 1 0 0\nS 1 1 1 1 1 1 1 0 0\nS 1 1 1 1 1 1 1 1 0\nS 1 1 1 1 1 1 1 1 0\n0 0 1 1 1 1 1 1 0 0\n0 0 0 1 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 0 0 1 L L L"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "S S S S 1 1 0 0 0 0\nS 0 0 0 1 1 0 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 0 0 L L L"
+      },
+      {
+        "topology_score": 0.019046533814742896,
+        "structural_efficiency": 0.019046533814742896,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S S S S 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 1 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 L L L"
+      }
+    ]
+  },
+  {
+    "sample_index": 25,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.941414184264792,
+        "structural_efficiency": 0.941414184264792,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S 0 S S S S S\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 L L 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.17269150234200845,
+        "structural_efficiency": 0.17269150234200845,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S 0 S S S S S\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 L L 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.18953624285375253,
+        "structural_efficiency": 0.18953624285375253,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S 0 S S S S S\n0 1 1 0 0 0 0 0 0 0\n0 1 0 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 0 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 0 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 L L 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.941414184264792,
+        "structural_efficiency": 0.941414184264792,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S 0 S S S S S\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 L L 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 26,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.46666666666666673,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 1 1 1 S S S S 0\n0 1 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.01312690014571752,
+        "structural_efficiency": 0.01312690014571752,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "1 1 1 1 1 S S S S 0\n1 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 S S S 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.7666666666666667,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "1 1 0 0 0 S S S S 0\n1 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 S S S S 0\n0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 1 S S S 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 27,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.06386404275071444,
+        "structural_efficiency": 0.06386404275071444,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L L L 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\nS S S S S 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.7768346915272382,
+        "structural_efficiency": 0.8286236709623873,
+        "material_efficiency": 0.9375,
+        "volume_ratio": 1.0666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L L L 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\nS S S S S 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.07954500612228824,
+        "structural_efficiency": 0.07954500612228824,
+        "material_efficiency": 1.0,
+        "volume_ratio": 1.0,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L L L 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\nS S S S S 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.06386404275071444,
+        "structural_efficiency": 0.06386404275071444,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L L L 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\nS S S S S 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 28,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 1 1 1 S S 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 1 1 1 S S 0 0"
+      },
+      {
+        "topology_score": 0.06967780234432401,
+        "structural_efficiency": 0.06967780234432401,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.3,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 1 1 1 1 S S 0 0"
+      },
+      {
+        "topology_score": 0.3602961026316976,
+        "structural_efficiency": 0.3602961026316976,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 1 0 1 0 1 0 1 0 0\nL 1 1 1 1 1 1 1 0 0\nL 1 1 1 1 1 S S 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 29,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.08462889872714506,
+        "structural_efficiency": 0.08462889872714506,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "1 1 1 1 L L L 1 1 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S"
+      },
+      {
+        "topology_score": 0.09143197755588181,
+        "structural_efficiency": 0.09143197755588181,
+        "material_efficiency": 1.0,
+        "volume_ratio": 1.0,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "1 1 1 1 L L L 1 1 1\n1 0 0 0 1 0 1 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.8333333333333334,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L L L 0 0 0\n0 0 0 1 1 0 1 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 1 0 0 0 0 0 1 0 0\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.6333333333333334,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L L L 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 1 1 1\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S"
+      }
+    ]
+  },
+  {
+    "sample_index": 30,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.5761532562255384,
+        "structural_efficiency": 0.5761532562255384,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 L L L 0 0"
+      },
+      {
+        "topology_score": 0.6163315859053089,
+        "structural_efficiency": 0.6163315859053089,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 L L L 0 0"
+      },
+      {
+        "topology_score": 0.07611735789768935,
+        "structural_efficiency": 0.07611735789768935,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\nS 1 1 1 1 1 1 0 0 0\nS 0 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 L L L 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 S S S S S 0 0\nS 0 0 1 1 1 1 0 0 0\nS 0 0 0 1 1 0 0 0 0\nS 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 L L L 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 31,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.02931866466493838,
+        "structural_efficiency": 0.02931866466493838,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 1 1 0 0 0 0 0\nL L L 1 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.02947135541972163,
+        "structural_efficiency": 0.02947135541972163,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n1 1 1 1 1 1 1 1 1 S\n1 1 1 0 0 0 0 0 0 0\nL L L 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.17427364053462038,
+        "structural_efficiency": 0.17427364053462038,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9000000000000001,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 1 1 S\n1 1 1 1 1 1 1 1 1 1\nL L L 1 1 1 1 1 1 1"
+      },
+      {
+        "topology_score": 0.21147396963131815,
+        "structural_efficiency": 0.21147396963131815,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 1 1 S\n1 1 1 1 1 1 1 1 1 1\nL L L 1 1 1 1 1 1 1"
+      }
+    ]
+  },
+  {
+    "sample_index": 32,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.023913300412334738,
+        "structural_efficiency": 0.023913300412334738,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.10954539203953823,
+        "structural_efficiency": 0.10954539203953823,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.02391330042365457,
+        "structural_efficiency": 0.02391330042365457,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.46666666666666673,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.04565621599548351,
+        "structural_efficiency": 0.04565621599548351,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 S S S S S 0 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 1 1 1 0 0\nS 0 0 0 0 0 0 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 33,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.021376260926974526,
+        "structural_efficiency": 0.021376260926974526,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.3666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S 1 1 1 L L 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.16250808145748374,
+        "structural_efficiency": 0.16250808145748374,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S 1 1 1 L L 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.34370897271720674,
+        "structural_efficiency": 0.34370897271720674,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S 1 1 1 L L 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.4775621355771229,
+        "structural_efficiency": 0.4775621355771229,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S 1 1 1 L L 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 34,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.008360165937465388,
+        "structural_efficiency": 0.008360165937465388,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L L 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.04731430073007594,
+        "structural_efficiency": 0.04731430073007594,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L L 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.13336249807941356,
+        "structural_efficiency": 0.13336249807941356,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L L 1 1 1 1 S\n0 0 0 1 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.17757609522303686,
+        "structural_efficiency": 0.17757609522303686,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 L L 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 35,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.09790164616120302,
+        "structural_efficiency": 0.09790164616120302,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\nL 1 1 1 1 1 1 1 1 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.12265923689816291,
+        "structural_efficiency": 0.12265923689816291,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 S\nL 1 1 1 1 1 1 1 1 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.14657267866336587,
+        "structural_efficiency": 0.14657267866336587,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 S\nL 1 1 1 1 1 1 1 1 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.09790164616120302,
+        "structural_efficiency": 0.09790164616120302,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\nL 1 1 1 1 1 1 1 1 S\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 36,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.14922054436300616,
+        "structural_efficiency": 0.14922054436300616,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 L L L 0 0\n0 0 0 0 1 0 1 1 1 S\nS 1 1 1 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.5358761911625917,
+        "structural_efficiency": 0.5358761911625917,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 L L L 0 0\n0 0 0 1 1 1 1 1 1 S\nS 0 1 1 0 0 0 0 1 S\nS 1 1 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.6294079349749062,
+        "structural_efficiency": 0.6294079349749062,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 L L L 0 0\n0 1 1 1 1 1 1 1 1 S\nS 1 1 1 1 1 1 1 1 S\nS 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.6902667157088906,
+        "structural_efficiency": 0.6902667157088906,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 L L L 0 0\n0 0 0 0 1 1 1 1 1 S\n1 1 1 1 1 1 1 1 1 S\nS 1 1 1 1 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 37,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.002878410596012153,
+        "structural_efficiency": 0.002878410596012153,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.08211310849429618,
+        "structural_efficiency": 0.08211310849429618,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 S S S 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 1 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.05713990649031918,
+        "structural_efficiency": 0.05713990649031918,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9000000000000001,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 S S S 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 1 1 1 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0669869064585788,
+        "structural_efficiency": 0.0669869064585788,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 0 1 1 1 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 38,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.726781299713642,
+        "structural_efficiency": 0.726781299713642,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 1\nS 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 S S S S S S"
+      },
+      {
+        "topology_score": 0.8427791620192162,
+        "structural_efficiency": 0.8427791620192162,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 S S S S S S"
+      },
+      {
+        "topology_score": 0.879957219966211,
+        "structural_efficiency": 0.879957219966211,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 S S S S S S"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\nS 0 0 0 0 0 0 0 1 1 1\nS 0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 S S S S S S"
+      }
+    ]
+  },
+  {
+    "sample_index": 39,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.46377287140618256,
+        "structural_efficiency": 0.46377287140618256,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 S S 0 0 S S S S\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 L L L 0"
+      },
+      {
+        "topology_score": 0.4770246766187427,
+        "structural_efficiency": 0.4770246766187427,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 S S 0 0 S S S S\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 L L L 0"
+      },
+      {
+        "topology_score": 0.4293739239279889,
+        "structural_efficiency": 0.4293739239279889,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 S S 0 0 S S S S\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 L L L 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 S S 0 0 S S S S\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 1 0 0 1 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 1 0 0 1 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 L L L 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 40,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.028314891236135065,
+        "structural_efficiency": 0.028314891236135065,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 L L\n0 0 0 0 0 0 0 0 0 1\nS 1 1 1 1 1 1 1 1 1\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 L L\n0 0 0 0 0 0 0 1 1 1\nS 1 1 1 1 1 1 1 1 1 1\nS 1 0 0 0 0 0 0 1 1 0\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 L L\n0 0 0 0 0 0 0 0 1 1\nS 1 1 1 1 1 1 1 1 1 1\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 0 0 0 0 0 0 L L\n0 0 0 0 0 0 0 0 1 1\nS 1 1 1 1 1 1 1 1 0 0\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 41,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.018220283463679786,
+        "structural_efficiency": 0.018220283463679786,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L 1 1 1 1 S S S S S\nL 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 S S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.019963260856290146,
+        "structural_efficiency": 0.019963260856290146,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L 1 1 1 1 S S S S S\nL 1 1 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 S S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.054599295366076196,
+        "structural_efficiency": 0.054599295366076196,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "L 1 1 1 1 S S S S S\nL 1 1 1 1 0 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 S S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.1505912764915207,
+        "structural_efficiency": 0.1505912764915207,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9000000000000001,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 0 0 0\n1 1 1 1 1 1 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 1 1 1 1 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 42,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.04689842684536737,
+        "structural_efficiency": 0.04689842684536737,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.46666666666666673,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 L 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.06542869332031152,
+        "structural_efficiency": 0.06542869332031152,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5333333333333333,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 1 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 L 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.1394228351243747,
+        "structural_efficiency": 0.1394228351243747,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 1 0 0 0 0 0 0 0 S\nS 1 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 L 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.39151747910347584,
+        "structural_efficiency": 0.39151747910347584,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 1 1 1 0 0 0 0 0 S\nS 1 1 1 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 L 1 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 43,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.28242719673468214,
+        "structural_efficiency": 0.28242719673468214,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.3,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.3339739413777153,
+        "structural_efficiency": 0.3339739413777153,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.4,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.5830941480615052,
+        "structural_efficiency": 0.5830941480615052,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.3150917579987316,
+        "structural_efficiency": 0.3150917579987316,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 44,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.31625828291372426,
+        "structural_efficiency": 0.31625828291372426,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S S S S 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 L L L"
+      },
+      {
+        "topology_score": 0.5023032779206954,
+        "structural_efficiency": 0.552533605712765,
+        "material_efficiency": 0.9090909090909091,
+        "volume_ratio": 1.1,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S S S S 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 1 1 1 1 1 S\n0 0 0 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 L L L"
+      },
+      {
+        "topology_score": 0.8441504503339772,
+        "structural_efficiency": 0.8722887986784431,
+        "material_efficiency": 0.9677419354838709,
+        "volume_ratio": 1.0333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S S S S 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 0 0 L L L"
+      },
+      {
+        "topology_score": 0.5814837059858127,
+        "structural_efficiency": 0.5814837059858127,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "S S S S 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 L L L"
+      }
+    ]
+  },
+  {
+    "sample_index": 45,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.007334334889787474,
+        "structural_efficiency": 0.007334334889787474,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.46666666666666673,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 S S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 1 1 1 1 1 S S 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 S S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 9 9 9 9 9 9 S S V"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "0 0 S S S S S 0 0 0\n0 0 V 0 0 0 0 0 0 0\n0 0 V 0 0 0 0 0 0 0\n0 0 V 0 0 0 0 0 0 0\n0 0 V 0 0 0 0 0 0 0\n0 0 V 0 0 0 0 0 0 0\n0 0 V 0 0 0 0 0 0 0\n0 0 V 0 0 0 0 0 0 0\n0 0 V 0 0 0 0 0 0 0\nL V V V V V V S S V"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "V V S S S S S 0 0 0\nV V 0 0 0 0 0 0 0 0\nV V 0 0 0 0 0 0 0 0\nV V 0 0 0 0 0 0 0 0\nV V 0 0 0 0 0 0 0 0\nV V 0 0 0 0 0 0 0 0\nV V 0 0 0 0 0 0 0 0\nV V 0 0 0 0 0 0 0 0\nV V 0 0 0 0 0 0 0 0\nL V 0 0 0 0 0 S S 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 46,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.09295628664650406,
+        "structural_efficiency": 0.09295628664650406,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 L\nS 0 0 0 0 0 0 0 0 L\nS 0 0 0 0 0 0 0 0 L\nS 0 0 0 S S S 1 1 1"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": null,
+        "load_carrying": false,
+        "valid_output_grid": false,
+        "completion": "S 0 0 0 0 0 0 0 0 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 L\nS 0 0 S S S 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.05709923492338651,
+        "structural_efficiency": 0.05709923492338651,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.43333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 L\nS 0 0 0 0 0 0 0 0 L\nS 0 0 0 0 0 1 1 1 L\nS 0 0 0 S S S 0 0 0"
+      },
+      {
+        "topology_score": 0.01970587868020945,
+        "structural_efficiency": 0.01970587868020945,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 1 1 1 L\nS 0 0 0 0 0 1 0 1 L\nS 0 0 0 0 0 1 0 1 L\nS 0 0 0 S S S 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 47,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.4,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n1 S S 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.6305409058475828,
+        "structural_efficiency": 0.6725769662374217,
+        "material_efficiency": 0.9375,
+        "volume_ratio": 1.0666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\n1 S S 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.4,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0"
+      },
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 L 0 0 0 0 0\n0 0 0 1 0 1 0 0 0 0\n0 0 1 0 0 1 0 0 0 0\n0 1 0 0 0 1 0 0 0 0\n1 0 0 0 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 0 0 1 0 0 0 0 0 0\n0 S S 0 0 0 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 48,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.0,
+        "structural_efficiency": 0.0,
+        "material_efficiency": 0.0,
+        "volume_ratio": 0.46666666666666673,
+        "load_carrying": false,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 S S S\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 L L L 0 0 0 0"
+      },
+      {
+        "topology_score": 0.13851104726240093,
+        "structural_efficiency": 0.13851104726240093,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 S S S\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 L L L 0 0 0 0"
+      },
+      {
+        "topology_score": 0.2982338920283901,
+        "structural_efficiency": 0.2982338920283901,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 S S S\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 L L L 0 0 0 0"
+      },
+      {
+        "topology_score": 0.05366949795269952,
+        "structural_efficiency": 0.05366949795269952,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.7333333333333334,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 0 0 0 0 0 0 S S S\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 L L L 0 0 0 0"
+      }
+    ]
+  },
+  {
+    "sample_index": 49,
+    "model": "ollama/qwen3.8:latest",
+    "dataset_version": "v2",
+    "rounds": 3,
+    "trajectory": [
+      {
+        "topology_score": 0.020441044555487713,
+        "structural_efficiency": 0.020441044555487713,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.5666666666666668,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S S S 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 1 L\n0 0 S S S 1 1 1 1 L"
+      },
+      {
+        "topology_score": 0.05429234376215545,
+        "structural_efficiency": 0.05429234376215545,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.6666666666666667,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S S S 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 1 1 1 1 L\n0 0 S S S 1 1 1 1 L"
+      },
+      {
+        "topology_score": 0.02652059580666748,
+        "structural_efficiency": 0.02652059580666748,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.8,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S S S 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 L\n0 0 0 0 0 1 0 0 1 L\n0 0 S S S 1 1 1 1 L"
+      },
+      {
+        "topology_score": 0.13721370264862848,
+        "structural_efficiency": 0.13721370264862848,
+        "material_efficiency": 1.0,
+        "volume_ratio": 0.9333333333333335,
+        "load_carrying": true,
+        "valid_output_grid": true,
+        "completion": "0 S S S S S 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 0 1\n0 0 0 0 0 0 0 1 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 L\n0 S S S 1 1 1 1 1 L"
+      }
+    ]
+  }
+]
