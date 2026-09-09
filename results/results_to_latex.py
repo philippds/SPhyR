@@ -2,6 +2,53 @@ import os
 import json
 from pathlib import Path
 
+# Direction of improvement, appended to the metric label in the rendered table.
+# The difficulty score is neither: it describes the sample, not the model.
+METRIC_DIRECTIONS = {
+    "Exact Match": r"$\uparrow$",
+    "Difference Ratio (%)": r"$\uparrow$",
+    "Relative Difference Ratio (%)": r"$\uparrow$",
+    "Penalized Difference Ratio (%)": r"$\uparrow$",
+    "Average Difficulty Score": "",
+    "Difficulty Weighted Difference Ratio (%)": r"$\uparrow$",
+    "Difficulty Weighted Relative Difference Ratio (%)": r"$\uparrow$",
+    "Valid Output Grid (%)": r"$\uparrow$",
+    "Load-Support Connectivity (%)": r"$\uparrow$",
+    "Load-Support Directional Connectivity (%)": r"$\uparrow$",
+    "Average Isolated Clusters Count": r"$\downarrow$",
+    "Force Path Cost Average Efficiency Ratio (%)": r"$\uparrow$",
+    "Topology Score (%)": r"$\uparrow$",
+    "Structural Efficiency (%)": r"$\uparrow$",
+    "Material Efficiency (%)": r"$\uparrow$",
+    "Compliance Efficiency vs Ground Truth (%)": r"$\uparrow$",
+    "Load Carrying (%)": r"$\uparrow$",
+}
+
+
+def write_latex_table(output_latex_file, latex_code):
+    """Write a generated table as LaTeX the paper can use unedited.
+
+    Two fixes are applied on the way out:
+
+    * Metric names carry a literal "(%)", and an unescaped percent starts a
+      comment in LaTeX - which silently swallowed the rest of every row that
+      contained one, so generated tables could not be pasted into the paper
+      without hand-editing.
+    * The direction of improvement is appended to each metric label, matching
+      the convention the tables already use.
+    """
+    latex_code = latex_code.replace("(%)", r"(\%)")
+
+    for metric, arrow in METRIC_DIRECTIONS.items():
+        if not arrow:
+            continue
+        label = metric.replace("(%)", r"(\%)")
+        latex_code = latex_code.replace(f"& {label} &", f"& {label} {arrow} &")
+
+    with open(output_latex_file, "w", encoding="utf-8") as f:
+        f.write(latex_code)
+
+
 # Base directory and output file
 RESULTS_DIR = Path("results")
 
@@ -367,8 +414,7 @@ def results_to_latex_main_body(output_latex_file):
     results = find_and_parse_results(model_order, subject_map)
     latex_code = generate_latex_table(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(f"LaTeX table written to: {output_latex_file}")
 
@@ -536,11 +582,15 @@ def generate_latex_table_side_by_side(results, model_order, model_name_map):
 
 
 def results_to_latex_main_body_side_by_side(output_latex_file):
+    # The DeepSeek column reports ``deepseek_deepseek-r1``: the results in
+    # ``deepseek-reasoner`` were produced against deepseek-chat (V3), not R1,
+    # and were reported under R1's name.  The V3 results are kept and are
+    # labelled for what they are; see deepseek_v3_r1_comparison_to_latex.
     model_order = [
         "gpt-4.1-2025-04-14",
         "claude-opus-4-20250514",
         "gemini-2.5-pro-preview-05-06",
-        "deepseek-reasoner",
+        "deepseek_deepseek-r1",
         "perplexity-sonar",
     ]
 
@@ -548,7 +598,8 @@ def results_to_latex_main_body_side_by_side(output_latex_file):
         "gpt-4.1-2025-04-14": "GPT 4.1",
         "claude-opus-4-20250514": "Claude Opus 4",
         "gemini-2.5-pro-preview-05-06": "Gemini 2.5 Pro",
-        "deepseek-reasoner": "DeepSeek-R1",
+        "deepseek_deepseek-r1": "DeepSeek-R1",
+        "deepseek-reasoner": "DeepSeek-V3",
         "perplexity-sonar": "Perplexity Sonar",
     }
 
@@ -577,8 +628,7 @@ def results_to_latex_main_body_side_by_side(output_latex_file):
     results = find_and_parse_results(model_order, subject_map)
     latex_code = generate_latex_table_side_by_side(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(f"Side-by-side LaTeX table written to: {output_latex_file}")
 
@@ -635,8 +685,7 @@ def rotation_comparison_results_to_latex_main_body_side_by_side(output_latex_fil
     # Generate side-by-side LaTeX
     latex_code = generate_latex_table_side_by_side(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(
         f"Side-by-side rotation comparison LaTeX table written to: {output_latex_file}"
@@ -700,8 +749,7 @@ def results_to_latex_appendix(output_latex_file):
     results = find_and_parse_results(model_order, subject_map)
     latex_code = generate_latex_table(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
 
 def rotation_comparison_results_to_latex_main_body(output_latex_file):
@@ -749,8 +797,7 @@ def rotation_comparison_results_to_latex_main_body(output_latex_file):
     results = find_and_parse_results(model_order, subject_map)
     latex_code = generate_latex_table(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(f"LaTeX table written to: {output_latex_file}")
 
@@ -796,8 +843,7 @@ def rotation_best_model_results_to_latex(output_latex_file):
     results = find_and_parse_results(model_order, subject_map)
     latex_code = generate_latex_table(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(f"LaTeX table written to: {output_latex_file}")
 
@@ -972,8 +1018,7 @@ def rotation_best_model_results_to_latex_side_by_side(output_latex_file):
     latex_code = "\n".join(header + body + footer)
 
     # --- Write file ---
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(
         f"Side-by-side rotation best model LaTeX table written to: {output_latex_file}"
@@ -1023,8 +1068,7 @@ def few_shot_comparison_results_to_latex_main_body(output_latex_file):
     results = find_and_parse_results(model_order, subject_map)
     latex_code = generate_latex_table(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(f"LaTeX table written to: {output_latex_file}")
 
@@ -1074,8 +1118,7 @@ def physics_enhanced_neutral_prompt_comparison_results_to_latex_main_body(
     results = find_and_parse_results(model_order, subject_map)
     latex_code = generate_latex_table(results, model_order, model_name_map)
 
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(f"LaTeX table written to: {output_latex_file}")
 
@@ -1254,8 +1297,7 @@ def few_shot_comparison_results_to_latex_main_body_side_by_side(output_latex_fil
     latex_code = "\n".join(header + body + footer)
 
     # --- Write to file ---
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(
         f"Side-by-side few-shot comparison LaTeX table written to: {output_latex_file}"
@@ -1438,8 +1480,7 @@ def physics_enhanced_neutral_prompt_comparison_results_to_latex_main_body_side_b
     latex_code = "\n".join(header + body + footer)
 
     # --- Write output ---
-    with open(output_latex_file, "w") as f:
-        f.write(latex_code)
+    write_latex_table(output_latex_file, latex_code)
 
     print(
         f"Side-by-side physics prompt comparison LaTeX table written to: {output_latex_file}"
@@ -1474,15 +1515,15 @@ if __name__ == "__main__":
     #     RESULTS_DIR / "physics_enhanced_neutral_prompt_comparison_results_to_latex.tex"
     # )
 
-    physics_enhanced_neutral_prompt_comparison_results_to_latex_main_body_side_by_side(
-        RESULTS_DIR
-        / "physics_enhanced_neutral_prompt_comparison_results_to_latex_side_by_side.tex"
-    )
+    # physics_enhanced_neutral_prompt_comparison_results_to_latex_main_body_side_by_side(
+    #     RESULTS_DIR
+    #     / "physics_enhanced_neutral_prompt_comparison_results_to_latex_side_by_side.tex"
+    # )
 
     # SIDE BY SIDE
-    # results_to_latex_main_body_side_by_side(
-    #     RESULTS_DIR / "results_to_latex_main_body_side_by_side.tex"
-    # )
+    results_to_latex_main_body_side_by_side(
+        RESULTS_DIR / "results_to_latex_main_body_side_by_side.tex"
+    )
 
     # rotation_comparison_results_to_latex_main_body_side_by_side(
     #     RESULTS_DIR / "rotation_comparison_results_to_latex_side_by_side.tex"
