@@ -140,13 +140,33 @@ def _client(name=""):
     return OpenAI(api_key=key, base_url=BASE_URL, timeout=REQUEST_TIMEOUT)
 
 
-def call_model(
+def _usage_info(response):
+    """How a reply ended and what it cost, as flat record fields.
+
+    ``finish_reason`` is what separates a model that answered badly from one
+    that ran out of budget mid-grid: a reply cut off at the token cap ends in
+    ``length``.  Reasoning tokens are reported separately where the provider
+    exposes them, since they share the cap with the answer.
+    """
+    usage = getattr(response, "usage", None)
+    details = getattr(usage, "completion_tokens_details", None)
+    return {
+        "finish_reason": getattr(response.choices[0], "finish_reason", None),
+        "prompt_tokens": getattr(usage, "prompt_tokens", None),
+        "completion_tokens": getattr(usage, "completion_tokens", None),
+        "reasoning_tokens": getattr(details, "reasoning_tokens", None),
+    }
+
+
+def complete(
     name: str,
     prompt: str,
     max_tokens: int = MAX_TOKENS,
     max_attempts: int = MAX_ATTEMPTS,
-) -> str:
+) -> tuple[str, dict]:
     """Send one prompt to a benchmarked model through OpenRouter.
+
+    Returns the reply and its :func:`_usage_info`.
 
     Retries transient failures with exponential backoff.  Without this a failed
     call drops the sample from the run, and because a call fails most readily
@@ -174,14 +194,29 @@ def call_model(
             content = response.choices[0].message.content
             if not content:
                 raise RuntimeError(f"{model} returned an empty reply")
+            # A provider that fails mid-generation can still return the partial
+            # text, flagged only by the finish reason.  Scored, it would count
+            # as the model's own unreadable answer; it is a serving failure.
+            if getattr(response.choices[0], "finish_reason", None) == "error":
+                raise RuntimeError(f"{model} reply ended in a provider error")
 
-            return content.strip()
+            return content.strip(), _usage_info(response)
         except Exception as error:  # noqa: BLE001 - every mode seen is transient
             last_error = error
 
     raise RuntimeError(
         f"{model} failed {max_attempts} times; last error: {last_error}"
     ) from last_error
+
+
+def call_model(
+    name: str,
+    prompt: str,
+    max_tokens: int = MAX_TOKENS,
+    max_attempts: int = MAX_ATTEMPTS,
+) -> str:
+    """The reply alone, for callers that do not record usage."""
+    return complete(name, prompt, max_tokens, max_attempts)[0]
 
 
 class LLMPolicy:
@@ -195,9 +230,8 @@ class LLMPolicy:
         self.max_tokens = max_tokens
 
     def __call__(self, observation) -> SPhyRAction:
-        return SPhyRAction(
-            grid=call_model(self.model, observation.prompt, self.max_tokens)
-        )
+        reply, usage = complete(self.model, observation.prompt, self.max_tokens)
+        return SPhyRAction(grid=reply, metadata={"usage": usage})
 
 
 class ConstantFillPolicy:

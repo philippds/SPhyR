@@ -106,3 +106,41 @@ Your previous answer:
 {PREVIOUS}
 
 Revise it to carry the load with less material. Reply with the completed grid only, in the same format: one row per line, cells separated by spaces, the same number of rows and columns. Return only the grid, with no explanation."""
+
+
+# The same task with the answer taken out of grid form.  The model still sees
+# the grid exactly as the default prompt shows it, but replies with only the
+# masked cells that should carry material, so a score under this template
+# measures the structure without the ability to emit several hundred cells in
+# an exact shape.  The grid stays the last grid-shaped block in the prompt --
+# the masked-cell list is written in words -- so stored records still parse.
+SPARSE_PROMPT_TEMPLATE = """You are given a structural material distribution represented as a grid. Each cell can have one of the following states:
+- 'L' indicates applied load.
+- 'V' indicates void.
+- 'S' indicates support.
+
+The goal is to predict the correct material distribution by filling in all {FILL_INSTRUCTION}, based on the surrounding structure and implicit physical reasoning (such as load paths, supports, and forces).
+
+Important: The completed structure should use as little material as possible while remaining stable and plausible for carrying the applied forces. Minimize material usage unless necessary for structural support.
+
+Below is the input grid with masked regions. It has {ROWS} rows and {COLS} columns; rows are numbered 0 to {LAST_ROW} from the top and columns 0 to {LAST_COL} from the left.
+
+{GRID}
+
+The masked cells, by row:
+{MASKED_CELLS}
+
+Do not reproduce the grid. Instead, {SPARSE_INSTRUCTION}
+Every masked cell you do not list is left empty (0). Cells that are not masked keep their values and must not be listed.
+Return only the list without any additional explanation."""
+
+SPARSE_BINARY_INSTRUCTION = (
+    "list every masked cell that should be solid ('1'), one per line as "
+    "row,column (for example 3,7). If no masked cell should be solid, reply "
+    "with NONE."
+)
+SPARSE_DENSITY_INSTRUCTION = (
+    "list every masked cell whose density should be above 0, one per line as "
+    "row,column,value with the value between 0 and 1 to one decimal place "
+    "(for example 3,7,0.8). If every masked cell should be 0.0, reply with NONE."
+)

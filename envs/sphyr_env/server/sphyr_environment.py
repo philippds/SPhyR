@@ -26,13 +26,15 @@ from uuid import uuid4
 from openenv.core.env_server.interfaces import Environment
 from openenv.core.env_server.types import State
 
-from sphyr.metrics.utils import extract_grid_from_text
+from sphyr.metrics.utils import parse_completion
 from sphyr.scoring import calculate_all_metrics, reward_from_metrics
 from sphyr.tasks import (
     RANDOM_SEED,
     SAMPLE_COUNT,
     SUBJECTS,
+    answer_format_for,
     generate_prompts,
+    is_density_subject,
     gravity_for_rotation,
     load_subject,
     DEFAULT_DATASET_VERSION,
@@ -129,11 +131,22 @@ class SPhyREnvironment(Environment):
         order, so a new model is measured against the stored columns rather
         than against a fresh draw of the same size.
         """
+        answer_format = answer_format_for(self._prompt_style)
+
         if self._replay_from:
+            # The stored prompt is the published task; only a different
+            # prompt style re-poses it, so a default-style replay stays
+            # byte-identical to the run it replays.
             self._samples = replay_samples(
                 subject=self._subject,
                 records=published_records(self._subject, self._replay_from),
                 rotation_count=self._rotation_count,
+                prompt_template=(
+                    None
+                    if self._prompt_style == "default"
+                    else resolve_prompt_template(self._prompt_style)
+                ),
+                answer_format=answer_format,
             )
             self._cursor = 0
             self._built_config = self._config()
@@ -154,6 +167,7 @@ class SPhyREnvironment(Environment):
             few_shot_count=self._few_shot_count,
             prompt_template=resolve_prompt_template(self._prompt_style),
             rng=self._rng,
+            answer_format=answer_format,
         )
         self._cursor = 0
         self._built_config = self._config()
@@ -186,7 +200,9 @@ class SPhyREnvironment(Environment):
             rotation_count: Quarter turns applied to the sample and its load case.
             few_shot_count: Solved examples to include in the prompt.
             prompt_style: ``'default'``, ``'physics_enhanced'``,
-                ``'physics_neutral'``, or a template containing a GRID placeholder.
+                ``'physics_neutral'``, ``'sparse'`` (reply with the solid
+                masked cells only, not the grid), or a template containing a
+                GRID placeholder.
             dataset_source: ``'local'``, ``'hub'``, or None to prefer the
                 bundled dataset files.
             replay_from: Name of a directory under ``results/`` whose stored
@@ -223,6 +239,14 @@ class SPhyREnvironment(Environment):
             self._feedback_rounds = feedback_rounds
         if replay_from is not None:
             self._replay_from = replay_from
+
+        if self._feedback_rounds and answer_format_for(self._prompt_style) != "grid":
+            # The feedback prompt shows the previous answer back as a grid and
+            # asks for a grid in return.
+            raise ValueError(
+                "feedback_rounds supports grid answers only, not prompt_style "
+                f"{self._prompt_style!r}"
+            )
 
         if seed is not None:
             self._rng = random.Random(seed)
@@ -290,11 +314,20 @@ class SPhyREnvironment(Environment):
 
         # Models wrap the grid in prose or code fences, so the last grid block
         # in the text is taken as the answer; a completion with no grid in it
-        # at all falls through as an invalid one and scores zero.
-        output_grid = extract_grid_from_text(action.grid) or str_to_grid(action.grid)
+        # at all falls through as an invalid one and scores zero.  A sparse
+        # answer is expanded onto the masked grid instead.
+        input_grid = str_to_grid(sample.input)
+        output_grid, format_info = parse_completion(
+            action.grid,
+            input_grid,
+            answer_format=sample.answer_format,
+            density=is_density_subject(sample.subject),
+        )
+        if sample.answer_format == "grid" and not output_grid:
+            output_grid = str_to_grid(action.grid)
 
         metrics = calculate_all_metrics(
-            input_grid=str_to_grid(sample.input),
+            input_grid=input_grid,
             output_grid=output_grid,
             gt_grid=str_to_grid(sample.ground_truth),
             subject=sample.subject,
@@ -303,6 +336,10 @@ class SPhyREnvironment(Environment):
             output=action.grid,
             gravity_dir=gravity_for_rotation(sample.rotation_count),
         )
+        if sample.answer_format != "grid":
+            # Recorded so a rescore reads the stored completion the same way.
+            metrics["answer_format"] = sample.answer_format
+            metrics.update(format_info)
 
         self._attempt += 1
         done = self._attempt > self._feedback_rounds

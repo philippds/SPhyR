@@ -26,10 +26,20 @@ from contextlib import contextmanager
 
 from tqdm import tqdm
 
-from sphyr.metrics.utils import extract_grid_from_text, get_gravity_from_folder
+from sphyr.metrics.utils import (
+    extract_grid_from_text,
+    get_gravity_from_folder,
+    parse_completion,
+)
 from sphyr.policies import RUNNABLE_MODELS, get_policy, resolve_model
 from sphyr.scoring import Result, aggregate_results, calculate_all_metrics
-from sphyr.tasks import DEFAULT_DATASET_VERSION, SAMPLE_COUNT, SUBJECTS
+from sphyr.tasks import (
+    DEFAULT_DATASET_VERSION,
+    PROMPT_STYLES,
+    SAMPLE_COUNT,
+    SUBJECTS,
+    is_density_subject,
+)
 
 from sphyr_env import SPhyRAction
 
@@ -235,6 +245,7 @@ def evaluate_subject(
                     record["openrouter_model"] = resolve_model(model)
                 except ValueError:
                     pass
+                record.update(action.metadata.get("usage", {}))
 
                 results.append(record)
                 existing_results[record["prompt"]] = record
@@ -308,10 +319,19 @@ def run_main_experiment(
     dataset_version=None,
     sample_count=SAMPLE_COUNT,
     subjects=None,
+    prompt_style="default",
+    name_suffix=None,
 ):
+    # A non-default prompt style poses different tasks, so its results go to
+    # their own directory rather than resuming into the default run's.
+    if name_suffix is None:
+        name_suffix = "" if prompt_style == "default" else f"_{prompt_style}"
+
     run_experiment(
         models=models or DEFAULT_MODELS,
         subjects=subjects or SUBJECTS,
+        name_suffix=name_suffix,
+        prompt_style=prompt_style,
         sample_count=sample_count,
         base_url=base_url,
         concurrency=concurrency,
@@ -424,10 +444,18 @@ def rescore_stored_results(results_root=RESULTS_ROOT):
                 records = json.load(handle)
 
             for record in records:
+                input_grid = extract_grid_from_text(record["prompt"])
+                output_grid, format_info = parse_completion(
+                    record["completion"],
+                    input_grid,
+                    answer_format=record.get("answer_format", "grid"),
+                    density=is_density_subject(record["subject"]),
+                )
+                record.update(format_info)
                 record.update(
                     calculate_all_metrics(
-                        input_grid=extract_grid_from_text(record["prompt"]),
-                        output_grid=extract_grid_from_text(record["completion"]),
+                        input_grid=input_grid,
+                        output_grid=output_grid,
                         gt_grid=extract_grid_from_text(record["ground_truth"]),
                         subject=record["subject"],
                         prompt=record["prompt"],
@@ -532,6 +560,25 @@ def build_parser():
             "same on a 20x20 grid)."
         ),
     )
+    parser.add_argument(
+        "--prompt-style",
+        default="default",
+        choices=sorted(PROMPT_STYLES),
+        help=(
+            "Prompt for the main experiment. 'sparse' asks for the solid "
+            "masked cells as row,column lines instead of the grid, which "
+            "takes serialisation out of the score; combined with "
+            "--replay-from it poses the stored samples in that format."
+        ),
+    )
+    parser.add_argument(
+        "--name-suffix",
+        help=(
+            "Suffix for the results directory of the main experiment, to keep "
+            "a rerun apart from the stored run. Defaults to the prompt style "
+            "when it is not the default."
+        ),
+    )
     parser.add_argument("--few-shot-count", type=int, default=1)
     parser.add_argument("--rotations", type=int, default=3)
     parser.add_argument("--results-root", default=RESULTS_ROOT)
@@ -552,6 +599,8 @@ def main(argv=None):
             dataset_version=args.dataset_version,
             sample_count=args.sample_count,
             subjects=args.subjects,
+            prompt_style=args.prompt_style,
+            name_suffix=args.name_suffix,
         )
     elif args.experiment == "rotations":
         run_rotation_comparison_experiment(

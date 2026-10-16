@@ -19,6 +19,9 @@ from sphyr.prompt_templates import (
     PHYSICS_ENHANCED_PROMPT_TEMPLATE,
     PHYSICS_NEUTRAL_PROMPT_TEMPLATE,
     PROMPT_TEMPLATE,
+    SPARSE_BINARY_INSTRUCTION,
+    SPARSE_DENSITY_INSTRUCTION,
+    SPARSE_PROMPT_TEMPLATE,
 )
 
 SUBJECTS = [
@@ -80,7 +83,16 @@ PROMPT_STYLES = {
     "feedback": FEEDBACK_PROMPT_TEMPLATE,
     "physics_enhanced": PHYSICS_ENHANCED_PROMPT_TEMPLATE,
     "physics_neutral": PHYSICS_NEUTRAL_PROMPT_TEMPLATE,
+    "sparse": SPARSE_PROMPT_TEMPLATE,
 }
+
+# How a reply to each prompt style is read back.  Every style asks for the
+# completed grid except ``sparse``, which asks for the solid masked cells only.
+ANSWER_FORMATS = {"sparse": "sparse"}
+
+
+def answer_format_for(prompt_style):
+    return ANSWER_FORMATS.get(prompt_style, "grid")
 
 BINARY_FILL_INSTRUCTION = "'V' cells with either '1' (solid) or '0' (empty)"
 DENSITY_FILL_INSTRUCTION = (
@@ -103,6 +115,7 @@ class Sample:
     rows: int = 0
     cols: int = 0
     masked_cells: int = 0
+    answer_format: str = "grid"
 
 
 def grid_to_str(grid):
@@ -148,6 +161,50 @@ def fill_instruction_for(subject):
     if is_density_subject(subject):
         return DENSITY_FILL_INSTRUCTION
     return BINARY_FILL_INSTRUCTION
+
+
+def describe_masked_cells(input_grid):
+    """The masked cells of a grid in words, one row per line, runs collapsed.
+
+    ``row 3: 0-4, 9`` rather than a list of coordinate pairs: compact on a fully
+    masked 20x20 grid, and never mistakable for a grid row when parsed back.
+    """
+    lines = []
+    for r, row in enumerate(str_to_grid(input_grid)):
+        columns = [c for c, cell in enumerate(row) if cell == "V"]
+        if not columns:
+            continue
+        runs, start = [], columns[0]
+        for previous, column in zip(columns, columns[1:] + [None]):
+            if column != previous + 1:
+                runs.append(f"{start}" if start == previous else f"{start}-{previous}")
+                start = column
+        lines.append(f"row {r}: {', '.join(runs)}")
+    return "\n".join(lines)
+
+
+def render_prompt(template, subject, input_grid):
+    """Fill a prompt template for one masked grid.
+
+    Every template takes FILL_INSTRUCTION and GRID; the sparse one also names
+    the grid's size and its masked cells.  ``str.format`` ignores the fields a
+    template does not use, so all of them are always supplied.
+    """
+    rows = str_to_grid(input_grid)
+    return template.format(
+        FILL_INSTRUCTION=fill_instruction_for(subject),
+        GRID=input_grid,
+        ROWS=len(rows),
+        COLS=len(rows[0]) if rows else 0,
+        LAST_ROW=len(rows) - 1,
+        LAST_COL=(len(rows[0]) if rows else 0) - 1,
+        MASKED_CELLS=describe_masked_cells(input_grid),
+        SPARSE_INSTRUCTION=(
+            SPARSE_DENSITY_INSTRUCTION
+            if is_density_subject(subject)
+            else SPARSE_BINARY_INSTRUCTION
+        ),
+    )
 
 
 def resolve_prompt_template(prompt_style):
@@ -287,6 +344,7 @@ def build_sample(
     prompt_template=PROMPT_TEMPLATE,
     few_shot_prompt_template=FEW_SHOT_PROMPT_TEMPLATE,
     rng=None,
+    answer_format="grid",
 ):
     """Turn one dataset record into a ready-to-serve :class:`Sample`."""
     input_grid = rotate_grid(record["input_grid"], times=rotation_count)
@@ -302,10 +360,7 @@ def build_sample(
             GRID=input_grid,
         )
     else:
-        prompt = prompt_template.format(
-            FILL_INSTRUCTION=fill_instruction,
-            GRID=input_grid,
-        )
+        prompt = render_prompt(prompt_template, subject, input_grid)
 
     rows = str_to_grid(input_grid)
 
@@ -320,6 +375,7 @@ def build_sample(
         rows=len(rows),
         cols=len(rows[0]) if rows else 0,
         masked_cells=count_masked_cells(input_grid),
+        answer_format=answer_format,
     )
 
 
@@ -343,7 +399,9 @@ def published_records(subject, replay_from, results_root=None):
         return json.load(handle)
 
 
-def replay_samples(subject, records, rotation_count=0):
+def replay_samples(
+    subject, records, rotation_count=0, prompt_template=None, answer_format="grid"
+):
     """Rebuild the samples a published run was scored on, from its own records.
 
     The published samples cannot be regenerated from the dataset.  Every
@@ -358,6 +416,11 @@ def replay_samples(subject, records, rotation_count=0):
     Reconstructing from those is therefore not a convenience but the only way a
     new model can be measured on the samples the published columns were
     measured on.
+
+    With ``prompt_template`` the stored prompt is replaced by that template
+    filled with the stored grid: the same samples, posed differently.  Without
+    it the stored prompt is served verbatim, so a resumed run still matches
+    the records it is resuming.
     """
     samples = []
 
@@ -365,6 +428,8 @@ def replay_samples(subject, records, rotation_count=0):
         prompt = record["prompt"]
         input_grid = grid_to_str(extract_grid_from_text(prompt))
         rows = str_to_grid(input_grid)
+        if prompt_template is not None:
+            prompt = render_prompt(prompt_template, subject, input_grid)
 
         samples.append(
             Sample(
@@ -378,6 +443,7 @@ def replay_samples(subject, records, rotation_count=0):
                 rows=len(rows),
                 cols=len(rows[0]) if rows else 0,
                 masked_cells=count_masked_cells(input_grid),
+                answer_format=answer_format,
             )
         )
 
@@ -393,6 +459,7 @@ def generate_prompts(
     prompt_template=PROMPT_TEMPLATE,
     few_shot_prompt_template=FEW_SHOT_PROMPT_TEMPLATE,
     rng=None,
+    answer_format="grid",
 ) -> list[Sample]:
     """Build the prompts for one subject, in dataset order."""
     return [
@@ -406,6 +473,7 @@ def generate_prompts(
             prompt_template=prompt_template,
             few_shot_prompt_template=few_shot_prompt_template,
             rng=rng,
+            answer_format=answer_format,
         )
         for index, record in enumerate(dataset[:sample_count])
     ]

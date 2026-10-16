@@ -29,7 +29,12 @@ from sphyr.metrics.structural import (
     STRUCTURAL_METRIC_KEYS,
     get_structural_metrics,
 )
-from sphyr.metrics.utils import extract_grid_from_text, get_gravity_from_folder
+from sphyr.metrics.utils import (
+    extract_grid_from_text,
+    get_gravity_from_folder,
+    parse_completion,
+)
+from sphyr.tasks import is_density_subject
 
 RESULTS_SUFFIX = "_results.json"
 AGGREGATED_SUFFIX = "_aggregated_results.json"
@@ -76,7 +81,12 @@ def find_result_files(results_root):
 def rescore_record(record, gravity_dir, include_own_budget_reference):
     """Add the structural metrics to one stored result record."""
     input_grid = extract_grid_from_text(record["prompt"])
-    output_grid = extract_grid_from_text(record["completion"])
+    output_grid, _ = parse_completion(
+        record["completion"],
+        input_grid,
+        answer_format=record.get("answer_format", "grid"),
+        density=is_density_subject(record["subject"]),
+    )
     gt_grid = extract_grid_from_text(record["ground_truth"])
 
     metrics = get_structural_metrics(

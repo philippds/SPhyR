@@ -77,3 +77,77 @@ def extract_grid_from_text(text):
     if not matches:
         return []
     return [line.split() for line in matches[-1].strip().splitlines()]
+
+
+# One entry of a sparse answer: ``row,col`` or ``row,col,value``, optionally
+# bulleted or parenthesised.  Commas keep an entry from ever reading as a grid
+# row, so a prompt that carries both a grid and a sparse answer parses
+# unambiguously.
+SPARSE_ENTRY_RE = re.compile(
+    r"^[-*\s]*\(?\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([+-]?\d*\.?\d+))?\s*\)?[\s,;.]*$"
+)
+SPARSE_NONE_RE = re.compile(r"^\W*none\W*$", re.IGNORECASE)
+
+
+def parse_sparse_answer(text, input_grid, density=False):
+    """Rebuild a full grid from an answer that lists only the solid masked cells.
+
+    The sparse answer format exists to take serialisation out of the score:
+    the agent never writes the grid, only the masked cells that should carry
+    material, so it cannot miscount a row or stop a grid short.  Every masked
+    cell it does not list is empty and every visible cell keeps its value.
+
+    An entry naming a cell that is not masked, or lies outside the grid, is
+    dropped and counted rather than voiding the answer -- the point of the
+    format is that bookkeeping slips cost the cells they touch, not the whole
+    sample.  A density entry without a value is dropped the same way.
+
+    Returns ``(grid, info)``.  The grid is empty when the reply contains no
+    entry at all and does not say ``NONE``, which scores as an unreadable
+    answer, like a grid reply with no grid in it.
+    """
+    empty = "0.0" if density else "0"
+    grid = [[empty if cell == "V" else cell for cell in row] for row in input_grid]
+    accepted, rejected, said_none = 0, 0, False
+
+    segments = (
+        segment.strip()
+        for line in text.replace("`", "").splitlines()
+        for segment in line.split(";")
+    )
+    for segment in segments:
+        if not segment:
+            continue
+        if SPARSE_NONE_RE.match(segment):
+            said_none = True
+            continue
+        match = SPARSE_ENTRY_RE.match(segment)
+        if not match:
+            continue
+
+        r, c, value = int(match.group(1)), int(match.group(2)), match.group(3)
+        masked = 0 <= r < len(input_grid) and 0 <= c < len(input_grid[r]) and (
+            input_grid[r][c] == "V"
+        )
+        if not masked or (density and value is None):
+            rejected += 1
+            continue
+
+        grid[r][c] = value if value is not None else "1"
+        accepted += 1
+
+    info = {"sparse_entries": accepted, "sparse_rejected_entries": rejected}
+    if not accepted and not said_none:
+        return [], info
+    return grid, info
+
+
+def parse_completion(text, input_grid, answer_format="grid", density=False):
+    """Turn an agent's reply into the grid it describes, in either answer format.
+
+    Returns ``(grid, info)``; ``info`` carries format-specific bookkeeping and
+    is empty for grid answers.
+    """
+    if answer_format == "sparse":
+        return parse_sparse_answer(text, input_grid, density=density)
+    return extract_grid_from_text(text), {}
