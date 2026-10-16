@@ -112,6 +112,14 @@ python -m sphyr.run_eval main --concurrency 8
 # A local model served by Ollama, at its OpenAI-compatible endpoint
 python -m sphyr.run_eval main --models ollama/qwen3:8b
 
+# Answer as a list of solid cells instead of a grid (see "Answer formats")
+python -m sphyr.run_eval main --models anthropic/claude-opus-5 --dataset-version v2-20 \
+    --replay-from anthropic_claude-opus-5_v2-20 --prompt-style sparse
+
+# Repeat a run under its own name instead of resuming the stored one
+python -m sphyr.run_eval main --models google/gemini-3.8-flash --dataset-version v2-20 \
+    --replay-from anthropic_claude-opus-5_v2-20 --name-suffix _rerun
+
 # Baselines that answer without a model, to calibrate absolute scores
 python -m sphyr.run_eval main --models baseline-solid baseline-empty \
     baseline-random baseline-retrieval
@@ -140,6 +148,29 @@ the sampling — loads and supports on any edge, eight load directions, and
 rejection sampling that holds every pair of samples at least 6 boundary cells
 and 8 structure cells apart. Formats, tokens and schema are unchanged.
 
+### Answer formats
+
+The default prompt asks for the completed grid, and a reply that is not a grid
+of the right shape scores zero. At 20×20 that makes emitting several hundred
+cells in an exact shape part of what is measured: a model that runs out of
+output budget mid-row, or miscounts a row, loses the sample whatever it had
+reasoned about the structure.
+
+`--prompt-style sparse` serves the same task without the grid in the answer.
+The prompt lists the masked cells by row (`row 3: 0-4, 9`) and asks for only the
+masked cells that should carry material, one per line as `row,column` (binary
+subjects), `row,column,value` (density subjects) or `NONE`. Every masked cell
+not listed is empty and every visible cell keeps its value, so no answer can be
+misshapen. An entry that names an unmasked or out-of-range cell is dropped and
+counted (`sparse_rejected_entries` in the record) rather than voiding the
+answer; a reply with no entry at all and no `NONE` scores as unreadable, like a
+grid reply with no grid in it.
+
+Results land in their own directory, `results/<model>_sparse[_<version>]/`,
+next to the grid run; `--replay-from` the grid run so both formats answer the
+same samples, then compare them with `analyze_results formats` (see "Analyses
+behind the paper").
+
 ### Feedback rounds
 
 The environment is single-step by default. With `feedback_rounds` set, a
@@ -153,6 +184,24 @@ from sphyr_env.server.sphyr_environment import SPhyREnvironment
 
 env = SPhyREnvironment(feedback_rounds=3)
 ```
+
+The experiment behind the paper's feedback section runs each sample twice over:
+once with the simulator's report between attempts and once re-posing the same
+prompt with nothing added, so that best-of-several is controlled for and only
+the gap between the two arms is credited to the feedback:
+
+```bash
+# Revision arm: answer, be simulated, revise, for three further attempts
+python -m sphyr.run_feedback --models ollama/qwen3:8b --subject full_easy \
+    --dataset-version v2 --samples 50 --rounds 3
+
+# Control arm: the same four attempts with the prompt simply re-posed
+python -m sphyr.run_feedback --models ollama/qwen3:8b --subject full_easy \
+    --dataset-version v2 --samples 50 --rounds 3 --no-feedback
+```
+
+Each attempt is scored on its own and stored under
+`results/<model>_feedback_<version>/` and `results/<model>_resample_<version>/`.
 
 The models the paper reported are mapped to their OpenRouter ids in
 [`src/sphyr/policies.py`](src/sphyr/policies.py), keyed by the name their
@@ -350,6 +399,41 @@ The physics engine is standalone and reusable:
 `src/sphyr/physics/simp.py` (topology optimization),
 `src/sphyr/physics/boundary_conditions.py` (grid → load case),
 `src/sphyr/physics/analysis.py` (structural response).
+
+---
+
+## 🔍 Analyses Behind the Paper
+
+The statistics the paper quotes beyond its result tables are computed from the
+stored completions by [`src/sphyr/analyze_results.py`](src/sphyr/analyze_results.py).
+None of the first four calls a model or re-runs a simulation; they read the
+metrics stored with every record.
+
+```bash
+# The abstract's numbers: valid completions that carry their load while differing
+# from the reference, and where cell-graph connectivity and compliance disagree
+python -m sphyr.analyze_results headline
+
+# Completions as good as the reference design on both factors, yet not the reference
+python -m sphyr.analyze_results alternatives
+
+# Why unreadable completions are unreadable: no grid, cut off, extra rows, wrong widths
+python -m sphyr.analyze_results invalid --runs google_gemini-3.8-flash_v2-20
+
+# Grid against sparse answers on the samples both runs share; --latex prints table rows
+python -m sphyr.analyze_results formats --runs anthropic_claude-opus-5_v2-20 \
+    google_gemini-3.8-flash_rerun_v2-20:google_gemini-3.8-flash_sparse_v2-20
+
+# Model-free: drive the optimizer into other local optima and count the structurally
+# different designs the verifier rates as highly as the reference (runs the solver)
+python -m sphyr.analyze_results optima --dataset-version v2 --samples 30
+```
+
+`headline` and `alternatives` default to the v1 runs the paper's statistics were
+first computed over, so their numbers keep meaning what the paper says; pass
+`--runs` to compute them over other result directories. `formats` pairs each
+grid run with its `_sparse` counterpart automatically, or takes `GRID:SPARSE`
+to pair two directories explicitly, as above for a rerun.
 
 ---
 
