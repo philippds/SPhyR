@@ -73,6 +73,8 @@ def run_episode(session, policy, subject, sample_index, rounds, feedback=True):
                 "optimal_compliance": metrics.get("optimal_compliance"),
                 "scoring_policy": metrics.get("scoring_policy"),
                 "visible_cell_changes": metrics.get("visible_cell_changes", 0),
+                "load_direction": metrics.get("load_direction"),
+                "load_direction_source": metrics.get("load_direction_source"),
             }
         )
         if not feedback:
@@ -129,6 +131,8 @@ def run(model, policy, subject, rounds, samples, dataset_version,
                     # to reconstruct a shuffled dataset from sample_index.
                     "prompt": trajectory[0]["prompt"],
                     "ground_truth": trajectory[0]["ground_truth"],
+                    "load_direction": trajectory[0]["load_direction"],
+                    "load_direction_source": trajectory[0]["load_direction_source"],
                     "feedback_generated_with_scoring_policy": SCORING_POLICY,
                 }
             )

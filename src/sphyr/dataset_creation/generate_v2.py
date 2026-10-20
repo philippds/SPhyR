@@ -11,8 +11,9 @@ v2 changes the sampling rather than the task.  Load and support groups are
 placed on any edge in any combination, the load direction varies, and a
 candidate is rejected unless its boundary conditions *and* its solution are far
 from every sample already accepted.  The task formats, grid size, tokens and
-record schema are unchanged, so the existing prompts, metrics and environment
-work against v2 without modification.
+records carry the load direction explicitly so generation, prompts and scoring
+use the same load case. Historical v2 files omitted this field; corrected
+datasets must be written to a new directory and evaluated with fresh replies.
 
 Ground truth comes from the repository's own SIMP optimizer rather than from an
 external solver, so the dataset can be regenerated from source.
@@ -295,8 +296,10 @@ def _answer_grid(sample, difficulty):
 
 
 def write_subjects(samples, out_dir, seed=0):
-    """Write the sixteen subject files, in the v1 record schema."""
+    """Write sixteen subjects, retaining the force used by the optimizer."""
     out_dir = Path(out_dir)
+    if any(out_dir.glob("*.jsonl")):
+        raise FileExistsError(f"Refusing to overwrite existing subjects in {out_dir}; choose a new directory")
     out_dir.mkdir(parents=True, exist_ok=True)
     written = {}
 
@@ -316,6 +319,7 @@ def write_subjects(samples, out_dir, seed=0):
                                 "index": index,
                                 "input_grid": masked,
                                 "ground_truth": answer,
+                                "load_direction": list(sample.problem.load_direction),
                             }
                         )
                         + "\n"

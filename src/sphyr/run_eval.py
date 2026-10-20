@@ -491,7 +491,8 @@ def build_parser():
         help=(
             "Dataset version to evaluate on: v1 (the published benchmark), "
             "v2 (regenerated with widely separated samples), or v2-20 (the "
-            "same on a 20x20 grid)."
+            "same on a 20x20 grid). Use v2-force or v2-20-force for new "
+            "evaluations with explicit generation load directions."
         ),
     )
     parser.add_argument(

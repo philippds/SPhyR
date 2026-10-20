@@ -290,7 +290,8 @@ def by_task(run, results_root):
     """A run's records keyed by subject and masked grid, so formats pair up."""
     keyed = {}
     for _, record in records([run], results_root):
-        task = repr(extract_grid_from_text(record["prompt"]))
+        task = repr((extract_grid_from_text(record["prompt"]),
+                     record.get("load_direction", [1, 0])))
         keyed.setdefault(record["subject"], {})[task] = record
     return keyed
 
@@ -352,7 +353,7 @@ OPTIMA_DRAWS = 4
 OPTIMA_MIN_SEPARATION = 3
 
 
-def alternative_optima(input_grid, gt_grid, rng):
+def alternative_optima(input_grid, gt_grid, rng, gravity_dir=(1, 0)):
     """Distinct binary designs for one sample, each with its verifier score.
 
     Every design spends exactly the reference answer's material in the masked
@@ -360,7 +361,7 @@ def alternative_optima(input_grid, gt_grid, rng):
     forbidden cells only steer the optimiser; the score is always computed on
     the sample as posed, with every masked cell available.
     """
-    problem = get_problem_from_grid(gt_grid)
+    problem = get_problem_from_grid(gt_grid, gravity_dir=gravity_dir)
     shape = (problem.nely, problem.nelx)
     structural = problem.structural_cells_mask()
     free = get_free_cells_mask(input_grid, shape) & ~structural
@@ -410,7 +411,7 @@ def alternative_optima(input_grid, gt_grid, rng):
             ]
             for r in range(shape[0])
         ]
-        score = get_structural_metrics(grid, gt_grid, input_grid).topology_score
+        score = get_structural_metrics(grid, gt_grid, input_grid, gravity_dir=gravity_dir).topology_score
         kept.append((design, score))
 
     return [
@@ -431,8 +432,9 @@ def run_optima(args):
     for index, row in enumerate(rows):
         input_grid = str_to_grid(grid_to_str(row["input_grid"]))
         gt_grid = str_to_grid(grid_to_str(row["ground_truth"]))
-        answer = get_structural_metrics(gt_grid, gt_grid, input_grid).topology_score
-        designs = alternative_optima(input_grid, gt_grid, rng)
+        direction = row.get("load_direction", (1, 0))
+        answer = get_structural_metrics(gt_grid, gt_grid, input_grid, gravity_dir=direction).topology_score
+        designs = alternative_optima(input_grid, gt_grid, rng, gravity_dir=direction)
         # "As good as the reference" means scoring at least what the dataset's
         # own answer scores, within the near-optimal margin.
         good = [

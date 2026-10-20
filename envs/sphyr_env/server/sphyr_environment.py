@@ -35,7 +35,6 @@ from sphyr.tasks import (
     answer_format_for,
     generate_prompts,
     is_density_subject,
-    gravity_for_rotation,
     load_subject,
     DEFAULT_DATASET_VERSION,
     format_feedback,
@@ -43,6 +42,7 @@ from sphyr.tasks import (
     replay_samples,
     resolve_prompt_template,
     str_to_grid,
+    with_load_direction,
 )
 
 try:
@@ -148,6 +148,13 @@ class SPhyREnvironment(Environment):
                 ),
                 answer_format=answer_format,
             )
+            if self._dataset_version.endswith("-force") and any(
+                not sample.load_direction_explicit for sample in self._samples
+            ):
+                raise ValueError(
+                    "Corrected force datasets cannot replay legacy tasks without explicit "
+                    "load directions. Run fresh corrected tasks first, then replay that run."
+                )
             self._cursor = 0
             self._built_config = self._config()
             return
@@ -291,6 +298,7 @@ class SPhyREnvironment(Environment):
             cell_values=self._current.cell_values,
             masked_cells=self._current.masked_cells,
             rotation_count=self._current.rotation_count,
+            load_direction=self._current.load_direction,
             done=False,
             reward=0.0,
         )
@@ -334,7 +342,8 @@ class SPhyREnvironment(Environment):
             prompt=sample.prompt,
             ground_truth=sample.ground_truth,
             output=action.grid,
-            gravity_dir=gravity_for_rotation(sample.rotation_count),
+            gravity_dir=sample.load_direction,
+            load_direction_source=("explicit" if sample.load_direction_explicit else "legacy-rotation"),
         )
         if sample.answer_format != "grid":
             # Recorded so a rescore reads the stored completion the same way.
@@ -352,6 +361,7 @@ class SPhyREnvironment(Environment):
             cell_values=sample.cell_values,
             masked_cells=sample.masked_cells,
             rotation_count=sample.rotation_count,
+            load_direction=sample.load_direction,
             completion=action.grid,
             ground_truth=sample.ground_truth,
             valid_grid=metrics["valid_output_grid"],
@@ -369,6 +379,8 @@ class SPhyREnvironment(Environment):
                 PREVIOUS=action.grid,
             )
             observation.grid = sample.input
+            if sample.load_direction_explicit:
+                observation.prompt = with_load_direction(observation.prompt, sample.load_direction)
             observation.ground_truth = None
 
         return observation

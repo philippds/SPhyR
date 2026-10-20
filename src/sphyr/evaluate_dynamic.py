@@ -34,7 +34,7 @@ from sphyr.metrics.utils import (
     get_gravity_from_folder,
     parse_completion,
 )
-from sphyr.tasks import is_density_subject
+from sphyr.tasks import is_density_subject, validate_load_direction
 from sphyr.scoring import Result, aggregate_results, calculate_all_metrics
 
 RESULTS_SUFFIX = "_results.json"
@@ -95,6 +95,9 @@ def rescore_record(record, gravity_dir, include_own_budget_reference=False,
         density=is_density_subject(record["subject"]),
     )
     gt_grid = extract_grid_from_text(record["ground_truth"])
+    # Stored force components are already in the displayed grid's axes.
+    # Never recover a generation force and silently apply it to an old reply.
+    gravity_dir = validate_load_direction(record.get("load_direction", gravity_dir))
 
     reference = record.get("optimal_compliance") if reuse_reference else None
     if reference is not None and not (0 < reference < float("inf")):
@@ -110,6 +113,7 @@ def rescore_record(record, gravity_dir, include_own_budget_reference=False,
         gravity_dir=gravity_dir,
         include_own_budget_reference=include_own_budget_reference,
         reference_compliance=reference,
+        load_direction_source=record.get("load_direction_source", "explicit" if "load_direction" in record else "legacy-rotation"),
     )
 
     record.update(metrics)
@@ -264,7 +268,8 @@ def build_probe_completions(ground_truth, rng, hard, input_grid=None):
 
 
 def run_validate(args):
-    records = load_dataset_file(args.subject)[: args.samples]
+    from sphyr.tasks import load_subject
+    records = load_subject(args.subject, version=args.dataset_version)[: args.samples]
     hard = args.subject.endswith("hard")
 
     rows = defaultdict(list)
@@ -281,6 +286,7 @@ def run_validate(args):
                 output_grid=completion,
                 gt_grid=ground_truth,
                 input_grid=record["input_grid"],
+                gravity_dir=record.get("load_direction", (1, 0)),
                 include_own_budget_reference=args.design_efficiency,
             )
             rows[name].append(metrics)
@@ -342,6 +348,7 @@ def main():
     )
     validate.add_argument("--subject", default="full_easy")
     validate.add_argument("--samples", type=int, default=20)
+    validate.add_argument("--dataset-version", default="v1")
     validate.add_argument("--design-efficiency", action="store_true")
     validate.set_defaults(func=run_validate)
 

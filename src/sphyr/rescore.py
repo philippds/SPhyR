@@ -59,6 +59,9 @@ def rescore_episode(episode, subject, gravity, rebuild_references=False):
         attempt.setdefault("subject", subject)
         attempt.setdefault("prompt", episode["prompt"])
         attempt.setdefault("ground_truth", episode["ground_truth"])
+        if episode.get("load_direction") is not None:
+            attempt.setdefault("load_direction", episode["load_direction"])
+            attempt.setdefault("load_direction_source", episode.get("load_direction_source", "explicit"))
         rescore_record(attempt, gravity, reuse_reference=not rebuild_references)
     episode["scoring_policy"] = SCORING_POLICY
     return episode

@@ -63,6 +63,9 @@ class SPhyRObservation(Observation):
         default=None,
         description="Quarter turns applied to the sample; the load case rotates with it",
     )
+    load_direction: Optional[tuple[float, float]] = Field(
+        default=None, description="Applied force direction as (row, column) components",
+    )
     completion: Optional[str] = Field(
         default=None,
         description="The grid text the agent submitted (revealed after step)",
