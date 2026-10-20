@@ -169,7 +169,7 @@ def plot_results(
                     else:
                         with open(file_path, "r") as f:
                             data = json.load(f)
-                            value = data.get(metric_key, 0)
+                            value = 100 * data.get(metric_key, 0) / max(data.get("evaluated_samples", 100), 1)
                             if (
                                 metric_key == "total_difficulty_score"
                                 or metric_key == "total_isolated_clusters_count"
@@ -258,7 +258,7 @@ def plot_line_graph_results(
                     else:
                         with open(file_path, "r") as f:
                             data = json.load(f)
-                            value = data.get(metric_key, 0)
+                            value = 100 * data.get(metric_key, 0) / max(data.get("evaluated_samples", 100), 1)
                             if (
                                 metric_key == "total_difficulty_score"
                                 or metric_key == "total_isolated_clusters_count"

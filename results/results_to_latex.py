@@ -129,6 +129,9 @@ def find_and_parse_results(model_order, subject_map):
                         task, {}
                     )
                     for key, value in data.items():
+                        if not key.startswith("total_"):
+                            continue
+                        value = 100 * value / max(data.get("evaluated_samples", 100), 1)
                         metric = METRICS_MAP.get(key, key)
                         if (
                             metric == "Average Difficulty Score"

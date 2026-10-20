@@ -26,7 +26,7 @@ from matplotlib.patches import Rectangle
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 
 from sphyr.metrics.structural import get_reference_optimum, get_structural_metrics
-from sphyr.metrics.utils import extract_grid_from_text
+from sphyr.metrics.utils import complete_masked_grid, extract_grid_from_text
 from sphyr.physics.boundary_conditions import (
     get_densities_from_grid,
     get_free_cells_mask,
@@ -95,7 +95,7 @@ def load_case(case):
         record = json.load(handle)[case["index"]]
 
     input_grid = extract_grid_from_text(record["prompt"])
-    output_grid = extract_grid_from_text(record["completion"])
+    output_grid = complete_masked_grid(input_grid, extract_grid_from_text(record["completion"]))
     gt_grid = extract_grid_from_text(record["ground_truth"])
 
     metrics = get_structural_metrics(
