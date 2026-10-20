@@ -28,6 +28,7 @@ from tqdm import tqdm
 from sphyr.policies import get_policy
 from sphyr.run_eval import RESULTS_ROOT, open_session, results_dir_name
 from sphyr.tasks import DEFAULT_DATASET_VERSION
+from sphyr.metrics.utils import SCORING_POLICY
 
 from sphyr_env import SPhyRAction
 
@@ -51,6 +52,7 @@ def run_episode(session, policy, subject, sample_index, rounds, feedback=True):
         sample_index=sample_index,
         feedback_rounds=rounds if feedback else 0,
     )
+    task_prompt = observation.prompt
 
     trajectory = []
     for _ in range(rounds + 1):
@@ -66,6 +68,11 @@ def run_episode(session, policy, subject, sample_index, rounds, feedback=True):
                 "load_carrying": bool(metrics.get("load_carrying")),
                 "valid_output_grid": bool(metrics.get("valid_output_grid")),
                 "completion": scored.completion,
+                "prompt": task_prompt,
+                "ground_truth": metrics.get("ground_truth"),
+                "optimal_compliance": metrics.get("optimal_compliance"),
+                "scoring_policy": metrics.get("scoring_policy"),
+                "visible_cell_changes": metrics.get("visible_cell_changes", 0),
             }
         )
         if not feedback:
@@ -118,6 +125,11 @@ def run(model, policy, subject, rounds, samples, dataset_version,
                     "dataset_version": dataset_version,
                     "rounds": rounds,
                     "trajectory": trajectory,
+                    # Store the task itself so future rescoring never needs
+                    # to reconstruct a shuffled dataset from sample_index.
+                    "prompt": trajectory[0]["prompt"],
+                    "ground_truth": trajectory[0]["ground_truth"],
+                    "feedback_generated_with_scoring_policy": SCORING_POLICY,
                 }
             )
             if len(episodes) % SAVE_EVERY == 0:

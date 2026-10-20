@@ -3,8 +3,8 @@
 Two commands:
 
 ``rescore``
-    Recompute the structural metrics for the stored benchmark results and write
-    them back into the existing result files, leaving every other metric alone.
+    Recompute all metrics for stored benchmark results with given cells fixed,
+    preserving raw answers and backing up the original files.
 
 ``validate``
     Evidence that the metric measures what it claims to: it scores the dataset
@@ -35,6 +35,7 @@ from sphyr.metrics.utils import (
     parse_completion,
 )
 from sphyr.tasks import is_density_subject
+from sphyr.scoring import Result, aggregate_results, calculate_all_metrics
 
 RESULTS_SUFFIX = "_results.json"
 AGGREGATED_SUFFIX = "_aggregated_results.json"
@@ -78,10 +79,16 @@ def find_result_files(results_root):
     return grouped
 
 
-def rescore_record(record, gravity_dir, include_own_budget_reference):
-    """Add the structural metrics to one stored result record."""
+def rescore_record(record, gravity_dir, include_own_budget_reference=False,
+                   reuse_reference=True):
+    """Recompute all metrics on one reconstructed design; keep the raw answer.
+
+    Restoring given cells leaves the reference task unchanged. Its previously
+    computed compliance can therefore be reused; prediction physics is solved
+    again. A missing reference falls back to the standard optimizer.
+    """
     input_grid = extract_grid_from_text(record["prompt"])
-    output_grid, _ = parse_completion(
+    output_grid, format_info = parse_completion(
         record["completion"],
         input_grid,
         answer_format=record.get("answer_format", "grid"),
@@ -89,20 +96,31 @@ def rescore_record(record, gravity_dir, include_own_budget_reference):
     )
     gt_grid = extract_grid_from_text(record["ground_truth"])
 
-    metrics = get_structural_metrics(
+    reference = record.get("optimal_compliance") if reuse_reference else None
+    if reference is not None and not (0 < reference < float("inf")):
+        reference = None
+    metrics = calculate_all_metrics(
         output_grid=output_grid,
         gt_grid=gt_grid,
         input_grid=input_grid,
+        subject=record["subject"],
+        prompt=record["prompt"],
+        ground_truth=record["ground_truth"],
+        output=record["completion"],
         gravity_dir=gravity_dir,
         include_own_budget_reference=include_own_budget_reference,
+        reference_compliance=reference,
     )
 
-    record.update(metrics.as_dict())
+    record.update(metrics)
+    record.update(format_info)
+    record.pop("score", None)
+    record.pop("normalized_score", None)
     return record
 
 
 def update_aggregates(path, records):
-    """Refresh only the structural totals of the aggregate file next to it."""
+    """Refresh every metric total after restoring the task constraints."""
     aggregate_path = path.replace(RESULTS_SUFFIX, AGGREGATED_SUFFIX)
 
     aggregates = {}
@@ -110,10 +128,7 @@ def update_aggregates(path, records):
         with open(aggregate_path, "r") as handle:
             aggregates = json.load(handle)
 
-    for key in STRUCTURAL_METRIC_KEYS:
-        aggregates[f"total_{key}"] = sum(
-            float(record.get(key) or 0.0) for record in records
-        )
+    aggregates.update(aggregate_results([Result.from_dict(r) for r in records]))
     aggregates["evaluated_samples"] = len(records)
 
     with open(aggregate_path, "w") as handle:
@@ -188,40 +203,15 @@ def print_leaderboard(summaries):
 
 
 def run_rescore(args):
-    grouped = find_result_files(args.results_root)
-    if not grouped:
-        print(f"No result files found under {args.results_root}/")
-        return
+    """Use the full scorer so symbolic and structural metrics stay consistent."""
+    from sphyr.rescore import rescore_stored_results
 
-    file_count = sum(len(files) for files in grouped.values())
-    print(
-        f"Rescoring {file_count} result files across {len(grouped)} subjects "
-        f"with {args.workers} worker(s)."
+    return rescore_stored_results(
+        results_root=args.results_root,
+        workers=args.workers,
+        dry_run=args.dry_run,
+        own_budget=args.design_efficiency,
     )
-    if args.dry_run:
-        print("Dry run: metrics are computed but nothing is written back.")
-
-    tasks = [
-        (subject, files, args.design_efficiency, args.dry_run)
-        for subject, files in sorted(grouped.items())
-    ]
-
-    started = time.time()
-    summaries = []
-
-    if args.workers <= 1:
-        for task in tasks:
-            summaries.extend(rescore_subject(task))
-            print(f"  done: {task[0]}")
-    else:
-        with ProcessPoolExecutor(max_workers=args.workers) as executor:
-            futures = {executor.submit(rescore_subject, task): task[0] for task in tasks}
-            for future in as_completed(futures):
-                summaries.extend(future.result())
-                print(f"  done: {futures[future]}")
-
-    print(f"\nFinished in {time.time() - started:.0f}s")
-    print_leaderboard(summaries)
 
 
 def load_dataset_file(subject):
@@ -232,7 +222,7 @@ def load_dataset_file(subject):
         return [json.loads(line) for line in handle if line.strip()]
 
 
-def build_probe_completions(ground_truth, rng, hard):
+def build_probe_completions(ground_truth, rng, hard, input_grid=None):
     """Completions whose relative quality is known in advance.
 
     A metric worth trusting has to rank these in the obvious order, and has to
@@ -246,7 +236,8 @@ def build_probe_completions(ground_truth, rng, hard):
             (row, col)
             for row in range(len(grid))
             for col in range(len(grid[0]))
-            if grid[row][col] not in ("L", "S")
+            if (input_grid[row][col] == "V" if input_grid is not None
+                else grid[row][col] not in ("L", "S"))
         ]
         for row, col in rng.sample(cells, min(count, len(cells))):
             if hard:
@@ -257,8 +248,10 @@ def build_probe_completions(ground_truth, rng, hard):
 
     def fill(value):
         return [
-            [value if cell not in ("L", "S") else cell for cell in row]
-            for row in ground_truth
+            [value if (input_grid[r][c] == "V" if input_grid is not None
+                       else cell not in ("L", "S")) else cell
+             for c, cell in enumerate(row)]
+            for r, row in enumerate(ground_truth)
         ]
 
     return {
@@ -282,7 +275,7 @@ def run_validate(args):
         ground_truth = record["ground_truth"]
         rng = random.Random(index)
         for name, completion in build_probe_completions(
-            ground_truth, rng, hard
+            ground_truth, rng, hard, input_grid=record["input_grid"]
         ).items():
             metrics = get_structural_metrics(
                 output_grid=completion,

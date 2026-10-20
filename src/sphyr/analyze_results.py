@@ -154,7 +154,9 @@ def run_alternatives(args):
             continue
         near_optimal += 1
 
-        output = solid_mask(extract_grid_from_text(record["completion"]))
+        output = solid_mask(extract_grid_from_text(
+            record.get("scored_grid", record["completion"])
+        ))
         reference = solid_mask(str_to_grid(record["ground_truth"]))
         masked = np.array(
             [[cell == "V" for cell in row]

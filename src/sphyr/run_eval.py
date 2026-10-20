@@ -409,77 +409,11 @@ def run_prompt_style_experiment(prompt_style, models=None, base_url=None):
     )
 
 
-def rescore_stored_results(results_root=RESULTS_ROOT):
-    """Recompute every metric for the stored results and rewrite them in place.
+def rescore_stored_results(results_root=RESULTS_ROOT, workers=1):
+    """Rescore all stored metrics using the same constraint rule as live episodes."""
+    from sphyr.rescore import rescore_stored_results as rescore
 
-    The completions are already on disk, so this needs no model and no
-    environment: the same scorer the environment calls from ``step()`` is
-    applied to the grids parsed back out of each record.
-    """
-    print(f"Scanning {results_root}/ for existing results...")
-
-    model_dirs = [
-        name
-        for name in sorted(os.listdir(results_root))
-        if os.path.isdir(os.path.join(results_root, name)) and name != "plots"
-    ]
-
-    for model_dir in model_dirs:
-        model_path = os.path.join(results_root, model_dir)
-        print(f"\nProcessing model directory: {model_dir}")
-
-        # Rotation is recorded in the directory name, not the file name, and
-        # gravity has to rotate with the sample.
-        gravity_dir = get_gravity_from_folder(model_dir)
-
-        for file_name in sorted(os.listdir(model_path)):
-            if file_name.endswith("_aggregated_results.json"):
-                continue
-            if not file_name.endswith("_results.json"):
-                continue
-
-            results_file = os.path.join(model_path, file_name)
-
-            with open(results_file, "r") as handle:
-                records = json.load(handle)
-
-            for record in records:
-                input_grid = extract_grid_from_text(record["prompt"])
-                output_grid, format_info = parse_completion(
-                    record["completion"],
-                    input_grid,
-                    answer_format=record.get("answer_format", "grid"),
-                    density=is_density_subject(record["subject"]),
-                )
-                record.update(format_info)
-                record.update(
-                    calculate_all_metrics(
-                        input_grid=input_grid,
-                        output_grid=output_grid,
-                        gt_grid=extract_grid_from_text(record["ground_truth"]),
-                        subject=record["subject"],
-                        prompt=record["prompt"],
-                        ground_truth=record["ground_truth"],
-                        output=record["completion"],
-                        gravity_dir=gravity_dir,
-                    )
-                )
-
-                # Retired metrics from earlier revisions of the benchmark.
-                record.pop("score", None)
-                record.pop("normalized_score", None)
-
-            with open(results_file, "w") as handle:
-                json.dump(records, handle, indent=2)
-
-            aggregated = aggregate_results([Result.from_dict(r) for r in records])
-
-            with open(
-                results_file.replace("_results.json", "_aggregated_results.json"), "w"
-            ) as handle:
-                json.dump(aggregated, handle, indent=2)
-
-    print("\nAll files updated.")
+    return rescore(results_root=results_root, workers=workers)
 
 
 def build_parser():
