@@ -62,10 +62,18 @@ scored = env.step(SPhyRAction(grid=completed_grid_text))
 | `few_shot_count` | solved examples to include in the prompt |
 | `prompt_style` | `default`, `physics_enhanced`, `physics_neutral`, or your own template |
 | `dataset_source` | `local` (bundled files) or `hub` (Hugging Face) |
+| `dataset_version` | `v1` (default), historical `v2` / `v2-20`, or corrected `v2-force` / `v2-20-force` |
 | `seed` | reseed the sample order |
 
 Arguments left out keep their current value, so a bare `reset()` serves the
 next sample of the subject already loaded.
+
+For new evaluations, the `*-force` versions retain the force used to generate
+each layout and state it in the prompt. `observation.load_direction` exposes
+the same `(row, column)` vector; rotation turns it with the grid, and results
+store it for replay and rescoring. Historical v2 tasks keep the default
+downward force used by the paper's existing results. Those prompts omit the
+force vector and those layouts need not be optimal for the evaluated force.
 
 ## Reward
 

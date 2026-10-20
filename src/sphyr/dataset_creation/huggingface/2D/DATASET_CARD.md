@@ -12,18 +12,38 @@ with the least material.
 | `V` | masked cell, to be predicted |
 | `0`–`1` | material density (`0`/`1` on `easy`, one decimal place on `hard`) |
 
-Each record is `{"index": int, "input_grid": [[str]], "ground_truth": [[str]]}`.
+Historical records are `{"index": int, "input_grid": [[str]], "ground_truth": [[str]]}`.
+Corrected `v2-force` and `v2-20-force` records also contain
+`"load_direction": [row_component, column_component]`, the force used to generate
+the layout. Positive row points down, positive column points right; the
+simulator normalizes the vector. The prompt states it explicitly.
 
 ## Which version to use
 
-**Use `v2` for new work.** `v1` is kept because it is the version the published
-results were produced on, not because it is the better benchmark.
+**Use `v2-force` or `v2-20-force` for new work.** The historical versions remain
+available to replay the paper's existing results.
 
 | Version | Grid | Samples | Nearest-neighbour boundary-condition distance |
 | --- | --- | --- | --- |
 | `v1` | 10×10 | 1296 | **1 cell** (1294 of 1295 boundary conditions) |
 | `v2` | 10×10 | 300 | ≥ 6 cells |
 | `v2-20` | 20×20 | 300 | ≥ 6 cells |
+| `v2-force` | 10×10 | 300 | ≥ 6 cells |
+| `v2-20-force` | 20×20 | 300 | ≥ 6 cells |
+
+The historical v2 tasks omitted generation force vectors. Their reported
+single-step, sparse-format and feedback evaluations instead use a fixed
+downward force, which the prompts leave implicit. Stored layouts provide
+visible cells, reconstruction targets and budgets, without a claim that those
+layouts are optimal for the evaluated force. The scoring optimizer and the
+completion are simulated under the same evaluated force. Those results do not
+measure reasoning over explicitly specified force directions.
+
+The corrected versions preserve all historical grids and masks and add the
+recovered generation force. Recovery replayed seed 0 and verified every one of
+the 600 load cases by reproducing both its binary and rounded density answers.
+`provenance.json` records verification and source-file hashes. Corrected tasks
+require fresh model replies; no corrected-task model results are reported.
 
 ### Why v2 exists
 
@@ -42,12 +62,13 @@ masks only rows 1–8, leaving the entire load and support rows — 20 of 100 ce
 
 ### What v2 changes
 
-Only the sampling, not the task. Formats, tokens and record schema are
-identical, so existing prompts and metrics work unchanged.
+Sampling covers a broader layout family. Corrected records additionally
+preserve the force vector so generation, prompting and evaluation agree.
 
 - Loads and supports on **any edge in any combination**, supports optionally in
   two disjoint groups. v1 was always load-top, support-bottom.
-- **Eight load directions** including diagonals. v1 had one.
+- **Eight generation load directions** including diagonals, retained and stated
+  explicitly only in the corrected `*-force` versions.
 - **Rejection sampling**: a candidate is accepted only if its boundary condition
   differs from every accepted sample by ≥ 6 cells *and* its solved structure by
   ≥ 8 cells.
@@ -93,9 +114,18 @@ published columns were measured on.
 
 ```bash
 python -c "from sphyr.dataset_creation.generate_v2 import generate_samples, write_subjects; \
-           write_subjects(generate_samples(300, grid=20), 'datasets_v2_20')"
+           write_subjects(generate_samples(300, grid=20), 'new_datasets_v2_20_force')"
 ```
 
 ## Citation
 
 See the project repository for the paper and citation.
+
+## Licensing status
+
+An explicit license for the project's code and generated datasets has not yet
+been declared in this checkout. V1 generation used Millipede; permission and
+license documentation for that tool remains an author follow-up. V2 uses the
+project's SIMP implementation. Citation and provenance information do not
+constitute a license grant; this card does not assert permission on behalf of
+third-party asset owners.
