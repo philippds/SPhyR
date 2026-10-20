@@ -86,6 +86,28 @@ def test_step_scores_the_dataset_answer(env):
     assert observation.reward > 0.0
 
 
+def test_step_restores_given_cells_but_retains_the_raw_answer(env):
+    task = env.reset(subject="10_random_cell_easy", sample_index=0)
+    answer = env._current.ground_truth
+    clean = env.step(SPhyRAction(grid=answer))
+    input_grid = str_to_grid(task.grid)
+    tampered = str_to_grid(answer)
+    changes = 0
+    for r, row in enumerate(input_grid):
+        for c, cell in enumerate(row):
+            if cell != "V":
+                tampered[r][c] = "0" if cell in ("L", "S", "1") else "1"
+                changes += 1
+    raw = "\n".join(" ".join(row) for row in tampered)
+    env.reset(subject="10_random_cell_easy", sample_index=0)
+    scored = env.step(SPhyRAction(grid=raw))
+    assert scored.reward == clean.reward
+    assert scored.metrics["exact_match"]
+    assert scored.metrics["visible_cell_changes"] == changes
+    assert scored.metrics["completion"] == raw
+    assert scored.completion == raw
+
+
 def test_step_tolerates_prose_and_code_fences(env):
     env.reset(subject="10_random_cell_easy", sample_index=0)
     answer = env._current.ground_truth

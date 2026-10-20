@@ -18,6 +18,7 @@ from sphyr.metrics.reconstruction import (
 )
 from sphyr.metrics.structural import (
     STRUCTURAL_METRIC_KEYS,
+    StructuralMetrics,
     get_structural_metrics,
 )
 from sphyr.metrics.topology import (
@@ -26,7 +27,12 @@ from sphyr.metrics.topology import (
     is_load_supported,
     is_load_supported_force_directional,
 )
-from sphyr.metrics.utils import get_grid_shape_and_value_validity
+from sphyr.metrics.utils import (
+    SCORING_POLICY,
+    complete_masked_grid,
+    get_grid_shape_and_value_validity,
+    visible_cell_changes,
+)
 
 # The scalar an RL loop optimises.  ``topology_score`` is the headline dynamic
 # metric: stiffness relative to the best design achievable on the reference
@@ -41,17 +47,17 @@ class Result:
     ground_truth: str
     completion: str
     exact_match: bool
-    difference_ratio: float  # lower is better
-    penalized_difference_ratio: float  # lower is better
-    relative_difference_ratio: float  # lower is better
+    difference_ratio: float  # higher is better
+    penalized_difference_ratio: float  # higher is better
+    relative_difference_ratio: float  # higher is better
     valid_output_grid: bool
     load_support_connected: bool
     load_support_connected_force_directional: bool
     isolated_clusters_count: int  # lower is better
     force_path_cost_average_efficiency_ratio: float
     difficulty_score: float  # higher is more difficult
-    difficulty_weighted_difference_ratio: float  # lower is better
-    difficulty_weighted_relative_difference_ratio: float  # lower is better
+    difficulty_weighted_difference_ratio: float  # higher is better
+    difficulty_weighted_relative_difference_ratio: float  # higher is better
 
     # Dynamic, simulation-based metrics.  Defaulted so that result files
     # written before the structural evaluation existed still load.
@@ -62,6 +68,10 @@ class Result:
     load_carrying: bool = False
     compliance: float = None  # lower is better
     volume_ratio: float = 0.0  # 1.0 matches the reference material usage
+    visible_cell_changes: int = 0
+    visible_numeric_cell_changes: int = 0
+    visible_boundary_cell_changes: int = 0
+    visible_cells_preserved: bool = False
 
     @staticmethod
     def from_dict(result_dict):
@@ -99,6 +109,10 @@ class Result:
             load_carrying=result_dict.get("load_carrying", False),
             compliance=result_dict.get("compliance"),
             volume_ratio=result_dict.get("volume_ratio", 0.0),
+            visible_cell_changes=result_dict.get("visible_cell_changes", 0),
+            visible_numeric_cell_changes=result_dict.get("visible_numeric_cell_changes", 0),
+            visible_boundary_cell_changes=result_dict.get("visible_boundary_cell_changes", 0),
+            visible_cells_preserved=result_dict.get("visible_cells_preserved", False),
         )
 
 
@@ -111,6 +125,9 @@ def calculate_all_metrics(
     ground_truth,
     output,
     gravity_dir=(1, 0),
+    reference_compliance=None,
+    include_own_budget_reference=False,
+    load_direction_source="legacy-rotation",
 ):
     """Score one completion against its sample.
 
@@ -119,6 +136,12 @@ def calculate_all_metrics(
     A completion whose shape or values are invalid is scored as a miss on
     every metric rather than raising, because an unusable answer is a real
     outcome the benchmark has to report.
+
+    Given cells are restored before every metric is computed, so the submitted
+    design and optimization reference have identical design variables. Copying
+    errors are measured separately, and ``output`` stays raw.
+    ``reference_compliance`` is for offline rescoring of an unchanged task with
+    its already-computed reference; live scoring computes the reference.
     """
     valid_grid = get_grid_shape_and_value_validity(output_grid, gt_grid)
 
@@ -127,7 +150,7 @@ def calculate_all_metrics(
         gt_grid=gt_grid,
     )
 
-    structural_metrics = {}
+    structural_metrics = StructuralMetrics().as_dict()
 
     exact_match = False
     difference_ratio = 0.0
@@ -137,8 +160,18 @@ def calculate_all_metrics(
     load_support_connected_force_directional = False
     isolated_clusters_count = 0
     force_path_cost_average_efficiency_ratio = 0
+    preservation = {
+        "visible_cell_changes": 0,
+        "visible_numeric_cell_changes": 0,
+        "visible_boundary_cell_changes": 0,
+        "visible_cells_preserved": False,
+    }
+    scored_grid = ""
 
     if valid_grid:
+        preservation = visible_cell_changes(input_grid, output_grid)
+        output_grid = complete_masked_grid(input_grid, output_grid)
+        scored_grid = "\n".join(" ".join(row) for row in output_grid)
         exact_match = get_exact_match(output_grid, gt_grid)
         difference_ratio = get_difference_ratio(output_grid, gt_grid)
         penalized_difference_ratio = get_penalized_difference_ratio(
@@ -164,6 +197,8 @@ def calculate_all_metrics(
             gt_grid=gt_grid,
             input_grid=input_grid,
             gravity_dir=gravity_dir,
+            reference_compliance=reference_compliance,
+            include_own_budget_reference=include_own_budget_reference,
         ).as_dict()
 
     result_dict = {
@@ -184,6 +219,11 @@ def calculate_all_metrics(
         "difficulty_weighted_relative_difference_ratio": difficulty_score
         * relative_difference_ratio,
         "valid_output_grid": valid_grid,
+        "scoring_policy": SCORING_POLICY,
+        "scored_grid": scored_grid,
+        "load_direction": list(gravity_dir),
+        "load_direction_source": load_direction_source,
+        **preservation,
     }
 
     result_dict.update(structural_metrics)
@@ -264,5 +304,12 @@ def aggregate_results(results: list[Result]) -> dict:
         aggregated[f"total_{key}"] = sum(
             float(getattr(result, key) or 0.0) for result in results
         )
+
+    for key in (
+        "visible_cell_changes", "visible_numeric_cell_changes",
+        "visible_boundary_cell_changes", "visible_cells_preserved",
+    ):
+        aggregated[f"total_{key}"] = sum(getattr(result, key) for result in results)
+    aggregated["scoring_policy"] = SCORING_POLICY
 
     return aggregated

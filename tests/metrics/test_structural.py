@@ -26,10 +26,10 @@ DISCONNECTED = [
 ]
 
 SOLID = [
-    ["L", "L", "1", "1"],
+    ["L", "L", "0", "0"],
     ["1", "1", "1", "1"],
     ["1", "1", "1", "1"],
-    ["S", "S", "1", "1"],
+    ["S", "S", "0", "0"],
 ]
 
 EMPTY = [
@@ -77,7 +77,7 @@ def test_filling_everything_solid_is_penalised_for_material():
     # Stiffest possible answer, so the stiffness half of the score saturates.
     assert metrics.structural_efficiency == pytest.approx(1.0)
     # But it spends far more material than the reference answer.
-    assert metrics.material_efficiency < 0.6
+    assert metrics.material_efficiency == pytest.approx(2 / 3)
     assert metrics.topology_score < score(GROUND_TRUTH).topology_score
 
 

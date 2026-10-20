@@ -7,9 +7,8 @@ was generated with:
 1. The load case encoded in the sample (loads, supports, load direction) is
    rebuilt and the completion is solved as a linear elastic structure, giving
    its compliance - the work done by the load, i.e. the inverse of stiffness.
-2. A SIMP topology optimiser is then re-run on exactly the masked region, given
-   exactly the material the model spent there, producing the stiffest structure
-   that could have been drawn into that hole.
+2. A SIMP topology optimiser is run on exactly the masked region, at the
+   reference material budget, with visible material fixed.
 3. The completion is scored by how close it gets to that optimum.
 
 A completion that differs from the reference answer but carries the load just
@@ -23,6 +22,7 @@ from dataclasses import asdict, dataclass
 import numpy as np
 
 from sphyr.physics.analysis import analyze_structure
+from sphyr.metrics.utils import complete_masked_grid
 from sphyr.physics.boundary_conditions import (
     InvalidProblemError,
     get_densities_from_grid,
@@ -147,13 +147,19 @@ def get_structural_metrics(
     penal=DEFAULT_PENAL,
     filter_radius=DEFAULT_FILTER_RADIUS,
     include_own_budget_reference=False,
+    reference_compliance=None,
 ):
     """Evaluate a completion by simulating it and re-optimising its mask.
 
     Boundary conditions are always read from ``gt_grid`` so that a completion
     cannot improve its score by relocating loads or supports.  ``input_grid``
     identifies the masked cells; without it the whole non-structural grid is
-    treated as the masked region.
+    treated as the masked region. With an input grid, visible material is
+    restored before simulation, even when this function is called directly.
+
+    ``reference_compliance`` reuses a precomputed reference for the exact same
+    task during offline rescoring; it must not be supplied for a changed task,
+    budget, load case or solver configuration.
 
     ``include_own_budget_reference`` adds ``design_efficiency``, which re-runs
     the optimiser at the material budget the completion actually chose.  It is
@@ -176,6 +182,9 @@ def get_structural_metrics(
     shape = (problem.nely, problem.nelx)
     if len(output_grid) != shape[0] or any(len(row) != shape[1] for row in output_grid):
         return metrics
+
+    if input_grid is not None:
+        output_grid = complete_masked_grid(input_grid, output_grid)
 
     structural_mask = problem.structural_cells_mask()
 
@@ -204,16 +213,20 @@ def get_structural_metrics(
 
     # The yardstick: the stiffest design available on the reference budget,
     # seeded with the reference answer so it can never be worse than it.
-    optimum = get_reference_optimum(
-        problem=problem,
-        free_cells=free_cells,
-        pinned_densities=gt_densities,
-        volume_fraction=gt_analysis.volume_fraction,
-        penal=penal,
-        filter_radius=filter_radius,
-        seed_designs=(gt_densities,),
-    )
-    metrics.optimal_compliance = optimum.compliance
+    if reference_compliance is None:
+        optimum = get_reference_optimum(
+            problem=problem,
+            free_cells=free_cells,
+            pinned_densities=gt_densities,
+            volume_fraction=gt_analysis.volume_fraction,
+            penal=penal,
+            filter_radius=filter_radius,
+            seed_designs=(gt_densities,),
+        )
+        reference_compliance = optimum.compliance
+    elif not np.isfinite(reference_compliance) or reference_compliance <= 0:
+        raise ValueError("Stored reference compliance must be finite and positive")
+    metrics.optimal_compliance = float(reference_compliance)
 
     if include_own_budget_reference:
         own_budget_optimum = get_reference_optimum(
@@ -236,7 +249,7 @@ def get_structural_metrics(
         return metrics
 
     metrics.structural_efficiency = _clipped_ratio(
-        optimum.compliance, output_analysis.compliance
+        metrics.optimal_compliance, output_analysis.compliance
     )
     if metrics.own_budget_optimal_compliance is not None:
         metrics.design_efficiency = _clipped_ratio(
@@ -246,9 +259,9 @@ def get_structural_metrics(
         gt_analysis.compliance, output_analysis.compliance
     )
 
-    if np.isfinite(optimum.compliance) and output_analysis.compliance > 0.0:
+    if np.isfinite(metrics.optimal_compliance) and output_analysis.compliance > 0.0:
         metrics.structural_efficiency_raw = float(
-            optimum.compliance / output_analysis.compliance
+            metrics.optimal_compliance / output_analysis.compliance
         )
 
     # Spending more material than the reference answer is discounted in

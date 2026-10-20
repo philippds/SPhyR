@@ -1,6 +1,53 @@
 import re
 
 
+SCORING_POLICY = "masked-only-v1"
+
+
+def complete_masked_grid(input_grid, output_grid):
+    """Insert submitted masked values into the input, preserving visible cells.
+
+    Shape/value validation belongs to the caller. A misshapen answer must never
+    become valid through reconstruction. Neither supplied grid is modified.
+    """
+    if len(input_grid) != len(output_grid) or any(
+        len(given) != len(predicted)
+        for given, predicted in zip(input_grid, output_grid)
+    ):
+        raise ValueError("Input and completion must have the same shape")
+    return [
+        [predicted if given == "V" else given for given, predicted in zip(a, b)]
+        for a, b in zip(input_grid, output_grid)
+    ]
+
+
+def visible_cell_changes(input_grid, output_grid):
+    """Count copying errors independently of the reconstructed design's score.
+
+    Numeric spellings such as 0 and 0.0 describe the same material state.
+    Load/support symbols must match exactly. Call only for a valid grid shape.
+    """
+    numeric = boundary = 0
+    for given_row, predicted_row in zip(input_grid, output_grid):
+        for given, predicted in zip(given_row, predicted_row):
+            if given == "V" or given == predicted:
+                continue
+            if given in ("L", "S"):
+                boundary += 1
+                continue
+            try:
+                equal = float(given) == float(predicted)
+            except (TypeError, ValueError):
+                equal = False
+            numeric += not equal
+    return {
+        "visible_cell_changes": numeric + boundary,
+        "visible_numeric_cell_changes": numeric,
+        "visible_boundary_cell_changes": boundary,
+        "visible_cells_preserved": numeric + boundary == 0,
+    }
+
+
 def is_solid(value):
     """Return True if the cell can transmit force (solid or partially solid)."""
     if value in ("L", "S"):
