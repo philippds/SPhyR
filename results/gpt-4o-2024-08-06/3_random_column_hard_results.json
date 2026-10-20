@@ -33,7 +33,13 @@
     "volume_ratio": 1.509090909090909,
     "max_displacement": 16.88626334964168,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.0 0.5 0.0 0.1 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.5 0.0 0.2 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.5 0.0 0.3 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.5 0.0 0.4 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.5 0.0 0.6 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.5 0.0 0.6 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.5 0.0 0.6 0.0 0.0\n0.0 0.0 0.8 0.1 0.0 0.5 0.0 0.6 0.0 0.0\n0.0 0.0 S S S 0.5 S 1.0 S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -41,35 +47,41 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.6 0.6 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.2 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "completion": "```\n0.5 0.0 0.0 0.0 L L 0.5 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.6 0.0 0.0 0.0 0.0 0.6 0.5 0.0 0.7 0.0\n0.6 0.0 0.1 0.6 0.6 0.7 0.4 0.0 0.6 0.0\n0.7 0.0 0.7 0.2 0.8 0.4 0.3 0.0 0.5 0.0\n0.7 S S S 0.1 0.0 0.2 0.0 0.3 0.0\n```",
     "exact_match": false,
-    "difference_ratio": -3.7058823529411766,
-    "relative_difference_ratio": -1.4705882352941178,
-    "penalized_difference_ratio": -1.7647058823529407,
+    "difference_ratio": -3.4117647058823533,
+    "relative_difference_ratio": -1.3970588235294112,
+    "penalized_difference_ratio": -1.691176470588235,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 1,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 1.6,
-    "difficulty_weighted_difference_ratio": -5.929411764705883,
-    "difficulty_weighted_relative_difference_ratio": -2.3529411764705883,
+    "difficulty_weighted_difference_ratio": -5.458823529411766,
+    "difficulty_weighted_relative_difference_ratio": -2.235294117647058,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 77.63951213160128,
+    "compliance": 81.23562468744433,
     "ground_truth_compliance": 86.86462799731345,
     "optimal_compliance": 86.86462799731345,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.4475524475524476,
+    "topology_score": 0.4555160142348754,
     "structural_efficiency": 1.0,
-    "structural_efficiency_raw": 1.1188198587605152,
+    "structural_efficiency_raw": 1.0692923004104027,
     "design_efficiency": null,
-    "material_efficiency": 0.4475524475524476,
+    "material_efficiency": 0.4555160142348754,
     "compliance_efficiency_vs_ground_truth": 1.0,
-    "volume_fraction": 0.286,
+    "volume_fraction": 0.281,
     "ground_truth_volume_fraction": 0.128,
-    "volume_ratio": 2.2343749999999996,
-    "max_displacement": 154.9450791792701,
+    "volume_ratio": 2.1953125,
+    "max_displacement": 209.0312432090397,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.5 0.0 0.0 0.0 L L 0.5 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0 0.7 0.0\n0.6 0.0 0.0 0.0 0.0 0.6 0.5 0.0 0.7 0.0\n0.6 0.0 0.1 0.6 0.6 0.6 0.4 0.0 0.6 0.0\n0.7 0.0 0.7 0.2 0.8 0.0 0.3 0.0 0.5 0.0\n0.7 S S S 0.1 0.0 0.2 0.0 0.3 0.0",
+    "visible_cell_changes": 2,
+    "visible_numeric_cell_changes": 2,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "3_random_column_hard",
@@ -105,7 +117,13 @@
     "volume_ratio": 1.0219298245614037,
     "max_displacement": 668.2442346008876,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.1 L L L 0.1 L L 0.1\n0.0 0.0 0.1 0.3 0.1 0.1 0.1 0.2 0.0 0.1\n0.0 0.0 0.1 0.4 0.1 0.1 0.1 0.1 0.0 0.1\n0.0 0.0 0.1 0.4 0.2 0.2 0.1 0.0 0.0 0.1\n0.0 0.0 0.1 0.2 0.4 0.3 0.1 0.0 0.0 0.1\n0.0 0.0 0.1 0.1 0.4 0.2 0.1 0.0 0.0 0.1\n0.0 0.0 0.1 0.0 0.4 0.2 0.1 0.0 0.0 0.1\n0.0 0.0 0.1 0.0 0.4 0.2 0.1 0.0 0.0 0.1\n0.0 0.0 0.1 0.0 0.4 0.3 0.1 0.0 0.0 0.1\n0.0 0.0 0.1 S S S 0.1 S S 0.1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -141,7 +159,13 @@
     "volume_ratio": 1.3496932515337425,
     "max_displacement": 802.0886180279748,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.6 L L L 0.6 0.6 L\n0.0 0.0 0.0 0.4 0.2 0.4 0.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.4 0.0 0.2 0.5 0.3 0.3 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.5 0.2 0.2 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.5 0.2 0.2 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.5 0.2 0.2 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.5 0.2 0.2 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.6 0.2 0.2 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.3 0.3 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -177,7 +201,13 @@
     "volume_ratio": 1.3574660633484161,
     "max_displacement": 73.3826452728532,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 L 0.0\n0.0 0.1 0.2 0.3 0.2 0.1 0.3 0.1 0.0 0.0\n0.0 0.2 0.0 0.4 0.2 0.2 0.4 0.2 0.0 0.0\n0.0 0.3 0.0 0.3 0.4 0.4 0.3 0.3 0.0 0.0\n0.0 0.4 0.0 0.1 0.4 0.4 0.1 0.4 0.0 0.0\n0.0 0.5 0.0 0.0 0.4 0.4 0.0 0.5 0.0 0.0\n0.0 0.6 0.0 0.0 0.4 0.4 0.0 0.6 0.0 0.0\n0.0 0.7 0.0 0.0 0.4 0.4 0.0 0.7 0.0 0.0\n0.0 0.8 0.0 0.0 0.4 0.4 0.0 0.8 0.0 0.0\n0.0 0.9 S S S S S 0.9 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -213,7 +243,13 @@
     "volume_ratio": 1.6390532544378702,
     "max_displacement": 415.4213908264851,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 0.6 L L L 0.7 0.0 0.0 0.8\n0.0 0.2 0.5 0.0 0.3 0.2 0.6 0.0 0.0 0.7\n0.0 0.0 0.4 0.0 0.4 0.0 0.6 0.0 0.0 0.6\n0.0 0.0 0.3 0.4 0.2 0.0 0.6 0.0 0.0 0.5\n0.0 0.0 0.3 0.4 0.0 0.0 0.6 0.0 0.0 0.4\n0.0 0.0 0.3 0.4 0.0 0.0 0.6 0.0 0.0 0.3\n0.0 0.0 0.4 0.4 0.0 0.0 0.6 0.0 0.0 0.2\n0.0 0.0 0.5 0.5 0.5 0.5 0.6 0.0 0.0 0.1\n0.0 0.0 0.6 0.0 0.6 0.2 0.6 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.1 S 0.7 S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -249,7 +285,13 @@
     "volume_ratio": 1.5611111111111113,
     "max_displacement": 77.58726550756552,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.8 L L L 0.8 0.0 0.0 0.0 0.0 0.8\n0.5 0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.5\n0.4 0.0 0.5 0.5 0.4 0.0 0.0 0.0 0.0 0.4\n0.3 0.0 0.5 0.5 0.3 0.0 0.0 0.0 0.0 0.3\n0.2 0.0 0.5 0.5 0.2 0.0 0.0 0.0 0.0 0.2\n0.2 0.0 0.5 0.5 0.2 0.0 0.0 0.0 0.0 0.2\n0.2 0.0 0.5 0.5 0.2 0.0 0.0 0.0 0.0 0.2\n0.3 0.0 0.5 0.5 0.3 0.0 0.0 0.0 0.0 0.3\n0.4 0.0 0.5 0.5 0.4 0.0 0.0 0.0 0.0 0.4\n0.5 0.0 S S 0.5 S S S 0.0 0.5",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -285,7 +327,13 @@
     "volume_ratio": 1.3743589743589741,
     "max_displacement": 20.371072998056743,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.8 0.8 0.0 L L L L L 0.0 0.0\n0.6 0.7 0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0\n0.4 0.5 0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0\n0.2 0.3 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.2 0.3 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.2 0.3 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.2 0.3 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.2 0.3 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.2 0.3 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.2 0.3 0.0 S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -321,7 +369,13 @@
     "volume_ratio": 1.3478260869565217,
     "max_displacement": 42.55172653254562,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.1 L L L 0.1 L 0.0 0.0 0.0 0.0\n0.1 0.0 0.5 0.4 0.2 0.0 0.0 0.0 0.0 0.0\n0.2 0.0 0.3 0.7 0.3 0.0 0.0 0.0 0.0 0.0\n0.3 0.0 0.1 0.8 0.4 0.0 0.0 0.0 0.0 0.0\n0.4 0.0 0.0 0.8 0.5 0.0 0.0 0.0 0.0 0.0\n0.5 0.0 0.0 0.8 0.6 0.0 0.0 0.0 0.0 0.0\n0.6 0.0 0.0 0.8 0.7 0.0 0.0 0.0 0.0 0.0\n0.7 0.0 0.0 0.8 0.8 0.0 0.0 0.0 0.0 0.0\n0.8 0.0 0.0 0.8 0.9 0.0 0.0 0.0 0.0 0.0\n0.9 S S S 1.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -357,7 +411,13 @@
     "volume_ratio": 1.3099415204678364,
     "max_displacement": 1503.1593221084638,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L 0.8 0.7\n0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.7 0.6\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.6 0.5\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.5 0.4\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.4 0.3\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.2 0.3 0.2\n0.0 0.0 0.0 0.0 0.2 0.2 0.4 0.1 0.2 0.2\n0.0 0.0 0.1 0.3 0.4 0.3 0.4 0.0 0.1 0.1\n0.0 0.0 0.3 0.4 0.1 0.5 0.0 0.0 0.1 0.1\n0.0 S S S S 0.1 0.0 0.0 0.1 0.1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -393,7 +453,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "3_random_column_hard",
@@ -429,7 +495,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 58.9062298610542,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -465,7 +537,13 @@
     "volume_ratio": 1.1,
     "max_displacement": 1076.5866057429455,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 0.6 L 0.0 0.0 0.0 0.6 0.5 0.0\n0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.5 0.4 0.0\n0.0 0.5 0.4 0.0 0.0 0.0 0.0 0.4 0.3 0.0\n0.0 0.5 0.3 0.0 0.0 0.0 0.0 0.3 0.2 0.0\n0.0 0.5 0.2 0.0 0.0 0.0 0.0 0.2 0.1 0.0\n0.0 0.5 0.1 0.0 0.0 0.0 0.0 0.1 0.1 0.0\n0.0 0.5 0.1 0.0 0.0 0.0 0.0 0.1 0.1 0.0\n0.0 0.5 0.1 0.0 0.0 0.0 0.0 0.1 0.1 0.0\n0.0 0.5 0.1 0.0 0.0 0.0 0.0 0.1 0.1 0.0\nS S 0.9 S S S S 0.9 0.8 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -501,7 +579,13 @@
     "volume_ratio": 1.4054054054054057,
     "max_displacement": 1585.265313744268,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.6 0.0 L L 0.8 L 0.6 0.0 0.0\n0.0 0.5 0.0 0.0 0.4 0.3 0.0 0.6 0.0 0.0\n0.0 0.4 0.0 0.0 0.4 0.3 0.0 0.5 0.0 0.0\n0.0 0.4 0.0 0.0 0.4 0.2 0.0 0.5 0.0 0.0\n0.0 0.4 0.0 0.0 0.4 0.2 0.0 0.4 0.0 0.0\n0.0 0.3 0.0 0.0 0.4 0.2 0.0 0.4 0.0 0.0\n0.0 0.3 0.0 0.0 0.4 0.2 0.0 0.4 0.0 0.0\n0.0 0.2 0.0 0.0 0.4 0.1 0.0 0.3 0.0 0.0\n0.0 0.2 0.0 0.2 0.6 0.3 0.0 0.2 0.0 0.0\n0.0 0.1 S S S 0.1 0.0 0.1 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -537,7 +621,13 @@
     "volume_ratio": 1.2540540540540543,
     "max_displacement": 36.66867307510745,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.3 0.4 0.5 L L L L 0.0 0.0 0.0\n0.2 0.5 0.6 0.5 0.6 0.5 0.0 0.0 0.0 0.0\n0.1 0.3 0.5 0.2 0.7 0.2 0.0 0.0 0.0 0.0\n0.0 0.1 0.2 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.2 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.2 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.2 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.2 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.2 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -573,7 +663,13 @@
     "volume_ratio": 1.261111111111111,
     "max_displacement": 146.54766636511582,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.8 0.0 0.6 0.4 L L 0.0 0.0 0.0\n0.0 0.7 0.0 0.5 0.3 0.5 0.0 0.0 0.0 0.0\n0.0 0.6 0.0 0.4 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.3 0.1 0.5 0.0 0.0 0.0 0.0\n0.0 0.4 0.0 0.2 0.1 0.5 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.2 0.1 0.5 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.2 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.4 0.0 0.3 0.3 0.5 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.4 0.4 0.5 0.0 0.0 0.0 0.0\nS 0.6 S 0.5 0.5 S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -609,7 +705,13 @@
     "volume_ratio": 1.135483870967742,
     "max_displacement": 1282.9994690773813,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.1 0.1 0.0 0.0 0.0 0.2 0.3 0.3 0.3 0.0\n0.2 0.2 0.0 0.0 0.3 0.3 0.0 0.3 0.3 0.0\n0.2 0.2 0.1 0.3 0.1 0.1 0.2 0.4 0.0 0.0\n0.3 0.3 0.3 0.1 0.1 0.0 0.4 0.1 0.0 0.0\n0.4 0.4 0.3 0.1 0.1 0.3 0.4 0.0 0.0 0.0\n0.5 0.5 S S S 0.5 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -645,7 +747,13 @@
     "volume_ratio": 1.3863636363636362,
     "max_displacement": 117.77420820653455,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.2 0.0 0.3 0.4 L L L L L 0.0\n0.5 0.0 0.4 0.4 0.4 0.0 0.4 0.3 0.0 0.0\n0.6 0.0 0.5 0.5 0.5 0.0 0.5 0.0 0.0 0.0\n0.3 0.0 0.4 0.4 0.3 0.6 0.3 0.0 0.0 0.0\n0.2 0.0 0.3 0.3 0.0 0.6 0.0 0.0 0.0 0.0\n0.1 0.0 0.2 0.2 0.0 0.6 0.0 0.0 0.0 0.0\n0.1 0.0 0.2 0.2 0.0 0.6 0.0 0.0 0.0 0.0\n0.1 0.0 0.2 0.2 0.0 0.6 0.0 0.0 0.0 0.0\n0.1 0.0 0.2 0.2 0.0 0.6 0.0 0.0 0.0 0.0\n0.1 0.0 0.2 0.2 S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -681,7 +789,13 @@
     "volume_ratio": 1.336683417085427,
     "max_displacement": 573.6734343692463,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L 0.2 0.2 L 0.2\n0.0 0.0 0.1 0.2 0.0 0.2 0.2 0.2 0.1 0.2\n0.0 0.0 0.0 0.2 0.2 0.1 0.3 0.2 0.0 0.2\n0.0 0.0 0.0 0.1 0.3 0.0 0.3 0.2 0.0 0.2\n0.0 0.0 0.0 0.0 0.3 0.1 0.3 0.2 0.0 0.2\n0.0 0.0 0.0 0.0 0.1 0.3 0.4 0.3 0.0 0.2\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.3 0.0 0.2\n0.0 0.0 0.2 0.4 0.4 0.4 0.5 0.5 0.0 0.2\n0.0 0.2 0.5 0.1 0.5 0.0 0.4 0.6 0.0 0.2\nS S S S 0.1 0.0 0.3 0.7 0.0 0.2",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -717,7 +831,13 @@
     "volume_ratio": 1.1249999999999998,
     "max_displacement": 577670.1688432517,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.8 0.6 L 0.6 L L L 0.0 0.0\n0.0 0.7 0.5 0.4 0.5 0.4 0.3 0.0 0.0 0.0\n0.0 0.6 0.4 0.5 0.4 0.5 0.0 0.0 0.0 0.0\n0.0 0.5 0.3 0.3 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.4 0.2 0.0 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.0 S 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -753,7 +873,13 @@
     "volume_ratio": 1.7006802721088432,
     "max_displacement": 176.3493766978563,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.9 L 0.8 L 0.7 L 0.0\n0.0 0.0 0.0 0.8 0.0 0.7 0.5 0.6 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.6 0.6 0.5 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.5 0.6 0.4 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.4 0.6 0.4 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.4 0.6 0.4 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.2 0.7 0.2 0.0 0.0\n0.0 0.0 0.0 0.2 S 0.1 0.1 0.1 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -789,7 +915,13 @@
     "volume_ratio": 1.3878787878787877,
     "max_displacement": 4132.791059934668,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.1 0.0 L L 0.8 L L 0.0 0.1 0.0\n0.2 0.0 0.0 0.4 0.6 0.4 0.0 0.0 0.2 0.0\n0.3 0.0 0.0 0.1 0.4 0.1 0.0 0.0 0.3 0.0\n0.4 0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.4 0.0\n0.5 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.5 0.0\n0.6 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.6 0.0\n0.7 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.7 0.0\n0.8 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.8 0.0\n0.9 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.9 0.0\n1.0 0.0 0.0 0.0 0.1 S S S 1.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -825,7 +957,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 12.244853881611343,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.9 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -861,7 +999,13 @@
     "volume_ratio": 1.171232876712329,
     "max_displacement": 1503.7396341075569,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.5 L 0.5 0.4 L\n0.0 0.0 0.0 0.0 0.0 0.5 0.4 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.3 0.2 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -897,7 +1041,13 @@
     "volume_ratio": 1.6410256410256407,
     "max_displacement": 12.336387439196344,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.0 0.9 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.1 0.9 0.1 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.1 0.9 0.1 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.2 0.9 0.1 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.2 0.9 0.1 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.1 0.9 0.1 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.1 0.9 0.1 0.0 0.5 0.0 0.0 0.0 0.0 0.5\n0.0 0.9 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.5\nS S S S 0.5 0.0 0.0 0.0 0.0 0.5",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -933,7 +1083,13 @@
     "volume_ratio": 1.6726190476190477,
     "max_displacement": 548.7354320812242,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.3 0.0 0.0 0.0 0.0 0.5 L L 0.5 0.0\n0.3 0.0 0.0 0.0 0.0 0.5 0.3 0.3 0.5 0.0\n0.3 0.0 0.0 0.0 0.0 0.5 0.3 0.3 0.5 0.0\n0.3 0.0 0.0 0.0 0.0 0.5 0.3 0.3 0.5 0.0\n0.3 0.0 0.0 0.0 0.0 0.5 0.3 0.3 0.5 0.0\n0.4 0.0 0.0 0.0 0.1 0.5 0.4 0.3 0.5 0.0\n0.5 0.0 0.0 0.1 0.4 0.5 0.5 0.1 0.5 0.0\n0.6 0.0 0.2 0.4 0.2 0.5 0.4 0.0 0.5 0.0\n0.7 0.1 0.5 0.1 0.2 0.5 0.0 0.0 0.5 0.0\n0.8 S S S S 0.5 0.0 0.0 0.5 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -969,7 +1125,13 @@
     "volume_ratio": 1.2967741935483872,
     "max_displacement": 20.830786631810202,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.1 0.0 0.0 0.2 L L 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.0 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.0 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.0 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.0 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.0 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.0 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.0 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 0.8 0.1 0.0 0.2 0.0 0.0\n0.1 0.0 0.0 0.2 S S S 0.2 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1005,7 +1167,13 @@
     "volume_ratio": 1.6449999999999998,
     "max_displacement": 64.25309694896072,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.2 0.3 0.4 L L L L 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.4 0.5 0.6 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.7 0.8 0.9 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1041,7 +1209,13 @@
     "volume_ratio": 1.2808219178082192,
     "max_displacement": 453.38177164207633,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.4 L L 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.4 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.5 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.7 0.4 0.4 0.0 0.0 0.0\n0.0 S 0.5 S 0.1 0.5 0.5 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1077,7 +1251,13 @@
     "volume_ratio": 1.5368421052631578,
     "max_displacement": 78.54707824691187,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 0.0 0.0 0.5 0.5 0.0 0.8 0.0 0.0 0.3\n0.0 S S S S S 0.9 S 0.0 0.3",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1113,7 +1293,13 @@
     "volume_ratio": 1.633540372670807,
     "max_displacement": 135.8329972292989,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L 0.6 0.0 0.7 0.0 0.6\n0.0 0.0 0.0 0.6 0.0 0.5 0.0 0.6 0.0 0.5\n0.0 0.0 0.0 0.6 0.0 0.4 0.0 0.5 0.0 0.4\n0.0 0.0 0.0 0.6 0.0 0.3 0.0 0.4 0.0 0.3\n0.0 0.0 0.0 0.6 0.0 0.3 0.0 0.3 0.0 0.3\n0.0 0.0 0.0 0.6 0.0 0.3 0.0 0.3 0.0 0.3\n0.0 0.0 0.0 0.6 0.0 0.3 0.0 0.3 0.0 0.3\n0.0 0.0 0.0 0.7 0.3 0.4 0.2 0.4 0.0 0.3\n0.0 0.0 0.0 0.8 0.5 0.5 0.1 0.5 0.0 0.4\n0.0 0.0 0.0 0.1 S 0.9 S 0.9 S 0.9",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1149,7 +1335,13 @@
     "volume_ratio": 0.9696969696969695,
     "max_displacement": 623.7494767275049,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.0 L L L L L L 0.0\n0.0 0.1 0.0 0.1 0.2 0.2 0.0 0.3 0.1 0.0\n0.0 0.0 0.0 0.2 0.1 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1185,7 +1377,13 @@
     "volume_ratio": 1.152542372881356,
     "max_displacement": 7007.3021915148,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 1.0 0.9 L 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.8 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.7 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.6 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.5 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.2 0.1 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1221,7 +1419,13 @@
     "volume_ratio": 1.4530386740331491,
     "max_displacement": 178.10064795319133,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.5 0.4 0.3\n0.0 0.0 0.0 0.3 0.3 0.3 0.3 0.4 0.3 0.2\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.4 0.3 0.2\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.4 0.3 0.2\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.4 0.3 0.2\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.4 0.3 0.2\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.4 0.3 0.2\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.4 0.3 0.2\n0.0 0.0 0.0 0.0 0.4 0.6 0.1 0.5 0.4 0.3\n0.0 0.0 0.0 0.0 0.0 S S 0.6 0.5 0.4",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1257,7 +1461,13 @@
     "volume_ratio": 1.0611353711790394,
     "max_displacement": 1088.1725343049256,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.8 0.8 0.8 L L 0.0\n0.0 0.0 0.2 0.3 0.6 0.6 0.6 0.2 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0 0.0 0.0\nS S S S 0.5 0.5 0.5 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1293,7 +1503,13 @@
     "volume_ratio": 1.072289156626506,
     "max_displacement": 12.336391666479242,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.2 0.2 0.0 0.0 0.1 0.9 0.2\n0.0 0.0 0.0 0.2 0.2 0.0 0.0 0.1 0.9 0.2\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1301,35 +1517,41 @@
     "ground_truth": "0.0 L L L L L L L 0.0 0.0\n0.0 0.0 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "completion": "Below is the completed grid:\n\n```\n0.0 0.3 L 0.4 L L L L 0.0 0.2\n0.0 0.3 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.2\n0.0 0.3 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.2\n0.0 0.3 0.0 0.4 0.5 0.2 0.0 0.0 0.0 0.2\n0.0 0.4 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.3\n0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.4\n0.0 0.6 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.5\n0.0 0.7 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.6\n0.0 0.8 0.0 0.6 0.5 0.3 0.0 0.0 0.0 0.7\n0.0 0.9 0.0 S S S S 0.1 0.1 0.8\n```",
     "exact_match": false,
-    "difference_ratio": -5.031746031746032,
-    "relative_difference_ratio": -2.253968253968254,
-    "penalized_difference_ratio": -4.476190476190476,
+    "difference_ratio": -3.4444444444444446,
+    "relative_difference_ratio": -1.3650793650793651,
+    "penalized_difference_ratio": -2.634920634920635,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 1.9,
-    "difficulty_weighted_difference_ratio": -9.56031746031746,
-    "difficulty_weighted_relative_difference_ratio": -4.282539682539682,
+    "difficulty_weighted_difference_ratio": -6.544444444444444,
+    "difficulty_weighted_relative_difference_ratio": -2.5936507936507938,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 375.6301452153822,
+    "compliance": 76.29687109880331,
     "ground_truth_compliance": 84.22726604577721,
     "optimal_compliance": 84.22726604577721,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.14347535978824638,
-    "structural_efficiency": 0.22422925081660372,
-    "structural_efficiency_raw": 0.22422925081660372,
+    "topology_score": 0.6059602649006621,
+    "structural_efficiency": 1.0,
+    "structural_efficiency_raw": 1.1039412866184797,
     "design_efficiency": null,
-    "material_efficiency": 0.6398601398601397,
-    "compliance_efficiency_vs_ground_truth": 0.22422925081660372,
-    "volume_fraction": 0.28600000000000003,
+    "material_efficiency": 0.6059602649006621,
+    "compliance_efficiency_vs_ground_truth": 1.0,
+    "volume_fraction": 0.302,
     "ground_truth_volume_fraction": 0.18299999999999997,
-    "volume_ratio": 1.5628415300546452,
-    "max_displacement": 2395.2528463160124,
+    "volume_ratio": 1.6502732240437161,
+    "max_displacement": 124.18705328132086,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.3 L 0.4 L L L L 0.0 0.2\n0.0 0.3 0.2 0.4 0.0 0.4 0.2 0.0 0.0 0.2\n0.0 0.3 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.2\n0.0 0.3 0.0 0.4 0.5 0.2 0.0 0.0 0.0 0.2\n0.0 0.4 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.3\n0.0 0.5 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.4\n0.0 0.6 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.5\n0.0 0.7 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.6\n0.0 0.8 0.0 0.6 0.6 0.5 0.3 0.0 0.0 0.7\n0.0 0.9 0.0 S 0.0 S S S S 0.8",
+    "visible_cell_changes": 10,
+    "visible_numeric_cell_changes": 8,
+    "visible_boundary_cell_changes": 2,
+    "visible_cells_preserved": false
   },
   {
     "subject": "3_random_column_hard",
@@ -1365,7 +1587,13 @@
     "volume_ratio": 1.2,
     "max_displacement": 480.9997218081861,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.2 0.3 0.0 L 0.3 L 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.6 0.7 0.3 0.0 0.0 0.0 0.0\n0.0 0.9 1.0 S S 1.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1401,7 +1629,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 46.29021703576526,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L L\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 S 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1437,7 +1671,13 @@
     "volume_ratio": 1.1210526315789475,
     "max_displacement": 90.27591680771012,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.1 L L L L 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.3 0.4 0.3 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.1 0.1\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.1 0.1\n0.0 0.0 S 0.1 S S S S 0.1 0.1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1473,7 +1713,13 @@
     "volume_ratio": 1.5113122171945699,
     "max_displacement": 128.83376472873243,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.9 0.8 L 0.0 0.0 0.0 0.7\n0.0 0.3 0.3 0.5 0.4 0.0 0.0 0.0 0.0 0.5\n0.0 0.1 0.4 0.5 0.4 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.6 0.5 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.7 0.6 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.7 0.6 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.8 0.7 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.8 0.7 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.9 0.8 0.0 0.0 0.0 0.0 0.5\n0.0 S S 1.0 0.9 S S S S 0.6",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1509,7 +1755,13 @@
     "volume_ratio": 1.0476190476190477,
     "max_displacement": 1393.3487490489795,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.7 0.6 L 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.3 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.3 0.1 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.1 0.0 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.1 0.0 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.2 0.0 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.6 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.5 S 0.5 S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1545,7 +1797,13 @@
     "volume_ratio": 1.4874999999999998,
     "max_displacement": 46.88329772711444,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.5 0.0 L L 0.5 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.5 0.4 0.3 0.0 0.0\n0.0 0.0 0.9 0.0 S S 0.8 0.6 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1581,7 +1839,13 @@
     "volume_ratio": 1.64,
     "max_displacement": 95.55790729034189,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.8 0.7 L L L L 0.7 0.0 0.0 0.0\n0.8 0.7 0.4 0.0 0.4 0.3 0.7 0.0 0.0 0.0\n0.8 0.7 0.5 0.0 0.5 0.0 0.7 0.0 0.0 0.0\n0.7 0.6 0.3 0.5 0.3 0.0 0.6 0.0 0.0 0.0\n0.6 0.5 0.0 0.6 0.0 0.0 0.5 0.0 0.0 0.0\n0.5 0.4 0.0 0.6 0.0 0.0 0.4 0.0 0.0 0.0\n0.4 0.3 0.0 0.6 0.0 0.0 0.3 0.0 0.0 0.0\n0.3 0.2 0.0 0.6 0.0 0.0 0.2 0.0 0.0 0.0\n0.2 0.1 0.0 0.6 0.0 0.0 0.1 0.0 0.0 0.0\n0.1 0.1 0.0 S S S 0.1 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1617,7 +1881,13 @@
     "volume_ratio": 1.4217687074829932,
     "max_displacement": 542.5183802865728,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.3 0.0 L L 0.5 L 0.3 0.0 0.0\n0.0 0.3 0.0 0.0 0.3 0.5 0.3 0.3 0.0 0.0\n0.0 0.3 0.0 0.0 0.1 0.4 0.1 0.3 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0\n0.0 0.4 0.0 0.0 0.0 0.3 0.0 0.4 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.5 0.0 0.6 0.0 0.0\n0.0 0.6 0.0 0.0 0.0 0.6 0.6 0.7 0.0 0.0\n0.0 1.0 0.0 0.0 0.0 0.8 S 0.9 S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1653,7 +1923,13 @@
     "volume_ratio": 1.189189189189189,
     "max_displacement": 928.9443955337978,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0.1 L L L 0.2 0.3\n0.0 0.1 0.3 0.1 0.1 0.2 0.1 0.3 0.2 0.3\n0.0 0.0 0.3 0.2 0.2 0.1 0.2 0.3 0.2 0.3\n0.0 0.0 0.1 0.3 0.2 0.1 0.3 0.1 0.2 0.3\n0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.2 0.3\n0.0 0.0 0.0 0.2 0.2 0.3 0.2 0.0 0.2 0.3\n0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.2 0.3\n0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.2 0.3\n0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.2 0.3\n0.0 S S S 0.1 S 0.0 0.0 0.2 0.3",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1689,7 +1965,13 @@
     "volume_ratio": 1.6309523809523812,
     "max_displacement": 634.6143221320071,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.5 0.6 L L L L L 0.0 0.0 0.4\n0.4 0.5 0.2 0.3 0.3 0.2 0.0 0.0 0.0 0.3\n0.4 0.5 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.2\n0.4 0.5 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.2\n0.4 0.5 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.2\n0.4 0.5 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.2\n0.4 0.5 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.2\n0.4 0.5 0.0 0.2 0.5 0.4 0.2 0.0 0.0 0.2\n0.4 0.4 0.0 0.0 0.6 0.2 0.5 0.2 0.0 0.2\n0.3 0.3 0.0 0.0 0.0 S S S S 0.3",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1725,7 +2007,13 @@
     "volume_ratio": 0.9389671361502349,
     "max_displacement": 1237.6437001227034,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.0 L L 0.0 0.0 0.0\n0.0 0.3 0.4 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1761,7 +2049,13 @@
     "volume_ratio": 1.1307189542483662,
     "max_displacement": 301.864485483001,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.2 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.5 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.5 0.5 0.4 0.0\n0.0 0.0 0.0 0.1 0.5 0.1 0.6 0.7 0.0 0.0\n0.0 0.0 S S S S 0.6 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1797,7 +2091,13 @@
     "volume_ratio": 1.2461538461538462,
     "max_displacement": 841.4620127244357,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.3 L 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.3 0.1 0.1 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.3 0.4 0.4 0.2 0.0 0.0 0.3 0.0\n0.0 0.0 0.3 0.5 0.0 0.4 0.3 0.0 0.3 0.0\n0.0 0.0 0.3 0.4 0.5 0.2 0.5 0.0 0.3 0.0\n0.0 0.0 0.3 0.0 0.5 S S S 0.3 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1805,35 +2105,41 @@
     "ground_truth": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.6 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.2 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S 0.0 0.0",
     "completion": "```\n0.0 0.0 L 0.3 L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.2 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S S S 0.0 0.0 0.0\n```",
     "exact_match": false,
-    "difference_ratio": -1.318840579710145,
-    "relative_difference_ratio": -0.10144927536231885,
-    "penalized_difference_ratio": -0.9710144927536235,
+    "difference_ratio": -0.30434782608695654,
+    "relative_difference_ratio": 0.536231884057971,
+    "penalized_difference_ratio": 0.24637681159420277,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
-    "force_path_cost_average_efficiency_ratio": 1.0,
+    "force_path_cost_average_efficiency_ratio": 0.9866920152091254,
     "difficulty_score": 1.6666666666666667,
-    "difficulty_weighted_difference_ratio": -2.198067632850242,
-    "difficulty_weighted_relative_difference_ratio": -0.16908212560386476,
+    "difficulty_weighted_difference_ratio": -0.5072463768115942,
+    "difficulty_weighted_relative_difference_ratio": 0.893719806763285,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 238.99053766116268,
+    "compliance": 259.46176794952135,
     "ground_truth_compliance": 86.21572465959285,
     "optimal_compliance": 86.21572465959285,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.36074953219205796,
-    "structural_efficiency": 0.36074953219205796,
-    "structural_efficiency_raw": 0.36074953219205796,
+    "topology_score": 0.33228681566821916,
+    "structural_efficiency": 0.33228681566821916,
+    "structural_efficiency_raw": 0.33228681566821916,
     "design_efficiency": null,
     "material_efficiency": 1.0,
-    "compliance_efficiency_vs_ground_truth": 0.36074953219205796,
-    "volume_fraction": 0.12,
+    "compliance_efficiency_vs_ground_truth": 0.33228681566821916,
+    "volume_fraction": 0.125,
     "ground_truth_volume_fraction": 0.129,
-    "volume_ratio": 0.9302325581395349,
-    "max_displacement": 272.4149398813958,
+    "volume_ratio": 0.9689922480620154,
+    "max_displacement": 355.4283485091845,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L 0.3 L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.6 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.8 0.2 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 S S S 0.0 0.0",
+    "visible_cell_changes": 7,
+    "visible_numeric_cell_changes": 6,
+    "visible_boundary_cell_changes": 1,
+    "visible_cells_preserved": false
   },
   {
     "subject": "3_random_column_hard",
@@ -1869,7 +2175,13 @@
     "volume_ratio": 1.565217391304348,
     "max_displacement": 159.58652298435592,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.8 L 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.6 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.2 0.6 0.8 0.0 0.8 0.0 0.0 0.0 0.0\nS S S 0.8 0.0 0.8 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1905,7 +2217,13 @@
     "volume_ratio": 1.462121212121212,
     "max_displacement": 43.31215267669959,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0.9 L L 0.9 L L L L 0.9\n0.0 0.9 0.2 0.2 0.8 0.0 0.2 0.2 0.2 0.9\n0.0 0.8 0.3 0.1 0.7 0.0 0.1 0.3 0.1 0.8\n0.0 0.7 0.3 0.2 0.6 0.0 0.0 0.3 0.0 0.7\n0.0 0.6 0.3 0.2 0.6 0.0 0.0 0.3 0.0 0.6\n0.0 0.5 0.3 0.2 0.5 0.0 0.0 0.3 0.0 0.5\n0.0 0.4 0.3 0.2 0.4 0.0 0.0 0.3 0.0 0.4\n0.0 0.3 0.3 0.2 0.3 0.0 0.0 0.3 0.0 0.3\n0.0 0.2 0.3 0.2 0.2 0.0 0.0 0.3 0.0 0.2\n0.0 0.1 S S 0.1 S S S S 0.1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1941,7 +2259,13 @@
     "volume_ratio": 1.7282051282051283,
     "max_displacement": 13.792370116458786,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.5 L L L 0.5 0.5 0.0 0.0\n0.0 0.0 0.6 0.3 0.4 0.3 0.5 0.5 0.0 0.0\n0.0 0.0 0.7 0.4 0.4 0.1 0.5 0.5 0.0 0.0\n0.0 0.0 0.7 0.4 0.4 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.8 0.5 0.5 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.8 0.5 0.5 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.7 0.4 0.4 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.7 0.4 0.4 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.6 0.4 0.4 0.0 0.5 0.5 0.0 0.0\n0.0 S 0.5 S S S 0.5 0.5 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -1977,7 +2301,13 @@
     "volume_ratio": 1.3651685393258426,
     "max_displacement": 27.231376941144376,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.4 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.4 0.6 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.5 0.7 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.5 0.7 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.5 0.7 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.4 0.6 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.4 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2013,7 +2343,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 66.59264139375006,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2049,7 +2385,13 @@
     "volume_ratio": 1.325,
     "max_displacement": 62.483496140047514,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.3 0.0 0.0 0.0 L L 0.6 L 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\n0.0 0.3 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.3\nS 0.3 S S S S S 0.6 0.0 0.3",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2085,7 +2427,13 @@
     "volume_ratio": 1.0666666666666669,
     "max_displacement": 25.12864839018175,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L 0.8 0.8 L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 S S 0.8 0.8 S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2121,7 +2469,13 @@
     "volume_ratio": 1.0268817204301075,
     "max_displacement": 6781.679539329423,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L 0.8 0.9 L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.8 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.7 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 S S S S S 0.0 0.1 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2157,7 +2511,13 @@
     "volume_ratio": 1.8423645320197044,
     "max_displacement": 14.041555046823962,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.9 L L L L L L 0.9\n0.0 0.0 0.9 0.3 0.4 0.0 0.4 0.3 0.0 0.9\n0.0 0.0 0.9 0.0 0.5 0.0 0.5 0.0 0.0 0.9\n0.0 0.0 0.9 0.0 0.4 0.5 0.4 0.0 0.0 0.9\n0.0 0.0 0.9 0.0 0.1 0.6 0.1 0.0 0.0 0.9\n0.0 0.0 0.9 0.0 0.0 0.7 0.0 0.0 0.0 0.9\n0.0 0.0 0.9 0.0 0.0 0.7 0.0 0.0 0.0 0.9\n0.0 0.0 0.9 0.0 0.0 0.7 0.0 0.0 0.0 0.9\n0.0 0.0 0.9 0.0 0.0 0.7 0.0 0.0 0.0 0.9\n0.0 0.0 0.9 S S S S S S 0.9",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2193,7 +2553,13 @@
     "volume_ratio": 1.4195121951219516,
     "max_displacement": 55.28233613774083,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.5 0.0 L L L 0.1 L 0.2 0.0\n0.0 0.5 0.0 0.0 0.5 0.6 0.2 0.0 0.3 0.0\n0.0 0.4 0.0 0.0 0.2 0.7 0.3 0.0 0.3 0.0\n0.0 0.3 0.0 0.0 0.0 0.8 0.4 0.0 0.4 0.0\n0.0 0.2 0.0 0.0 0.0 0.8 0.5 0.0 0.4 0.0\n0.0 0.2 0.0 0.0 0.0 0.8 0.6 0.0 0.4 0.0\n0.0 0.3 0.0 0.0 0.0 0.8 0.5 0.0 0.3 0.0\n0.0 0.4 0.0 0.0 0.0 0.8 0.4 0.0 0.2 0.0\n0.0 0.5 0.0 0.0 0.0 0.8 0.3 0.0 0.2 0.0\nS 0.5 S S S S 0.1 S 0.1 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2229,7 +2595,13 @@
     "volume_ratio": 1.019607843137255,
     "max_displacement": 574.7830116883113,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.1 L L L L 0.1 L L\n0.0 0.0 0.1 0.0 0.3 0.4 0.0 0.1 0.3 0.0\n0.0 0.0 0.1 0.0 0.0 0.5 0.0 0.1 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.4 0.5 0.1 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.1 0.7 0.1 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.7 0.1 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.7 0.1 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.7 0.1 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.7 0.1 0.0 0.0\n0.0 0.0 0.1 S S S S 0.1 S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2265,7 +2637,13 @@
     "volume_ratio": 1.533333333333333,
     "max_displacement": 20.144367990337532,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 0.0 0.5 0.5 0.5 0.0\n0.0 0.5 0.5 0.5 0.0 0.0 0.4 0.3 0.4 0.0\n0.0 0.2 0.8 0.2 0.0 0.0 0.3 0.2 0.3 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.2 0.1 0.2 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.2 0.1 0.2 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.2 0.1 0.2 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.2 0.1 0.2 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.3 0.2 0.3 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.4 0.3 0.4 0.0\n0.0 S S S S 0.0 0.5 0.5 0.5 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2301,7 +2679,13 @@
     "volume_ratio": 1.0990099009900993,
     "max_displacement": 127.44963248488665,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.1 0.2 0.0 0.0 0.0\n0.0 0.0 S S S 0.1 0.2 S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2337,7 +2721,13 @@
     "volume_ratio": 1.0531400966183577,
     "max_displacement": 1068.2241455625247,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.5 0.5 L L 0.0 0.3 0.0\n0.0 0.0 0.3 0.7 0.7 0.3 0.0 0.0 0.5 0.0\n0.0 0.0 0.1 0.6 0.6 0.1 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.2 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.0 0.2 0.2 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.1 0.0\nS S S 0.6 0.6 S S 0.0 0.1 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2373,7 +2763,13 @@
     "volume_ratio": 1.802469135802469,
     "max_displacement": 228.77750810257356,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.5 L L 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.5 0.5 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.5 0.5 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.5 0.5 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.5 0.5 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.5 0.5 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.5 0.5 0.4 0.4 0.4 0.5 0.0 0.5 0.0 0.0\n0.5 0.3 0.5 0.0 0.2 0.5 0.0 0.5 0.0 0.0\n0.5 0.0 0.6 0.1 0.3 0.5 0.5 0.5 0.0 0.0\n0.5 0.0 0.0 S S 0.5 S 0.5 S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2409,7 +2805,13 @@
     "volume_ratio": 0.9807692307692307,
     "max_displacement": 1559.1756875815079,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.3 0.3 L L 0.4 L L\n0.0 0.0 0.0 0.2 0.3 0.0 0.4 0.5 0.4 0.0\n0.0 0.0 0.0 0.1 0.2 0.0 0.2 0.4 0.2 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 S S 0.3 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2445,7 +2847,13 @@
     "volume_ratio": 2.4217687074829928,
     "max_displacement": 85.30405309664997,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.5 L L 0.7 L 0.4 0.0 0.0 0.0 0.0\n0.6 0.3 0.5 0.6 0.0 0.5 0.0 0.0 0.0 0.0\n0.7 0.1 0.6 0.7 0.0 0.6 0.0 0.0 0.0 0.0\n0.8 0.0 0.6 0.8 0.0 0.7 0.0 0.0 0.0 0.0\n0.9 0.0 0.6 0.9 0.0 0.8 0.0 0.0 0.0 0.0\n1.0 0.0 0.6 1.0 0.0 0.9 0.0 0.0 0.0 0.0\n1.0 0.0 0.6 1.0 0.0 1.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.6 1.0 0.0 1.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.7 1.0 0.4 1.0 0.0 0.0 0.0 0.0\n1.0 0.0 0.1 1.0 S 1.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2481,7 +2889,13 @@
     "volume_ratio": 1.214574898785425,
     "max_displacement": 96.80559458883148,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.8 L L L 0.5 0.5 0.0\n0.0 0.0 0.3 0.7 0.1 0.3 0.3 0.5 0.5 0.0\n0.0 0.0 0.2 0.6 0.0 0.4 0.2 0.5 0.3 0.0\n0.0 0.0 0.0 0.4 0.0 0.5 0.0 0.5 0.2 0.0\n0.0 0.0 0.0 0.2 0.3 0.4 0.0 0.4 0.1 0.0\n0.0 0.0 0.0 0.2 0.6 0.2 0.0 0.3 0.1 0.0\n0.0 0.0 0.0 0.2 0.6 0.1 0.0 0.1 0.1 0.0\n0.0 0.0 0.0 0.2 0.6 0.0 0.0 0.1 0.1 0.0\n0.0 0.0 0.0 0.3 0.6 0.0 0.0 0.1 0.1 0.0\nS S S 0.8 S S S 0.9 0.9 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2517,7 +2931,13 @@
     "volume_ratio": 1.4324324324324325,
     "max_displacement": 16.886259980201842,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.1 0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.2 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.3 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.4 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.5 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.6 0.7 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.7 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.8 0.9 0.0 0.0 0.0 0.0 0.0 0.1 0.8 0.0\n1.0 1.0 S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2553,7 +2973,13 @@
     "volume_ratio": 1.162037037037037,
     "max_displacement": 318.77602389978256,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.3 0.0 0.0 0.0 0.4 L 0.5 L L L\n0.4 0.0 0.0 0.0 0.3 0.2 0.3 0.3 0.3 0.0\n0.4 0.0 0.0 0.0 0.2 0.1 0.2 0.4 0.1 0.0\n0.4 0.0 0.0 0.0 0.2 0.0 0.2 0.4 0.0 0.0\n0.4 0.0 0.0 0.0 0.2 0.0 0.2 0.4 0.0 0.0\n0.4 0.0 0.0 0.0 0.2 0.0 0.2 0.4 0.0 0.0\n0.4 0.0 0.0 0.0 0.1 0.0 0.3 0.5 0.0 0.0\n0.3 0.0 0.0 0.0 0.1 0.0 0.4 0.5 0.0 0.0\n0.2 0.0 0.0 0.0 0.1 0.0 0.5 0.5 0.0 0.0\n0.1 0.0 S S 0.1 S 0.5 S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2589,7 +3015,13 @@
     "volume_ratio": 1.5397727272727273,
     "max_displacement": 19.89655506470557,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.1 L 0.1 L 0.1 L 0.0\n0.0 0.0 0.0 0.1 0.0 0.2 0.6 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.0 0.3 0.8 0.3 0.0 0.0\n0.0 0.0 0.0 0.2 0.0 0.4 0.8 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.0 0.5 0.8 0.5 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.6 0.8 0.6 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.7 0.8 0.7 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.8 0.8 0.8 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.9 0.8 0.9 0.0 0.0\n0.0 0.0 0.0 0.5 S 0.5 S 0.5 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2625,7 +3057,13 @@
     "volume_ratio": 1.7238805970149254,
     "max_displacement": 515.1441573561009,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.1 0.0 L L L 0.1 0.0 0.0 0.0\n0.0 0.3 0.0 0.0 0.4 0.0 0.2 0.0 0.0 0.0\n0.0 0.4 0.0 0.0 0.4 0.0 0.3 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.4 0.0 0.5 0.0 0.0 0.0\n0.0 0.6 0.0 0.0 0.4 0.2 0.6 0.0 0.0 0.0\n0.0 0.7 0.0 0.0 0.5 0.3 0.7 0.2 0.1 0.0\n0.0 0.8 0.0 0.0 0.0 0.5 0.8 0.3 0.3 0.0\n0.0 0.9 0.0 0.0 0.0 0.5 0.9 0.3 0.5 0.1\n0.0 1.0 0.0 0.0 0.0 0.0 1.0 S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2633,35 +3071,41 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.7 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
     "completion": "```\n0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.1 0.0 0.1 0.0 0.0 0.5 0.5 0.5 0.0\n0.0 0.2 0.0 0.2 0.0 0.0 0.2 0.7 0.2 0.0\n0.0 0.3 0.0 0.3 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.6 0.0 0.6 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.7 0.0 0.7 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.8 0.0 0.8 0.0 0.1 0.7 0.1 0.0 0.0\n0.0 0.9 0.0 0.9 0.0 S S S S 0.0\n```",
     "exact_match": false,
-    "difference_ratio": -2.4285714285714284,
-    "relative_difference_ratio": -0.7714285714285711,
-    "penalized_difference_ratio": -1.3428571428571425,
+    "difference_ratio": -1.8571428571428572,
+    "relative_difference_ratio": -0.5714285714285714,
+    "penalized_difference_ratio": -1.1428571428571432,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 2,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 1.4666666666666666,
-    "difficulty_weighted_difference_ratio": -3.5619047619047612,
-    "difficulty_weighted_relative_difference_ratio": -1.131428571428571,
+    "difficulty_weighted_difference_ratio": -2.723809523809524,
+    "difficulty_weighted_relative_difference_ratio": -0.838095238095238,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 531.4295475138371,
+    "compliance": 24.740114440121264,
     "ground_truth_compliance": 24.740114616901202,
     "optimal_compliance": 24.740114616901202,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.030439084284361657,
-    "structural_efficiency": 0.04655389361137665,
-    "structural_efficiency_raw": 0.04655389361137665,
+    "topology_score": 0.6538461538461539,
+    "structural_efficiency": 1.0,
+    "structural_efficiency_raw": 1.0000000071454778,
     "design_efficiency": null,
     "material_efficiency": 0.6538461538461539,
-    "compliance_efficiency_vs_ground_truth": 0.04655389361137665,
+    "compliance_efficiency_vs_ground_truth": 1.0,
     "volume_fraction": 0.26,
     "ground_truth_volume_fraction": 0.17,
     "volume_ratio": 1.5294117647058822,
-    "max_displacement": 9610.909255038181,
+    "max_displacement": 26.727698562659743,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.1 0.0 0.1 0.0 0.0 0.5 0.5 0.5 0.0\n0.0 0.2 0.0 0.2 0.0 0.0 0.2 0.7 0.2 0.0\n0.0 0.3 0.0 0.3 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.6 0.0 0.6 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.7 0.0 0.7 0.0 0.0 0.0 0.7 0.0 0.0\n0.0 0.8 0.0 0.8 0.0 0.0 0.1 0.7 0.1 0.0\n0.0 0.9 0.0 0.9 0.0 S S S S 0.0",
+    "visible_cell_changes": 4,
+    "visible_numeric_cell_changes": 4,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "3_random_column_hard",
@@ -2697,7 +3141,13 @@
     "volume_ratio": 1.1592039800995024,
     "max_displacement": 1210.0915665773782,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0.5 0.4 L 0.6 L L L L L\n0.0 0.4 0.3 0.1 0.5 0.2 0.0 0.3 0.1 0.0\n0.0 0.3 0.2 0.2 0.4 0.1 0.2 0.3 0.0 0.0\n0.0 0.2 0.3 0.3 0.3 0.1 0.3 0.1 0.0 0.0\n0.0 0.2 0.4 0.3 0.2 0.1 0.3 0.0 0.0 0.0\n0.0 0.1 0.3 0.1 0.4 0.3 0.2 0.0 0.0 0.0\n0.0 0.1 0.2 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.1 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2733,7 +3183,13 @@
     "volume_ratio": 1.9393939393939394,
     "max_displacement": 8.28351447322621,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.9 L L L 0.9 L\n0.0 0.0 0.0 0.0 0.9 0.0 0.5 0.5 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.2 0.8 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.8 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.8 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.8 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.8 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.8 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 0.0 0.0 0.8 0.9 0.0\n0.0 0.0 0.0 0.0 0.9 S S S 0.9 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2769,7 +3225,13 @@
     "volume_ratio": 1.695852534562212,
     "max_displacement": 22.385221818209168,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0.8 L L L 0.8 L 0.0 0.0 0.8\n0.0 0.5 0.3 0.0 0.3 0.5 0.0 0.0 0.0 0.8\n0.0 0.5 0.4 0.0 0.4 0.5 0.0 0.0 0.0 0.8\n0.0 0.5 0.4 0.0 0.4 0.5 0.0 0.0 0.0 0.8\n0.0 0.5 0.4 0.2 0.4 0.5 0.0 0.0 0.0 0.8\n0.0 0.5 0.4 0.2 0.4 0.5 0.0 0.0 0.0 0.8\n0.0 0.5 0.4 0.2 0.4 0.5 0.0 0.0 0.0 0.8\n0.0 0.5 0.4 0.0 0.4 0.5 0.0 0.0 0.0 0.8\n0.0 0.5 0.4 0.0 0.4 0.5 0.0 0.0 0.0 0.8\nS 0.8 S S S 0.8 S 0.0 0.0 0.8",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2805,7 +3267,13 @@
     "volume_ratio": 1.526315789473684,
     "max_displacement": 77.07348713315811,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.8 0.8 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.7 0.7 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.6 0.6 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.6 0.6 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.7 0.7 0.7 0.0 0.0 0.0 0.0\n0.0 S S 0.8 0.8 0.8 S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2841,7 +3309,13 @@
     "volume_ratio": 1.0424242424242427,
     "max_displacement": 643.4120468762018,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.5 0.5 0.0 L L 1.0 L L\n0.0 0.0 0.4 0.4 0.0 0.0 0.5 0.8 0.5 0.0\n0.0 0.0 0.3 0.3 0.0 0.0 0.2 0.6 0.2 0.0\n0.0 0.0 0.2 0.2 0.0 0.0 0.0 0.4 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.2 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 S 1.0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2877,7 +3351,13 @@
     "volume_ratio": 1.3559322033898304,
     "max_displacement": 158.00741594425924,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0.5 L 0.0 0.0 0.0 0.5\n0.0 0.3 0.3 0.4 0.4 0.0 0.0 0.0 0.0 0.5\n0.0 0.1 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.4 0.4 0.5 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.5 0.5 0.6 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.5 0.5 0.7 0.0 0.0 0.0 0.0 0.5\n0.0 0.0 0.5 0.5 0.8 0.0 0.0 0.0 0.0 0.5\nS S S S 1.0 S S S S 1.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2913,7 +3393,13 @@
     "volume_ratio": 1.3872832369942194,
     "max_displacement": 16892.651814773926,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.8 L 0.8 L L L 0.0 0.7\n0.0 0.0 0.6 0.4 0.6 0.4 0.3 0.0 0.0 0.7\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.7\n0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0 0.0 0.7\n0.0 0.0 0.2 0.1 0.2 0.1 0.0 0.0 0.0 0.7\n0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.7\n0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.7\n0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.7\n0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.7\n0.0 0.0 0.1 S 0.1 S 0.0 0.0 0.0 0.7",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2949,7 +3435,13 @@
     "volume_ratio": 1.355,
     "max_displacement": 48.18585254971288,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.9 L L 0.9 L 0.0 0.0 0.0 0.0\n0.0 0.8 0.0 0.5 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.7 0.0 0.5 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.0 0.5 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.0 0.5 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.0 0.5 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.0 0.5 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.0 0.5 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.0 0.5 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 S S 0.6 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -2985,7 +3477,13 @@
     "volume_ratio": 1.2694610778443114,
     "max_displacement": 161.56317461174496,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.4 0.4 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.6 0.2 0.1 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.7 0.5 0.3 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.1 S S 0.5 0.5 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3021,7 +3519,13 @@
     "volume_ratio": 0.9623655913978493,
     "max_displacement": 35.03161334525529,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L 0.0 L 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S 0.0 S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3057,7 +3561,13 @@
     "volume_ratio": 1.590909090909091,
     "max_displacement": 35.25025445664669,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.5 0.0 0.0 0.0 L L L 0.4 0.4\n0.0 0.5 0.0 0.0 0.0 0.0 0.9 0.0 0.3 0.3\n0.0 0.5 0.0 0.0 0.0 0.0 0.8 0.0 0.2 0.2\n0.0 0.5 0.0 0.0 0.0 0.0 0.8 0.0 0.2 0.2\n0.0 0.5 0.0 0.0 0.0 0.0 0.8 0.0 0.2 0.2\n0.0 0.5 0.0 0.0 0.0 0.0 0.8 0.0 0.2 0.2\n0.0 0.5 0.0 0.0 0.0 0.1 0.8 0.1 0.3 0.3\n0.0 0.5 0.0 0.0 0.0 0.2 0.7 0.2 0.4 0.4\n0.0 0.5 0.0 0.0 0.0 0.4 0.6 0.4 0.5 0.5\n0.0 0.5 0.0 S S S S S 0.6 0.6",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3093,7 +3603,13 @@
     "volume_ratio": 1.4210526315789473,
     "max_displacement": 2024.108209297132,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 0.0 0.5 0.0 0.5\n0.0 0.1 0.2 0.2 0.2 0.0 0.0 0.4 0.0 0.4\n0.0 0.0 0.2 0.2 0.1 0.0 0.0 0.3 0.0 0.3\n0.0 0.0 0.2 0.2 0.0 0.0 0.0 0.2 0.0 0.2\n0.0 0.0 0.2 0.3 0.2 0.1 0.0 0.3 0.0 0.3\n0.0 0.0 0.1 0.3 0.1 0.2 0.1 0.4 0.0 0.4\n0.0 0.0 0.0 0.3 0.2 0.2 0.2 0.5 0.0 0.5\n0.0 0.0 0.0 0.2 0.3 0.0 0.2 0.6 0.2 0.6\n0.0 0.0 0.0 0.0 0.4 0.2 0.1 0.7 0.3 0.7\n0.0 0.0 0.0 0.0 0.0 0.5 S 0.8 S 0.8",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3129,7 +3645,13 @@
     "volume_ratio": 1.9617834394904459,
     "max_displacement": 119.19363383050128,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.1 0.2 L 0.4 L L 0.0 0.0 0.0\n0.0 0.2 0.3 0.3 0.4 0.2 0.0 0.0 0.0 0.0\n0.0 0.3 0.4 0.3 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.5 0.3 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.6 0.3 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.7 0.3 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.7 0.8 0.3 0.9 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.9 0.3 1.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.9 1.0 0.0 0.9 0.4 0.5 0.0 0.0 0.0\n0.0 1.0 1.0 0.0 0.8 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3165,7 +3687,13 @@
     "volume_ratio": 1.876923076923077,
     "max_displacement": 423.5486046103083,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.4 L L L L 0.4 L L 0.0 0.5\n0.5 0.2 0.3 0.2 0.1 0.5 0.2 0.0 0.0 0.5\n0.6 0.0 0.3 0.2 0.2 0.6 0.0 0.0 0.0 0.5\n0.7 0.0 0.2 0.3 0.3 0.7 0.0 0.0 0.0 0.5\n0.8 0.0 0.0 0.3 0.3 0.8 0.0 0.0 0.0 0.5\n0.8 0.0 0.0 0.3 0.3 0.8 0.0 0.0 0.0 0.5\n0.8 0.0 0.0 0.3 0.3 0.8 0.0 0.0 0.0 0.5\n0.8 0.0 0.0 0.3 0.3 0.8 0.0 0.0 0.0 0.5\n0.8 0.0 0.0 0.3 0.5 0.8 0.0 0.0 0.0 0.5\n0.9 0.0 0.0 0.0 S 0.9 S S S 0.9",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3201,7 +3729,13 @@
     "volume_ratio": 1.282485875706215,
     "max_displacement": 698.4756586653472,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L 0.4 0.1\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.3 0.2\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.2 0.1\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.2 0.1\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.2 0.1\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.2 0.1\n0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.0 0.3 0.2\n0.0 0.0 0.0 0.3 0.1 0.5 0.1 0.0 0.4 0.3\n0.0 0.0 0.3 0.1 0.3 0.6 0.0 0.0 0.5 0.4\nS S S S S 0.0 0.0 0.0 0.6 0.5",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3237,7 +3771,13 @@
     "volume_ratio": 1.8122065727699528,
     "max_displacement": 16.004349349651516,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.2 L L L L 0.2 0.2\n0.0 0.0 0.0 0.3 0.3 0.4 0.0 0.4 0.3 0.3\n0.0 0.0 0.0 0.4 0.0 0.5 0.0 0.5 0.4 0.4\n0.0 0.0 0.0 0.5 0.0 0.3 0.6 0.3 0.5 0.5\n0.0 0.0 0.0 0.6 0.0 0.1 0.7 0.1 0.6 0.6\n0.0 0.0 0.0 0.7 0.0 0.0 0.7 0.0 0.7 0.7\n0.0 0.0 0.0 0.8 0.0 0.0 0.7 0.0 0.8 0.8\n0.0 0.0 0.0 0.9 0.0 0.0 0.7 0.0 0.9 0.9\n0.0 0.0 0.0 1.0 0.0 0.0 0.7 0.0 1.0 1.0\n0.0 S S 1.0 S S S S 1.0 1.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3273,7 +3813,13 @@
     "volume_ratio": 1.488095238095238,
     "max_displacement": 168.77637728393532,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 1.0 L 0.0 0.0 0.0 0.1 0.0 0.1\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.2 0.0 0.2\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.3 0.0 0.3\n0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.4 0.0 0.4\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.5 0.0 0.5\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.6 0.0 0.6\n0.0 0.1 0.4 0.1 0.0 0.0 0.0 0.7 0.0 0.7\n0.0 0.1 0.3 0.1 0.0 0.0 0.0 0.8 0.0 0.8\n0.0 0.1 0.2 0.1 0.0 0.0 0.0 0.9 0.0 0.9\nS S 1.0 S S S 0.0 1.0 0.0 1.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3309,7 +3855,13 @@
     "volume_ratio": 1.9444444444444444,
     "max_displacement": 19.031267775074635,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.5 L L 0.5 0.0 0.0 0.0 0.2 0.0 0.0\n0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.2 0.0 0.0\n0.6 0.5 0.5 0.5 0.0 0.0 0.0 0.3 0.0 0.0\n0.7 0.5 0.5 0.5 0.0 0.0 0.0 0.3 0.0 0.0\n0.8 0.5 0.5 0.5 0.0 0.0 0.0 0.4 0.0 0.0\n0.9 0.5 0.5 0.5 0.0 0.0 0.0 0.5 0.0 0.0\n0.9 0.5 0.5 0.6 0.0 0.0 0.0 0.6 0.0 0.0\n1.0 0.5 0.5 0.7 0.0 0.0 0.0 0.7 0.0 0.0\n1.0 0.5 0.5 0.8 0.0 0.0 0.0 0.8 0.0 0.0\n1.0 S S 1.0 S S S 1.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3345,7 +3897,13 @@
     "volume_ratio": 1.149171270718232,
     "max_displacement": 79397.9158489619,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.3 L 0.3 L 0.3 0.0 0.0 0.0 0.0 0.0\n0.3 0.3 0.3 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.3 0.3 0.3 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.4 0.4 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.4 0.4 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.4 0.4 0.4 0.1 0.4 0.0 0.0 0.0 0.0 0.0\n0.3 0.3 0.3 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.1 0.1 0.1 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S 0.0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3381,7 +3939,13 @@
     "volume_ratio": 1.3862433862433865,
     "max_displacement": 796.9524069355739,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.1 L 0.3 0.4 L L L L L\n0.0 0.1 0.0 0.2 0.4 0.1 0.1 0.2 0.1 0.0\n0.0 0.1 0.0 0.2 0.4 0.1 0.1 0.2 0.0 0.0\n0.0 0.2 0.0 0.3 0.5 0.2 0.3 0.1 0.0 0.0\n0.0 0.2 0.0 0.3 0.5 0.2 0.2 0.0 0.0 0.0\n0.0 0.3 0.0 0.4 0.5 0.3 0.2 0.0 0.0 0.0\n0.0 0.4 0.1 0.4 0.6 0.3 0.1 0.0 0.0 0.0\n0.0 0.5 0.2 0.5 0.6 0.4 0.0 0.0 0.0 0.0\n0.0 0.6 0.4 0.5 0.7 0.1 0.0 0.0 0.0 0.0\nS 0.7 S 0.6 0.7 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3417,7 +3981,13 @@
     "volume_ratio": 1.4444444444444446,
     "max_displacement": 33.65611793660439,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.4 0.0 0.0 L L L L 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.4 0.0\n0.4 S S S S S S 0.0 0.4 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3453,7 +4023,13 @@
     "volume_ratio": 1.6711409395973156,
     "max_displacement": 537.5522610297276,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.5 0.0 0.0 0.0 0.0 L L L L 0.5\n0.5 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.5\n0.5 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.5\n0.5 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.5\n0.5 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.5\n0.5 0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.5\n0.5 0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.0 0.5\n0.5 0.0 0.0 0.0 0.2 0.4 0.5 0.2 0.0 0.5\n0.5 0.0 0.0 0.2 0.4 0.3 0.6 0.0 0.0 0.5\n0.5 0.0 S S S S 0.0 0.0 0.0 0.5",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3489,7 +4065,13 @@
     "volume_ratio": 1.9461077844311374,
     "max_displacement": 1032.1742714870911,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.1 0.0 0.0 0.0 L L 0.5 0.4\n0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.2 0.5 0.4\n0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.2 0.6 0.5\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.3 0.7 0.6\n0.0 0.0 0.5 0.0 0.0 0.1 0.2 0.4 0.8 0.7\n0.0 0.0 0.6 0.0 0.2 0.2 0.1 0.4 0.9 0.8\n0.0 0.0 0.7 0.3 0.3 0.2 0.3 0.4 1.0 0.9\n0.0 0.0 0.8 0.2 0.2 0.1 0.4 0.0 0.9 0.8\n0.0 0.3 0.9 0.1 0.1 0.5 0.1 0.0 0.8 0.7\nS S 1.0 S S 0.3 0.0 0.0 0.7 0.6",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3525,7 +4107,13 @@
     "volume_ratio": 1.2400000000000002,
     "max_displacement": 75.13677543767051,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.2 L L L 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.5 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 S S 0.2",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3561,7 +4149,13 @@
     "volume_ratio": 1.2666666666666668,
     "max_displacement": 77.05763907305732,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 1.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_column_hard",
@@ -3597,6 +4191,12 @@
     "volume_ratio": 1.3012048192771086,
     "max_displacement": 123.64820463939019,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.1 0.0 0.0 0.1 0.0 0.0 0.0 L L L\n0.2 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.6 0.0\n0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.7 0.0\n0.4 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.7 0.0\n0.5 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.7 0.0\n0.4 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.6 0.0\n0.3 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.6 0.0\n0.2 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.7 0.0\n0.1 0.0 0.0 0.1 0.0 0.1 0.5 0.6 0.7 0.0\n0.0 S S 0.0 S S S S 0.1 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   }
 ]

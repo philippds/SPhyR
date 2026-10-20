@@ -36,7 +36,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 L L 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -75,7 +81,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 S S 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 1 0 0 0 0 1 0 0 0\n1 1 1 1 1 1 1 0 0 0\n0 1 1 1 1 1 1 0 0 0\n0 0 0 1 L L L 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -114,7 +126,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\nL 1 0 0 1 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 1 0\n1 1 0 0 0 0 0 0 0 1\n1 1 0 0 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 0 S\n1 S S S S S 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -153,7 +171,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\nS 1 1 1 0 0 0 0 0 1\nS 1 1 1 1 1 1 0 0 1\n0 0 0 1 1 1 1 1 1 1\n0 0 0 0 0 0 1 1 1 L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -174,7 +198,31 @@
     "valid_output_grid": false,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -213,7 +261,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 S\n1 1 1 1 1 1 1 0 0 S\n1 1 1 1 1 1 0 0 0 S\nL 1 S S S S S 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -252,7 +306,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S 1 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 1 1 0 L\n0 0 0 0 0 1 1 1 1 L\n0 0 0 S S S S 1 1 L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -291,7 +351,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 0 1 1 0 0 0 0 0 0\n1 1 0 1 1 0 0 0 0 0\n1 0 0 0 1 1 0 0 0 0\n1 0 0 0 0 1 1 0 0 0\n1 0 0 0 0 0 1 1 0 0\n1 0 0 0 0 0 1 1 0 0\nS S S 0 0 0 S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -330,7 +396,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 1 S S S S 1 0 0 0\n0 1 0 0 0 1 1 0 0 0\n0 1 0 0 1 1 1 0 0 0\n0 1 0 0 0 0 1 0 0 0\n0 1 1 0 0 0 1 0 0 0\n0 1 0 0 0 1 0 0 0 0\n0 0 1 0 0 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 L L L 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -369,7 +441,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 S S S 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 1 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -408,7 +486,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 1 0 1 1 0 0 0 0\n1 1 1 1 1 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -416,38 +500,44 @@
     "ground_truth": "0 0 0 0 0 1 L L L 0\n0 0 0 0 1 1 1 0 1 0\n0 0 0 1 1 1 0 1 1 0\n0 0 1 1 1 0 0 0 1 0\n0 1 1 1 0 0 0 0 0 1\n1 1 1 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
     "completion": "0 0 0 0 0 1 L L L 0\n0 0 0 0 1 1 1 0 1 0\n0 0 0 1 1 1 0 1 1 0\n0 0 1 1 1 0 0 0 1 0\n0 1 1 1 0 0 0 0 0 1\n0 1 1 0 0 0 0 0 0 S\nS 1 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0",
     "exact_match": false,
-    "difference_ratio": 0.8571428571428572,
-    "relative_difference_ratio": 0.8571428571428572,
-    "penalized_difference_ratio": 0.7619047619047619,
+    "difference_ratio": 0.9047619047619048,
+    "relative_difference_ratio": 0.9047619047619048,
+    "penalized_difference_ratio": 0.9047619047619048,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 2.0,
-    "difficulty_weighted_difference_ratio": 1.7142857142857144,
-    "difficulty_weighted_relative_difference_ratio": 1.7142857142857144,
+    "difficulty_weighted_difference_ratio": 1.8095238095238095,
+    "difficulty_weighted_relative_difference_ratio": 1.8095238095238095,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 4.015104881448794,
+    "compliance": 4.0151048815353665,
     "ground_truth_compliance": 4.084759967815344,
     "optimal_compliance": 3.940750404249572,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.9498206238864756,
-    "structural_efficiency": 0.9814813113493582,
-    "structural_efficiency_raw": 0.9814813113493582,
+    "topology_score": 0.9814813113281958,
+    "structural_efficiency": 0.9814813113281958,
+    "structural_efficiency_raw": 0.9814813113281958,
     "design_efficiency": null,
-    "material_efficiency": 0.9677419354838709,
+    "material_efficiency": 1.0,
     "compliance_efficiency_vs_ground_truth": 1.0,
-    "volume_fraction": 0.31,
+    "volume_fraction": 0.3,
     "ground_truth_volume_fraction": 0.3,
-    "volume_ratio": 1.0333333333333334,
-    "max_displacement": 5.124721267998214,
+    "volume_ratio": 1.0,
+    "max_displacement": 5.124721268067136,
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 1 L L L 0\n0 0 0 0 1 1 1 0 1 0\n0 0 0 1 1 1 0 1 1 0\n0 0 1 1 1 0 0 0 1 0\n0 1 1 1 0 0 0 0 0 1\n0 1 1 0 0 0 0 0 0 S\nS 1 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 1,
+    "visible_numeric_cell_changes": 1,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "10_random_cell_easy",
@@ -486,7 +576,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 S\n0 1 1 0 0 0 1 1 1 S\n1 1 0 1 0 1 0 0 0 S\nL 1 1 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -525,7 +621,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 1 1 0 0 0 0 0 0\n1 0 1 1 1 1 0 0 0 0\n1 0 0 1 1 1 1 1 0 0\n1 0 0 0 0 1 1 1 0 0\n1 0 0 0 0 0 0 1 1 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -564,7 +666,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 1 1 1 1 1 1 0 0\nS 1 1 1 1 0 1 1 1 1\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 L L 0 1 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -603,7 +711,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 S S S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -642,7 +756,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 L\nS 0 0 0 0 0 0 0 1 L\nS 0 0 0 1 1 1 1 1 0\nS 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -681,7 +801,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 1 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 0 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -720,7 +846,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 1 1 1 1 1 1\n0 0 0 1 1 0 1 1 1 L\n0 1 1 1 1 1 1 1 1 L\nS S 0 0 0 0 S S S 1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -759,7 +891,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 1 1 S S S S S 0 0\nL 1 1 1 1 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 S\n0 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -798,7 +936,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 1 1 1 S S S 0 0\n0 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\nL 1 0 1 0 0 0 0 0 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -837,7 +981,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 1 S S S S\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -876,7 +1026,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 1 1 S S S S S 0 0\nL 1 1 1 1 1 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -915,7 +1071,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 1 1 0 1 0 0 0 0\nL 1 0 1 0 0 1 1 1 1\nL 1 1 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 0 S\n1 S S S S 0 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -954,7 +1116,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S S S 0 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 0 0 0 1 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\n1 1 0 0 0 1 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 0 1 1 L L L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -993,7 +1161,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S S 0 S S S S S\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 L L 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1032,7 +1206,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 1 1 1 S S S S 0\n0 1 1 1 1 0 0 0 0 0\nL 1 1 0 1 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 0 S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1071,7 +1251,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\nS S S S S 1 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1110,7 +1296,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 1 1 1 1 0 1 1 0 0\nL 1 1 0 1 1 1 1 0 0\nL 1 1 1 1 1 S S 1 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1149,7 +1341,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 0 1 1 1 0\n0 0 0 1 0 0 0 1 1 0\n0 0 1 0 0 0 0 1 1 1\n0 1 0 0 0 0 0 0 1 1\n1 0 0 0 0 0 0 0 1 0\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1188,7 +1386,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S S 0 0\nS 0 0 0 0 1 1 1 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 0 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 L L L 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1227,7 +1431,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 1 1 0 0 S\n0 0 0 0 1 1 1 0 0 S\n0 0 0 1 0 0 0 0 0 S\n0 0 0 1 0 0 0 0 1 S\n0 0 1 0 0 0 0 0 1 1\nL L L 1 1 1 1 1 1 1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1266,7 +1476,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S S 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 1 1 1 L\nS 0 0 0 0 0 1 1 1 1\nS 1 1 1 1 1 1 1 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1287,7 +1503,31 @@
     "valid_output_grid": false,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -1326,7 +1566,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 1 L L 1 1 1 1 S\n0 1 1 1 1 0 0 0 0 S\n0 1 1 1 1 0 0 0 0 S\n1 1 1 1 0 0 0 0 0 0\n1 0 1 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1365,7 +1611,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 1 1 1 1 S\n0 0 0 0 1 1 1 1 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 1 0 0 0 0 1 0\n0 1 1 0 0 0 0 0 1 S\nL 1 0 0 0 0 0 0 0 S\nL 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1404,7 +1656,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 1 0\n0 0 0 0 0 1 1 0 1 S\nS 1 1 1 0 1 1 0 1 S\nS 0 0 1 1 0 1 1 1 1\nS 0 0 0 1 1 1 1 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1443,7 +1701,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 S S S 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 L\nS 0 0 0 0 0 1 1 1 L\nS 0 0 1 1 1 1 0 1 0\nS 1 1 1 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1482,7 +1746,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 1 0 0 1 L\n0 0 0 0 0 0 0 0 1 1\n0 0 1 0 0 0 0 0 1 1\n0 1 0 0 0 0 0 0 1 1\n1 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1521,7 +1791,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S 0 0 S S S S\n0 0 0 0 0 0 1 0 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 0 1 0\n0 0 0 0 0 0 1 0 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 L L L 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1560,7 +1836,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 L L\n0 0 0 0 0 0 0 1 1 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 1 1 1 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1581,7 +1863,31 @@
     "valid_output_grid": false,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -1620,7 +1926,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 1 1 S\nS 0 0 0 0 0 1 1 1 1\nS 1 0 0 0 0 1 1 1 0\n0 0 1 0 1 1 1 1 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 L 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1659,7 +1971,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1698,7 +2016,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S S S 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 S\n0 0 0 0 1 0 0 0 0 S\n0 0 0 0 1 1 0 1 1 S\n0 0 0 0 0 1 1 1 1 S\n0 0 0 0 0 0 1 L L L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1737,7 +2061,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S S S 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 1 1 1 1 1 1 1 1 0\nL 1 1 1 1 1 1 S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1776,7 +2106,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 1 1 1 1 1 1 1 1 0\nS 0 0 0 0 0 1 1 1 L\nS 0 0 0 0 0 1 1 1 L\nS 0 0 0 0 0 1 1 1 L\nS 0 0 0 S S S 1 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1815,7 +2151,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 1 L 0 0 0 0 0\n0 1 0 1 0 0 0 0 0 0\n0 1 0 1 0 0 0 0 0 0\n1 1 0 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 0 1 0 0 0 0 0 0\nS 0 0 1 0 0 0 0 0 0\nS 0 0 1 0 0 0 0 0 0\nS 0 0 1 0 0 0 0 0 0\n0 S S 1 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1854,7 +2196,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 1 1 S S S\n0 0 0 0 1 1 0 0 0 1\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 L L L 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1893,7 +2241,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S S S S 0 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 S S S 1 1 1 1 L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1932,7 +2286,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S S S S 1 1\n0 0 0 0 1 1 0 1 1 0\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 1 0 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -1940,38 +2300,44 @@
     "ground_truth": "0 0 0 1 L 1 0 0 0 0\n0 1 1 1 1 1 0 0 0 0\n1 1 1 1 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 S S S S 0",
     "completion": "0 0 0 1 L 1 0 0 0 0\n0 1 1 1 1 1 1 0 0 0\n0 1 1 1 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 S S S S 0",
     "exact_match": false,
-    "difference_ratio": 0.8095238095238095,
-    "relative_difference_ratio": 0.8095238095238095,
-    "penalized_difference_ratio": 0.8095238095238095,
+    "difference_ratio": 0.8571428571428572,
+    "relative_difference_ratio": 0.8571428571428572,
+    "penalized_difference_ratio": 0.8571428571428572,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 2.6,
-    "difficulty_weighted_difference_ratio": 2.104761904761905,
-    "difficulty_weighted_relative_difference_ratio": 2.104761904761905,
+    "difficulty_weighted_difference_ratio": 2.2285714285714286,
+    "difficulty_weighted_relative_difference_ratio": 2.2285714285714286,
     "valid_output_grid": true,
     "physically_valid": true,
-    "load_carrying": true,
-    "compliance": 11.625271683116248,
+    "load_carrying": false,
+    "compliance": 91493345.93370059,
     "ground_truth_compliance": 6.266187344230369,
     "optimal_compliance": 6.197629397983423,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.533116951321184,
-    "structural_efficiency": 0.533116951321184,
-    "structural_efficiency_raw": 0.533116951321184,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
     "design_efficiency": null,
-    "material_efficiency": 1.0,
-    "compliance_efficiency_vs_ground_truth": 0.539014271239007,
-    "volume_fraction": 0.3,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.29,
     "ground_truth_volume_fraction": 0.3,
-    "volume_ratio": 1.0,
-    "max_displacement": 22.263609996926615,
+    "volume_ratio": 0.9666666666666667,
+    "max_displacement": 190308961.1913309,
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 1 L 1 0 0 0 0\n0 1 1 1 1 1 1 0 0 0\n0 1 1 1 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 S S S S 0",
+    "visible_cell_changes": 1,
+    "visible_numeric_cell_changes": 1,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "10_random_cell_easy",
@@ -2010,7 +2376,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 1 1 1 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\n1 1 0 0 1 1 0 0 0 0\n0 1 0 1 1 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 L 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2049,7 +2421,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 1 L L L 0 0\n0 0 1 1 1 1 1 1 1 0\n0 1 0 1 0 0 1 1 1 1\n1 1 1 1 0 0 0 0 1 S\nS 1 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2088,7 +2466,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S S S 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 0 1 S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2127,7 +2511,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 L L L 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2166,7 +2556,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 1 0 0 S\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 1 1\nL 0 0 0 1 1 1 1 1 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2174,38 +2570,44 @@
     "ground_truth": "S 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\n0 0 1 1 1 1 1 1 1 0\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 0 L\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 S S S 1 0",
     "completion": "S 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 1 1 0 1 0\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 S S S 1 0",
     "exact_match": false,
-    "difference_ratio": 0.8,
-    "relative_difference_ratio": 0.8,
-    "penalized_difference_ratio": 0.8,
+    "difference_ratio": 0.85,
+    "relative_difference_ratio": 0.85,
+    "penalized_difference_ratio": 0.85,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
-    "force_path_cost_average_efficiency_ratio": 0.9362831858407081,
+    "force_path_cost_average_efficiency_ratio": 0.013082401820160256,
     "difficulty_score": 2.2,
-    "difficulty_weighted_difference_ratio": 1.7600000000000002,
-    "difficulty_weighted_relative_difference_ratio": 1.7600000000000002,
+    "difficulty_weighted_difference_ratio": 1.87,
+    "difficulty_weighted_relative_difference_ratio": 1.87,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 6.412843785230548,
+    "compliance": 13.934058126424045,
     "ground_truth_compliance": 2.7244096950110572,
     "optimal_compliance": 2.7244096950110572,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.4248364354805677,
-    "structural_efficiency": 0.4248364354805677,
-    "structural_efficiency_raw": 0.4248364354805677,
+    "topology_score": 0.1955216255230474,
+    "structural_efficiency": 0.1955216255230474,
+    "structural_efficiency_raw": 0.1955216255230474,
     "design_efficiency": null,
     "material_efficiency": 1.0,
-    "compliance_efficiency_vs_ground_truth": 0.4248364354805677,
-    "volume_fraction": 0.28,
+    "compliance_efficiency_vs_ground_truth": 0.1955216255230474,
+    "volume_fraction": 0.27,
     "ground_truth_volume_fraction": 0.3,
-    "volume_ratio": 0.9333333333333335,
-    "max_displacement": 9.471831145178223,
+    "volume_ratio": 0.9000000000000001,
+    "max_displacement": 21.52389703008585,
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 1 1 0 1 0\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 0 L\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 S S S 1 0",
+    "visible_cell_changes": 1,
+    "visible_numeric_cell_changes": 1,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "10_random_cell_easy",
@@ -2244,7 +2646,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S 0 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 1 1 1 1 L\n0 0 0 0 1 1 1 1 1 L\n0 0 0 S S 1 1 1 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2265,7 +2673,31 @@
     "valid_output_grid": false,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "10_random_cell_easy",
@@ -2304,7 +2736,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 S S S S 0 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 1 1 1 1 1\n0 0 0 S S S 1 1 1 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2343,7 +2781,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n0 1 0 1 1 1 0 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 0 1 S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2382,7 +2826,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 1 L 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 1 1 1 1 1 0 0 0 0\n1 1 1 0 0 1 0 0 0 0\n1 1 0 0 0 1 0 0 0 0\nS 1 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\n0 0 S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2421,7 +2871,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 S S S S S 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 0 1 0 0 0 0 0 0\nL 1 1 1 1 1 0 0 0 0\n0 1 1 1 1 1 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2460,7 +2916,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 S S S S S 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\nL 1 1 1 0 1 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2499,7 +2961,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 0 0 1 0 0 1 1 0 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 1 0 0 1 0\n0 0 0 0 1 0 0 0 1 1\nS S S 1 1 1 1 1 1 L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2538,7 +3006,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 S S 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 1 1 1 1 1 0 0 S\n0 0 0 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2577,7 +3051,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 1 L L 1 0 0 0 S\n0 1 1 1 0 1 1 0 0 S\n0 0 1 1 0 0 1 1 1 S\nS 1 1 1 0 0 0 1 0 S\nS 1 1 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2616,7 +3096,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S 1 1 1 1 1 0 0 0 L\nS 0 0 0 0 1 1 1 1 1\nS 0 0 0 0 0 0 1 1 1\nS 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\nS 0 0 1 0 0 0 0 0 0\nS 0 1 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2655,7 +3141,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 1 1 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\nS S S S 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2694,7 +3186,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L S S S 1 0 0 0 0 0\nL 1 0 0 1 0 0 0 0 0\nL 0 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2733,7 +3231,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 L L L\n0 0 0 0 0 0 1 0 1 0\n0 0 0 0 0 1 0 1 1 0\n0 0 0 0 1 0 0 0 1 0\n0 0 0 1 0 0 0 0 1 0\n0 0 1 0 0 0 0 0 1 0\n0 1 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 1 1 1 0\n0 1 1 0 0 1 0 1 0 0\n0 S S S S S 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2772,7 +3276,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 1 1 1 1 S\n0 0 0 0 0 1 1 1 1 S\n0 0 0 0 0 1 1 1 1 S\n0 0 0 0 0 0 1 1 0 1\n0 0 0 0 0 1 L L L 1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2811,7 +3321,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S 1 1 1 1 1 1 0 0\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 S S S S S 1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2850,7 +3366,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L 0 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\nS 1 1 0 1 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\nS 1 0 0 1 0 0 0 0 0\nS 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 S S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2889,7 +3411,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L 1 1 1 1 1 1\n0 0 1 1 1 1 1 1 1 S\n0 0 0 1 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 0 1\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2928,7 +3456,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\nL 1 0 1 0 0 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\n1 1 1 1 1 1 1 0 0 0\n0 1 S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -2967,7 +3501,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\nS 1 1 0 0 0 0 1 1 S\nS 1 1 0 0 0 1 1 0 0\nS 1 1 1 0 1 1 0 0 0\nS 1 1 0 1 1 0 0 0 0\nL L L 1 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3006,7 +3546,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 1 1 0 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\nS 1 1 1 0 1 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3045,7 +3591,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 1 1 1 1 1 1 1 S\n1 1 0 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3084,7 +3636,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 1 1 1 0 0 1 S S 0\nL 0 1 1 0 1 1 1 1 0\n1 1 1 1 1 1 1 1 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3123,7 +3681,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 0 1 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 0 1 1 1 0 0 0\n0 0 0 0 S S 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3162,7 +3726,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L 0 0 0 0 0 0\n0 0 1 0 1 1 0 0 0 0\n0 0 1 1 1 0 1 1 0 0\n0 0 1 0 0 0 0 1 1 1\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3201,7 +3771,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 1 S S L\n0 0 0 0 0 0 1 0 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 0 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3240,7 +3816,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 1 1 1 S S 0 0 0\n1 1 1 1 1 1 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 S S S 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3279,7 +3861,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 S\n0 1 0 1 0 0 0 0 0 S\n0 0 0 1 1 0 0 0 0 S\n0 0 1 L L 1 1 1 1 1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3318,7 +3906,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 0 1 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 1 0 0 0\n0 0 1 0 0 1 1 0 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 1 1 1 0 1 1 0 0\n0 0 0 0 S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3357,7 +3951,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 S S S 0 0 0 S S S\n1 1 1 1 0 0 1 1 0 0\n1 1 1 1 0 1 1 0 0 0\nL 1 1 1 1 1 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3396,7 +3996,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 S S S\n0 0 0 0 0 1 0 0 0 0\nL 0 0 0 1 0 0 0 0 0\nL 1 0 1 1 0 0 0 0 0\nL 1 1 0 1 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 S\n0 0 0 1 1 1 1 0 0 S\n0 0 0 0 0 1 1 1 0 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3435,7 +4041,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 1 0 S\n0 0 0 0 0 0 1 0 0 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 0 1 0 1 0\n0 0 0 0 1 1 0 0 1 0\n0 0 0 0 1 0 1 1 0 0\n0 0 0 L L L 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3474,7 +4086,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 1 S S S 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 S\n0 1 1 1 1 0 0 0 0 S\n1 1 1 1 0 0 0 0 0 S\nL 1 0 0 0 0 0 0 0 S\nL 1 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3513,7 +4131,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 1 S\nS 1 0 0 0 0 0 1 1 S\nS 0 1 0 0 0 1 1 1 S\nS 1 1 0 1 1 1 1 0 S\nS 1 1 L L L 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3552,7 +4176,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 1 0 0 0 0 1 1 1 0\n0 1 0 0 1 1 1 0 0 0\n1 0 1 1 1 1 0 0 0 0\nL L L 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3591,7 +4221,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S S S S 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\nS 0 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 0 L L L 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3630,7 +4266,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 1 S S S S\n0 0 0 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3669,7 +4311,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S S S 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nL 0 1 1 0 0 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\nL S S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3708,7 +4356,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 1 1 1 1 L\nS 0 1 1 1 0 1 1 1 L\nS 0 1 1 1 1 0 1 1 L\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3747,7 +4401,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 1 1 0 0 1\n0 0 1 1 1 0 0 0 1 0\n1 1 1 0 0 0 0 0 1 0\nS 0 0 0 0 0 0 1 1 0\nS 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 S S S S S 1 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3786,7 +4446,13 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 1 1 1 1 1 S S S 0\nL 1 1 1 1 1 1 1 1 0\nL 1 1 1 0 1 1 1 0 0\nL 0 1 1 1 0 1 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "10_random_cell_easy",
@@ -3825,6 +4491,12 @@
     "unparsable_cells": 0,
     "model": "ollama/qwen3.8:latest",
     "dataset_version": "v2",
-    "openrouter_model": "qwen3.8:latest"
+    "openrouter_model": "qwen3.8:latest",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 S\nL 1 0 0 0 0 0 0 0 S\nL 0 1 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 0 1 0 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 1 1 1 1 S\n0 0 0 0 0 0 1 0 1 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   }
 ]

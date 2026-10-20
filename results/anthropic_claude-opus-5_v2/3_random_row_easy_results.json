@@ -36,24 +36,30 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S S S 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 0 1 S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
     "prompt": "You are given a structural material distribution represented as a grid. Each cell can have one of the following states:\n- 'L' indicates applied load.\n- 'V' indicates void.\n- 'S' indicates support.\n\nThe goal is to predict the correct material distribution by filling in all 'V' cells with either '1' (solid) or '0' (empty), based on the surrounding structure and implicit physical reasoning (such as load paths, supports, and forces).\n\nImportant: The completed structure should use as little material as possible while remaining stable and plausible for carrying the applied forces. Minimize material usage unless necessary for structural support.\n\nBelow is the input grid with masked regions:\n\nV V V S S S S V V V\n0 0 0 0 0 0 0 0 0 0\nV V V V V V V V V S\nV V V V V V V V V S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 L L 1 0 0 0\n\nPlease output the completed grid by replacing all 'V' cells with either '1' (solid) or '0' (empty).\nMaintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.\nReturn only the completed grid without any additional explanation.",
     "ground_truth": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 L L 1 0 0 0",
     "completion": "0 0 0 1 1 1 1 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 1 1 1 0 0 0",
-    "exact_match": false,
-    "difference_ratio": 0.5714285714285714,
-    "relative_difference_ratio": 0.5714285714285714,
-    "penalized_difference_ratio": -0.2857142857142858,
-    "load_support_connected": false,
+    "exact_match": true,
+    "difference_ratio": 1.0,
+    "relative_difference_ratio": 1.0,
+    "penalized_difference_ratio": 1.0,
+    "load_support_connected": true,
     "load_support_connected_force_directional": false,
-    "isolated_clusters_count": 2,
-    "force_path_cost_average_efficiency_ratio": 0,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 1.1666666666666667,
-    "difficulty_weighted_difference_ratio": 0.6666666666666666,
-    "difficulty_weighted_relative_difference_ratio": 0.6666666666666666,
+    "difficulty_weighted_difference_ratio": 1.1666666666666667,
+    "difficulty_weighted_relative_difference_ratio": 1.1666666666666667,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
@@ -75,7 +81,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 L L 1 0 0 0",
+    "visible_cell_changes": 9,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 9,
+    "visible_cells_preserved": false
   },
   {
     "subject": "3_random_row_easy",
@@ -114,7 +126,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 1 L 1 0 0 0 0 0 0\n0 1 1 0 1 0 0 0 0 0\n0 1 1 0 0 1 0 0 0 0\n1 1 1 0 0 0 1 0 0 0\n1 1 1 0 0 0 0 1 0 0\nS 1 0 0 0 0 0 0 1 S\nS 1 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -153,7 +171,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 L L L 0\n0 0 0 0 1 1 1 0 1 0\n0 0 0 1 1 1 0 1 1 0\n0 0 1 1 1 0 0 0 1 0\n0 1 1 1 0 0 0 0 0 1\n1 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -192,7 +216,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S S 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 0 0 0 L\nS 0 0 0 0 0 1 1 1 1\nS 1 1 1 1 1 1 1 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -231,7 +261,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S 0 0 0 0 0 0 L L L\nS 0 1 1 1 1 1 1 1 S\nS 1 0 0 0 0 0 0 0 S\nS 1 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -270,7 +306,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 S S S S 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 1 1 1 1 1\n0 0 0 S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -309,7 +351,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S S S S S S S S 0\n1 1 0 1 0 0 0 0 0 0\n1 1 0 1 0 0 0 0 0 0\n1 1 0 1 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -348,7 +396,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 1 S S S 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 1 1 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n0 1 0 0 0 1 1 1 1 0\n0 1 0 0 1 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -387,7 +441,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 1 1 S S S S S 0 0\nL 1 1 1 1 1 1 0 0 0\n1 1 1 1 1 1 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -426,7 +486,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 1 1 1 1 0 1 S\n0 0 1 0 1 0 0 1 0 S\n0 1 0 1 0 0 0 0 1 S\nL 0 1 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -465,7 +531,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 1 0\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -504,7 +576,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 S S 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\nL 0 0 0 0 0 0 0 0 S\nL 1 1 1 1 1 1 1 1 S\nL 1 1 1 1 1 1 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -543,7 +621,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 1 1 1 1 1 0\n0 1 1 0 1 0 0 1 0 0\n1 1 0 0 1 0 1 0 0 0\nS S S S S 1 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -582,7 +666,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n0 0 0 1 1 1 1 1 1 1\n0 0 1 0 0 0 0 0 1 1\n0 1 0 0 0 0 0 0 1 1\n1 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\nS 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -621,7 +711,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 1 S S S\n0 0 0 0 0 1 0 0 0 0\nL 0 0 0 1 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 S\n0 0 0 1 1 1 1 0 0 S\n0 0 0 0 0 1 1 1 0 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -660,7 +756,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 1 0 0 S\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 1 1\nL 0 0 1 1 1 1 1 1 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -699,7 +801,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S S S 0 S S S 1 1\n0 0 0 1 1 0 0 1 1 1\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 0 1 1 0 1 1\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -738,7 +846,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 1 S S S S 1\n0 0 0 0 1 1 0 0 0 1\n0 0 0 0 1 0 1 0 0 1\n0 0 0 0 1 0 0 1 0 1\n0 0 0 0 0 1 0 0 1 1\n0 0 0 0 0 1 0 0 1 1\n0 0 0 0 0 1 0 1 0 0\n0 0 0 0 0 1 0 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 L L 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -777,7 +891,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 1 0 0 0 0 0 0 0\n0 1 0 1 1 1 1 1 1 1\n0 1 1 0 0 0 0 0 0 S\n0 1 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 1 0 0 0 0 0 S\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -816,7 +936,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S S S 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\n1 0 0 0 0 1 1 0 0 0\n1 1 0 0 0 1 0 0 0 0\n0 1 0 0 0 1 0 0 0 0\n0 1 1 0 1 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 L L L 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -855,7 +981,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\nL 1 1 1 1 1 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\n1 1 1 1 1 1 1 1 0 0\n0 1 1 1 1 S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -894,7 +1026,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S S 1 0 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -933,7 +1071,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 1\nS 1 1 1 1 1 1 1 1 1\n1 1 1 0 0 0 0 0 1 0\n0 0 0 1 0 0 0 0 1 0\n0 0 0 1 1 1 1 1 1 0\n0 0 0 0 0 0 0 L L L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -972,7 +1116,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S S 1 1 1 1 0 0 0 0\n1 1 1 1 1 1 1 1 1 L\n0 0 0 0 0 1 1 0 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 1 1 0 0 0\n0 1 1 1 1 1 1 0 0 0\n0 1 1 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1011,7 +1161,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L 0 0 0 0 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1050,7 +1206,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 1 1 1 0 1\n0 0 0 0 1 1 1 0 1 1\n0 0 0 1 1 1 0 1 0 1\n0 0 1 1 1 0 1 0 1 0\n0 0 0 S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1089,7 +1251,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S S S S 0 0 0 0\n0 0 0 0 0 1 1 1 1 L\n0 0 0 0 0 0 1 1 0 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 S S S 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1128,7 +1296,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 L L L 1\n0 0 0 0 0 0 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 1 1 0 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1167,7 +1341,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 S\n0 0 0 1 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1206,7 +1386,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\nS 0 0 0 0 0 0 1 1 0\nS 1 1 1 1 1 1 1 0 0\nS 1 1 1 1 1 1 0 0 0\nS 1 L 1 1 1 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1245,7 +1431,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 0 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1284,7 +1476,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S 0 0 0 0 0 0\n0 1 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 1 L\n0 0 0 1 1 1 1 1 1 L\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1323,7 +1521,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 1 1 1 1 1 1 1 S\nL 1 0 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 0 S\n0 1 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\nS S S S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1362,7 +1566,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\nL 1 1 1 1 0 1 0 0 0\nL 1 1 1 1 0 0 1 0 0\n0 S S S S 0 0 0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1401,7 +1611,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 S\nL 1 1 1 1 1 1 1 1 S\nL 0 1 0 0 0 0 0 0 0\n0 1 0 1 0 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 1 1 1 1 S\n0 0 0 0 0 0 1 1 1 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1440,7 +1656,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 1 S S L\n0 0 0 0 0 0 1 1 1 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1479,7 +1701,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 1 L 1 0 0 0 0\n0 1 1 1 1 1 0 0 0 0\n1 1 1 1 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1518,7 +1746,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 1 1 1 1 1 0 0 0 0\nL 1 1 1 0 1 1 1 0 0\nL 1 1 1 1 0 0 1 1 0\n0 1 1 1 1 1 0 0 0 S\n0 0 1 S S S 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1557,7 +1791,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 0 1 1 1 1\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 L L 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1596,7 +1836,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 S S S 0 0\n0 0 0 0 1 1 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1635,7 +1881,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 1 0 S\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 0 1 0 0 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 0 1 1 0 0 S\n0 0 0 0 0 L L 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1656,7 +1908,31 @@
     "valid_output_grid": false,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "3_random_row_easy",
@@ -1695,7 +1971,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 S S S S\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 1 L\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 S S 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1734,7 +2016,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 S S S\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 0 0 0 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 1 1 0 0 0 0 S\n0 0 0 1 1 0 0 0 0 S\n0 0 1 0 1 1 1 1 1 1\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 L L 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1773,7 +2061,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\nL 1 1 1 1 1 0 0 0 0\nL 1 1 1 1 1 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1812,7 +2106,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L 1 1 0 0 0 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 1 0 1 1 1\n0 0 0 0 0 1 1 0 1 1\n0 0 0 0 0 0 1 0 0 S\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1851,7 +2151,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 1 1 S\nS 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 1 1 1 1 S\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 L L 1 1 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1890,7 +2196,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 1 0 1 1 1 S\n0 0 0 0 1 1 0 0 0 S\n0 0 0 0 0 1 0 0 0 S\n0 0 0 0 0 0 1 0 0 S\n0 0 0 0 0 0 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1929,7 +2241,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 0 0\n0 0 1 1 1 1 1 1 1 0\n0 1 1 1 1 0 1 1 1 1\n1 1 1 1 0 0 0 0 1 S\nS 1 0 0 0 0 0 0 0 S\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -1968,7 +2286,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L 0 0 0 0\n0 0 0 1 1 1 1 1 1 1\n0 0 0 1 0 0 1 1 1 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 0 0 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2007,7 +2331,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 0 S\n0 0 1 0 0 0 0 0 1 S\n0 0 1 0 0 0 0 1 0 0\n0 0 1 0 0 0 1 0 0 0\n1 0 1 1 1 1 0 0 0 0\nL L L 1 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2046,7 +2376,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 1 1 1 1 1 1\n0 0 0 1 1 1 1 1 1 L\n0 0 1 1 1 1 1 1 1 L\nS S S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2085,7 +2421,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S S 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 S\n0 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 1 1 S\n0 0 0 0 0 0 1 1 1 S\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 L L L 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2124,7 +2466,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 S S S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2163,7 +2511,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S 1 1 1 1 L\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2202,7 +2556,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 1 1 1 1 1 L L 0 0\nS 0 0 0 0 0 0 1 1 0\nS 0 0 0 0 0 0 1 1 0\nS 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 0 1\n0 0 0 0 0 0 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2241,7 +2601,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\nS S 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2280,7 +2646,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 L\nS 0 1 1 1 1 1 1 1 L\nS 1 1 1 1 1 1 1 1 L\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2319,7 +2691,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 S S S S\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 0 0\nS 1 1 1 1 0 0 1 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 0 0 1 L L 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2358,7 +2736,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S 1 1 L\n0 0 0 1 1 0 1 1 1 L\n0 0 0 1 1 1 1 1 1 L\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2397,7 +2781,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nL 1 1 1 1 1 1 1 1 0\nL 1 1 1 0 0 1 1 1 1\nL 1 1 1 1 1 1 1 1 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2436,7 +2826,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 S S S 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 0 1 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 1 0 1 0 0 0\n1 1 1 1 0 1 0 0 0 0\nL L L 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2475,7 +2871,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L 0 0 0 0 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 1 0 0 1 1 1\n0 0 0 0 1 0 0 0 0 S\n0 0 0 0 1 0 0 0 0 S\n0 0 0 0 1 0 0 0 0 S\n0 0 0 0 1 0 0 0 0 S\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2514,7 +2916,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 S S\n0 0 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\nL 1 0 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2553,7 +2961,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\nS 0 1 1 1 1 0 0 0 0\nS 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2592,7 +3006,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 1 0 1 0 0 0 0 0\n1 1 0 0 1 1 0 0 0 0\n1 0 0 0 0 1 0 0 0 0\n1 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\n0 0 S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2631,7 +3051,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 L 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2670,7 +3096,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 S\nS 1 1 0 0 0 0 0 1 S\nS 1 1 0 0 0 0 0 1 S\nS 1 1 0 0 0 1 1 1 0\n0 1 1 1 0 1 1 0 0 0\n0 0 L L L 1 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2709,7 +3141,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 L L L\n0 0 0 0 0 0 1 0 1 0\n0 0 0 0 0 1 0 0 1 0\n0 0 0 0 1 0 0 0 1 0\n0 0 0 1 0 0 0 0 1 0\n0 0 1 0 0 0 0 0 1 0\n0 1 0 0 0 0 0 0 1 0\n0 1 0 0 0 0 1 1 1 0\n0 1 1 0 0 1 0 1 0 0\n0 S S S S S 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2748,7 +3186,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 L\n1 1 0 0 0 0 1 1 1 L\nS 1 0 0 0 0 0 1 1 L\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 1 1 0 0 0 0\nS 0 1 1 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2787,7 +3231,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\nL 1 1 1 0 0 0 0 0 0\nL 1 0 0 1 0 0 0 0 0\nL 1 0 0 0 1 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 1 1 1 1 1 1 1\n1 1 0 0 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 0 S\n1 S S S S S 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2826,7 +3276,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S 0 0 0 0 S S S S S\nS 0 0 0 0 1 1 1 1 1\nS 0 0 0 0 0 1 1 1 L\n0 1 1 1 0 0 1 1 1 L\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2865,7 +3321,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\nL 1 0 1 0 0 1 1 1 0\nL 1 1 1 1 1 1 1 1 S\n1 1 1 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 0 S\n1 S S S S 0 0 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2904,7 +3366,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 S S S S 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 1 1 1\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 S S S 1 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2943,7 +3411,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 0\nS 1 1 1 1 0 0 0 1 0\nS 1 1 1 1 1 1 1 1 0\n0 0 0 1 1 1 1 L L 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -2982,7 +3456,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n1 1 1 1 1 1 0 0 0 0\nS 1 0 0 1 1 1 0 0 0\nS 1 0 1 1 0 1 1 0 0\nS 1 1 1 0 0 0 1 1 0\nS 1 1 0 0 0 0 0 1 L\n0 0 0 0 0 0 0 0 0 L",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3021,7 +3501,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 1 0 1 1 0 0 0 0\n1 1 1 1 1 1 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3060,7 +3546,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 1 1 1 1 1 1 1 1\nS 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 1 0 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 1 1 1 1 S\n0 0 0 0 1 1 1 L 1 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3099,7 +3591,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S S S S S S\n0 0 0 0 0 0 0 1 0 1\n0 0 0 0 0 0 0 1 0 1\n0 0 0 0 0 0 0 1 0 1\n0 0 0 0 0 0 0 1 0 1\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 1 0 1 0 0 0 0\n0 0 L L L 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3138,7 +3636,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 S S S 0 0 0 S S S\n1 1 1 1 0 0 1 1 0 0\n1 1 1 1 0 1 1 0 0 0\nL 1 1 1 1 1 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3177,7 +3681,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 1 1 1 1 1 1 1 1 L\n1 1 1 1 1 1 1 1 1 L\n1 1 1 1 0 0 0 0 0 0\nS 1 1 1 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3216,7 +3726,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 L L\n0 0 0 0 0 0 0 1 1 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 1 0 0 0 0\nS 1 1 1 1 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\nS 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3255,7 +3771,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 1 1 1 1 1 0 0 0 S\n1 1 1 1 1 1 1 0 0 S\n1 1 1 1 1 1 1 0 0 S\nL 1 S S S S S 0 0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3294,7 +3816,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L S S S S 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\nL 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 S S S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3333,7 +3861,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S 0 0 0 0 0 S S S S\nS 0 0 0 0 0 1 1 1 1\nS 0 0 0 0 0 0 1 1 0\nS 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 L L 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3372,7 +3906,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 S S 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\nS 1 0 0 1 0 0 0 0 0\nS 1 1 0 1 0 0 0 0 0\nS 1 1 0 1 0 0 0 0 0\nS 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 L L 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3411,7 +3951,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 1 1 1 1 1 S\n0 0 0 1 1 0 1 1 1 S\n0 0 0 1 0 1 0 1 1 1\n0 0 L L L 1 1 1 1 1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3450,7 +3996,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S S 1 0 0 0 0\nS 0 0 0 0 1 1 0 0 0\nS 0 0 0 0 0 1 1 0 0\nS 0 0 0 0 0 1 1 1 0\n1 1 1 1 1 0 0 0 1 1\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 L\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3489,7 +4041,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 1 1 S S S S\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 S\n0 1 1 0 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 1 S\nL 1 1 1 1 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3528,7 +4086,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 1 1 1 1 1 1 1 S\n1 1 0 0 0 0 0 0 0 S\n1 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 0 S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3567,7 +4131,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 1 1 1 1 1 1 1 0\n0 1 1 1 0 1 0 1 1 L\n1 1 1 0 1 0 1 0 0 L\n1 1 1 0 0 0 0 0 0 0\n0 S S 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3606,7 +4176,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L S S 0 0 0 0 0 0 0\nL 0 0 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 S\n1 1 0 0 0 0 0 0 0 S\n0 1 1 1 1 1 1 1 1 S\n0 0 1 1 1 1 1 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3614,16 +4190,16 @@
     "ground_truth": "S 1 1 1 1 1 1 0 0 0\nS 0 0 0 1 1 1 1 1 L\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\nS S 1 1 0 0 0 0 0 0",
     "completion": "```\n1 1 1 1 1 0 0 0 0 0\nS 0 0 0 1 1 1 1 1 L\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\nS S 1 1 0 0 0 0 0 0\n```",
     "exact_match": false,
-    "difference_ratio": 0.84,
-    "relative_difference_ratio": 0.84,
-    "penalized_difference_ratio": 0.76,
+    "difference_ratio": 0.88,
+    "relative_difference_ratio": 0.88,
+    "penalized_difference_ratio": 0.88,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 2.310344827586207,
-    "difficulty_weighted_difference_ratio": 1.9406896551724138,
-    "difficulty_weighted_relative_difference_ratio": 1.9406896551724138,
+    "difficulty_weighted_difference_ratio": 2.033103448275862,
+    "difficulty_weighted_relative_difference_ratio": 2.033103448275862,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
@@ -3645,7 +4221,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "S 1 1 1 1 0 0 0 0 0\nS 0 0 0 1 1 1 1 1 L\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\nS S 1 1 0 0 0 0 0 0",
+    "visible_cell_changes": 1,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 1,
+    "visible_cells_preserved": false
   },
   {
     "subject": "3_random_row_easy",
@@ -3684,7 +4266,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 S S 0 0 S S S S\n0 0 0 0 0 0 1 0 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 0 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 L L L 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3723,7 +4311,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 S S S S S 0 0 0 0\nS 0 0 0 0 0 0 0 0 0\nS 1 0 0 0 0 0 0 0 0\nS 0 1 0 0 0 0 0 0 0\nS 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n0 0 L L L 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3762,7 +4356,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 1 S S S 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 S\n0 1 1 1 1 0 0 0 0 S\n0 1 1 1 0 0 0 0 0 S\nL 1 1 0 0 0 0 0 0 S\nL 1 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3801,7 +4401,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 1 1 1 1 1 1 S\n0 0 1 1 0 1 0 0 0 S\nL 1 1 0 0 0 1 0 0 S\nL 1 0 0 0 0 0 1 0 S\nL 1 1 1 1 1 0 0 1 S\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3840,7 +4446,13 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 L L L\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 1 0 1 1 0\n0 0 0 0 1 1 0 0 1 0\n0 0 0 0 0 S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "3_random_row_easy",
@@ -3879,6 +4491,12 @@
     "unparsable_cells": 0,
     "model": "anthropic/claude-opus-5",
     "dataset_version": "v2",
-    "openrouter_model": "anthropic/claude-opus-5"
+    "openrouter_model": "anthropic/claude-opus-5",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 0 0 S\n0 0 0 0 0 0 0 0 1 S\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\nL 1 1 1 1 0 0 0 0 0\nL 1 S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   }
 ]

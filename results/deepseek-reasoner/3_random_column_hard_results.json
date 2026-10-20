@@ -33,7 +33,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -41,35 +47,41 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.6 0.6 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.2 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 L L 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.1 0.6 0.6 0.6 0.0 0.0 0.0 0.0 0.0  \n0.0 0.7 0.2 0.8 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "difference_ratio": -0.17647058823529416,
-    "relative_difference_ratio": 0.2941176470588235,
-    "penalized_difference_ratio": 0.0,
+    "difference_ratio": 0.8529411764705882,
+    "relative_difference_ratio": 0.8529411764705882,
+    "penalized_difference_ratio": 0.5588235294117647,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 1.6,
-    "difficulty_weighted_difference_ratio": -0.28235294117647064,
-    "difficulty_weighted_relative_difference_ratio": 0.4705882352941176,
+    "difficulty_weighted_difference_ratio": 1.3647058823529412,
+    "difficulty_weighted_relative_difference_ratio": 1.3647058823529412,
     "valid_output_grid": true,
     "physically_valid": true,
-    "load_carrying": false,
-    "compliance": 28575482.589793846,
+    "load_carrying": true,
+    "compliance": 86.86462799731345,
     "ground_truth_compliance": 86.86462799731345,
     "optimal_compliance": 86.86462799731345,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.0,
-    "structural_efficiency": 0.0,
-    "structural_efficiency_raw": 0.0,
+    "topology_score": 1.0,
+    "structural_efficiency": 1.0,
+    "structural_efficiency_raw": 1.0,
     "design_efficiency": null,
-    "material_efficiency": 0.0,
-    "compliance_efficiency_vs_ground_truth": 0.0,
+    "material_efficiency": 1.0,
+    "compliance_efficiency_vs_ground_truth": 1.0,
     "volume_fraction": 0.128,
     "ground_truth_volume_fraction": 0.128,
     "volume_ratio": 1.0,
-    "max_displacement": 471104421.26291025,
+    "max_displacement": 300.60072630209334,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.6 0.6 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.2 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 7,
+    "visible_numeric_cell_changes": 7,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -105,7 +117,13 @@
     "volume_ratio": 1.2499999999999998,
     "max_displacement": 70.92901485211958,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.3 L L L 0.3 L L 0.3\n0.0 0.0 0.3 0.3 0.1 0.1 0.3 0.2 0.0 0.3\n0.0 0.0 0.3 0.4 0.1 0.1 0.3 0.1 0.0 0.3\n0.0 0.0 0.3 0.4 0.2 0.2 0.3 0.0 0.0 0.3\n0.0 0.0 0.3 0.2 0.4 0.3 0.3 0.0 0.0 0.3\n0.0 0.0 0.3 0.1 0.4 0.2 0.3 0.0 0.0 0.3\n0.0 0.0 0.3 0.0 0.4 0.2 0.3 0.0 0.0 0.3\n0.0 0.0 0.3 0.0 0.4 0.2 0.3 0.0 0.0 0.3\n0.0 0.0 0.3 0.0 0.4 0.3 0.3 0.0 0.0 0.3\n0.0 0.0 0.3 S S S 0.3 S S 0.3",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -141,7 +159,13 @@
     "volume_ratio": 0.8773006134969326,
     "max_displacement": 1609690573.8268979,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 L\n0.0 0.0 0.0 0.0 0.2 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -177,7 +201,13 @@
     "volume_ratio": 0.9909502262443438,
     "max_displacement": 89.08102219377923,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 L 0.0\n0.0 0.0 0.2 0.3 0.2 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.2 0.2 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -213,7 +243,13 @@
     "volume_ratio": 1.153846153846154,
     "max_displacement": 2943.8415529804047,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 0.2 L L L 0.1 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.3 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.2 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.1 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.6 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.1 S 0.1 S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -249,7 +285,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 33.6561154103053,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -285,7 +327,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 20.371070846651723,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -321,7 +369,13 @@
     "volume_ratio": 0.9565217391304349,
     "max_displacement": 69.10489018729488,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.0 L 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -357,7 +411,13 @@
     "volume_ratio": 0.9883040935672512,
     "max_displacement": 1740.040459951337,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.4 0.1 0.0 0.0\n0.0 0.0 0.1 0.3 0.4 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.1 0.5 0.0 0.0 0.0 0.0\n0.0 S S S S 0.1 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -393,7 +453,13 @@
     "volume_ratio": 0.9600000000000001,
     "max_displacement": 994508364.2985178,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L 0.0 L 0.0 0.0 0.0\n0.0 0.2 0.3 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.5 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -429,7 +495,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 58.9062298610542,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -465,7 +537,13 @@
     "volume_ratio": 1.1904761904761905,
     "max_displacement": 74.221931709479,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 1.0 L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S 1.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -501,7 +579,13 @@
     "volume_ratio": 0.7837837837837838,
     "max_displacement": 2590.636537499407,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L 0.0 L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -537,7 +621,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 20.371070508762003,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.6 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.7 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -573,7 +663,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -609,7 +705,13 @@
     "volume_ratio": 0.9806451612903225,
     "max_displacement": 1646.6172589200744,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.3 0.3 0.0\n0.0 0.0 0.1 0.3 0.1 0.1 0.2 0.4 0.0 0.0\n0.0 0.0 0.3 0.1 0.1 0.0 0.4 0.1 0.0 0.0\n0.0 0.0 0.3 0.1 0.1 0.3 0.4 0.0 0.0 0.0\n0.0 0.0 S S S 0.5 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -645,7 +747,13 @@
     "volume_ratio": 0.9829545454545454,
     "max_displacement": 52.88658802109475,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -681,7 +789,13 @@
     "volume_ratio": 0.9296482412060301,
     "max_displacement": 13360.762044919018,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L 0.0 0.0 L 0.0\n0.0 0.0 0.1 0.2 0.0 0.2 0.0 0.0 0.1 0.0\n0.0 0.0 0.0 0.2 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.4 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.2 0.5 0.1 0.5 0.0 0.0 0.0 0.0 0.0\nS S S S 0.1 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -717,7 +831,13 @@
     "volume_ratio": 0.7784090909090909,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -753,7 +873,13 @@
     "volume_ratio": 0.9047619047619045,
     "max_displacement": 17998.579008310066,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L 0.0 L 0.0 L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S 0.0 0.1 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -789,7 +915,13 @@
     "volume_ratio": 0.7393939393939394,
     "max_displacement": 6064.453173577441,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L 0.3 L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -825,7 +957,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -861,7 +999,13 @@
     "volume_ratio": 0.589041095890411,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L 0.0 0.0 L\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -897,7 +1041,13 @@
     "volume_ratio": 1.0641025641025639,
     "max_displacement": 12.336391974108565,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.1 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S 1.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -933,7 +1083,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -969,7 +1125,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -1005,7 +1167,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 33.65611481678345,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1041,7 +1209,13 @@
     "volume_ratio": 0.7808219178082193,
     "max_displacement": 2717.122855309504,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 S 0.0 S 0.1 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1077,7 +1251,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 33.65611250312272,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1113,7 +1293,13 @@
     "volume_ratio": 0.9503105590062111,
     "max_displacement": 177.528744612155,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.3 0.0 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.5 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 S 0.0 S 0.0 S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1149,7 +1335,13 @@
     "volume_ratio": 0.9696969696969695,
     "max_displacement": 623.7494767275049,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.0 L L L L L L 0.0\n0.0 0.1 0.0 0.1 0.2 0.2 0.0 0.3 0.1 0.0\n0.0 0.0 0.0 0.2 0.1 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1185,7 +1377,13 @@
     "volume_ratio": 0.9887005649717514,
     "max_displacement": 110471.3109776654,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 L 0.0 0.0 0.0 0.0\n0.0 0.2 0.3 0.2 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.1 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1221,7 +1419,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 161.04463082829355,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.6 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1257,7 +1461,13 @@
     "volume_ratio": 0.868995633187773,
     "max_displacement": 1010885646.5994883,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.3 0.2 0.1 L L 0.0\n0.0 0.0 0.2 0.3 0.4 0.3 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.4 0.5 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.4 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1293,7 +1503,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 12.336391974106308,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.2\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.2\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.9 0.1\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.9 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1329,7 +1545,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -1365,7 +1587,13 @@
     "volume_ratio": 0.6148148148148148,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L 0.0 L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.7 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1401,7 +1629,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 46.29021703576526,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L L\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 S 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1437,7 +1671,13 @@
     "volume_ratio": 1.0842105263157895,
     "max_displacement": 120.46269166742398,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.1 0.0 0.3 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.2 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.4 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.2 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.1 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 S 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1473,7 +1713,13 @@
     "volume_ratio": 0.8371040723981901,
     "max_displacement": 3277.570435036483,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 L 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S 0.0 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1509,7 +1755,13 @@
     "volume_ratio": 0.8299319727891158,
     "max_displacement": 22178.307590672714,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.3 0.3 L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.2 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 S 0.0 S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1545,7 +1797,13 @@
     "volume_ratio": 0.75,
     "max_displacement": 1495.4653467596704,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1581,7 +1839,13 @@
     "volume_ratio": 0.9828571428571432,
     "max_displacement": 55.126191828567876,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1589,20 +1853,20 @@
     "ground_truth": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.6 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 S S S 0.0",
     "completion": "0.0 0.0 0.0 L L 0.0 L 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 S 0.0 S 0.0 0.0",
     "exact_match": false,
-    "difference_ratio": -1.2388059701492535,
-    "relative_difference_ratio": -0.5223880597014925,
-    "penalized_difference_ratio": -2.0149253731343277,
+    "difference_ratio": -0.791044776119403,
+    "relative_difference_ratio": -0.13432835820895495,
+    "penalized_difference_ratio": -1.0298507462686564,
     "load_support_connected": false,
     "load_support_connected_force_directional": false,
     "isolated_clusters_count": 0,
     "force_path_cost_average_efficiency_ratio": 0.01259,
     "difficulty_score": 2.1333333333333333,
-    "difficulty_weighted_difference_ratio": -2.642786069651741,
-    "difficulty_weighted_relative_difference_ratio": -1.1144278606965172,
+    "difficulty_weighted_difference_ratio": -1.6875621890547265,
+    "difficulty_weighted_relative_difference_ratio": -0.2865671641791039,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": false,
-    "compliance": null,
+    "compliance": 1012503159.2955065,
     "ground_truth_compliance": 47.54752353316364,
     "optimal_compliance": 47.54752353316364,
     "own_budget_optimal_compliance": null,
@@ -1612,12 +1876,18 @@
     "design_efficiency": null,
     "material_efficiency": 0.0,
     "compliance_efficiency_vs_ground_truth": 0.0,
-    "volume_fraction": 0.10400000000000001,
+    "volume_fraction": 0.11,
     "ground_truth_volume_fraction": 0.147,
-    "volume_ratio": 0.707482993197279,
-    "max_displacement": 0.0,
+    "volume_ratio": 0.7482993197278912,
+    "max_displacement": 1790104084.2027094,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L 0.0 L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
+    "visible_cell_changes": 3,
+    "visible_numeric_cell_changes": 1,
+    "visible_boundary_cell_changes": 2,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -1653,7 +1923,13 @@
     "volume_ratio": 0.9909909909909909,
     "max_displacement": 914.1105315000547,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0.3 L L L 0.0 0.0\n0.0 0.1 0.3 0.1 0.2 0.2 0.1 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.2 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.1 0.3 0.2 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.2 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.2 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.0 0.0 0.0 0.0\n0.0 S S S 0.2 S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1689,7 +1965,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 619.1641454965479,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.5 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.2 0.5 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1725,7 +2007,13 @@
     "volume_ratio": 0.9389671361502349,
     "max_displacement": 1237.6437001227034,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.0 L L 0.0 0.0 0.0\n0.0 0.3 0.4 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1733,16 +2021,16 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.4 0.5 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.1 0.5 0.4 0.0\n0.0 0.0 0.0 0.1 0.5 0.1 0.3 0.7 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0  \n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.4 0.5 0.0  \n0.0 0.0 0.0 0.0 0.2 0.5 0.5 0.5 0.4 0.0  \n0.0 0.0 0.0 0.1 0.5 0.1 0.7 0.7 0.0 0.0  \n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "difference_ratio": 0.041095890410958735,
-    "relative_difference_ratio": 0.3013698630136986,
-    "penalized_difference_ratio": -0.794520547945206,
-    "load_support_connected": false,
-    "load_support_connected_force_directional": false,
+    "difference_ratio": 0.45205479452054786,
+    "relative_difference_ratio": 0.7123287671232876,
+    "penalized_difference_ratio": 0.4383561643835616,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
-    "force_path_cost_average_efficiency_ratio": 0,
+    "force_path_cost_average_efficiency_ratio": 0.9486238532110094,
     "difficulty_score": 1.3333333333333333,
-    "difficulty_weighted_difference_ratio": 0.05479452054794498,
-    "difficulty_weighted_relative_difference_ratio": 0.4018264840182648,
+    "difficulty_weighted_difference_ratio": 0.6027397260273971,
+    "difficulty_weighted_relative_difference_ratio": 0.9497716894977168,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
@@ -1761,7 +2049,13 @@
     "volume_ratio": 1.0326797385620916,
     "max_displacement": 325.22192061401256,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.4 0.5 0.0\n0.0 0.0 0.0 0.0 0.2 0.5 0.5 0.5 0.4 0.0\n0.0 0.0 0.0 0.1 0.5 0.1 0.7 0.7 0.0 0.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 3,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 3,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -1797,7 +2091,13 @@
     "volume_ratio": 0.9923076923076923,
     "max_displacement": 7893.038295147411,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.1 L 0.0 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.1 0.0\n0.0 0.0 0.2 0.4 0.4 0.2 0.0 0.0 0.1 0.0\n0.0 0.0 0.3 0.5 0.0 0.4 0.3 0.0 0.1 0.0\n0.0 0.0 0.3 0.4 0.5 0.2 0.5 0.0 0.1 0.0\n0.0 0.0 0.1 0.0 0.5 S S S 0.1 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1833,7 +2133,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -1869,7 +2175,13 @@
     "volume_ratio": 1.0869565217391306,
     "max_displacement": 60.89723148206024,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.4 L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.6 0.6 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 1.0 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1905,7 +2217,13 @@
     "volume_ratio": 0.9734848484848485,
     "max_displacement": 162.69154337943144,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0.0 L L 0.0 L L L L 0.0\n0.0 0.0 0.2 0.2 0.0 0.0 0.2 0.2 0.2 0.0\n0.0 0.0 0.3 0.1 0.0 0.0 0.1 0.3 0.1 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 0.3 0.2 0.0 0.0 0.0 0.3 0.0 0.0\n0.0 0.0 S S 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1941,7 +2259,13 @@
     "volume_ratio": 1.0205128205128204,
     "max_displacement": 86.64893676337884,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.1 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.3 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 S 0.1 S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1977,7 +2301,13 @@
     "volume_ratio": 0.9831460674157302,
     "max_displacement": 12.271372478531335,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.9 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2013,7 +2343,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 66.59264139375006,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2049,7 +2385,13 @@
     "volume_ratio": 0.7999999999999999,
     "max_displacement": 1546.9041179868775,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L 0.0 L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0\nS 0.0 S S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2085,7 +2427,13 @@
     "volume_ratio": 1.2111111111111112,
     "max_displacement": 19.924969484291356,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L 0.3 0.3 L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 0.9 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S 1.0 1.0 S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2121,7 +2469,13 @@
     "volume_ratio": 0.7849462365591396,
     "max_displacement": 28339.7892084104,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L 0.3 0.3 L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.0 0.0\n0.0 S S S S S 0.1 0.1 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2157,7 +2511,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 39.232038309126274,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 0.5 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.6 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2193,7 +2553,13 @@
     "volume_ratio": 0.9658536585365854,
     "max_displacement": 36.513781793669324,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L 0.0 L 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.7 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\nS 0.0 S S S S 0.0 S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2229,7 +2595,13 @@
     "volume_ratio": 0.9313725490196079,
     "max_displacement": 1086.961249332113,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L 0.0 L L\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2265,7 +2637,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 20.14436472307815,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.8 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2301,7 +2679,13 @@
     "volume_ratio": 0.9801980198019803,
     "max_displacement": 78.51788244639768,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S 0.0 0.0 S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2337,7 +2721,13 @@
     "volume_ratio": 0.7053140096618359,
     "max_displacement": 841801223.6660676,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.3 0.3 L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 0.0 0.0 S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2345,35 +2735,41 @@
     "ground_truth": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.5 0.0 0.2 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.1 0.3 0.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
     "completion": "0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0  \n0.0 0.5 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0  \n0.0 0.3 0.5 0.0 0.2 0.0 0.0 0.0 0.0 0.0  \n0.0 0.0 0.6 0.1 0.3 0.5 0.0 0.0 0.0 0.0  \n0.0 0.0 S S 0.0 S 0.0 S 0.0 0.0",
     "exact_match": false,
-    "difference_ratio": -0.11111111111111116,
-    "relative_difference_ratio": 0.0972222222222221,
-    "penalized_difference_ratio": -1.291666666666667,
+    "difference_ratio": 0.5833333333333333,
+    "relative_difference_ratio": 0.7222222222222222,
+    "penalized_difference_ratio": 0.4444444444444444,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
     "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 2.1333333333333333,
-    "difficulty_weighted_difference_ratio": -0.23703703703703713,
-    "difficulty_weighted_relative_difference_ratio": 0.20740740740740715,
+    "difficulty_weighted_difference_ratio": 1.2444444444444442,
+    "difficulty_weighted_relative_difference_ratio": 1.5407407407407407,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 107.9369241315033,
+    "compliance": 230.33086371026616,
     "ground_truth_compliance": 119.07093114720377,
     "optimal_compliance": 119.07093114720377,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.970059880239521,
-    "structural_efficiency": 1.0,
-    "structural_efficiency_raw": 1.1031529025427436,
+    "topology_score": 0.5169560397992664,
+    "structural_efficiency": 0.5169560397992664,
+    "structural_efficiency_raw": 0.5169560397992664,
     "design_efficiency": null,
-    "material_efficiency": 0.970059880239521,
-    "compliance_efficiency_vs_ground_truth": 1.0,
-    "volume_fraction": 0.16699999999999998,
+    "material_efficiency": 1.0,
+    "compliance_efficiency_vs_ground_truth": 0.5169560397992664,
+    "volume_fraction": 0.162,
     "ground_truth_volume_fraction": 0.162,
-    "volume_ratio": 1.0308641975308641,
-    "max_displacement": 441.0976651319307,
+    "volume_ratio": 1.0,
+    "max_displacement": 1036.450764237177,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.5 0.0 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.1 0.3 0.5 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
+    "visible_cell_changes": 5,
+    "visible_numeric_cell_changes": 2,
+    "visible_boundary_cell_changes": 3,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -2409,7 +2805,13 @@
     "volume_ratio": 0.6538461538461539,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L 0.0 L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.4 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2445,7 +2847,13 @@
     "volume_ratio": 0.9319727891156462,
     "max_displacement": 18666.328008387976,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.0 L 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.7 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2481,7 +2889,13 @@
     "volume_ratio": 1.020242914979757,
     "max_displacement": 129.4301483586005,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.3 0.1 0.1 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.2 0.2 0.0 0.4 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.3 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.6 0.0 0.0 0.0 0.0 0.0\nS S S 0.5 S S S 0.0 0.0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2517,7 +2931,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 16.88625921396779,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.8 0.0\n0.0 0.0 S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2553,7 +2973,13 @@
     "volume_ratio": 0.837962962962963,
     "max_displacement": 2522.6156121226286,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.0 0.4 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0\n0.0 0.0 S S 0.0 S 0.0 S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2589,7 +3015,13 @@
     "volume_ratio": 0.9204545454545454,
     "max_displacement": 24.865709107175963,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L 0.0 L 0.0 L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S 0.0 S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2625,7 +3057,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -2661,7 +3099,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -2697,7 +3141,13 @@
     "volume_ratio": 0.8756218905472637,
     "max_displacement": 14206.16658011567,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0.1 0.1 L 0.1 L L L L L\n0.0 0.0 0.0 0.1 0.0 0.2 0.0 0.3 0.1 0.0\n0.0 0.0 0.0 0.2 0.0 0.1 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.1 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.1 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.0 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2733,7 +3183,13 @@
     "volume_ratio": 0.9575757575757575,
     "max_displacement": 45.419263712224,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L 0.0 L\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2769,7 +3225,13 @@
     "volume_ratio": 0.9585253456221197,
     "max_displacement": 82.78316606975078,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0.0 L L L 0.0 L 0.0 0.0 0.0\n0.0 0.0 0.3 0.0 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.2 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.4 0.0 0.0 0.0 0.0 0.0\nS 0.0 S S S 0.0 S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2805,7 +3267,13 @@
     "volume_ratio": 1.4210526315789473,
     "max_displacement": 81.1397269514911,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 S S 0.0 0.0 0.0 S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2841,7 +3309,13 @@
     "volume_ratio": 0.6727272727272727,
     "max_displacement": 1368588275.3559089,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L 0.0 L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S 0.0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2877,7 +3351,13 @@
     "volume_ratio": 1.135593220338983,
     "max_displacement": 152.6948899614081,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 1.0 L 0.0 0.0 0.0 0.0\n0.0 0.3 0.3 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.5 0.5 0.5 0.0 0.0 0.0 0.0 0.0\nS S S S 1.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2913,7 +3393,13 @@
     "volume_ratio": 0.8728323699421965,
     "max_displacement": 770127798.6411803,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.3 L 0.3 L L L 0.0 0.0\n0.0 0.0 0.3 0.4 0.3 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.4 0.5 0.4 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.3 0.3 0.3 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S 0.0 S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2949,7 +3435,13 @@
     "volume_ratio": 0.7999999999999999,
     "max_displacement": 1484.6427739067935,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L 0.0 L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S 0.0 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2985,7 +3477,13 @@
     "volume_ratio": 0.9940119760479044,
     "max_displacement": 192.13311554781242,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.5 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 0.5 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 S S 0.0 0.0 S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3021,7 +3519,13 @@
     "volume_ratio": 0.9623655913978493,
     "max_displacement": 35.03161334525529,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L 0.0 L 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S 0.0 S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3057,7 +3561,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -3093,7 +3603,13 @@
     "volume_ratio": 0.9649122807017545,
     "max_displacement": 7692.869129492394,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 0.0 0.0 0.0 0.0\n0.0 0.1 0.2 0.2 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.2 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.3 0.2 0.1 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.3 0.1 0.2 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.2 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.3 0.0 0.2 0.0 0.2 0.0\n0.0 0.0 0.0 0.0 0.4 0.2 0.1 0.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 S 0.0 S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3129,7 +3645,13 @@
     "volume_ratio": 0.802547770700637,
     "max_displacement": 1964035842.4448657,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L 0.0 L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3165,7 +3687,13 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -3201,7 +3729,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 684.1475991148463,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.4 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.3 0.1 0.5 0.1 0.0 0.0 0.0\n0.0 0.0 0.3 0.1 0.3 0.6 0.0 0.0 0.0 0.0\nS S S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3237,7 +3771,13 @@
     "volume_ratio": 0.9859154929577465,
     "max_displacement": 44.468316323077026,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.6 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.7 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.0 0.0 0.0\n0.0 S S 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3273,7 +3813,13 @@
     "volume_ratio": 0.6190476190476191,
     "max_displacement": 6180.235394450566,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.1 L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.1 0.1 0.0 0.0 0.0 0.0 0.0 0.0\nS S 1.0 S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3309,7 +3855,13 @@
     "volume_ratio": 2.5,
     "max_displacement": 4.597961161438198,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1.0 L L 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 0.5 0.5 1.0 0.0 0.0 0.0 1.0 0.0 0.0\n1.0 S S 1.0 S S S 1.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3345,7 +3897,13 @@
     "volume_ratio": 0.7679558011049723,
     "max_displacement": 1825411693.0152066,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L 0.0 L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S 0.0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3381,7 +3939,13 @@
     "volume_ratio": 0.8465608465608467,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L 0.0 0.0 L L L L L\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.2 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.3 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.2 0.0 0.0 0.0\n0.0 0.0 0.1 0.0 0.0 0.3 0.1 0.0 0.0 0.0\n0.0 0.0 0.2 0.0 0.0 0.4 0.0 0.0 0.0 0.0\n0.0 0.0 0.4 0.0 0.0 0.1 0.0 0.0 0.0 0.0\nS 0.0 S 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3417,43 +3981,55 @@
     "volume_ratio": 1.0,
     "max_displacement": 33.656112498625085,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 0.5 0.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
     "prompt": "You are given a structural material distribution represented as a grid. Each cell can have one of the following states:\n- 'L' indicates applied load.\n- 'V' indicates void.\n- 'S' indicates support.\n\nThe goal is to predict the correct material distribution by filling in all 'V' cells with a floating point number between 0 and 1, with one decimal place (e.g., 0.0, 0.1, 0.2, ..., 1.0), based on the surrounding structure and implicit physical reasoning (such as load paths, supports, and forces).\n\nImportant: The completed structure should use as little material as possible while remaining stable and plausible for carrying the applied forces. Minimize material usage unless necessary for structural support.\n\nBelow is the input grid with masked regions:\n\nV 0.0 0.0 0.0 0.0 L L L L V\nV 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 V\nV 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 V\nV 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 V\nV 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 V\nV 0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 V\nV 0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.0 V\nV 0.0 0.0 0.0 0.2 0.4 0.5 0.2 0.0 V\nV 0.0 0.0 0.2 0.4 0.3 0.6 0.0 0.0 V\nV 0.0 S S S S 0.0 0.0 0.0 V\n\nPlease output the completed grid by replacing all 'V' cells with a floating point number between 0 and 1, with one decimal place (e.g., 0.0, 0.1, 0.2, ..., 1.0).\nMaintain the same format as the input: one row per line, cells separated by spaces, and the total number of rows and columns unchanged.\nReturn only the completed grid without any additional explanation.",
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.5 0.2 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.3 0.6 0.0 0.0 0.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0  \n0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.0 0.0 0.0  \n0.0 0.0 0.0 0.2 0.4 0.5 0.2 0.0 0.0 0.0  \n0.0 0.0 0.2 0.4 0.3 0.6 0.0 0.0 0.0 0.0  \n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
-    "exact_match": false,
-    "difference_ratio": -1.318840579710145,
-    "relative_difference_ratio": 0.24637681159420288,
-    "penalized_difference_ratio": -0.33333333333333326,
+    "exact_match": true,
+    "difference_ratio": 1.0,
+    "relative_difference_ratio": 1.0,
+    "penalized_difference_ratio": 1.0,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
-    "force_path_cost_average_efficiency_ratio": 0.9484978540772532,
+    "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 1.0,
-    "difficulty_weighted_difference_ratio": -1.318840579710145,
-    "difficulty_weighted_relative_difference_ratio": 0.24637681159420288,
+    "difficulty_weighted_difference_ratio": 1.0,
+    "difficulty_weighted_relative_difference_ratio": 1.0,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 350.9575634127693,
+    "compliance": 152.11624411357235,
     "ground_truth_compliance": 152.11624411357235,
     "optimal_compliance": 152.11624411357235,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.40617214044110755,
-    "structural_efficiency": 0.43343201563849737,
-    "structural_efficiency_raw": 0.43343201563849737,
+    "topology_score": 1.0,
+    "structural_efficiency": 1.0,
+    "structural_efficiency_raw": 1.0,
     "design_efficiency": null,
-    "material_efficiency": 0.9371069182389936,
-    "compliance_efficiency_vs_ground_truth": 0.43343201563849737,
-    "volume_fraction": 0.159,
+    "material_efficiency": 1.0,
+    "compliance_efficiency_vs_ground_truth": 1.0,
+    "volume_fraction": 0.149,
     "ground_truth_volume_fraction": 0.149,
-    "volume_ratio": 1.0671140939597317,
-    "max_displacement": 1770.7159411338316,
+    "volume_ratio": 1.0,
+    "max_displacement": 523.807928258954,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.4 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.4 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.4 0.5 0.2 0.0 0.0\n0.0 0.0 0.0 0.2 0.4 0.3 0.6 0.0 0.0 0.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 16,
+    "visible_numeric_cell_changes": 15,
+    "visible_boundary_cell_changes": 1,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -3489,7 +4065,13 @@
     "volume_ratio": 1.059880239520958,
     "max_displacement": 4258.786373040167,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.2 0.2 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.4 0.4 0.0\n0.0 0.0 0.0 0.0 0.2 0.2 0.1 0.4 0.4 0.0\n0.0 0.0 0.0 0.3 0.3 0.2 0.3 0.4 0.4 0.0\n0.0 0.0 0.0 0.2 0.2 0.1 0.4 0.0 0.3 0.0\n0.0 0.3 0.1 0.1 0.1 0.5 0.1 0.0 0.2 0.0\nS S 0.0 S S 0.3 0.0 0.0 0.1 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3525,7 +4107,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 33.65611305922299,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3561,7 +4149,13 @@
     "volume_ratio": 1.2400000000000002,
     "max_displacement": 81.41889786478718,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.4 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.7 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.8 0.5 0.5 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3597,6 +4191,12 @@
     "volume_ratio": 0.0,
     "max_displacement": 0.0,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   }
 ]

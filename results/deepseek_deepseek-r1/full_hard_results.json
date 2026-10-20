@@ -17,7 +17,31 @@
     "difficulty_weighted_relative_difference_ratio": 0.0,
     "valid_output_grid": false,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "full_hard",
@@ -55,7 +79,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L L 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.8 0.9 0.5 0.5 0.5 0.5 0.5 0.5 0.8 0.0\n0.7 0.8 0.5 0.5 0.5 0.5 0.5 0.5 0.7 0.0\n0.6 0.7 0.5 0.5 0.5 0.5 0.5 0.5 0.6 0.0\n0.5 0.6 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.0\n0.4 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.4 0.0\n0.3 0.4 0.5 0.5 0.5 0.5 0.5 0.5 0.3 0.0\n0.2 0.3 1.0 1.0 1.0 1.0 1.0 1.0 0.2 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -93,7 +123,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.0 0.0 0.0\n0.0 0.0 0.8 0.8 0.8 0.8 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 0.8 0.8 0.8 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.8 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 0.8 0.8 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -131,7 +167,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -169,7 +211,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L L 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -207,7 +255,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\nS S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -245,7 +299,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -283,7 +343,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -321,7 +387,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 1.0 1.0 0.5 0.0 0.0\n0.0 0.0 0.0 0.5 1.0 1.0 1.0 0.5 0.0 0.0\n0.0 0.0 0.5 1.0 1.0 1.0 1.0 0.5 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.5 1.0 1.0 1.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.5 1.0 1.0 0.1 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.1 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -341,7 +413,31 @@
     "difficulty_weighted_relative_difference_ratio": 0.0,
     "valid_output_grid": false,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "full_hard",
@@ -379,7 +475,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.0 0.0 0.0\n0.0 0.0 0.0 0.6 0.6 0.6 0.6 0.6 0.0 0.0\n0.0 0.0 0.0 0.1 0.6 0.6 0.6 0.6 0.6 0.0\n0.0 0.0 0.0 0.1 S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -417,7 +519,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -455,7 +563,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 0.6 0.6 0.6 0.6 0.0 0.0 0.0 0.0\n0.0 0.5 0.5 0.5 0.5 0.5 0.5 0.0 0.0 0.0\n0.0 0.4 0.4 0.5 0.5 0.4 0.4 0.4 0.0 0.0\n0.0 0.3 0.4 0.4 0.4 0.4 0.4 0.4 0.3 0.0\n0.0 0.3 0.4 0.4 0.4 0.4 0.4 0.4 0.3 0.0\n0.0 0.3 0.4 0.4 0.4 0.4 0.4 0.4 0.3 0.0\n0.0 0.3 0.4 0.4 0.4 0.4 0.4 0.4 0.3 0.0\n0.0 0.3 0.4 0.4 0.4 0.4 0.4 0.4 0.3 0.0\n0.0 S S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -493,7 +607,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -531,7 +651,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -569,7 +695,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -607,7 +739,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -645,7 +783,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.6 1.0 1.0 1.0 1.0 0.2 0.0 0.0\n0.0 0.0 0.1 1.0 1.0 1.0 1.0 0.4 0.0 0.0\n0.0 0.0 0.0 0.3 1.0 1.0 1.0 0.3 0.0 0.0\n0.0 0.0 0.0 0.2 1.0 1.0 1.0 0.9 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 1.0 1.0 1.0 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.3 0.0\n0.0 0.0 0.0 0.0 0.0 0.9 1.0 1.0 0.6 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 1.0 1.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -683,7 +827,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.0 0.9 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.8 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.7 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.6 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.5 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.4 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.3 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.2 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -721,7 +871,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.1 0.7 0.8 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 0.9 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 1.0 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 0.9 0.5 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.8 0.6 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 0.7 0.7 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.6 0.8 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 0.9 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -759,7 +915,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -797,7 +959,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L L 0.0\n0.2 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.8 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.2 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.8 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.2 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.8 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -835,7 +1003,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L L 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -873,7 +1047,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L 0.0 0.0\n0.0 0.4 0.7 1.0 1.0 1.0 1.0 0.7 0.4 0.0\n0.0 0.0 0.4 0.7 1.0 1.0 0.7 0.4 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.7 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.7 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.7 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.7 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.7 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 0.4 0.7 0.7 0.4 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -881,16 +1061,16 @@
     "ground_truth": "0.0 0.0 L L L L L L L L\n0.0 0.0 0.0 0.2 0.3 0.1 0.2 0.3 0.2 0.0\n0.0 0.0 0.0 0.0 0.3 0.2 0.2 0.3 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 0.3 0.3 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.3 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.3 0.5 0.1 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
     "completion": "0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0  \n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0",
     "exact_match": false,
-    "difference_ratio": -7.6363636363636385,
-    "relative_difference_ratio": -6.030303030303032,
-    "penalized_difference_ratio": -9.666666666666671,
-    "load_support_connected": false,
-    "load_support_connected_force_directional": false,
-    "isolated_clusters_count": 1,
-    "force_path_cost_average_efficiency_ratio": 0,
+    "difference_ratio": -5.81818181818182,
+    "relative_difference_ratio": -4.212121212121214,
+    "penalized_difference_ratio": -4.212121212121214,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 2.15,
-    "difficulty_weighted_difference_ratio": -16.41818181818182,
-    "difficulty_weighted_relative_difference_ratio": -12.965151515151518,
+    "difficulty_weighted_difference_ratio": -12.509090909090913,
+    "difficulty_weighted_relative_difference_ratio": -9.056060606060608,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
@@ -911,7 +1091,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L L L\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
+    "visible_cell_changes": 12,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 12,
+    "visible_cells_preserved": false
   },
   {
     "subject": "full_hard",
@@ -949,7 +1135,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L L L 0.0 0.0\n0.0 0.8 1.0 1.0 1.0 1.0 1.0 1.0 0.2 0.0\n0.0 0.6 1.0 1.0 1.0 1.0 1.0 1.0 0.4 0.0\n0.0 0.3 1.0 1.0 1.0 1.0 1.0 1.0 0.7 0.0\n0.0 0.1 1.0 1.0 1.0 1.0 1.0 1.0 0.9 0.0\n0.0 0.0 0.9 1.0 1.0 1.0 1.0 1.0 1.0 0.1\n0.0 0.0 0.7 1.0 1.0 1.0 1.0 1.0 1.0 0.3\n0.0 0.0 0.4 1.0 1.0 1.0 1.0 1.0 1.0 0.6\n0.0 0.0 0.2 1.0 1.0 1.0 1.0 1.0 1.0 0.8\n0.0 0.0 0.0 S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -969,7 +1161,31 @@
     "difficulty_weighted_relative_difference_ratio": 0.0,
     "valid_output_grid": false,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "full_hard",
@@ -1007,7 +1223,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1045,7 +1267,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L L L 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\nS S S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1083,7 +1311,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 1.0 1.0 1.0 0.3 0.0 0.0 0.0 0.0\n0.0 0.0 0.8 1.0 1.0 1.0 0.8 0.0 0.0 0.0\n0.0 0.0 0.3 1.0 1.0 1.0 1.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.8 1.0 1.0 1.0 1.0 0.3 0.0\n0.0 0.0 0.0 0.3 1.0 1.0 1.0 1.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 1.0 1.0 1.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.3 1.0 1.0 1.0 1.0 0.3\n0.0 0.0 0.2 0.8 0.8 0.8 0.8 0.5 0.0 0.0\n0.0 0.0 0.0 S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1121,7 +1355,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1159,7 +1399,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\nS S S S 0.5 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1197,7 +1443,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1235,7 +1487,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L L L\n0.0 0.0 0.0 0.0 0.0 0.6 0.9 0.9 0.6 0.4\n0.0 0.0 0.0 0.0 0.5 0.7 1.0 0.8 0.5 0.0\n0.0 0.0 0.0 0.0 0.6 0.8 0.9 0.7 0.4 0.0\n0.0 0.0 0.0 0.4 0.7 0.9 0.8 0.6 0.0 0.0\n0.0 0.0 0.0 0.6 0.8 0.9 0.7 0.4 0.0 0.0\n0.0 0.0 0.4 0.7 0.9 0.8 0.6 0.0 0.0 0.0\n0.0 0.0 0.5 0.8 1.0 0.7 0.5 0.0 0.0 0.0\n0.0 0.4 0.6 0.9 0.9 0.6 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1273,7 +1531,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L 0.0 0.0\n0.0 0.5 0.8 1.0 1.0 1.0 1.0 0.5 0.2 0.0\n0.3 0.6 0.8 1.0 1.0 1.0 0.8 0.5 0.2 0.0\n0.3 0.6 0.9 1.0 1.0 1.0 0.8 0.5 0.2 0.0\n0.3 0.7 0.9 1.0 1.0 0.9 0.7 0.4 0.1 0.0\n0.4 0.7 0.9 1.0 0.9 0.8 0.6 0.3 0.1 0.0\n0.4 0.8 0.9 0.9 0.8 0.7 0.5 0.2 0.0 0.0\n0.5 0.8 0.8 0.8 0.7 0.5 0.3 0.1 0.0 0.0\n0.5 0.8 0.8 0.7 0.6 0.4 0.2 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1311,7 +1575,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.5 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1349,7 +1619,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\nS S S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1387,7 +1663,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L L\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1425,7 +1707,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1463,7 +1751,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0\n0.0 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.0\n0.0 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.0\n0.0 S S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1501,7 +1795,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L L 0.0\n0.0 0.2 0.4 0.7 0.9 0.8 0.6 0.3 0.0 0.0\n0.0 0.0 0.3 0.5 0.8 0.9 0.7 0.5 0.2 0.0\n0.0 0.0 0.0 0.4 0.7 0.9 0.8 0.6 0.3 0.0\n0.0 0.0 0.0 0.0 0.5 0.8 0.9 0.7 0.5 0.2\n0.0 0.0 0.0 0.0 0.0 0.6 0.9 0.8 0.6 0.3\n0.0 0.0 0.0 0.0 0.0 0.0 0.7 0.9 0.7 0.4\n0.0 0.0 0.0 0.0 0.0 0.0 0.3 0.8 0.8 0.6\n0.0 0.0 0.0 0.0 0.0 0.1 0.6 1.0 0.6 0.1\n0.0 0.0 0.0 0.0 0.0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1539,7 +1839,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1577,7 +1883,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 0.9 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.8 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.7 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.6 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.4 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.3 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.2 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.1 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1585,16 +1897,16 @@
     "ground_truth": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.8 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.1 0.8 0.0\n0.0 0.0 S S S S S S S 0.0",
     "completion": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0  \n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0  \n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0  \n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0  \n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0",
     "exact_match": false,
-    "difference_ratio": -6.692307692307693,
-    "relative_difference_ratio": -5.6923076923076925,
-    "penalized_difference_ratio": -8.76923076923077,
-    "load_support_connected": false,
-    "load_support_connected_force_directional": false,
-    "isolated_clusters_count": 1,
-    "force_path_cost_average_efficiency_ratio": 0,
+    "difference_ratio": -5.153846153846155,
+    "relative_difference_ratio": -4.153846153846153,
+    "penalized_difference_ratio": -4.153846153846153,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 1.65,
-    "difficulty_weighted_difference_ratio": -11.042307692307693,
-    "difficulty_weighted_relative_difference_ratio": -9.392307692307693,
+    "difficulty_weighted_difference_ratio": -8.503846153846155,
+    "difficulty_weighted_relative_difference_ratio": -6.853846153846153,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
@@ -1615,7 +1927,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 S S S S S S S 0.0",
+    "visible_cell_changes": 10,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 10,
+    "visible_cells_preserved": false
   },
   {
     "subject": "full_hard",
@@ -1653,7 +1971,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.1 0.3 0.7 1.0 1.0 1.0 0.7 0.3 0.1\n0.0 0.2 0.5 0.9 1.0 1.0 0.8 0.5 0.2 0.0\n0.0 0.3 0.7 1.0 1.0 0.9 0.6 0.3 0.1 0.0\n0.0 0.4 0.8 1.0 1.0 0.7 0.3 0.1 0.0 0.0\n0.0 0.6 1.0 1.0 0.8 0.4 0.1 0.0 0.0 0.0\n0.0 0.8 1.0 1.0 0.7 0.2 0.0 0.0 0.0 0.0\n0.0 0.9 1.0 1.0 0.4 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1691,7 +2015,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1729,7 +2059,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.2 0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.2 0.2 0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.2 0.2 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 0.2 0.2 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.2 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1767,7 +2103,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1805,7 +2147,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L L L\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\nS S S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1843,7 +2191,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L L L L 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.8 0.8 0.8 0.8 0.8 0.8 0.8 0.8 0.0\n0.0 0.6 0.6 0.6 0.6 0.6 0.6 0.6 0.6 0.0\n0.0 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.0\n0.0 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.4 0.0\n0.0 0.6 0.6 0.6 0.6 0.6 0.6 0.6 0.6 0.0\n0.0 0.8 0.8 0.8 0.8 0.8 0.8 0.8 0.8 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\nS S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1881,7 +2235,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1919,7 +2279,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -1939,7 +2305,31 @@
     "difficulty_weighted_relative_difference_ratio": 0.0,
     "valid_output_grid": false,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false,
+    "physically_valid": false,
+    "load_carrying": false,
+    "compliance": null,
+    "ground_truth_compliance": null,
+    "optimal_compliance": null,
+    "own_budget_optimal_compliance": null,
+    "topology_score": 0.0,
+    "structural_efficiency": 0.0,
+    "structural_efficiency_raw": 0.0,
+    "design_efficiency": null,
+    "material_efficiency": 0.0,
+    "compliance_efficiency_vs_ground_truth": 0.0,
+    "volume_fraction": 0.0,
+    "ground_truth_volume_fraction": 0.0,
+    "volume_ratio": 0.0,
+    "max_displacement": 0.0,
+    "unfilled_cells": 0,
+    "unparsable_cells": 0
   },
   {
     "subject": "full_hard",
@@ -1977,7 +2367,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.8 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.6 0.6 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.6 0.6 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.8 0.8 0.8 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2015,7 +2411,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.9 1.0 1.0 1.0 1.0 0.9 0.0\n0.0 0.0 0.0 0.7 1.0 1.0 1.0 1.0 0.7 0.0\n0.0 0.0 0.0 0.6 1.0 1.0 1.0 1.0 0.6 0.0\n0.0 0.0 0.0 0.4 1.0 1.0 1.0 1.0 0.4 0.0\n0.0 0.0 0.0 0.3 1.0 1.0 1.0 1.0 0.3 0.0\n0.0 0.0 0.0 0.1 1.0 1.0 1.0 1.0 0.1 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2053,7 +2455,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.4 0.4 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.6 0.3 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.1 S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2091,7 +2499,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2129,7 +2543,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2167,7 +2587,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L L 0.0\n0.2 0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.2\n0.2 0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.2\n0.2 0.5 1.0 1.0 1.0 1.0 1.0 0.5 0.2 0.0\n0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.2 0.0\n0.5 1.0 1.0 1.0 1.0 1.0 0.5 0.2 0.0 0.0\n0.5 1.0 1.0 1.0 1.0 1.0 0.5 0.2 0.0 0.0\n0.5 1.0 1.0 1.0 1.0 0.5 0.2 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.5 0.2 0.0 0.0 0.0\nS S S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2205,7 +2631,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2213,16 +2645,16 @@
     "ground_truth": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.0 0.0 0.1 0.1 0.2 0.1 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 0.2 0.2 0.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.2 0.3 0.2 0.0 0.0\n0.0 0.0 0.2 0.2 0.2 0.1 0.3 0.0 0.0 0.0\n0.0 0.2 0.1 0.1 0.1 0.3 0.2 0.0 0.0 0.0\n0.2 0.2 0.2 0.2 0.1 0.3 0.0 0.0 0.0 0.0\n0.1 0.4 0.2 0.2 0.4 0.0 0.0 0.0 0.0 0.0\nS S S 0.5 0.0 0.0 0.0 0.0 0.0 0.0",
     "completion": "0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0  \n0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.0  \n0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0  \n0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0  \n1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0  \n1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0  \n1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0  \n1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0  \n1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0",
     "exact_match": false,
-    "difference_ratio": -7.648648648648646,
-    "relative_difference_ratio": -5.878378378378373,
-    "penalized_difference_ratio": -8.310810810810802,
-    "load_support_connected": false,
-    "load_support_connected_force_directional": false,
-    "isolated_clusters_count": 1,
-    "force_path_cost_average_efficiency_ratio": 0,
+    "difference_ratio": -6.432432432432431,
+    "relative_difference_ratio": -4.662162162162159,
+    "penalized_difference_ratio": -4.662162162162159,
+    "load_support_connected": true,
+    "load_support_connected_force_directional": true,
+    "isolated_clusters_count": 0,
+    "force_path_cost_average_efficiency_ratio": 1.0,
     "difficulty_score": 2.475,
-    "difficulty_weighted_difference_ratio": -18.9304054054054,
-    "difficulty_weighted_relative_difference_ratio": -14.548986486486474,
+    "difficulty_weighted_difference_ratio": -15.920270270270267,
+    "difficulty_weighted_relative_difference_ratio": -11.538851351351344,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
@@ -2243,7 +2675,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0\n0.5 1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 0.5 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 9,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 9,
+    "visible_cells_preserved": false
   },
   {
     "subject": "full_hard",
@@ -2281,7 +2719,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L L 0.0\n0.0 1.0 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.0\n0.0 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.0 0.0\n0.0 0.8 0.7 0.6 0.5 0.4 0.3 0.0 0.0 0.0\n0.0 0.7 0.6 0.5 0.4 0.3 0.0 0.0 0.0 0.0\n0.0 0.6 0.5 0.4 0.3 0.0 0.0 0.0 0.0 0.0\n0.0 0.5 0.4 0.3 0.2 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.3 0.2 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 0.3 0.2 0.1 0.1 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.1 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2319,7 +2763,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L L L\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 S S S 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2357,7 +2807,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.1 0.1 0.1 1.0 0.9 0.9 0.0\n0.0 0.0 0.0 0.3 0.3 0.3 1.0 0.8 0.8 0.0\n0.0 0.0 0.0 0.4 0.4 0.4 1.0 0.7 0.6 0.0\n0.0 0.0 0.0 0.6 0.6 0.6 1.0 0.6 0.5 0.0\n0.0 0.0 0.0 0.7 0.7 0.7 1.0 0.4 0.4 0.0\n0.0 0.0 0.0 0.9 0.9 0.9 1.0 0.3 0.3 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.2 0.1 0.0\n0.0 0.0 0.0 S S S S 0.1 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2395,7 +2851,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 0.0 L L L\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2433,7 +2895,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.1 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 0.1 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2471,7 +2939,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.8 1.0 1.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.6 1.0 1.0 0.8 0.0 0.0 0.0 0.0 0.0\n0.0 0.4 0.8 1.0 0.8 0.4 0.0 0.0 0.0 0.0\n0.0 0.2 0.6 1.0 0.8 0.6 0.2 0.0 0.0 0.0\n0.0 0.0 0.4 0.8 1.0 0.8 0.6 0.4 0.2 0.0\n0.0 0.0 0.4 0.6 0.8 1.0 0.8 0.6 0.4 0.2\n0.0 0.0 0.4 0.6 0.8 0.8 0.8 0.8 0.6 0.4\n0.0 0.0 S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2509,7 +2983,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2547,7 +3027,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L L L L L\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2585,7 +3071,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 0.5 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2623,7 +3115,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\nS S S S S 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2661,7 +3159,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L L 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S S 0.0 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2699,7 +3203,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L L L L\n0.0 0.0 0.9 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.8 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.7 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.6 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.4 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.3 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.2 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.1 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.0 S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2737,7 +3247,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 0.9 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.8 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.7 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.6 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.4 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.3 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.1 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2775,7 +3291,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2813,7 +3335,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S 0.1 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2851,7 +3379,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L L L\n0.0 0.0 0.0 0.8 0.8 0.8 0.9 0.9 0.9 0.9\n0.0 0.0 0.7 0.7 0.7 0.7 0.8 0.8 0.8 0.8\n0.0 0.7 0.7 0.7 0.7 0.8 0.8 0.8 0.8 0.0\n0.7 0.7 0.7 0.7 0.8 0.8 0.8 0.8 0.0 0.0\n0.7 0.7 0.7 0.7 0.8 0.8 0.8 0.8 0.0 0.0\n0.7 0.7 0.7 0.7 0.8 0.8 0.8 0.8 0.0 0.0\n0.7 0.7 0.7 0.7 0.8 0.8 0.8 0.8 0.0 0.0\n0.7 0.7 0.7 0.7 0.8 0.8 0.8 0.8 0.0 0.0\nS S S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2889,7 +3423,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\nS S S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2927,7 +3467,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -2965,7 +3511,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.9 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.8 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.7 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.6 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3003,7 +3555,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\nS S S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3041,7 +3599,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L L L\n1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3079,7 +3643,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.1 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.2 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.3 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.4 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.6 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.7 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.8 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.9 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 S S S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3117,7 +3687,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 S S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3155,7 +3731,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.2 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.2 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.2 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.1 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3193,7 +3775,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 0.0 L L L 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\nS S S 0.5 0.2 0.0 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3231,7 +3819,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 L L L L L 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 0.4 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 0.3 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 0.2 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 1.0 0.1 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 0.9 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 0.8 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 0.7 0.0 0.0 0.0 0.0\n0.0 0.5 1.0 1.0 1.0 0.6 0.0 0.0 0.0 0.0\n0.0 0.0 S S S S 0.0 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3269,7 +3863,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L 0.0\n0.0 0.0 0.0 0.5 0.5 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.5 0.5 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.5 0.5 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.5 0.5 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.6 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3307,7 +3907,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 0.0 L L L L L\n0.0 0.0 0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.8\n0.0 0.0 0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.8\n0.0 0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.8 0.0\n0.0 0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.8 0.0\n0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.8 0.0 0.0\n0.0 0.0 0.0 0.8 0.8 0.8 0.8 0.8 0.0 0.0\n0.0 0.8 0.8 0.8 0.8 0.8 0.8 0.8 0.0 0.0\n0.0 0.8 0.8 0.8 0.8 0.8 0.8 0.8 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3345,7 +3951,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 L L L L L L 0.0 0.0 0.0\n0.0 1.0 0.5 0.5 0.5 0.5 1.0 0.0 0.0 0.0\n0.0 1.0 0.5 0.5 0.5 0.5 1.0 0.0 0.0 0.0\n0.0 1.0 0.5 0.5 0.5 0.5 1.0 0.0 0.0 0.0\n0.0 1.0 0.5 0.5 0.5 0.5 1.0 0.0 0.0 0.0\n1.0 0.5 0.5 0.5 0.5 0.5 0.5 1.0 0.0 0.0\n1.0 0.5 0.5 0.5 0.5 0.5 0.5 1.0 0.0 0.0\n1.0 0.5 0.5 0.5 0.5 0.5 0.5 1.0 0.0 0.0\n1.0 0.5 0.5 0.5 0.5 0.5 0.5 1.0 0.0 0.0\nS S S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3383,7 +3995,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.0 0.5 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 0.5 0.5 1.0 1.0 1.0 1.0 1.0 0.0\n0.0 0.0 S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3421,7 +4039,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3459,7 +4083,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.8 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.6 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.4 1.0 1.0 1.0 1.0 1.0 0.2 0.0 0.0 0.0\n0.2 1.0 1.0 1.0 1.0 1.0 0.4 0.2 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.6 0.4 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 0.8 0.6 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 1.0 1.0 0.8 0.0 0.0\n0.0 S S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3497,7 +4127,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 0.0 0.0 0.0 0.0 0.0\n0.4 1.0 1.0 1.0 0.9 0.0 0.0 0.0 0.0 0.0\n0.3 1.0 1.0 1.0 1.0 0.4 0.0 0.0 0.0 0.0\n0.2 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.1 1.0 1.0 1.0 1.0 1.0 0.3 0.0 0.0 0.0\n0.1 1.0 1.0 1.0 1.0 1.0 0.7 0.0 0.0 0.0\n0.0 0.9 1.0 1.0 1.0 1.0 1.0 0.4 0.0 0.0\n0.0 0.7 1.0 1.0 1.0 1.0 1.0 1.0 0.2 0.0\n0.0 0.6 1.0 1.0 1.0 1.0 1.0 1.0 0.1 0.0\n0.0 S S S S S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3535,7 +4171,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.2 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3573,7 +4215,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 0.0 0.0 0.0 0.5 S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3611,7 +4259,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 L L L L L L L\n0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0\n0.0 0.0 0.1 1.0 1.0 1.0 1.0 1.0 1.0 0.6\n0.0 0.0 0.3 1.0 1.0 1.0 1.0 1.0 1.0 0.1\n0.0 0.0 0.4 1.0 1.0 1.0 1.0 1.0 0.7 0.0\n0.0 0.0 0.6 1.0 1.0 1.0 1.0 1.0 0.3 0.0\n0.0 0.0 0.7 1.0 1.0 1.0 1.0 0.9 0.0 0.0\n0.0 0.0 0.9 1.0 1.0 1.0 1.0 0.4 0.0 0.0\n0.0 0.0 1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0\n0.0 0.0 S S S S S 0.0 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3649,7 +4303,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L L L\n0.0 0.1 0.3 0.5 0.7 0.9 0.9 0.7 0.5 0.3\n0.0 0.0 0.2 0.5 0.7 0.9 0.9 0.7 0.5 0.2\n0.0 0.0 0.2 0.4 0.6 0.9 0.9 0.6 0.4 0.2\n0.0 0.0 0.1 0.4 0.6 0.9 0.9 0.6 0.4 0.1\n0.0 0.0 0.0 0.3 0.6 0.9 0.9 0.6 0.3 0.0\n0.0 0.0 0.0 0.2 0.5 0.8 0.8 0.5 0.2 0.0\n0.0 0.0 0.0 0.1 0.5 0.8 0.8 0.5 0.1 0.0\n0.0 0.0 0.0 0.0 0.4 0.8 0.8 0.4 0.0 0.0\n0.0 0.0 0.0 0.0 S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3687,7 +4347,13 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0.0 0.0 0.0 0.0 L L L L L 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\n0.0 0.0 0.0 0.0 0.1 0.1 0.1 0.1 0.1 0.0\nS S S S S S S S 0.0 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "full_hard",
@@ -3725,6 +4391,12 @@
     "unfilled_cells": 0,
     "unparsable_cells": 0,
     "model": "deepseek/deepseek-r1",
-    "openrouter_model": "deepseek/deepseek-r1"
+    "openrouter_model": "deepseek/deepseek-r1",
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n1.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0 0.0\n0.8 1.0 1.0 1.0 1.0 0.2 0.0 0.0 0.0 0.0\n0.6 0.8 1.0 1.0 1.0 0.4 0.0 0.0 0.0 0.0\n0.4 0.6 0.8 1.0 1.0 0.6 0.2 0.0 0.0 0.0\n0.2 0.4 0.6 0.8 1.0 0.8 0.4 0.2 0.0 0.0\n0.0 0.2 0.4 0.6 0.2 1.0 0.8 0.6 0.4 0.0\n0.0 0.0 0.0 0.0 0.2 S S S S 0.0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   }
 ]

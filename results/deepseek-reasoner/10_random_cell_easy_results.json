@@ -33,7 +33,13 @@
     "volume_ratio": 1.15625,
     "max_displacement": 4.90568022791953,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L 1 L L L 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 1 0 1 1 0 1 0 0 0\n0 0 0 1 1 0 1 0 0 0\n0 0 0 1 1 0 0 0 0 0\nS S S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -69,7 +75,13 @@
     "volume_ratio": 0.9523809523809524,
     "max_displacement": 10.24666002517975,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L L 0\n0 0 1 1 1 1 1 1 0 0\n0 0 1 1 0 0 1 0 0 0\n0 0 0 1 0 0 1 0 0 0\n0 0 0 1 0 0 1 0 0 0\n0 0 0 1 0 0 1 0 0 0\n0 0 0 1 0 0 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 S S S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -105,7 +117,13 @@
     "volume_ratio": 0.96875,
     "max_displacement": 32.55943238899939,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L L L\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -113,35 +131,41 @@
     "ground_truth": "L L L L L L 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 1 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 1 S S S",
     "completion": "L L L L 1 L 0 0 0 0  \n0 1 1 1 1 0 0 0 0 0  \n0 0 1 1 1 0 0 0 0 0  \n0 0 0 1 0 0 0 0 0 0  \n0 0 1 1 0 1 1 0 0 0  \n0 0 0 1 1 0 1 1 0 0  \n0 0 0 1 1 0 1 1 1 0  \n0 0 0 0 0 1 1 1 1 1  \n0 0 0 0 0 0 1 S S S  \n0 0 0 0 0 0 0 S S S",
     "exact_match": false,
-    "difference_ratio": 0.6842105263157895,
-    "relative_difference_ratio": 0.6842105263157895,
-    "penalized_difference_ratio": 0.4736842105263158,
+    "difference_ratio": 0.8157894736842105,
+    "relative_difference_ratio": 0.8157894736842105,
+    "penalized_difference_ratio": 0.7631578947368421,
     "load_support_connected": true,
     "load_support_connected_force_directional": true,
     "isolated_clusters_count": 0,
-    "force_path_cost_average_efficiency_ratio": 0.9626730201951439,
+    "force_path_cost_average_efficiency_ratio": 0.9529424977538186,
     "difficulty_score": 2.4,
-    "difficulty_weighted_difference_ratio": 1.6421052631578947,
-    "difficulty_weighted_relative_difference_ratio": 1.6421052631578947,
+    "difficulty_weighted_difference_ratio": 1.9578947368421051,
+    "difficulty_weighted_relative_difference_ratio": 1.9578947368421051,
     "valid_output_grid": true,
     "physically_valid": true,
     "load_carrying": true,
-    "compliance": 41.00471238632046,
+    "compliance": 35.15499763709123,
     "ground_truth_compliance": 18.7901949894752,
     "optimal_compliance": 18.7901949894752,
     "own_budget_optimal_compliance": null,
-    "topology_score": 0.4582447698314737,
-    "structural_efficiency": 0.4582447698314737,
-    "structural_efficiency_raw": 0.4582447698314737,
+    "topology_score": 0.5344956976942049,
+    "structural_efficiency": 0.5344956976942049,
+    "structural_efficiency_raw": 0.5344956976942049,
     "design_efficiency": null,
     "material_efficiency": 1.0,
-    "compliance_efficiency_vs_ground_truth": 0.4582447698314737,
-    "volume_fraction": 0.39,
+    "compliance_efficiency_vs_ground_truth": 0.5344956976942049,
+    "volume_fraction": 0.41,
     "ground_truth_volume_fraction": 0.47,
-    "volume_ratio": 0.8297872340425533,
-    "max_displacement": 149.01606586089937,
+    "volume_ratio": 0.8723404255319149,
+    "max_displacement": 140.06002036506473,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 1 L 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 1 1 0 1 1 1 0\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 1 1 1 1 1\n0 0 0 0 0 0 1 S S S",
+    "visible_cell_changes": 5,
+    "visible_numeric_cell_changes": 5,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": false
   },
   {
     "subject": "input_grid",
@@ -177,7 +201,13 @@
     "volume_ratio": 1.0344827586206897,
     "max_displacement": 11.033908011803891,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 1 L 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\nS 1 S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -213,7 +243,13 @@
     "volume_ratio": 1.0909090909090908,
     "max_displacement": 36.50619627264411,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 1 1 1 1 0\n0 0 0 0 0 S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -249,7 +285,13 @@
     "volume_ratio": 1.1388888888888888,
     "max_displacement": 4.9234839222835465,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L L L 0\n0 0 1 0 1 1 1 1 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n1 0 0 0 0 1 1 1 0 0\n0 1 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\nS S S S S S S 1 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -285,7 +327,13 @@
     "volume_ratio": 0.9583333333333334,
     "max_displacement": 65.21824412077005,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -321,7 +369,13 @@
     "volume_ratio": 0.9655172413793105,
     "max_displacement": 59.54650475965939,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -357,7 +411,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 5.41470660003594,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -393,7 +453,13 @@
     "volume_ratio": 1.08,
     "max_displacement": 45.329490740192554,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 L L L 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 1 0 1 1 1 0 0\n0 0 0 S S S S 1 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -429,7 +495,13 @@
     "volume_ratio": 1.15,
     "max_displacement": 9.884622595646025,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 S S S 1 S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -465,7 +537,13 @@
     "volume_ratio": 1.1136363636363635,
     "max_displacement": 4.2805996112711355,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 1 L L L 0\n0 1 1 0 1 0 1 1 1 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 1 1 0 1 0 0\n1 0 0 1 1 1 0 0 0 0\n0 1 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 1 0\n0 0 S S S 1 S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -501,7 +579,13 @@
     "volume_ratio": 1.0606060606060606,
     "max_displacement": 34.839686950740095,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 1 1 1 1 0 0 0 0 0\n0 1 1 0 1 1 1 0 0 0\n0 0 1 1 1 1 1 1 0 0\n0 0 0 1 1 1 0 1 0 0\n0 0 0 1 S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -537,7 +621,13 @@
     "volume_ratio": 1.0645161290322582,
     "max_displacement": 7.833631680846889,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L L L L\n0 0 0 0 1 1 0 1 1 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\nS S S S 1 S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -573,7 +663,13 @@
     "volume_ratio": 1.2592592592592593,
     "max_displacement": 7.914976758125684,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L 1 0 0\n0 0 0 0 0 1 0 0 0 0\n1 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 1 1\n0 0 0 0 1 1 1 0 0 0\n0 0 1 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 1 1 1 1 0 0 0\n0 S S S 1 S S S 1 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -609,7 +705,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 7.585229745276027,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L 0 L L L 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 0 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -645,7 +747,13 @@
     "volume_ratio": 1.135135135135135,
     "max_displacement": 4.862699523993355,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L 1 L L L L L\n0 0 0 0 1 1 0 1 1 0\n0 0 0 1 1 1 0 1 1 0\n0 0 0 0 0 1 0 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 0 1 0 0\n0 0 1 0 0 1 0 1 1 0\n0 0 0 S 1 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -681,7 +789,13 @@
     "volume_ratio": 0.9166666666666667,
     "max_displacement": 78.81126808316992,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L L 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -717,7 +831,13 @@
     "volume_ratio": 1.1153846153846152,
     "max_displacement": 6.08515663386493,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 1 L L 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -753,7 +873,13 @@
     "volume_ratio": 0.9714285714285715,
     "max_displacement": 51.49050945188974,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 L L L\n0 0 0 0 0 0 0 0 1 1\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 1 1 1 1 1 0 0\n0 0 1 1 1 1 1 1 0 0\n0 0 1 0 0 1 1 0 0 0\n0 S S 0 S 1 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -789,7 +915,13 @@
     "volume_ratio": 1.12,
     "max_displacement": 7.919928609423058,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n1 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\nS S S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -825,7 +957,13 @@
     "volume_ratio": 1.0285714285714287,
     "max_displacement": 17.64478460188021,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L 1 L L L L L L 0\n0 0 1 1 1 1 1 1 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 1 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 S S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -861,7 +999,13 @@
     "volume_ratio": 0.923076923076923,
     "max_displacement": 17.449547829376016,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L L L L L\n0 0 1 1 0 1 1 1 1 0\n0 0 1 1 0 1 1 1 0 0\n0 0 0 1 1 1 0 1 0 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 1 0 0 1 1 0 0\n0 0 0 1 1 0 1 0 0 0\n0 0 0 1 1 0 1 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 S S S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -897,7 +1041,13 @@
     "volume_ratio": 0.9666666666666667,
     "max_displacement": 11.05596193179359,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -933,7 +1083,13 @@
     "volume_ratio": 0.9117647058823529,
     "max_displacement": 57.32423436226429,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 L L L L\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 0 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 S S S S 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -969,7 +1125,13 @@
     "volume_ratio": 0.9696969696969697,
     "max_displacement": 76.97085288339997,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 L L L L\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 S S S 1 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1005,7 +1167,13 @@
     "volume_ratio": 0.9375,
     "max_displacement": 10.94560177493051,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\nS S S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1041,7 +1209,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 47.55375958710546,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L 1 L 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 S S S 1 1 S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1077,7 +1251,13 @@
     "volume_ratio": 0.9375,
     "max_displacement": 516211908.4596787,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L 0 0 0\n0 1 1 0 1 1 0 0 0 0\n0 0 1 0 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 S S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1113,7 +1293,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 64.1938616039863,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L L L 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 0 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1149,7 +1335,13 @@
     "volume_ratio": 1.0540540540540542,
     "max_displacement": 13.153332897225736,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L 1 1 L 0\n0 1 1 0 1 0 1 1 0 0\n1 0 1 1 1 1 1 0 0 0\n1 0 0 1 0 1 1 0 0 0\n0 0 0 1 0 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 S S S 0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1185,7 +1377,13 @@
     "volume_ratio": 1.1891891891891893,
     "max_displacement": 42.06554452828949,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L L L L 0\n0 0 1 1 1 1 1 1 0 0\n0 1 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 1 0 1 1 1 1 0 1 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n1 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1221,7 +1419,13 @@
     "volume_ratio": 1.2413793103448276,
     "max_displacement": 37.43154306510116,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L 0 0 0\n0 1 1 0 1 1 0 0 0 0\n1 0 1 0 1 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n1 0 0 1 0 0 0 1 0 0\n0 0 0 1 0 0 0 0 1 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 0 S 1 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1257,7 +1461,13 @@
     "volume_ratio": 1.0344827586206897,
     "max_displacement": 387996633.3666844,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L L 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 1 1 1 1 1 1 0\n0 0 1 1 0 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 S S S 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1293,7 +1503,13 @@
     "volume_ratio": 0.9285714285714285,
     "max_displacement": 475420132.2952449,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L 1 L L L\n0 0 0 0 1 1 0 1 0 0\n0 0 0 0 0 1 0 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\nS 0 S S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1329,7 +1545,13 @@
     "volume_ratio": 1.1481481481481481,
     "max_displacement": 19.688138327178912,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L 1 0\n0 0 0 0 0 1 1 1 0 0\n0 0 1 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 1 0 1 0 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\nS S S S 1 S 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1365,7 +1587,13 @@
     "volume_ratio": 1.2307692307692308,
     "max_displacement": 12.044954184887166,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 1\n0 0 1 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 1 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 1 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n1 1 0 0 0 S S 1 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1401,7 +1629,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 12.254968062415557,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1437,7 +1671,13 @@
     "volume_ratio": 0.9722222222222222,
     "max_displacement": 51.11323419970867,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L 0 0\n0 1 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1473,7 +1713,13 @@
     "volume_ratio": 1.0499999999999998,
     "max_displacement": 50.075133627837545,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 0 1 L 1\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 1 1 1 1 1 0 0\n0 0 1 1 1 1 1 1 0 0\n1 0 1 1 1 1 1 0 0 0\n0 1 1 1 1 1 0 0 0 0\n0 S S S 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1509,7 +1755,13 @@
     "volume_ratio": 1.0666666666666667,
     "max_displacement": 10.759826618545677,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 S S S 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1545,7 +1797,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 14.108153306271715,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0\n1 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\nS S S S 0 S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1581,7 +1839,13 @@
     "volume_ratio": 0.96,
     "max_displacement": 8.75047048421086,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\nS S S S S S 1 S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1617,7 +1881,13 @@
     "volume_ratio": 1.2083333333333333,
     "max_displacement": 61.67721420963315,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 1 L 0 0 L 0 0 0\n0 0 0 1 1 1 0 1 0 0\n0 0 0 0 1 0 0 0 0 0\n0 1 0 0 1 0 0 0 1 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 1 0 1 0 0 0 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1653,7 +1923,13 @@
     "volume_ratio": 0.975,
     "max_displacement": 78.2351389131907,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 1 1 1 1 1 0 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 1 1 1 1 1 1 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 1 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1689,7 +1965,13 @@
     "volume_ratio": 1.2413793103448276,
     "max_displacement": 5.253565243612643,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 1 0 L 1 L L L L 0\n0 0 1 0 1 1 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 1 0\n0 0 0 0 1 1 1 0 0 1\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 S S 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1725,7 +2007,13 @@
     "volume_ratio": 1.2916666666666667,
     "max_displacement": 5.744052108969108,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 1 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n1 1 0 0 1 1 0 0 0 0\n0 0 1 0 1 1 0 0 0 0\n0 1 1 0 1 1 0 0 0 0\n0 0 0 0 S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1761,7 +2049,13 @@
     "volume_ratio": 0.9090909090909091,
     "max_displacement": 23.59843509884848,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L 0 L L L\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 S S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1797,7 +2091,13 @@
     "volume_ratio": 1.2121212121212122,
     "max_displacement": 6.514298000262633,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 1 L L L L 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 1 1 1 0 1 0 0 0 0\n0 0 1 1 0 1 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n1 0 1 1 0 0 0 0 0 0\n1 1 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1833,7 +2133,13 @@
     "volume_ratio": 0.8571428571428572,
     "max_displacement": 462013070.84795594,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 1 1 1 0 1 1 0 0 0\n0 1 0 0 1 1 0 0 0 0\n1 1 1 0 1 0 0 0 0 0\nS S S 1 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1869,7 +2175,13 @@
     "volume_ratio": 0.9285714285714285,
     "max_displacement": 13.197371577673248,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L L L\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1905,7 +2217,13 @@
     "volume_ratio": 0.9772727272727273,
     "max_displacement": 4.6043032873100405,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L L L\n0 0 0 1 1 1 1 1 1 0\n0 0 0 1 1 0 0 1 1 0\n0 0 0 0 1 0 0 1 0 0\n0 0 0 0 1 0 0 1 0 0\n0 0 0 0 1 0 0 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 1 0 1 0 0\n0 0 S 0 S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1941,7 +2259,13 @@
     "volume_ratio": 0.9444444444444445,
     "max_displacement": 52.070690466751465,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L L L\n0 0 0 1 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -1977,7 +2301,13 @@
     "volume_ratio": 0.975,
     "max_displacement": 6.243046765083053,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L 0 L L 0 L L L L 0\n0 1 1 1 0 1 1 1 0 0\n0 1 1 0 0 0 1 0 0 0\n0 0 1 0 0 0 1 0 0 0\n0 0 1 0 0 0 1 0 0 0\n0 0 1 0 0 0 1 0 0 0\n0 0 1 0 0 0 1 0 0 0\n0 0 1 0 0 0 1 0 0 0\n0 0 1 0 0 0 1 0 0 0\nS S S S S 0 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2013,7 +2343,13 @@
     "volume_ratio": 1.032258064516129,
     "max_displacement": 7.7496641506151445,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\nS 1 S S 0 0 0 S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2049,7 +2385,13 @@
     "volume_ratio": 0.9411764705882353,
     "max_displacement": 33.98982807721182,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 0 1 0 1 1 0\n0 0 0 0 0 1 0 S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2085,7 +2427,13 @@
     "volume_ratio": 1.0357142857142856,
     "max_displacement": 7.390545202686172,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L 1 L 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 S S 0 0 S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2121,7 +2469,13 @@
     "volume_ratio": 1.0526315789473684,
     "max_displacement": 38.634270018612376,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 1 L L L L L 0\n0 1 1 0 1 0 1 1 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 0 1 1 1 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n1 0 0 0 0 S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2157,7 +2511,13 @@
     "volume_ratio": 0.9142857142857144,
     "max_displacement": 222490765.1917089,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L L L 1 L\n0 0 0 1 0 1 0 1 1 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2193,7 +2553,13 @@
     "volume_ratio": 1.037037037037037,
     "max_displacement": 8.591981692994585,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\nS S S S S 0 S 0 S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2229,7 +2595,13 @@
     "volume_ratio": 0.9722222222222222,
     "max_displacement": 11.561026873314113,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L 1 L 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2265,7 +2637,13 @@
     "volume_ratio": 1.1923076923076923,
     "max_displacement": 8.97912395160895,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 1 L L L 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n1 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n1 0 1 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 S S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2301,7 +2679,13 @@
     "volume_ratio": 0.888888888888889,
     "max_displacement": 9.287799806788577,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L 1 L 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\nS S 1 S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2337,7 +2721,13 @@
     "volume_ratio": 0.96,
     "max_displacement": 8.673466102593066,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L L 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2373,7 +2763,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 4.971023658561448,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L 1 1 L L 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 S S S S 0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2409,7 +2805,13 @@
     "volume_ratio": 1.0909090909090908,
     "max_displacement": 14.246558208703519,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L L 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 S 0 0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2445,7 +2847,13 @@
     "volume_ratio": 1.25,
     "max_displacement": 8.837049803499674,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 1 0 0 0 0 1 1 1 0\n0 0 1 0 0 0 1 0 0 1\n0 0 0 0 1 0 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 S S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2481,7 +2889,13 @@
     "volume_ratio": 0.9705882352941176,
     "max_displacement": 52.74329303426307,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\nS S S S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2517,7 +2931,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 18.06653522230227,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 L L L 1 L L L L L\n0 1 0 0 1 1 1 1 1 0\n0 0 1 1 1 1 1 1 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n1 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\nS S S S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2553,7 +2973,13 @@
     "volume_ratio": 0.9310344827586208,
     "max_displacement": 41.80550020151954,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 S 0 S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2589,7 +3015,13 @@
     "volume_ratio": 1.263157894736842,
     "max_displacement": 10.58218200195685,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 1 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 1 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\nS S 1 S S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2625,7 +3057,13 @@
     "volume_ratio": 1.1142857142857143,
     "max_displacement": 35.86940623475684,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "1 0 1 0 0 0 L L L L\n0 0 0 0 0 0 0 1 1 0\n0 0 1 0 0 0 0 1 1 0\n0 0 1 0 0 0 0 1 1 0\n0 0 0 0 0 0 0 1 1 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 1 0 1 1 1 0 0 0\nS S S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2661,7 +3099,13 @@
     "volume_ratio": 1.4285714285714286,
     "max_displacement": 8.405048782607501,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 1 1 0 0 1 1 1 0 0\n0 1 0 0 0 1 1 0 0 0\n1 1 1 0 0 0 1 0 0 0\n0 0 0 1 0 0 1 1 1 0\n0 0 0 S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2697,7 +3141,13 @@
     "volume_ratio": 1.0625,
     "max_displacement": 37.761660614679705,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L L L\n0 0 0 0 0 1 1 1 1 0\n0 1 0 0 0 1 1 1 1 0\n0 1 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 1 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 S S S S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2733,7 +3183,13 @@
     "volume_ratio": 0.9411764705882353,
     "max_displacement": 610607227.7825981,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 0 1 1 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2769,7 +3225,13 @@
     "volume_ratio": 0.9210526315789473,
     "max_displacement": 114.5186980914762,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L L 0\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 S S S 1 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2805,7 +3267,13 @@
     "volume_ratio": 0.9361702127659575,
     "max_displacement": 5.275359372519781,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 1 L L L L L\n0 1 1 1 1 1 1 1 1 0\n0 0 1 1 1 1 1 1 0 0\n0 0 0 1 0 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2841,7 +3309,13 @@
     "volume_ratio": 0.9411764705882353,
     "max_displacement": 34.30308804818238,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 1 1 1 0 0 0 0 0 0\n0 0 S S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2877,7 +3351,13 @@
     "volume_ratio": 0.9743589743589743,
     "max_displacement": 263137051.99260485,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L L L 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 0 1 1 0 0 0\n0 0 0 1 0 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 S S S S S S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2913,7 +3393,13 @@
     "volume_ratio": 1.0526315789473684,
     "max_displacement": 5.213090219667142,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L 1 1 L 0 0\n0 1 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n1 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2949,7 +3435,13 @@
     "volume_ratio": 1.0384615384615385,
     "max_displacement": 703882068.3422256,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L 1 0\n0 0 0 1 1 0 1 1 0 0\n0 0 0 0 1 0 1 1 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 S S S 1 S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -2985,7 +3477,13 @@
     "volume_ratio": 0.9310344827586208,
     "max_displacement": 337317668.3223324,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L L 0\n0 0 0 1 1 0 1 0 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 S S S 0 S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3021,7 +3519,13 @@
     "volume_ratio": 0.930232558139535,
     "max_displacement": 77.81674390427798,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 1 1 1 1 0 0 0 0 0\n0 1 0 0 1 1 0 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 0 1 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 0 1 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3057,7 +3561,13 @@
     "volume_ratio": 1.0499999999999998,
     "max_displacement": 6.142702982836581,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L L L L L 0 0\n0 1 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n1 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\nS S S S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3093,7 +3603,13 @@
     "volume_ratio": 1.2,
     "max_displacement": 5.553890115018134,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 1 1 0 1 0 0\n0 0 0 0 1 1 0 0 1 0\n0 0 0 0 1 1 0 0 0 0\n0 1 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 1 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\nS S S S S 1 S S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3129,7 +3645,13 @@
     "volume_ratio": 1.1428571428571428,
     "max_displacement": 5.744052168550568,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 1 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n1 S S S 1 S S 1 S 1",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3165,7 +3687,13 @@
     "volume_ratio": 0.875,
     "max_displacement": 479.37408332352277,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L 1 L L L L L 0 0\n0 1 1 1 1 1 1 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 0 1 1 1 0 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 S S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3201,7 +3729,13 @@
     "volume_ratio": 0.9062499999999999,
     "max_displacement": 359574572.091134,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 L L L L L L\n0 0 0 0 0 1 1 1 1 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 S S S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3237,7 +3771,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 16.811319897378418,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L L 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 0 S 0 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3273,7 +3813,13 @@
     "volume_ratio": 0.9655172413793105,
     "max_displacement": 40.31794698291848,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3309,7 +3855,13 @@
     "volume_ratio": 0.9259259259259258,
     "max_displacement": 26.625349102302067,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L L 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 1 0 1 0 0 0\n0 0 0 S 0 S 1 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3345,7 +3897,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 5.4147066147179475,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 L L L L 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 0 1 1 0 0 0 0\n0 0 0 S S S 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3381,7 +3939,13 @@
     "volume_ratio": 0.9583333333333334,
     "max_displacement": 68.97845089610699,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L L 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 0 0 0 1 1 1 0\n0 0 0 0 0 0 0 0 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3417,7 +3981,13 @@
     "volume_ratio": 1.1666666666666667,
     "max_displacement": 5.461565007366175,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "L L L L 0 0 0 0 0 0\n0 1 1 0 1 0 0 0 0 0\n0 1 1 0 1 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 1 1 0 0 1 0 0 0 0\n0 1 1 0 0 1 0 0 0 0\n0 1 1 0 0 0 0 0 0 0\n0 S S S S 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3453,7 +4023,13 @@
     "volume_ratio": 1.0,
     "max_displacement": 5.414706670745495,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L 1 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 0 1 1 0 0 0 0 0 0\n0 S S S S 0 S S S 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3489,7 +4065,13 @@
     "volume_ratio": 0.9062499999999999,
     "max_displacement": 375816569.0148314,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 0 L L L 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 1 1 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 1 1 1 0 1 1 0 0\n0 0 1 1 1 1 1 0 0 0\n0 0 1 1 1 1 0 0 0 0\n0 S S S 0 0 0 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3525,7 +4107,13 @@
     "volume_ratio": 0.9259259259259258,
     "max_displacement": 7.771110718369182,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 0 0 0 L L L 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\nS 0 S S S S S S 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3561,7 +4149,13 @@
     "volume_ratio": 0.8611111111111112,
     "max_displacement": 18.31215451266498,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 0 L L L L L L L L\n0 0 0 1 0 1 0 1 1 0\n0 0 0 0 1 1 0 1 0 0\n0 0 0 0 1 1 1 1 0 0\n0 0 0 0 0 1 1 1 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 1 1 0 0 0\n0 0 0 0 S S S 0 0 0",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   },
   {
     "subject": "input_grid",
@@ -3597,6 +4191,12 @@
     "volume_ratio": 1.0333333333333334,
     "max_displacement": 39.11838754803294,
     "unfilled_cells": 0,
-    "unparsable_cells": 0
+    "unparsable_cells": 0,
+    "scoring_policy": "masked-only-v1",
+    "scored_grid": "0 L L L L L 0 0 0 0\n0 0 1 1 1 0 0 0 0 0\n0 0 0 1 1 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 1 1 1 0 0 0 0\n0 0 0 1 1 1 1 1 0 0\n0 0 0 0 1 1 1 1 1 0\n0 0 0 0 0 S S 1 S S",
+    "visible_cell_changes": 0,
+    "visible_numeric_cell_changes": 0,
+    "visible_boundary_cell_changes": 0,
+    "visible_cells_preserved": true
   }
 ]
